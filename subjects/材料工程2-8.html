@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論2.8</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "PMingLiU", serif;
+            line-height: 1.8;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 2cm;
+            background-color: white;
+            color: #333;
+        }
+        
+        h1 {
+            color: #5533aa;
+            font-size: 24pt;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        
+        h2 {
+            color: #cc0000;
+            font-size: 16pt;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: bold;
+        }
+        
+        .section-number {
+            color: #5533aa;
+            font-size: 28pt;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 0.3em;
+        }
+        
+        .term {
+            color: #009966;
+            font-weight: bold;
+        }
+        
+        .italic-term {
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 1em;
+            text-indent: 2em;
+        }
+        
+        .no-indent {
+            text-indent: 0;
+        }
+        
+        .figure-caption {
+            color: #0066cc;
+            font-weight: bold;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            text-indent: 0;
+        }
+        
+        .example-box {
+            background-color: #e6f3ff;
+            border: 2px solid #0066cc;
+            padding: 1.5em;
+            margin: 1.5em 0;
+        }
+        
+        .example-title {
+            background-color: #0066cc;
+            color: white;
+            font-weight: bold;
+            font-size: 14pt;
+            padding: 0.5em 1em;
+            margin: -1.5em -1.5em 1em -1.5em;
+        }
+        
+        .example-subtitle {
+            color: #cc0000;
+            font-weight: bold;
+            font-size: 13pt;
+            margin-bottom: 0.8em;
+        }
+        
+        .solution-title {
+            color: #cc0000;
+            font-weight: bold;
+            font-style: italic;
+            font-size: 12pt;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 1em 0;
+            font-family: "Times New Roman", serif;
+            font-size: 11pt;
+        }
+        
+        .equation-number {
+            float: right;
+            color: #666;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        sup {
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+        
+        sub {
+            font-size: 0.8em;
+            vertical-align: sub;
+        }
+    </style>
+</head>
+<body>
+    <h1><span class="section-number">2.8</span> 混合鍵結</h1>
+    
+    <p>有時候在所謂的<span class="italic-term">鍵結四面體</span>（bonding tetrahedron）上表示四種鍵結類型——離子、共價、金屬和凡得瓦——是具有說明性的，這是一個三維四面體，每個頂點都有一種「極端」類型，如圖2.25a所示。此外，我們應該指出，對於許多真實材料，原子鍵合是這些極端類型中的兩種或更多種的混合（即<span class="italic-term">混合鍵結</span>，mixed bonds）。三種混合鍵結類型——共價-離子、共價-金屬和金屬-離子——也包含在此四面體的邊緣上；我們現在討論每一種。</p>
+    
+    <p>對於混合共價-離子鍵結，大多數共價鍵結具有某種離子特性，而某些共價特性也存在於離子鍵結中。正如前所述，這兩種極端鍵結類型之間存在連續性。在圖2.25a中，這種類型的鍵結表示在離子和共價鍵結頂點之間。任何鍵結類型的程度取決於元素週期表（圖2.8）中組成原子的相對位置，或其電負度差異（參見圖2.9）。分離越寬（水平方向——相對於IVA族——和垂直方向），從左下角到右上角（即電負度差異越大），鍵結的離子性越強。相反地，原子越接近（即電負度差異越小），共價程度越大。元素A和B（A為電負度較大者）之間的鍵結的離子性百分比（%IC）可以用以下表示式近似：</p>
+    
+    <div class="equation">
+        %IC = {1 − exp[−(0.25)(<i>X</i><sub>A</sub> − <i>X</i><sub>B</sub>)<sup>2</sup>]} × 100
+        <span class="equation-number">(2.16)</span>
+    </div>
+    
+    <p>其中<i>X</i><sub>A</sub>和<i>X</i><sub>B</sub>是各元素的電負度。</p>
+    
+    <p>另一種類型的混合鍵結存在於週期表中IIIA、IVA和VA族的某些元素（即B、Si、Ge、As、Sb、Te、Po和At）。這些元素的原子間鍵結是金屬和共價的混合，如圖2.25a所示。這些材料稱為<span class="italic-term">類金屬</span>（metalloids）或<span class="italic-term">半金屬</span>（semi-metals），其性質介於金屬和非金屬之間。此外，對於IV族元素，當垂直向下移動此欄時，鍵結逐漸從共價轉變為金屬——例如，碳（鑽石）的鍵結是純共價，而錫和鉛的鍵結則主要是金屬。</p>
+    
+    <p>當兩種金屬的電負度之間存在顯著差異時，會觀察到混合金屬-離子鍵結用於由兩種金屬組成的化合物。這意味著與鍵結相關的某些電子轉移，因為它具有離子成分。此外，電負度差異越大，離子程度越大。</p>
+    
+    <div class="page-break"></div>
+    
+    <p>例如，對於<span class="term">金屬間化合物</span>TiAl，幾乎沒有離子特性，因為Al和Ti的電負度都相同（1.5；參見圖2.9）。然而，AuCu<sub>3</sub>存在更大程度的離子特性；銅和金的電負度差為0.5。</p>
+    
+    <p class="figure-caption">圖2.25 (a) 鍵結四面體：四種極端（或純）鍵結類型中的每一種都位於四面體的一個角落；三種混合鍵結類型沿四面體邊緣包含。(b) 材料類型四面體：每種材料分類（金屬、陶瓷、聚合物等）與其鍵結類型的關聯。</p>
+    
+    <div class="example-box">
+        <div class="example-title">範例問題 2.3</div>
+        
+        <div class="example-subtitle">C-H鍵結離子性百分比的計算</div>
+        
+        <p style="text-indent: 0;">計算碳和氫之間形成的原子間鍵結的離子性百分比（%IC）。</p>
+        
+        <div class="solution-title">解答</div>
+        
+        <p style="text-indent: 0;">兩個原子/離子A和B（A為電負度較大者）之間鍵結的%IC是其電負度<i>X</i><sub>A</sub>和<i>X</i><sub>B</sub>的函數，根據式2.16。C和H的電負度（參見圖2.9）分別為<i>X</i><sub>C</sub> = 2.5和<i>X</i><sub>H</sub> = 2.1。因此，%IC為</p>
+        
+        <div class="equation" style="text-align: left; margin-left: 3em;">
+            %IC = {1 − exp[−(0.25)(<i>X</i><sub>C</sub> − <i>X</i><sub>H</sub>)<sup>2</sup>]} × 100<br>
+            <span style="margin-left: 2em;">= {1 − exp[−(0.25)(2.5 − 2.1)<sup>2</sup>]} × 100</span><br>
+            <span style="margin-left: 2em;">= 3.9%</span>
+        </div>
+        
+        <p style="text-indent: 0; margin-top: 1em;">因此C—H原子鍵結主要是共價性（96.1%）。</p>
+    </div>
+    
+    <div style="margin-top: 3em; padding-top: 1em; border-top: 2px solid #ccc; text-align: center; color: #666;">
+        <p style="text-indent: 0; margin: 0;">材料科學導論 2.8節</p>
+        <p style="text-indent: 0; margin: 0.5em 0 0 0;">混合鍵結</p>
+    </div>
+</body>
+</html>
