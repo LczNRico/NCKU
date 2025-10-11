@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學4-2</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .note-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .definition-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .side-note {
+            background-color: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+
+        .side-note-title {
+            color: #1976d2;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>4.2 水溶液的性質：強電解質和弱電解質</h1>
+    
+    <p>回想一下，溶液是均勻混合物。它在整個過程中都是相同的（第一口咖啡與最後一口相同），但其組成可以通過改變溶解物質的量來改變（可以製作淡咖啡或濃咖啡）。在本節中，我們將考慮當物質（<span class="term">溶質</span>）溶解於液態水（<span class="term">溶劑</span>）中時會發生什麼。</p>
+    
+    <p>表徵溶液的一個有用性質是其<span class="highlight">電導率</span>，即其傳導電流的能力。可以使用圖4.4所示的裝置方便地檢查這個特性。如果容器中的溶液導電，燈泡就會發光。一些溶液非常有效地傳導電流，燈泡非常明亮地發光；這些溶液含有<span class="term">強電解質</span>。其他溶液只傳導少量電流，燈泡微弱發光；這些溶液含有<span class="term">弱電解質</span>。有些溶液不允許電流流動，燈泡保持不亮；這些溶液含有<span class="term">非電解質</span>。</p>
+
+    <p>溶液導電性的基礎首先由Svante Arrhenius正確識別，他當時是瑞典烏普薩拉大學的物理學研究生，在1880年代早期進行了關於溶液性質的研究。Arrhenius開始相信溶液的導電性源於離子的存在，這個想法最初被大多數科學界所嘲笑。然而，在1890年代後期，當發現原子含有帶電粒子時，離子理論突然變得有意義並被廣泛接受。</p>
+
+    <p>正如Arrhenius所假設的，溶液能夠傳導電流的程度直接取決於存在的離子數量。某些材料，例如氯化鈉，在水溶液中容易產生離子，因此是強電解質。其他物質，例如醋酸，產生</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.4</div>
+        <p class="figure-caption">水溶液的電導率。只有當溶液中存在電荷載體（離子）時，電路才會完成並允許電流流動。<strong>註：</strong>水分子存在但在這些圖片中未顯示。(a) 鹽酸溶液是強電解質，含有容易導電並使燈泡明亮發光的離子。(b) 醋酸溶液是弱電解質，僅含有少量離子，不像強電解質那樣傳導大量電流。燈泡只是微弱發光。(c) 蔗糖溶液是非電解質，不含離子，不導電。燈泡保持不亮。</p>
+        <p class="figure-caption"><em>圖示展示三個實驗裝置，每個都包含一個燒杯、電極和燈泡。(a)燈泡明亮，下方圓圈顯示綠色和藍色球體（陰離子和陽離子）；(b)燈泡微弱發光，下方圓圈顯示較少的紫色和粉色球體；(c)燈泡不亮，下方圓圈顯示黃色分子，沒有離子。</em></p>
+    </div>
+
+    <p>在水中溶解時產生相對少量的離子，是弱電解質。第三類材料，例如糖，在水中溶解時幾乎不形成離子，是非電解質。</p>
+
+    <h2>強電解質</h2>
+
+    <p>我們將考慮幾類強電解質：(1) 可溶性鹽，(2) 強酸，和 (3) 強鹼。</p>
+
+    <p>如圖4.2所示，鹽由陽離子和陰離子陣列組成，當鹽溶解時它們會分離並變得水合。<span class="highlight">溶解度</span>通常以在給定體積的溶劑中溶解的溶質質量（克）或以在給定體積的溶液中溶解的溶質莫耳數來測量。某些鹽，例如NaCl、KCl和NH₄Cl，在水中非常可溶。例如，在25°C時，大約357克NaCl會溶解在1公升水中。另一方面，許多鹽在水中只有非常輕微的溶解度；例如，氯化銀(AgCl)在25°C時在水中只溶解到非常輕微的程度（大約2 × 10⁻⁴ g/L）。此時我們只考慮可溶性鹽。</p>
+
+    <p>Arrhenius最重要的發現之一涉及<span class="term">酸</span>的性質。酸性行為最初與柑橘類水果的酸味有關。事實上，<span class="emphasis">acid</span>這個詞直接來自拉丁語<span class="emphasis">acidus</span>，意思是「酸」。<span class="emphasis">無機酸</span>硫酸(H₂SO₄)和硝酸(HNO₃)之所以如此命名，是因為它們最初是通過處理礦物獲得的，於1300年左右被發現。</p>
+
+    <p>酸在Arrhenius之前的數百年就已為人所知，但在他對溶液的研究之前，沒有人認識到它們的本質。</p>
+
+    <p>在溶液的研究中，Arrhenius發現當物質HCl、HNO₃和H₂SO₄溶解於水中時，它們表現為強電解質。他假設這是水中電離反應的結果，例如：</p>
+
+    <div class="equation">
+        HCl →<sup>H₂O</sup> H⁺(aq) + Cl⁻(aq)<br><br>
+        HNO₃ →<sup>H₂O</sup> H⁺(aq) + NO₃⁻(aq)<br><br>
+        H₂SO₄ →<sup>H₂O</sup> H⁺(aq) + HSO₄⁻(aq)
+    </div>
+
+    <div class="side-note">
+        <div class="side-note-title">Arrhenius對酸的定義：</div>
+        在溶液中產生H⁺離子的物質。
+    </div>
+
+    <div class="side-note">
+        <div class="side-note-title">高氯酸，HClO₄(aq)，是另一種強酸。</div>
+    </div>
+
+    <p>因此Arrhenius提出，<span class="emphasis">酸是在水中溶解時產生H⁺離子（質子）的物質</span>。研究電導性顯示，當HCl、HNO₃和H₂SO₄放入水中時，<span class="emphasis">實際上每個分子</span>都會解離產生離子。這些物質是強電解質，因此被稱為<span class="highlight">強酸</span>。所有這三種都是非常重要的化學品，我們將在進行時對它們有更多了解。然而，此時以下事實很重要：</p>
+
+    <div class="note-box">
+        <p>鹽酸、硝酸和硫酸是水溶液，在化學方程式中應寫為HCl(aq)、HNO₃(aq)和H₂SO₄(aq)，儘管它們經常出現時沒有(aq)符號。</p>
+    </div>
+
+    <p>強酸是完全解離其離子的酸。因此，如果將100個HCl分子溶解於水中，就會產生100個H⁺離子和100個Cl⁻離子。在水溶液中實際上不存在HCl分子（▶ 圖4.5）。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.5</div>
+        <p class="figure-caption">HCl(aq)完全電離。</p>
+        <p class="figure-caption"><em>圖示顯示一個燒杯，其中充滿H⁺（灰色小球）和Cl⁻（綠色大球）離子，標示它們均勻分散在溶液中。</em></p>
+    </div>
+
+    <div class="side-note">
+        <div class="side-note-title">強電解質在水溶液中完全解離。</div>
+    </div>
+
+    <p>硫酸是一種特殊情況。化學式H₂SO₄表示這種酸每個分子可以產生兩個H⁺離子。然而，只有第一個H⁺離子完全解離。第二個H⁺離子可以在某些條件下被拉出，我們稍後將討論。因此，H₂SO₄在水中溶解的溶液主要含有H⁺離子和HSO₄⁻離子。</p>
+
+    <p>另一類重要的強電解質是<span class="highlight">強鹼</span>，含有<span class="emphasis">氫氧根離子</span>(OH⁻)的可溶性化合物，在水中溶解時完全解離。含有鹼的溶液具有苦味和滑膩感。最常見的鹼性溶液是固體氫氧化鈉(NaOH)或氫氧化鉀(KOH)溶解於水中產生的。當固體氫氧化鈉或氫氧化鉀溶解於水中時產生離子，如下所示（▶ 圖4.6）：</p>
+
+    <div class="equation">
+        NaOH(s) →<sup>H₂O</sup> Na⁺(aq) + OH⁻(aq)<br><br>
+        KOH(s) →<sup>H₂O</sup> K⁺(aq) + OH⁻(aq)
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.6</div>
+        <p class="figure-caption">氫氧化鈉的水溶液。</p>
+        <p class="figure-caption"><em>圖示顯示一個燒杯，其中充滿OH⁻（紅色球體）和Na⁺（灰色球體）離子，均勻分散在溶液中。</em></p>
+    </div>
+
+    <h2>弱電解質</h2>
+
+    <p>弱電解質是在水中溶解時產生相對少量離子的物質，如圖4.4(b)所示。最常見的弱電解質是弱酸和弱鹼。</p>
+
+    <p>醋的主要酸性成分是醋酸(HC₂H₃O₂)。醋酸的化學式寫成其中兩個氫原子的化學區分。具有產生H⁺離子的酸性氫原子或原子（在溶液中）的酸式首先列出。如果存在任何非酸性氫，則它們稍後寫在化學式中。因此，化學式HC₂H₃O₂表示一個酸性氫原子和三個非酸性氫原子。醋酸在水中的解離反應可以寫成如下：</p>
+
+    <div class="equation">
+        HC₂H₃O₂(aq) →<sup>H₂O</sup> H⁺(aq) + C₂H₃O₂⁻(aq)
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.7</div>
+        <p class="figure-caption">醋酸(HC₂H₃O₂)在水中主要以未解離分子的形式存在。只有一小部分分子被電離。</p>
+        <p class="figure-caption"><em>圖示顯示一個燒杯，其中大部分是未解離的醋酸分子（由紅色氧原子、灰色碳原子和白色氫原子組成的分子模型），只有少數H⁺離子和C₂H₃O₂⁻離子。</em></p>
+    </div>
+
+    <p>醋酸與強酸非常不同，因為其分子中只有約1%在水溶液中解離（▲ 圖4.7）。因此，當100個HC₂H₃O₂分子溶解於水中時，大約99個HC₂H₃O₂分子保持完整，只產生一個H⁺離子和一個C₂H₃O₂⁻離子。</p>
+
+    <div class="side-note">
+        <div class="side-note-title">弱電解質在水溶液中只解離到輕微程度。</div>
+    </div>
+
+    <p>由於醋酸是一種在水溶液中<span class="emphasis">僅解離到輕微程度</span>的弱電解質，它被稱為<span class="term">弱酸</span>。我們將在第7章中詳細探討弱酸。</p>
+
+    <p>最常見的弱鹼是氨(NH₃)。當氨在水中溶解時，它的反應如下：</p>
+
+    <div class="equation">
+        NH₃(aq) + H₂O(l) ⟶ NH₄⁺(aq) + OH⁻(aq)
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.8</div>
+        <p class="figure-caption">NH₃在水中的反應。NH₄⁺和OH⁻離子是由NH₃分子與H₂O分子反應形成的。</p>
+        <p class="figure-caption"><em>圖示顯示一個燒杯，其中大部分是未反應的NH₃分子（藍色氮原子和白色氫原子），只有少數NH₄⁺離子和OH⁻離子。</em></p>
+    </div>
+
+    <p>由於產生了OH⁻離子，溶液是<span class="emphasis">鹼性的</span>。氨被稱為<span class="term">弱鹼</span>，因為<span class="emphasis">所產生的溶液是弱電解質</span>——存在的離子非常少（▲ 圖4.8）。實際上，每溶解100個NH₃分子，只產生一個NH₄⁺離子和一個OH⁻離子；99個NH₃分子保持未反應。</p>
+
+    <h2>非電解質</h2>
+
+    <p>非電解質是在水中溶解但不產生任何離子的物質[圖4.4(c)]。非電解質的一個例子是乙醇（見圖4.3的結構式）。當乙醇溶解時，完整的C₂H₅OH分子分散在水中。由於分子不分解成離子，所產生的溶液不導電。另一種常見的非電解質是蔗糖（食用糖，C₁₂H₂₂O₁₁），在水中非常可溶但溶解時不產生離子。</p>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

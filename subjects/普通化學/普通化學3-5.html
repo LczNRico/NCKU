@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學3-5</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .question-section {
+            background-color: #fff9e6;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .question-title {
+            font-weight: bold;
+            font-style: italic;
+            color: #e65100;
+            margin-bottom: 8px;
+        }
+
+        .summary-list {
+            background-color: #e8f5e9;
+            padding: 15px 15px 15px 35px;
+            margin: 20px 0;
+            border-left: 5px solid #4caf50;
+        }
+
+        .summary-list ol {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        .summary-list li {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>3.5 化合物的百分組成</h1>
+    
+    <p>到目前為止，我們已經討論了化合物在組成原子數量方面的組成。通常我們也需要知道化合物在元素質量方面的組成。我們可以從化合物的化學式獲得這項資訊，方法是將化合物中每種元素1莫耳的質量與化合物1莫耳的總質量進行比較。</p>
+
+    <p>以乙醇為例，其化學式為C₂H₅OH。每種元素存在的質量和莫耳質量可通過以下步驟獲得：</p>
+
+    <div class="equation">
+        <div style="text-align: left; display: inline-block;">
+            C的質量 = 2 mol × 12.011 g/mol = 24.022 g<br><br>
+            H的質量 = 6 mol × 1.008 g/mol = 6.048 g<br><br>
+            O的質量 = 1 mol × 15.999 g/mol = 15.999 g<br><br>
+            1 mol C₂H₅OH的質量 = 46.069 g
+        </div>
+    </div>
+
+    <p>乙醇中碳的<span class="term">質量百分比</span>（通常稱為重量百分比）可以通過比較1莫耳乙醇中碳的質量與1莫耳乙醇的總質量，然後將結果乘以100%來計算：</p>
+
+    <div class="equation">
+        C的質量百分比 = (1 mol C₂H₅OH中C的質量)/(1 mol C₂H₅OH的質量) × 100%<br><br>
+        = (24.022 g)/(46.069 g) × 100%<br><br>
+        = 52.144%
+    </div>
+
+    <p>乙醇中氫和氧的質量百分比可以用類似的方式獲得：</p>
+
+    <div class="equation">
+        H的質量百分比 = (1 mol C₂H₅OH中H的質量)/(1 mol C₂H₅OH的質量) × 100%<br><br>
+        = (6.048 g)/(46.069 g) × 100%<br><br>
+        = 13.13%
+    </div>
+
+    <div class="equation">
+        O的質量百分比 = (1 mol C₂H₅OH中O的質量)/(1 mol C₂H₅OH的質量) × 100%<br><br>
+        = (15.999 g)/(46.069 g) × 100%<br><br>
+        = 34.728%
+    </div>
+
+    <p>請注意，如果四捨五入到小數點後兩位，這些百分比加起來等於100%；這是計算的驗證方式。</p>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 3.5</div>
+        <h3>計算質量百分比</h3>
+        
+        <p>盤尼西林是目前大量抗生素（抗菌劑）中的第一種，於1928年由蘇格蘭細菌學家亞歷山大·弗萊明偶然發現，但他從未能將其分離為純化合物。此後，類似的抗生素挽救了數百萬人的生命。盤尼西林F的化學式為C₁₄H₂₀N₂SO₄。請計算每種元素的質量百分比。</p>
+
+        <div class="figure-box">
+            <p class="figure-caption"><em>照片說明：從黴菌中分離出的盤尼西林。</em></p>
+        </div>
+        
+        <p><strong>解答</strong> 如我們在第3.4節討論的，您對問題的解答應該從提問開始，首先是：</p>
+
+        <div class="question-section">
+            <div class="question-title">我們要去哪裡？</div>
+            <p>在這個例子中，您被要求確定盤尼西林F中每種元素的質量百分比。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們知道什麼？</div>
+            <p>我們知道盤尼西林F的化學式。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們如何到達那裡？</div>
+            <p>化合物中給定元素的質量百分比是該元素在化合物中的質量占化合物總質量的百分比。我們知道盤尼西林F的化學式為C₁₄H₂₀N₂SO₄。例如，碳的質量百分比為</p>
+        </div>
+
+        <div class="equation" style="font-size: 1.05em;">
+            碳的質量百分比 = (1 mole C₁₄H₂₀N₂SO₄中碳的質量)/(1 mole C₁₄H₂₀N₂SO₄的質量) × 100%
+        </div>
+
+        <p>請注意我們如何讓問題引導我們。原始問題是要找出化合物中每種元素的質量百分比。根據質量百分比的定義，我們發現需要單獨解決每種元素的問題。我們還將問題改為兩個新的、更具體的問題：</p>
+
+        <p>1. 1莫耳盤尼西林F中碳的質量是多少？（上式中的分子）</p>
+        <p>2. 1莫耳盤尼西林F的質量是多少？（上式中的分母）</p>
+
+        <p>從第3.3節的討論中，我們看到第二個問題實際上是在詢問盤尼西林F的莫耳質量。這顯示我們雖然讓問題引導我們很重要，但我們也需要基本原理的知識。盤尼西林F的莫耳質量計算如下：</p>
+
+        <div class="equation" style="font-size: 1.05em;">
+            <div style="text-align: left; display: inline-block;">
+                C: 14 mol × 12.011 g/mol = 168.15 g<br><br>
+                H: 20 mol × 1.008 g/mol = 20.16 g<br><br>
+                N: 2 mol × 14.007 g/mol = 28.014 g<br><br>
+                S: 1 mol × 32.07 g/mol = 32.07 g<br><br>
+                O: 4 mol × 15.999 g/mol = 63.996 g<br><br>
+                1 mol C₁₄H₂₀N₂SO₄的質量 = 312.39 g
+            </div>
+        </div>
+
+        <div class="figure-box">
+            <p class="figure-caption"><strong>桃樂絲·霍奇金</strong>（1910-1994）出生於埃及開羅。她在大約10歲時對化學和晶體產生了興趣，在16歲生日時，她收到了一本關於如何使用X射線分析晶體的書籍，從那時起，她的職業道路就確定了。霍奇金博士使用X射線分析進行了三項重要發現。1945年，她確定了盤尼西林的結構，這幫助製造商生產盤尼西林。1954年，她確定了維生素B₁₂的結構，這使她在1964年獲得了諾貝爾化學獎。儘管這兩項發現都很重要且有用，霍奇金博士認為她最偉大的科學成就是發現胰島素的結構（1969年），現在用於治療糖尿病。</p>
+        </div>
+    </div>
+
+    <p>請注意，在求解盤尼西林F的莫耳質量時，我們也同時求解了化合物中每種元素1莫耳的質量。有了這些質量，我們就可以確定每種元素的質量百分比：</p>
+
+    <div class="equation" style="font-size: 1.05em;">
+        <div style="text-align: left; display: inline-block;">
+            C的質量百分比 = (168.15 g C)/(312.39 g C₁₄H₂₀N₂SO₄) × 100% = 53.827%<br><br>
+            H的質量百分比 = (20.16 g H)/(312.39 g C₁₄H₂₀N₂SO₄) × 100% = 6.453%<br><br>
+            N的質量百分比 = (28.014 g N)/(312.39 g C₁₄H₂₀N₂SO₄) × 100% = 8.968%<br><br>
+            S的質量百分比 = (32.07 g S)/(312.39 g C₁₄H₂₀N₂SO₄) × 100% = 10.27%<br><br>
+            O的質量百分比 = (63.996 g O)/(312.39 g C₁₄H₂₀N₂SO₄) × 100% = 20.486%
+        </div>
+    </div>
+
+    <p>最後，我們可以檢查答案是否合理，因為這些百分比加起來等於100%。</p>
+
+    <p>讓我們總結一下這個方法：</p>
+
+    <div class="summary-list">
+        <ol>
+            <li>我們從一般性的問題開始：「我們要去哪裡？」</li>
+            <li>我們寫下問題中給我們的資訊。</li>
+            <li>我們審視了問題1的答案，並思考如何繼續。換句話說，我們考慮了「我們如何到達那裡？」這個問題</li>
+            <li>我們讓答案引導我們提出新的問題，這些問題對於具體問題更加具體（例如，「1莫耳C₁₄H₂₀N₂SO₄的質量是多少？」）。</li>
+            <li>我們使用基本原理的知識回答了這些具體問題。</li>
+            <li>我們得出了解答。</li>
+        </ol>
+    </div>
+
+    <p>這種方法將引導您解決整本教科書中的問題。無論問題變得多麼複雜，您都應該始終清楚地知道您正在嘗試解決什麼，然後提出（並回答）問題以獲得解答。您的知識會隨著學習而累積，在化學中尤其如此。例如，要解決這個特定問題，如果不知道化學式的含義以及對莫耳質量的理解，就不可能完成。</p>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

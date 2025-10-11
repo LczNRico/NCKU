@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學3-9</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .critical-thinking {
+            background-color: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            color: #e65100;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .steps-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .steps-title {
+            background-color: #0288d1;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .steps-box ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+
+        .steps-box li {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+
+        .flowchart {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 2px solid #757575;
+        }
+
+        .flow-box {
+            background-color: #c8e6c9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px auto;
+            max-width: 400px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .flow-arrow {
+            text-align: center;
+            color: #ff6f00;
+            font-size: 1.8em;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        .question-section {
+            background-color: #fff9e6;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .question-title {
+            font-weight: bold;
+            font-style: italic;
+            color: #e65100;
+            margin-bottom: 8px;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>3.9 化學計量計算：反應物和生成物的量</h1>
+    
+    <p>請記住,化學方程式中的係數代表分子的<span class="emphasis">數量</span>,而不是質量。然而,在實驗室或化工廠中,當要進行反應時,所需物質的量不能通過計數分子來確定。計數總是通過稱重來完成的。在本節中,我們將看到如何使用化學方程式來處理反應化學物質的<span class="emphasis">質量</span>。</p>
+    
+    <p>為了發展處理反應化學計量的原理,我們將考慮丙烷(C₃H₈)的燃燒,這是一種用於瓦斯烤肉架的碳氫化合物,在天然氣管線不可用的農村地區常被用作燃料。丙烷與氧氣反應生成二氧化碳和水。我們將考慮這個問題:「多少質量的氧氣將與96.1克丙烷反應?」在進行涉及化學反應的計算之前,必須做的第一件事是<span class="highlight">寫出反應的平衡化學方程式</span>。◀ 在這種情況下,平衡方程式為:</p>
+
+    <div class="equation">
+        C₃H₈(g) + 5O₂(g) → 3CO₂(g) + 4H₂O(g)
+    </div>
+
+    <div class="info-box">
+        <p><strong>重要提醒:</strong>在進行任何涉及化學反應的計算之前,請確保反應方程式已平衡。</p>
+    </div>
+
+    <p>請記住,這個方程式意味著1莫耳的C₃H₈將與5莫耳的O₂反應,生成3莫耳的CO₂和4莫耳的H₂O。要使用這個方程式來找出反應物和生成物的質量,我們必須能夠在物質的質量和莫耳之間進行轉換。因此我們必須首先問:「96.1克丙烷中存在多少莫耳的丙烷?」丙烷的莫耳質量(精確到三位有效數字)為44.1 g/mol。丙烷的莫耳數可以按如下方式計算:</p>
+
+    <div class="equation">
+        96.1 g C₃H₈ × (1 mol C₃H₈)/(44.1 g C₃H₈) = 2.18 mol C₃H₈
+    </div>
+
+    <div class="figure-box">
+        <p class="figure-caption"><em>照片說明(上):丙烷在瓦斯烤肉架上燃燒。</em></p>
+        <p class="figure-caption"><em>照片說明(下):二鉻酸銨的分解。</em></p>
+    </div>
+
+    <p>接下來,我們必須考慮到每莫耳丙烷與5莫耳氧氣反應。做到這一點的最佳方法是使用平衡方程式建立莫耳比。在這種情況下,我們想要從丙烷的莫耳數轉換為氧氣的莫耳數。從平衡方程式中我們看到,每莫耳C₃H₈需要5莫耳O₂,因此適當的比率為:</p>
+
+    <div class="equation">
+        (5 mol O₂)/(1 mol C₃H₈)
+    </div>
+
+    <p>這可以用來計算所需的O₂莫耳數:</p>
+
+    <div class="equation">
+        2.18 mol C₃H₈ × (5 mol O₂)/(1 mol C₃H₈) = 10.9 mol O₂
+    </div>
+
+    <p>由於最初的問題要求與96.1克丙烷反應所需的氧氣質量,因此10.9莫耳的O₂必須轉換為<span class="emphasis">克</span>,使用O₂的莫耳質量:</p>
+
+    <div class="equation">
+        10.9 mol O₂ × (32.0 g O₂)/(1 mol O₂) = 349 g O₂
+    </div>
+
+    <p>因此,燃燒96.1克丙烷需要349克氧氣。</p>
+
+    <p>這個例子可以通過問「當96.1克丙烷與氧氣燃燒時,會產生多少質量的二氧化碳?」來延伸。在這種情況下,我們必須在丙烷的莫耳數和二氧化碳的莫耳數之間進行轉換。</p>
+
+    <p>這種轉換可以通過檢查平衡方程式來完成,該方程式顯示每莫耳C₃H₈反應會產生3莫耳CO₂:</p>
+
+    <div class="equation">
+        2.18 mol C₃H₈ × (3 mol CO₂)/(1 mol C₃H₈) = 6.54 mol CO₂
+    </div>
+
+    <p>然後我們使用CO₂的莫耳質量(44.0 g/mol)來計算產生的CO₂質量:</p>
+
+    <div class="equation">
+        6.54 mol CO₂ × (44.0 g CO₂)/(1 mol CO₂) = 288 g CO₂
+    </div>
+
+    <p>從96.1克丙烷找出產生的二氧化碳質量的過程在此總結:</p>
+
+    <div class="flowchart">
+        <div class="flow-box" style="background-color: #c8e6c9;">
+            丙烷的質量<br>96.1 g C₃H₈
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div style="text-align: center; margin: 10px 0; color: #ff6f00; font-weight: 500;">
+            1 mol C₃H₈<br>44.1 g C₃H₈
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box" style="background-color: #c8e6c9;">
+            丙烷的莫耳數<br>2.18 mol C₃H₈
+        </div>
+        <div class="flow-arrow">→</div>
+        <div style="text-align: center; margin: 10px 0; color: #ff6f00; font-weight: 500;">
+            3 mol CO₂<br>1 mol C₃H₈
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box" style="background-color: #c8e6c9;">
+            二氧化碳的莫耳數<br>6.54 mol CO₂
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div style="text-align: center; margin: 10px 0; color: #ff6f00; font-weight: 500;">
+            44.0 g CO₂<br>1 mol CO₂
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box" style="background-color: #c8e6c9;">
+            二氧化碳的質量<br>288 g CO₂
+        </div>
+    </div>
+
+    <div class="critical-thinking">
+        <div class="critical-title">批判性思考</div>
+        <p>您的實驗室夥伴觀察到您總是在實驗室中稱量化學品的質量,但卻使用莫耳比來平衡方程式。「為什麼我們不在方程式中使用質量作為係數?」您的夥伴問道。如果您的實驗室夥伴決定通過使用質量作為係數來平衡方程式,這甚至可能嗎?為什麼可以或為什麼不可以?</p>
+    </div>
+
+    <div class="steps-box">
+        <div class="steps-title">步驟</div>
+        <h3>化學反應中反應物和生成物質量的計算</h3>
+        
+        <ol>
+            <li>平衡反應方程式。</li>
+            <li>將已知物質的質量轉換為莫耳數。</li>
+            <li>使用平衡方程式建立適當的莫耳比。</li>
+            <li>使用適當的莫耳比計算所需反應物或生成物的莫耳數。</li>
+            <li>如果問題要求,將莫耳數轉換回克數。</li>
+        </ol>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 3.9</div>
+        <h3>化學計量</h3>
+        
+        <p>小蘇打(NaHCO₃)經常被用作抗酸劑。它中和胃分泌的過量鹽酸:</p>
+
+        <div class="equation">
+            NaHCO₃(s) + HCl(aq) → NaCl(aq) + H₂O(l) + CO₂(aq)
+        </div>
+
+        <p>鎂乳,是氫氧化鎂的水溶液懸浮液,也被用作抗酸劑:</p>
+
+        <div class="equation">
+            Mg(OH)₂(s) + 2HCl(aq) → 2H₂O(l) + MgCl₂(aq)
+        </div>
+
+        <p>哪一種是每克更有效的抗酸劑,NaHCO₃還是Mg(OH)₂?</p>
+
+        <h3>解答</h3>
+
+        <div class="question-section">
+            <div class="question-title">我們要去哪裡?</div>
+            <p>在這個問題中,我們被要求確定哪種抗酸劑更有效。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們知道什麼?</div>
+            <p>我們得到了兩種抗酸劑與HCl反應的平衡化學方程式。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們如何到達那裡?</div>
+            <p>更有效的抗酸劑將與(中和)更多的酸反應。因此要回答這個問題,我們必須回答以下問題:</p>
+        </div>
+
+        <ol>
+            <li>每克NaHCO₃中和多少HCl?</li>
+            <li>每克Mg(OH)₂中和多少HCl?</li>
+        </ol>
+
+        <p>然後我們將比較答案並選擇更有效的抗酸劑。</p>
+
+        <div class="question-section">
+            <div class="question-title">我們如何確定與一定量鹼(抗酸劑)反應的酸量?</div>
+            <p>我們有平衡的化學方程式,這給了我們NaHCO₃/HCl和Mg(OH)₂/HCl的莫耳比。因此,我們必須將每種抗酸劑的1.00 g轉換為莫耳數的抗酸劑,然後轉換為莫耳數的HCl。與較多莫耳數HCl反應的抗酸劑是更有效的。</p>
+        </div>
+
+        <p>使用NaHCO₃的莫耳質量,我們確定1.00 g NaHCO₃中的莫耳數:</p>
+
+        <div class="equation">
+            1.00 g NaHCO₃ × (1 mol NaHCO₃)/(84.01 g NaHCO₃) = 1.19 × 10⁻² mol NaHCO₃
+        </div>
+
+        <p>因為HCl和NaHCO₃以1:1反應,這個答案也代表所需的HCl莫耳數。因此1.00 g的NaHCO₃將中和1.19 × 10⁻² mol HCl。</p>
+
+        <p>使用Mg(OH)₂的莫耳質量,我們接下來確定1.00 g中Mg(OH)₂的莫耳數:</p>
+
+        <div class="equation">
+            1.00 g Mg(OH)₂ × (1 mol Mg(OH)₂)/(58.32 g Mg(OH)₂) = 1.71 × 10⁻² mol Mg(OH)₂
+        </div>
+
+        <p>使用平衡方程式,我們確定將與此量Mg(OH)₂反應的HCl莫耳數:</p>
+
+        <div class="equation">
+            1.71 × 10⁻² mol Mg(OH)₂ × (2 mol HCl)/(1 mol Mg(OH)₂) = 3.42 × 10⁻² mol HCl
+        </div>
+
+        <p>因此1.00 g的Mg(OH)₂將中和3.42 × 10⁻² mol HCl。它是每克比NaHCO₃更好的抗酸劑。</p>
+    </div>
+
+    <div class="figure-box">
+        <p class="figure-caption"><em>照片說明:兩片抗酸片溶解產生CO₂氣體。HCO₃⁻溶解產生CO₂氣體。</em></p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

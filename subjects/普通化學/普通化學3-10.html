@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學3-10</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .steps-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .steps-title {
+            background-color: #0288d1;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .steps-box ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+
+        .steps-box li {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+
+        .question-section {
+            background-color: #fff9e6;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .question-title {
+            font-weight: bold;
+            font-style: italic;
+            color: #e65100;
+            margin-bottom: 8px;
+        }
+
+        .note-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .molecular-diagram {
+            background-color: #f0f4ff;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #90caf9;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>3.10 涉及限量反應物的計算</h1>
+    
+    <p>當化學品混合在一起進行反應時,它們通常以<span class="term">化學計量數量</span>混合——也就是說,以恰好正確的量混合,使得所有物質在同一時間「用完」(耗盡)。為了澄清這個概念,讓我們考慮氨的生產。氨是哈伯法中的重要肥料本身和其他肥料的起始材料,是通過根據方程式將空氣中的氮與氫結合而製成的:</p>
+
+    <div class="equation">
+        N₂(g) + 3H₂(g) → 2NH₃(g)
+    </div>
+
+    <p>這個過程的氫是由甲烷與水反應產生的:</p>
+
+    <div class="equation">
+        CH₄(g) + H₂O(g) → 3H₂(g) + CO(g)
+    </div>
+
+    <p>現在考慮以下問題:與甲烷恰好2.50 × 10³公斤反應需要多少質量的水?也就是說,多少水將與2.50 × 10³公斤的甲烷恰好反應,不留下甲烷或水的剩餘?使用前一節中發展的原理,我們知道如果2.50 × 10³公斤的甲烷與2.81 × 10³公斤的水混合,兩種反應物將在同一時間用完。這些反應物以化學計量數量混合。</p>
+
+    <p>然而,如果將2.50 × 10³公斤的甲烷與3.00 × 10³公斤的水混合,甲烷將在水能用完之前被消耗掉。水將是<span class="emphasis">過量的</span>。在這種情況下,所形成的產物量將由甲烷的量決定。一旦甲烷被消耗——已達到該反應可進行的極限,就不能形成更多的產物,即使還有一些水剩餘。在這種情況下,因為甲烷的量<span class="emphasis">限制</span>了可以形成的產物量,所以它被稱為<span class="term">限量反應物</span>或<span class="term">限制反應物</span>。在任何化學計量問題中,確定哪種反應物是限制反應物是至關重要的,以便正確計算將形成的產物量。</p>
+
+    <div class="info-box">
+        <p><strong>重要概念:</strong>為了進一步探討限量反應物的概念,請考慮氨合成反應。</p>
+    </div>
+
+    <div class="equation">
+        N₂(g) + 3H₂(g) → 2NH₃(g)
+    </div>
+
+    <p>假設將5個N₂分子和9個H₂分子放入燒瓶中。這是化學計量數量的反應物,還是其中一個會在另一個消耗之前用完?從平衡方程式中我們知道每個N₂分子需要3個H₂分子才能發生反應:</p>
+
+    <div class="molecular-diagram">
+        <p style="font-size: 1.2em; margin: 10px 0;">
+            <span style="color: #1976d2;">●●</span> + 
+            <span style="color: #42a5f5;">●<br>●<br>●</span> → 
+            <span style="color: #5e35b1;">●●</span>
+        </p>
+    </div>
+
+    <p>因此所需的H₂/N₂比率為3H₂/1N₂。在我們的實驗中,我們有9個H₂分子和5個N₂分子。因此H₂/N₂的實際比率為9H₂/5N₂ = 1.8H₂/1N₂。</p>
+
+    <p>由於平衡方程式(3:1)所需的實際H₂/N₂莫耳比小於3,H₂必須是限制反應物。也就是說,氫將首先用完,留下一些未反應的N₂分子。我們可以將這個視覺化,如圖3.9所示,其中顯示N₂分子中的3個與9個H₂分子反應產生6個NH₃分子:</p>
+
+    <div class="equation">
+        3N₂ + 9H₂ → 6NH₃
+    </div>
+
+    <p>這留下2個N₂分子未反應——氮是過量的。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖3.9</div>
+        <p class="figure-caption">氫和氮根據方程式N₂ + 3H₂ → 2NH₃反應形成氨。</p>
+        <div style="text-align: center; margin: 20px 0;">
+            <p><em>[圖示顯示反應前後的分子:左側有5個N₂分子(藍色)和9個H₂分子(淺藍色),箭頭指向右側形成的6個NH₃分子(紫色)和2個未反應的N₂分子]</em></p>
+        </div>
+    </div>
+
+    <p>我們在這裡所展示的是,在這個實驗中氫是限量反應物。反應無法用完所有N₂分子,因為H₂分子全部被前3個N₂分子消耗而反應。</p>
+
+    <p>在實驗室或化工廠中,我們處理的量比前面例子中的幾個分子要大得多。因此我們必須使用莫耳來處理限量反應物。這些想法完全相同,只是我們使用莫耳而不是個別分子。例如,假設將25.0公斤的氮和5.00公斤的氫混合並反應形成氨。當這個反應進行到完成(直到其中一種反應物完全消耗)時,我們如何計算產生的氨質量?</p>
+
+    <p>如同前面的例子,我們必須使用平衡方程式</p>
+
+    <div class="equation">
+        N₂(g) + 3H₂(g) → 2NH₃(g)
+    </div>
+
+    <p>來確定氮或氫是否為限量反應物,然後確定形成的氨量。我們首先計算存在的反應物莫耳數:</p>
+
+    <div class="equation">
+        25.0 kg N₂ × (1000 g N₂)/(1 kg N₂) × (1 mol N₂)/(28.0 g N₂) = 8.93 × 10² mol N₂
+    </div>
+
+    <div class="equation">
+        5.00 kg H₂ × (1000 g H₂)/(1 kg H₂) × (1 mol H₂)/(2.016 g H₂) = 2.48 × 10³ mol H₂
+    </div>
+
+    <p>由於1莫耳的N₂與3莫耳的H₂反應,將與8.93 × 10²莫耳的N₂恰好反應的H₂莫耳數為</p>
+
+    <div class="equation">
+        8.93 × 10² mol N₂ × (3 mol H₂)/(1 mol N₂) = 2.68 × 10³ mol H₂
+    </div>
+
+    <p>因此8.93 × 10²莫耳的N₂需要2.68 × 10³莫耳的H₂才能完全反應。然而,在這種情況下只有2.48 × 10³莫耳的H₂存在。因此,氫將在氮之前被消耗。因此,氫是這種特定情況下的<span class="emphasis">限量反應物</span>,我們必須使用氫的量來計算形成的氨量:▶</p>
+
+    <div class="info-box">
+        <p><strong>重要提醒:</strong>始終檢查看哪種反應物是限制反應物。</p>
+    </div>
+
+    <div class="equation">
+        2.48 × 10³ mol H₂ × (2 mol NH₃)/(3 mol H₂) = 1.65 × 10³ mol NH₃
+    </div>
+
+    <div class="equation">
+        1.65 × 10³ mol NH₃ × (17.0 g NH₃)/(1 mol NH₃) = 2.80 × 10⁴ g NH₃ = 28.0 kg NH₃
+    </div>
+
+    <p>請注意,要確定限量反應物,我們可以改為從給定的氫量開始並計算所需的氮莫耳數:</p>
+
+    <div class="equation">
+        2.48 × 10³ mol H₂ × (1 mol N₂)/(3 mol H₂) = 8.27 × 10² mol N₂
+    </div>
+
+    <p>因此2.48 × 10³莫耳的H₂需要8.27 × 10²莫耳的N₂。由於8.93 × 10²莫耳的N₂實際存在,氮是過量的。氫將首先用完,因此再次我們發現氫限制了形成的氨量。</p>
+
+    <p>確定哪種反應物是限制反應物的一個相關但更簡單的方法是比較平衡方程式所需的物質莫耳比與實際存在的反應物莫耳比。例如,在這種情況下,平衡方程式所需的H₂與N₂的莫耳比為</p>
+
+    <div class="equation">
+        (3 mol H₂)/(1 mol N₂)
+    </div>
+
+    <p>也就是說,</p>
+
+    <div class="equation">
+        (mol H₂)/(mol N₂)(required) = 3/1 = 3
+    </div>
+
+    <p>在這個實驗中,我們有2.48 × 10³莫耳的H₂和8.93 × 10²莫耳的N₂。因此比率</p>
+
+    <div class="equation">
+        (mol H₂)/(mol N₂)(actual) = (2.48 × 10³)/(8.93 × 10²) = 2.78
+    </div>
+
+    <p>由於2.78小於3,H₂與N₂的實際莫耳比太小,H₂必須是限制反應物。如果實際H₂/N₂莫耳比大於3,則H₂將是過量的,N₂將是限制反應物。</p>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 3.10</div>
+        <h3>化學計量:限量反應物</h3>
+        
+        <p>通過在高溫下將氣態氨通過固體銅(II)氧化物可以製備氮氣。反應的其他產物是固體銅和水蒸氣。如果18.1 g的NH₃與90.4 g的CuO反應,哪個是限量反應物?將形成多少克的N₂?</p>
+
+        <h3>解答</h3>
+
+        <div class="question-section">
+            <div class="question-title">我們要去哪裡?</div>
+            <p>在這個例子中,我們被要求解決兩個問題:確定限量反應物和確定在給定量的反應物中將形成的N₂質量。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們知道什麼?</div>
+            <p>我們得到了反應物的化學式、產物的名稱以及反應物的質量。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們如何到達那裡?</div>
+            <p>我們首先需要回答以下兩個問題:限量反應物一詞是什麼意思?以及我們需要做什麼來解N₂的量?</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">限量反應物一詞是什麼意思?</div>
+            <p>它是在反應中完全用完的反應物。由於化學方程式給出了反應物的莫耳比,我們確定需要多少莫耳的給定反應物,將其與我們實際擁有的進行比較。要做到這一點,我們需要有一個平衡方程式,我們可以從問題的描述中得到。</p>
+        </div>
+
+        <div class="equation">
+            2NH₃(g) + 3CuO(s) → N₂(g) + 3Cu(s) + 3H₂O(g)
+        </div>
+
+        <p>要使用這個方程式,我們必須比較莫耳數的反應物量與平衡方程式,因此我們必須計算NH₃和CuO的莫耳數:</p>
+
+        <div class="equation">
+            18.1 g NH₃ × (1 mol NH₃)/(17.0 g NH₃) = 1.06 mol NH₃
+        </div>
+
+        <div class="equation">
+            90.4 g CuO × (1 mol CuO)/(79.5 g CuO) = 1.14 mol CuO
+        </div>
+
+        <p>我們現在可以使用其中任何一個來確定另一個反應物完全反應所需的莫耳數。例如,如果所有NH₃反應,需要多少莫耳的CuO?</p>
+
+        <div class="equation">
+            1.06 mol NH₃ × (3 mol CuO)/(2 mol NH₃) = 1.59 mol CuO
+        </div>
+
+        <p>因此需要1.59莫耳的CuO來與1.06莫耳的NH₃反應。由於只有1.14莫耳的CuO實際存在,CuO的量是限制反應物。</p>
+
+        <p>我們可以通過比較平衡方程式所需的CuO與NH₃的莫耳比來驗證這個結論,</p>
+
+        <div class="equation">
+            (mol CuO)/(mol NH₃)(required) = 3/2 = 1.5
+        </div>
+
+        <p>與實際存在的莫耳比,</p>
+
+        <div class="equation">
+            (mol CuO)/(mol NH₃)(actual) = 1.14/1.06 = 1.08
+        </div>
+
+        <p>由於實際比率太小(小於1.5),CuO是限量反應物。</p>
+
+        <div class="question-section">
+            <div class="question-title">我們需要做什麼來解N₂的量?</div>
+            <p>要確定這一點,我們需要使用限量反應物來計算莫耳數,然後計算N₂的質量。</p>
+        </div>
+
+        <p>因為CuO是限量反應物,我們必須使用CuO的量來計算形成的N₂量:</p>
+
+        <div class="equation">
+            1.14 mol CuO × (1 mol N₂)/(3 mol CuO) = 0.380 mol N₂
+        </div>
+
+        <p>使用N₂的莫耳質量,我們可以計算產生的N₂質量:</p>
+
+        <div class="equation">
+            0.380 mol N₂ × (28.0 g N₂)/(1 mol N₂) = 10.6 g N₂
+        </div>
+
+        <p>注意:與大多數問題一樣,有不止一種方法來解決這個問題。我們可以回答「限量反應物一詞是什麼意思?」的問題為:限制產物形成量的反應物。因此,解決這個問題的另一種方法是假設所有NH₃反應並再次解N₂產生的莫耳數,假設所有CuO反應。導致產物量較小的反應物限制了反應。一旦我們知道限量反應物,我們就可以解產生的N₂質量。請自己做這件事,證明它給出了相同的結果。</p>
+    </div>
+
+    <p>當限量反應物完全消耗時形成的給定產物量稱為該產物的<span class="term">理論產率</span>。在範例3.10中,10.6克的氮是理論產率。這是從所使用的反應物量可以產生的氮的<span class="emphasis">最大</span>量。實際上,理論產率預測的產物量很少通過副反應(涉及一種或多種反應物或產物)和其他複雜情況獲得。產物的<span class="term">實際產率</span>通常以理論產率的百分比給出。這個值稱為<span class="highlight">百分產率</span>:▶</p>
+
+    <div class="info-box">
+        <p><strong>重要概念:</strong>百分產率是作為特定實驗室或工業反應效率指標的重要指標。</p>
+    </div>
+
+    <div class="equation">
+        (實際產率)/(理論產率) × 100% = 百分產率
+    </div>
+
+    <p>例如,如果範例3.10中考慮的反應實際上產生了6.63克的氮而不是預測的10.6克,氮的百分產率為</p>
+
+    <div class="equation">
+        (6.63 g N₂)/(10.6 g N₂) × 100% = 62.5%
+    </div>
+
+    <div class="steps-box">
+        <div class="steps-title">步驟</div>
+        <h3>解決涉及反應物和生成物質量的化學計量問題</h3>
+        
+        <ol>
+            <li>寫出並平衡反應方程式。</li>
+            <li>將已知物質的質量轉換為莫耳數。</li>
+            <li>通過將平衡方程式所需的反應物莫耳比與實際存在的反應物莫耳比進行比較,確定哪種反應物是限制反應物。</li>
+            <li>使用限量反應物的量和適當的莫耳比,計算所需產物的莫耳數。</li>
+            <li>使用莫耳質量從莫耳數轉換為克數。</li>
+        </ol>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 3.11</div>
+        <h3>計算百分產率</h3>
+        
+        <p>鉻酸鉀,一種明亮的黃色固體,是通過固體鉻礦石(FeCr₂O₄)與固體碳酸鉀和氣態氧在高溫下反應產生的。該反應的其他產物是固體鐵(III)氧化物和氣態二氧化碳。在一個特定的實驗中,169 kg的鉻礦石、298 kg的碳酸鉀和75.0 kg的氧氣在反應容器中密封並在高溫下反應。獲得的鉻酸鉀量為194 kg。計算鉻酸鉀的百分產率。</p>
+
+        <h3>解答</h3>
+
+        <div class="question-section">
+            <div class="question-title">我們要去哪裡?</div>
+            <p>這個問題要求我們確定百分產率。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們知道什麼?</div>
+            <p>我們得到了反應物和產物的名稱以及反應物的質量和其中一種產物的質量。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們如何到達那裡?</div>
+        </div>
+
+        <div class="equation">
+            百分產率 = (實際產率)/(理論產率) × 100%
+        </div>
+
+        <p>我們得到鉻酸鉀的實際產率為194 kg;因此我們有</p>
+
+        <div class="equation">
+            百分產率 = (194 kg)/(理論產率) × 100%
+        </div>
+
+        <p>因此我們現在已將問題改為:理論產率是多少?一旦我們有了這個,我們就可以解百分產率。這引導我們到:</p>
+
+        <div class="question-section">
+            <div class="question-title">理論產率是什麼意思?</div>
+            <p>理論產率是如果反應進行到完成,我們可以預期的產物量。它是我們一直在使用3.8和3.9節中的想法計算的產物量。</p>
+        </div>
+
+        <p>我們得到了三種反應物的質量(和名稱)並被告知產物的名稱。首先,我們需要一個平衡的化學方程式。</p>
+
+        <p>從反應的前述描述中可以寫出的非平衡方程式為</p>
+
+        <div class="equation">
+            FeCr₂O₄(s) + K₂CO₃(s) + O₂(g) → K₂CrO₄(s) + Fe₂O₃(s) + CO₂(g)
+        </div>
+
+        <p>平衡方程式為</p>
+
+        <div class="equation">
+            4FeCr₂O₄(s) + 8K₂CO₃(s) + 7O₂(g) → 8K₂CrO₄(s) + 2Fe₂O₃(s) + 8CO₂(g)
+        </div>
+
+        <p>接下來我們將反應物的質量轉換為莫耳數。使用莫耳質量:</p>
+
+        <div class="equation">
+            169 kg FeCr₂O₄ × (1000 g)/(1 kg) × (1 mol FeCr₂O₄)/(223.84 g FeCr₂O₄) = 755 mol FeCr₂O₄
+        </div>
+
+        <div class="equation">
+            298 kg K₂CO₃ × (1000 g)/(1 kg) × (1 mol K₂CO₃)/(138.21 g K₂CO₃) = 2156 mol K₂CO₃
+        </div>
+
+        <div class="equation">
+            75.0 kg O₂ × (1000 g)/(1 kg) × (1 mol O₂)/(32.00 g O₂) = 2344 mol O₂
+        </div>
+
+        <p>然後我們確定限量反應物。使用莫耳比方法:</p>
+
+        <div class="equation">
+            (mol K₂CO₃)/(mol FeCr₂O₄)(required) = 8/4 = 2
+        </div>
+
+        <p>實際莫耳比為</p>
+
+        <div class="equation">
+            (mol K₂CO₃)/(mol FeCr₂O₄)(actual) = (2.16 × 10³)/(7.55 × 10²) = 2.86
+        </div>
+
+        <p>由於實際莫耳比大於所需的比率,K₂CO₃相對於FeCr₂O₄是過量的。因此FeCr₂O₄或O₂必須是限制反應物。要確定這兩者中哪一個將限制產物量,我們比較所需的莫耳比,</p>
+
+        <div class="equation">
+            (mol O₂)/(mol FeCr₂O₄)(required) = 7/4 = 1.75
+        </div>
+
+        <p>與實際莫耳比,</p>
+
+        <div class="equation">
+            (mol O₂)/(mol FeCr₂O₄)(actual) = (2.34 × 10³)/(7.55 × 10²) = 3.10
+        </div>
+
+        <p>因此存在比所需更多的K₂CO₃和O₂。這些反應物是過量的,因此FeCr₂O₄是限量反應物。</p>
+
+        <p>我們必須使用FeCr₂O₄的量來計算可以形成的K₂CrO₄最大量:</p>
+
+        <div class="equation">
+            7.55 × 10² mol FeCr₂O₄ × (8 mol K₂CrO₄)/(4 mol FeCr₂O₄) = 1.51 × 10³ mol K₂CrO₄
+        </div>
+
+        <p>使用K₂CrO₄的莫耳質量,我們可以確定質量:</p>
+
+        <div class="equation">
+            1.51 × 10³ mol K₂CrO₄ × (194.19 g K₂CrO₄)/(1 mol K₂CrO₄) = 2.93 × 10⁵ g K₂CrO₄
+        </div>
+
+        <p>這個值代表K₂CrO₄的理論產率。實際產率為194 kg,即1.94 × 10⁵ g。因此百分產率為</p>
+
+        <div class="equation">
+            (1.94 × 10⁵ g K₂CrO₄)/(2.93 × 10⁵ g K₂CrO₄) × 100% = 66.2%
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

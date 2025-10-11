@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學4-3</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .question-section {
+            background-color: #fff9e6;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .question-title {
+            font-weight: bold;
+            font-style: italic;
+            color: #e65100;
+            margin-bottom: 8px;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .side-note {
+            background-color: #e1f5fe;
+            border-left: 4px solid #0288d1;
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>4.3 溶液的組成</h1>
+    
+    <p>當兩種溶液混合時，化學反應經常會發生。為了進行化學計量計算，我們必須知道兩件事：(1) <span class="emphasis">反應的性質</span>，這取決於化學品溶解時所採取的確切形式，以及 (2) 溶液中存在的<span class="emphasis">化學品量</span>，也就是說，每種化學品的組成。</p>
+
+    <p>如我們將在第17章中看到的，溶液的組成可以用許多不同的方式描述。此時我們只考慮最常用的濃度表示法，<span class="highlight">莫耳濃度</span>（M），其定義為<span class="emphasis">每體積溶液的溶質莫耳數（以公升表示）</span>：</p>
+
+    <div class="equation">
+        M = 莫耳濃度 = 溶質的莫耳數 / 溶液的公升數
+    </div>
+
+    <p>濃度為1.0莫耳（寫作1.0 M）的溶液每公升溶液含有1.0莫耳的溶質。</p>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 4.1</div>
+        <h3>莫耳濃度的計算</h3>
+        
+        <p>計算將1.56克氣態HCl通入足夠的水中製成26.8毫升溶液所製備的溶液的莫耳濃度。</p>
+
+        <h3>解答</h3>
+
+        <div class="question-section">
+            <div class="question-title">我們要去哪裡？</div>
+            <p>我們被要求求解以莫耳濃度為單位的溶液濃度。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們知道什麼？</div>
+            <p>我們知道溶質的質量（以克為單位）和溶液的體積（以毫升為單位）。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們如何到達那裡？</div>
+        </div>
+
+        <div class="equation" style="font-size: 1.1em;">
+            莫耳濃度 = 溶質的莫耳數 / 溶液的公升數
+        </div>
+
+        <p>我們得到的溶液體積為毫升，我們可以將其轉換為公升：</p>
+
+        <div class="equation">
+            26.8 mL × (1 L / 1000 mL) = 2.68 × 10⁻² L
+        </div>
+
+        <p>因此我們有</p>
+
+        <div class="equation">
+            莫耳濃度 = 溶質的莫耳數 / 2.68 × 10⁻² L
+        </div>
+
+        <p>為了計算莫耳濃度，我們需要確定溶質的莫耳數，因此我們將原始問題改為「<span class="emphasis">1.56克HCl中有多少莫耳的HCl？</span>」回想第三章，我們使用莫耳質量如下：</p>
+
+        <div class="equation">
+            1.56 g HCl × (1 mol HCl / 36.5 g HCl) = 4.27 × 10⁻² mol HCl
+        </div>
+
+        <p>我們現在可以如下確定濃度：</p>
+
+        <div class="equation">
+            莫耳濃度 = (4.27 × 10⁻² mol HCl) / (2.68 × 10⁻² L 溶液) = 1.59 M HCl
+        </div>
+    </div>
+
+    <p>請注意，對溶液組成的描述可能不準確地反映溶液的化學性質。溶液濃度總是以溶質<span class="emphasis">在溶解之前</span>的形式給出。例如，考慮標示為1.0 M NaCl的1.0公升溶液。這個溶液是通過將1.0莫耳的NaCl溶解於足夠的水中製成1.0公升溶液而製備的。標籤1.0 M並不意味著溶液含有1.0莫耳的NaCl單位。實際上，溶液含有1.0莫耳的Na⁺離子和1.0莫耳的Cl⁻離子。</p>
+
+    <p>我們經常需要確定在給定體積的已知莫耳濃度溶液中存在的溶質莫耳數。執行此操作的程序很容易從莫耳濃度的定義中得出：▶</p>
+
+    <div class="side-note" style="background-color: #e3f2fd; border-color: #1976d2;">
+        M = 溶質的莫耳數 / 溶液的公升數
+    </div>
+
+    <div class="equation">
+        溶液公升數 × 莫耳濃度 = 溶液公升數 × (溶質的莫耳數 / 溶液的公升數)<br><br>
+        = 溶質的莫耳數
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 4.2</div>
+        <h3>離子濃度</h3>
+        
+        <p>計算在1.75 L的1.0 × 10⁻³ M AlCl₃中Cl⁻離子的莫耳數。</p>
+
+        <h3>解答</h3>
+
+        <div class="question-section">
+            <div class="question-title">我們要去哪裡？</div>
+            <p>我們正在尋找Cl⁻離子的莫耳數。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們知道什麼？</div>
+            <p>我們得到了溶液的體積和以莫耳濃度表示的濃度，以及離子化合物的化學式。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們如何到達那裡？</div>
+            <p>我們知道莫耳濃度是溶質莫耳數與溶液公升數的比率，或</p>
+        </div>
+
+        <div class="equation">
+            M = 溶質的莫耳數 / 溶液的公升數
+        </div>
+
+        <p>因此</p>
+
+        <div class="equation">
+            莫耳數 = M × 體積
+        </div>
+
+        <p>這會給我們會溶解的AlCl₃的莫耳數，但我們尋找的是溶液中Cl⁻離子的莫耳數。</p>
+
+        <p>當固體AlCl₃溶解時，它產生如下的離子：</p>
+
+        <div class="equation">
+            AlCl₃(s) →<sup>H₂O</sup> Al³⁺(aq) + 3Cl⁻(aq)
+        </div>
+
+        <p>因此1.0 × 10⁻³ M AlCl₃溶液含有1.0 × 10⁻³ M Al³⁺離子和3.0 × 10⁻³ M Cl⁻離子。</p>
+
+        <p>要計算在1.75 L的1.0 × 10⁻³ M AlCl₃溶液中Cl⁻離子的莫耳數，我們必須將體積乘以莫耳濃度：</p>
+
+        <div class="equation">
+            1.75 L 溶液 × 3.0 × 10⁻³ M Cl⁻<br><br>
+            = 1.75 L 溶液 × (3.0 × 10⁻³ mol Cl⁻ / 1 L 溶液)<br><br>
+            = 5.3 × 10⁻³ mol Cl⁻
+        </div>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 4.3</div>
+        <h3>濃度與體積</h3>
+        
+        <p>典型的血清約為0.14 M NaCl。什麼體積的血液含有1.0毫克的NaCl？</p>
+
+        <h3>解答</h3>
+
+        <div class="question-section">
+            <div class="question-title">我們要去哪裡？</div>
+            <p>我們想要確定含有1.0毫克NaCl的血液體積。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們知道什麼？</div>
+            <p>我們知道NaCl的莫耳濃度。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們需要什麼資訊？</div>
+            <p>我們正在尋找體積和質量之間的轉換。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們如何到達那裡？</div>
+            <p>我們知道莫耳濃度是溶質莫耳數與溶液公升數的比率，因此我們有體積和莫耳數之間的轉換：</p>
+        </div>
+
+        <div class="equation">
+            M = 溶質的莫耳數 / 溶液的公升數
+        </div>
+
+        <p>因此</p>
+
+        <div class="equation">
+            體積 = 溶質的莫耳數 / M
+        </div>
+
+        <p>我們也有質量和莫耳數之間的轉換（莫耳質量）。因此我們可以將質量轉換為莫耳數（使用莫耳質量），並將莫耳數轉換為體積（使用莫耳濃度）：</p>
+
+        <p>我們必須首先確定1.0毫克NaCl所代表的莫耳數：</p>
+
+        <div class="equation">
+            1.0 mg NaCl × (1 g NaCl / 1000 mg NaCl) × (1 mol NaCl / 58.45 g NaCl) = 1.7 × 10⁻⁵ mol NaCl
+        </div>
+
+        <p>接下來，我們必須確定0.14 M NaCl溶液的什麼體積含有1.7 × 10⁻⁵莫耳的NaCl。有某個體積（V），當乘以這個溶液的莫耳濃度時，會產生1.7 × 10⁻⁵莫耳的NaCl。也就是說，</p>
+
+        <div class="equation">
+            V × (0.14 mol NaCl / L 溶液) = 1.7 × 10⁻⁵ mol NaCl
+        </div>
+
+        <p>求解體積得到</p>
+
+        <div class="equation">
+            V = (1.7 × 10⁻⁵ mol NaCl) / (0.14 mol NaCl / L 溶液) = 1.2 × 10⁻⁴ L 溶液
+        </div>
+
+        <p>因此0.12毫升的血液含有1.7 × 10⁻⁵莫耳的NaCl，或1.0毫克的NaCl。</p>
+    </div>
+
+    <p><span class="term">標準溶液</span>是<span class="emphasis">濃度精確已知</span>的溶液。標準溶液常用於化學分析中，可以如圖4.9▼和範例4.4所示的方式製備。</p>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 4.4</div>
+        <h3>已知濃度的溶液</h3>
+        
+        <p>為了分析某種葡萄酒的酒精含量，化學家需要1.00 L的0.200 M K₂Cr₂O₇（重鉻酸鉀）水溶液。必須稱出多少固體K₂Cr₂O₇來製備這個溶液？</p>
+
+        <h3>解答</h3>
+
+        <div class="question-section">
+            <div class="question-title">我們要去哪裡？</div>
+            <p>我們被要求確定製備1.00 L的0.200 M溶液所需的K₂Cr₂O₇溶質質量。</p>
+        </div>
+
+        <div class="figure-box">
+            <div class="figure-title">圖4.9</div>
+            <p class="figure-caption">製備標準水溶液所涉及的步驟。(a) 將稱重量的物質（溶質）放入容量瓶中，並加入少量水。(b) 通過輕輕旋轉瓶子（<span class="emphasis">瓶塞在原位</span>）將固體溶解在瓶中。(c) 添加更多水（輕輕旋轉），直到溶液的液面剛好達到瓶頸上蝕刻的標記。然後通過倒置瓶子數次來徹底混合溶液。</p>
+            <p class="figure-caption"><em>圖示顯示三個步驟：(a)含有固體和少量水的容量瓶，有體積標記（校準標記）和稱重的溶質量；(b)添加沖洗瓶將固體溶解；(c)添加水至標記，產生橙色溶液的最終容量瓶。</em></p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們知道什麼？</div>
+            <p>我們得到了溶液的濃度和體積，以及化合物的分子式。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們需要什麼資訊？</div>
+            <p>我們需要確定固體的莫耳數。</p>
+        </div>
+
+        <div class="question-section">
+            <div class="question-title">我們如何到達那裡？</div>
+            <p>知道莫耳濃度是溶質莫耳數與溶液公升數的比率，我們可以使用莫耳濃度和體積來確定溶質的莫耳數。</p>
+        </div>
+
+        <div class="equation">
+            M = 溶質的莫耳數 / 溶液的公升數
+        </div>
+
+        <p>因此</p>
+
+        <div class="equation">
+            莫耳數 = M × 體積
+        </div>
+
+        <p>然而，我們被要求提供質量，因此我們需要使用溶質的莫耳質量將莫耳數轉換為質量。</p>
+
+        <p>首先，確定所需的K₂Cr₂O₇莫耳數：</p>
+
+        <div class="equation">
+            1.00 L 溶液 × (0.200 mol K₂Cr₂O₇ / L 溶液) = 0.200 mol K₂Cr₂O₇
+        </div>
+
+        <p>這個量可以使用K₂Cr₂O₇的莫耳質量轉換為克：</p>
+
+        <div class="equation">
+            0.200 mol K₂Cr₂O₇ × (294.2 g K₂Cr₂O₇ / mol K₂Cr₂O₇) = 58.8 g K₂Cr₂O₇
+        </div>
+
+        <p>因此，要製備1.00 L的0.200 M K₂Cr₂O₇，化學家必須稱出58.8克的K₂Cr₂O₇，將其放入1.00升的容量瓶中，並加水至標記。</p>
+
+        <p><strong>註：</strong>回顧範例4.1到4.4的解答，您應該注意到這些問題的求解方式相似。例如，在所有情況下，我們需要知道莫耳濃度的含義以及如何操作濃度的公式。問題在細節上有所不同。在範例4.1、4.3和4.4中，我們需要使用莫耳質量=質量/莫耳。在範例4.2中，我們需要了解離子固體如何溶解。如第3.4節所討論的，我們需要提出允許問題引導我們的問題，但我們也需要可以借鑑的知識庫。</p>
+    </div>
+
+    <h2>稀釋</h2>
+
+    <p>為了節省實驗室的時間和空間，常規使用的溶液通常以濃縮形式購買或製備（這些被稱為<span class="term">原液</span>）。在稱為<span class="highlight">稀釋</span>的過程中，然後添加水以達到特定溶液所需的莫耳濃度。例如，常見的酸作為濃縮溶液購買並根據需要稀釋。典型的稀釋計算涉及確定必須向一定量的原液添加多少水才能達到所需濃度的溶液。進行這些計算的關鍵是記住，由於在稀釋中只添加了水，<span class="emphasis">最終稀釋溶液中的所有溶質必須來自濃縮原液</span>。也就是說，</p>
+
+    <div class="side-note" style="background-color: #e3f2fd; border-color: #1976d2;">
+        用水稀釋不會改變存在的溶質莫耳數。
+    </div>
+
+    <div class="equation">
+        稀釋後的溶質莫耳數 = 稀釋前的溶質莫耳數 ◀
+    </div>
+
+    <p>例如，假設我們需要從17.5 M醋酸原液製備500毫升的1.00 M醋酸(HC₂H₃O₂)。需要多少體積的原液？第一步是確定最終溶液中醋酸的莫耳數，方法是將體積乘以莫耳濃度：</p>
+
+    <div class="equation">
+        500. mL 溶液 × (1 L 溶液 / 1000 mL 溶液) × (1.00 mol HC₂H₃O₂ / 1 L 溶液)<br><br>
+        = 0.500 mol HC₂H₃O₂
+    </div>
+
+    <p>因此我們需要使用含有0.500莫耳HC₂H₃O₂的17.5 M醋酸體積。也就是說，</p>
+
+    <div class="equation">
+        V × (17.5 mol HC₂H₃O₂ / L 溶液) = 0.500 mol HC₂H₃O₂
+    </div>
+
+    <p>求解V得到</p>
+
+    <div class="equation">
+        V = (0.500 mol HC₂H₃O₂) / (17.5 mol HC₂H₃O₂ / L 溶液) = 0.0286 L，或28.6 mL 溶液
+    </div>
+
+    <p>因此，要製備500毫升的1.00 M醋酸溶液，我們可以取28.6毫升的17.5 M醋酸並將其稀釋至總體積為500毫升。</p>
+
+    <p>稀釋程序通常涉及兩種類型的玻璃器皿：滴管和容量瓶。<span class="term">滴管</span>是用於精確測量和轉移給定體積溶液的裝置。有兩種類型的滴管：<span class="emphasis">測量滴管</span>和<span class="emphasis">容量滴管</span>，如圖4.10▶所示。<span class="highlight">測量滴管</span>用於測量出容量滴管不可用的體積。例如，我們會使用圖4.11▼所示的測量滴管來將28.6毫升的17.5 M醋酸輸送到500毫升容量瓶中，然後加水至標記以進行上述稀釋。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.10</div>
+        <p class="figure-caption">(a) 測量滴管有刻度，可用於測量各種體積的液體並精確輸送。(b) 容量滴管設計為測量<span class="emphasis">一個</span>體積準確。當充滿至校準標記時，它會輸送滴管上指示的體積。</p>
+        <p class="figure-caption"><em>圖示顯示(a)一個帶刻度的測量滴管，標記從0到頂部刻度；(b)一個容量滴管，頂部有一個膨脹部分和一個校準標記。</em></p>
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.11</div>
+        <p class="figure-caption">(a) 使用測量滴管將28.7毫升的17.4 M醋酸溶液轉移到容量瓶中。(b) 向瓶中加水至校準標記。(c) 所得溶液為1.00 M醋酸。</p>
+        <p class="figure-caption"><em>圖示顯示三個步驟：(a)測量滴管將藍色溶液滴入空容量瓶；(b)添加沖洗瓶水至部分充滿的容量瓶（現為綠色）；(c)最終的500毫升容量瓶充滿至標記（淺綠色溶液）。</em></p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>
