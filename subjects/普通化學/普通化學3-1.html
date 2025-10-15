@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學3-1</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-title {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .critical-thinking {
+            background-color: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            color: #e65100;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .note-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>3.1 原子質量</h1>
+    
+    <p>如我們在第二章中所見，關於原子質量的第一批定量資訊來自道耳頓、給呂薩克、拉瓦節、亞佛加厥、坎尼扎羅和貝采里烏斯的研究。通過觀察元素結合形成各種化合物的比例，十九世紀的化學家計算出了相對原子質量。現代原子質量系統於1961年建立，<span class="highlight">以¹²C（碳-12）為標準</span>。在這個系統中，<span class="emphasis">¹²C被賦予精確12原子質量單位</span>（u）的質量，而所有其他原子的質量都是相對於這個標準給出的。</p>
+    
+    <p>目前可用於比較原子質量最準確的方法涉及使用<span class="term">質譜儀</span>。在這種儀器中（如圖3.1所示），原子或分子被導入高速電子束。高速電子將被分析的原子或分子上的電子撞擊掉，並將它們轉變為正離子。然後，施加的電場通過磁場加速這些離子，磁場使離子的路徑發生偏轉。每個離子的路徑偏轉量取決於其質量——最重的離子偏轉最小——而這種偏轉使離子分離，如圖3.1所示。通過比較離子撞擊檢測板的位置，可以得到非常準確的相對質量值。例如，當¹²C和¹³C在質譜儀中分析時，發現它們的質量比為</p>
+
+    <div class="equation">
+        質量 ¹³C / 質量 ¹²C = 1.0836129
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖3.1</div>
+        <p class="figure-caption">質譜儀的示意圖。圖示包含以下組件：樣品被加熱裝置蒸發，電子束將原子或分子轉化為正離子，離子加速電場加速正離子形成加速離子束，離子束通過狹縫，磁場使離子路徑偏轉，質量最小的離子偏轉最多，最終撞擊檢測板。</p>
+        <p class="figure-caption"><em>照片說明：</em>化學家使用質譜儀分析血漿中的銅。</p>
+    </div>
+
+    <p>由於原子質量單位的定義使得¹²C的質量<span class="emphasis">精確為</span>12原子質量單位，因此在同一尺度上，</p>
+
+    <div class="equation">
+        ¹³C的質量 = (1.0836129)(12 u) = 13.003355 u
+        <div style="font-size: 0.9em; color: #1976d2; margin-top: 5px;">
+            ↑<br>精確數字，<br>根據定義
+        </div>
+    </div>
+
+    <p>其他原子的質量可以用類似的方式確定。</p>
+
+    <p>每種元素的質量在本書封面內頁的表格中給出。這個數值雖然實際上是一個質量，但由於歷史原因，有時被稱為每種元素的<span class="term">原子量</span>。</p>
+
+    <div class="info-box">
+        <p><strong>註：</strong>大多數元素在自然界中以同位素混合物的形式存在；因此原子質量通常報告為平均值。為了反映這一點，碳（例如）現在的官方質量為12.0096至12.0116 u，但由於不確定性，這將在文中被忽略。此系統已被10個元素（氫、鋰、硼、碳、氮、氧、矽、硫、氯和鉈）採用。在文本中，我們將繼續使用這些元素的標準平均原子質量法。</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-title">範例 3.1</div>
+        <h2 style="color: #2e7d32;">元素的平均質量</h2>
+        
+        <p>銅是一種非常重要的金屬，用於水管、電線、屋頂覆蓋物和許多其他材料。當銅樣品蒸發並注入質譜儀時，獲得圖3.3所示的結果。使用這些數據計算天然銅的平均質量。（⁶³Cu和⁶⁵Cu的質量值分別為62.93 u和64.93 u。）</p>
+        
+        <p><strong>解答</strong> 如圖所示，平均每100個天然銅原子中，69.09個是⁶³Cu，30.91個是⁶⁵Cu。因此，100個天然銅原子的平均質量為</p>
+        
+        <div class="equation">
+            (69.09 atoms)(62.93 u/atom) + (30.9 atoms)(64.93 u/atom) = 6355 u
+        </div>
+        
+        <p>每個原子的平均質量為</p>
+        
+        <div class="equation">
+            6355 u / 100 atoms = 63.55 u/atom
+        </div>
+        
+        <p>此質量值用於涉及銅反應的計算，並且是本書封面內頁表格中給出的值。</p>
+
+        <div class="figure-box" style="background: white; border-color: #4caf50; margin-top: 20px;">
+            <div class="figure-title">圖3.3</div>
+            <p class="figure-caption">天然銅的質譜圖。圖表顯示在質量數63處有69.09%的峰，在質量數65處有30.91%的峰。</p>
+        </div>
+    </div>
+
+    <div class="critical-thinking">
+        <div class="critical-title">批判性思考</div>
+        <p>如果有人提供您100萬美元，要求您以每秒計一個數字的速度從1數到6 × 10²³，您會怎麼做？計算您的時薪。您會這樣做嗎？您能做到嗎？</p>
+    </div>
+
+    <p>查看表格中給出的碳原子質量值。您可能期望看到12，因為我們說原子質量系統是基於¹²C的。然而，碳的數字是12.01，因為在地球上發現的碳（天然碳）是同位素¹²C、¹³C和¹⁴C的混合物。所有這三種同位素都有六個質子，但它們分別有六個、七個和八個中子。由於天然碳是同位素的混合物，我們使用的碳的原子質量是基於其同位素組成的<span class="emphasis">平均值</span>。</p>
+
+    <p>碳的平均原子質量計算如下。化學家知道天然碳由98.89%的¹²C原子和1.11%的¹³C原子組成。在這個精度水平上，¹⁴C的量可以忽略不計。使用¹²C（精確為12 u）和¹³C（13.003355 u）的質量，可以計算出天然碳的平均原子質量：</p>
+
+    <div class="equation">
+        98.89% × 12 u + 1.11% × 13.003355 u<br>
+        = (0.9889)(12 u) + (0.0111)(13.003355 u) = 12.01 u ◀
+    </div>
+
+    <p>這個平均質量通常被稱為碳的原子量。</p>
+
+    <div class="note-box">
+        <p><strong>重要概念：</strong></p>
+        <p><span class="emphasis">即使天然碳不含單一原子質量為12.01的原子，出於化學計量目的，我們認為碳只由一種質量為12.01的原子類型組成。</span>我們這樣做是為了能夠通過稱量碳樣品來計數碳原子。讓我們考慮一個非化學的例子。稱量我們的3000克軟糖豆樣品（平均每個軟糖豆質量為3克）比數出1000個軟糖豆要容易得多。請注意，沒有一個軟糖豆的質量必須是3克才能使這種方法有效；只有<span class="emphasis">平均</span>質量必須是3克。我們將同樣的原理擴展到計數原子。對於天然碳，平均質量為12.01原子質量單位，要獲得1000個原子需要稱出12,010原子質量單位的天然碳（¹²C和¹³C的混合物）。</p>
+    </div>
+
+    <p>正如碳的情況一樣，本書封面內頁表格中給出的每種元素的質量是基於該元素天然存在的同位素組成的平均值。例如，氫（1.008）列出的質量是天然氫的平均質量，天然氫是¹H和²H（氘）的混合物。沒有原子的氫實際具有1.008的質量。</p>
+
+    <p>除了用於確定單個原子的準確質量值外，質譜儀還用於確定天然元素的同位素組成。例如，當天然氖樣品注入質譜儀時，獲得圖3.2所示的結果。「峰」的面積或條形的高度表示²⁰Ne、²¹Ne和²²Ne原子的相對數量。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖3.2</div>
+        <p class="figure-caption">當天然氖注入質譜儀時記錄的信號相對強度，以(a)「峰」和(b)柱狀圖表示。峰的相對面積為0.9092（²⁰Ne）、0.00257（²¹Ne）和0.0882（²²Ne）；因此天然氖為90.92% ²⁰Ne、0.257% ²¹Ne和8.82% ²²Ne。(c) 霓虹燈招牌。</p>
+        <p class="figure-caption">圖示包含三個部分：(a)顯示質量數18-24的離子束強度圖，在20處有最高峰；(b)顯示質量數20-22的相對原子數柱狀圖，其中20處為91%，21處為0.3%，22處為9%；(c)顯示「OPEN」字樣的霓虹燈招牌照片。</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

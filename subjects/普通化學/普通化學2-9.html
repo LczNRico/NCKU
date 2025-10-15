@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學2-9</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th {
+            background-color: #00838f;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .table-caption {
+            background-color: #00838f;
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .rule-list {
+            background-color: #e3f2fd;
+            padding: 15px 15px 15px 40px;
+            margin: 20px 0;
+            border-left: 4px solid #1976d2;
+        }
+
+        .rule-list ol {
+            margin: 10px 0;
+        }
+
+        .rule-list li {
+            margin: 10px 0;
+        }
+
+        .info-note {
+            background-color: #e1f5fe;
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-left: 4px solid #0288d1;
+        }
+
+        .example-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-title {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .flowchart {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            border: 2px solid #757575;
+        }
+
+        .flow-box {
+            background-color: #c8e6c9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px auto;
+            max-width: 500px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .flow-box.blue {
+            background-color: #90caf9;
+            border-color: #1976d2;
+        }
+
+        .flow-box.orange {
+            background-color: #ffcc80;
+            border-color: #f57c00;
+        }
+
+        .flow-arrow {
+            text-align: center;
+            color: #555;
+            font-size: 1.5em;
+            margin: 5px 0;
+        }
+
+        .critical-thinking {
+            background-color: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            color: #e65100;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .compound-table {
+            background-color: #f0f4ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>2.9 簡單化合物的命名</h1>
+    
+    <p>當化學還是一門新興科學時,化合物的命名並沒有系統。鉛糖、藍礬、生石灰、瀉鹽、鎂乳、石膏和笑氣等名稱是由早期化學家創造的。這些名稱被稱為<span class="term">俗名</span>。隨著化學的發展,很明顯,對化合物使用俗名將導致無法接受的混亂。目前已知的化合物超過四百萬種。記住這些化合物的俗名將是一項不可能的任務。</p>
+
+    <p>當然,解決方案是採用一個<span class="term">系統</span>來命名化合物,其中名稱能說明有關化合物組成的某些資訊。在學習了這個系統之後,化學家在給定化學式時應該能夠命名化合物,或者在給定名稱時應該能夠構建化合物的化學式。在本節中,我們將具體說明除有機化合物(基於碳原子鏈的化合物)以外的化合物命名的最重要規則。</p>
+
+    <div class="info-note">
+        <strong>註:</strong>有機化合物的系統命名將在第21章中討論。
+    </div>
+
+    <p>我們將從無機<span class="highlight">二元化合物</span>的命名系統開始——由兩種元素組成的化合物——我們將其分類為各種類型以便於識別。我們將考慮離子化合物和共價化合物。</p>
+
+    <h2>二元化合物(第I型;離子型)</h2>
+
+    <p><span class="highlight">二元離子化合物</span>含有一個正離子(陽離子),總是首先寫在化學式中,以及一個負離子(陰離子)。在命名這些化合物時,應用以下規則:</p>
+
+    <div class="rule-list">
+        <ol>
+            <li>陽離子總是首先命名,陰離子其次。</li>
+            <li>單原子(意思是來自一個原子)陽離子從元素名稱取其名稱。例如,Na⁺在含有此離子的化合物名稱中稱為鈉。</li>
+            <li>單原子陰離子的命名是取元素名稱的第一部分並加上<em>-ide</em>。因此Cl⁻離子稱為氯化物。</li>
+        </ol>
+    </div>
+
+    <div class="info-note">
+        <strong>註:</strong>單原子陽離子與其母元素具有相同的名稱。
+    </div>
+
+    <p>表2.3中給出了一些常見的單原子陽離子和陰離子及其名稱。</p>
+
+    <div class="table-caption">表2.3</div>
+    <p style="text-align: center; font-weight: bold;">常見單原子陽離子和陰離子</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>陽離子</th>
+                <th>名稱</th>
+                <th>陰離子</th>
+                <th>名稱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>H⁺</td>
+                <td>Hydrogen</td>
+                <td>H⁻</td>
+                <td>Hydride</td>
+            </tr>
+            <tr>
+                <td>Li⁺</td>
+                <td>Lithium</td>
+                <td>F⁻</td>
+                <td>Fluoride</td>
+            </tr>
+            <tr>
+                <td>Na⁺</td>
+                <td>Sodium</td>
+                <td>Cl⁻</td>
+                <td>Chloride</td>
+            </tr>
+            <tr>
+                <td>K⁺</td>
+                <td>Potassium</td>
+                <td>Br⁻</td>
+                <td>Bromide</td>
+            </tr>
+            <tr>
+                <td>Cs⁺</td>
+                <td>Cesium</td>
+                <td>I⁻</td>
+                <td>Iodide</td>
+            </tr>
+            <tr>
+                <td>Be²⁺</td>
+                <td>Beryllium</td>
+                <td>O²⁻</td>
+                <td>Oxide</td>
+            </tr>
+            <tr>
+                <td>Mg²⁺</td>
+                <td>Magnesium</td>
+                <td>S²⁻</td>
+                <td>Sulfide</td>
+            </tr>
+            <tr>
+                <td>Ca²⁺</td>
+                <td>Calcium</td>
+                <td>N³⁻</td>
+                <td>Nitride</td>
+            </tr>
+            <tr>
+                <td>Ba²⁺</td>
+                <td>Barium</td>
+                <td>P³⁻</td>
+                <td>Phosphide</td>
+            </tr>
+            <tr>
+                <td>Al³⁺</td>
+                <td>Aluminum</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Ag⁺</td>
+                <td>Silver</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Zn²⁺</td>
+                <td>Zinc</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>第I型二元離子化合物含有僅形成一種類型陽離子的金屬。命名第I型化合物的規則由以下例子說明:</p>
+
+    <div class="compound-table">
+        <table style="background: transparent;">
+            <tr>
+                <th>化合物</th>
+                <th>存在的離子</th>
+                <th>名稱</th>
+            </tr>
+            <tr>
+                <td>NaCl</td>
+                <td>Na⁺, Cl⁻</td>
+                <td>Sodium chloride</td>
+            </tr>
+            <tr>
+                <td>KI</td>
+                <td>K⁺, I⁻</td>
+                <td>Potassium iodide</td>
+            </tr>
+            <tr>
+                <td>CaS</td>
+                <td>Ca²⁺, S²⁻</td>
+                <td>Calcium sulfide</td>
+            </tr>
+            <tr>
+                <td>Li₃N</td>
+                <td>Li⁺, N³⁻</td>
+                <td>Lithium nitride</td>
+            </tr>
+            <tr>
+                <td>CsBr</td>
+                <td>Cs⁺, Br⁻</td>
+                <td>Cesium bromide</td>
+            </tr>
+            <tr>
+                <td>MgO</td>
+                <td>Mg²⁺, O²⁻</td>
+                <td>Magnesium oxide</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-note">
+        <strong>註:</strong>在離子化合物的化學式中,簡單離子用元素符號表示:Cl表示Cl⁻,Na表示Na⁺,依此類推。
+    </div>
+
+    <h2>二元化合物(第II型;離子型)</h2>
+
+    <p>在先前考慮的離子化合物(第I型)中,所涉及的金屬僅形成單一類型的陽離子。也就是說,鈉僅形成Na⁺,鈣僅形成Ca²⁺,依此類推。然而,正如我們稍後將在文中詳細討論的那樣,許多金屬可以形成不止一種類型的正離子,因此可以與給定的陰離子形成不止一種類型的離子化合物。例如,化合物FeCl₂含有Fe²⁺離子,而化合物FeCl₃含有Fe³⁺離子。在這種情況下,<span class="emphasis">必須指定金屬離子的電荷</span>。這些兩種鐵化合物的系統名稱是氯化鐵(II)和氯化鐵(III),其中<span class="emphasis">羅馬數字表示陽離子的電荷</span>。</p>
+
+    <p>在較舊的文獻中,用於僅形成兩種離子的金屬的另一種命名這些離子化合物的系統被使用。<span class="emphasis">較高電荷的離子具有以-ic結尾的名稱,而較低電荷的離子具有以-ous結尾的名稱</span>。在這個系統中,例如,Fe³⁺稱為鐵離子,而Fe²⁺稱為亞鐵離子。FeCl₃和FeCl₂的名稱則分別為氯化鐵和氯化亞鐵。</p>
+
+    <p>表2.4給出了兩種常見第II型陽離子的名稱。本文將專門使用羅馬數字系統。</p>
+
+    <div class="table-caption">表2.4</div>
+    <p style="text-align: center; font-weight: bold;">常見第II型陽離子</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>離子</th>
+                <th>系統名稱</th>
+                <th>替代名稱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fe³⁺</td>
+                <td>Iron(III)</td>
+                <td>Ferric</td>
+            </tr>
+            <tr>
+                <td>Fe²⁺</td>
+                <td>Iron(II)</td>
+                <td>Ferrous</td>
+            </tr>
+            <tr>
+                <td>Cu²⁺</td>
+                <td>Copper(II)</td>
+                <td>Cupric</td>
+            </tr>
+            <tr>
+                <td>Cu⁺</td>
+                <td>Copper(I)</td>
+                <td>Cuprous</td>
+            </tr>
+            <tr>
+                <td>Co³⁺</td>
+                <td>Cobalt(III)</td>
+                <td>Cobaltic</td>
+            </tr>
+            <tr>
+                <td>Co²⁺</td>
+                <td>Cobalt(II)</td>
+                <td>Cobaltous</td>
+            </tr>
+            <tr>
+                <td>Sn⁴⁺</td>
+                <td>Tin(IV)</td>
+                <td>Stannic</td>
+            </tr>
+            <tr>
+                <td>Sn²⁺</td>
+                <td>Tin(II)</td>
+                <td>Stannous</td>
+            </tr>
+            <tr>
+                <td>Pb⁴⁺</td>
+                <td>Lead(IV)</td>
+                <td>Plumbic</td>
+            </tr>
+            <tr>
+                <td>Pb²⁺</td>
+                <td>Lead(II)</td>
+                <td>Plumbous</td>
+            </tr>
+            <tr>
+                <td>Hg²⁺</td>
+                <td>Mercury(II)</td>
+                <td>Mercuric</td>
+            </tr>
+            <tr>
+                <td>Hg₂²⁺*</td>
+                <td>Mercury(I)</td>
+                <td>Mercurous</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="footnote">*注意汞(I)離子總是以結合在一起的形式存在,形成Hg₂²⁺。</p>
+
+    <div class="info-note">
+        <strong>第II型二元離子化合物含有可以形成不止一種類型陽離子的金屬。</strong>
+    </div>
+
+    <p>不需要羅馬數字的常見金屬是第1A族元素,它們僅形成1+離子;第2A族元素,它們僅形成2+離子;以及鋁,它僅形成Al³⁺。不需要羅馬數字的常見過渡金屬(因為它們僅形成一種離子)是鋅(Zn²⁺)和銀(Ag⁺)。</p>
+
+    <p>當存在形成不止一種類型陽離子的金屬離子時,必須通過平衡化合物的正電荷和負電荷來確定金屬離子上的電荷。要做出這種確定,您必須能夠識別常見的陽離子和陰離子並知道它們的電荷(參見表2.3和2.5)。</p>
+
+    <p>以下流程圖在命名二元離子化合物時很有用:</p>
+
+    <div class="flowchart">
+        <div class="flow-box" style="background-color: #c8e6c9;">
+            化合物含有第I型還是第II型陽離子?
+        </div>
+        <div style="display: flex; justify-content: space-around; margin: 20px 0;">
+            <div style="width: 45%;">
+                <div class="flow-box blue">第I型</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-box" style="background-color: #c8e6c9;">
+                    使用元素名稱命名陽離子
+                </div>
+            </div>
+            <div style="width: 45%;">
+                <div class="flow-box orange">第II型</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-box" style="background-color: #ffcc80;">
+                    使用電荷平衡原理,確定陽離子電荷
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-box" style="background-color: #c8e6c9;">
+                    在陽離子名稱中包含表示電荷的羅馬數字
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="critical-thinking">
+        <div class="critical-title">批判性思考</div>
+        <p>我們可以使用週期表來告訴我們許多原子形成的穩定離子的某些資訊。例如,第1列中的原子總是形成+1離子。然而,過渡金屬可以形成不止一種類型的穩定離子。</p>
+        <p>如果每種過渡金屬離子只有一種可能的電荷,化合物的命名會有什麼不同?</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-title">範例 2.2</div>
+        <h3>命名二元化合物</h3>
+        
+        <p>給出以下每種化合物的系統名稱。</p>
+        <p><strong>a.</strong> CoBr₂　　<strong>b.</strong> CaCl₂　　<strong>c.</strong> Al₂O₃　　<strong>d.</strong> CrCl₃</p>
+        
+        <h4>解答</h4>
+        
+        <table style="margin: 20px 0;">
+            <tr>
+                <th style="width: 15%;">化合物</th>
+                <th style="width: 35%;">名稱</th>
+                <th style="width: 50%;">註解</th>
+            </tr>
+            <tr>
+                <td><strong>a.</strong> CoBr₂</td>
+                <td>Cobalt(II) bromide</td>
+                <td>鈷是一種過渡金屬,需要羅馬數字。兩個Br⁻離子必須由一個Co²⁺陽離子平衡。</td>
+            </tr>
+            <tr>
+                <td><strong>b.</strong> CaCl₂</td>
+                <td>Calcium chloride</td>
+                <td>鈣是一種鹼土金屬,僅形成Ca²⁺離子。不需要羅馬數字。</td>
+            </tr>
+            <tr>
+                <td><strong>c.</strong> Al₂O₃</td>
+                <td>Aluminum oxide</td>
+                <td>鋁僅形成Al³⁺。不需要羅馬數字。</td>
+            </tr>
+            <tr>
+                <td><strong>d.</strong> CrCl₃</td>
+                <td>Chromium(III) chloride</td>
+                <td>鉻是一種過渡金屬,必須有羅馬數字。CrCl₃含有Cr³⁺。</td>
+            </tr>
+        </table>
+
+        <div style="margin-top: 20px; padding: 10px; background: #fff9c4; border-left: 4px solid #fbc02d;">
+            <p><strong>圖片說明:</strong>各種鉻化合物顯示的溶液(從左到右):CrCl₃、K₂Cr₂O₇、Cr(NO₃)₃、CrCl₃、K₂CrO₄。</p>
+        </div>
+    </div>
+
+    <h2>含多原子離子的離子化合物</h2>
+
+    <div class="info-note">
+        <strong>含多原子離子的離子化合物不是二元化合物。</strong>
+    </div>
+
+    <p>我們還沒有考慮含有<span class="term">多原子離子</span>的離子化合物。例如,銨鹽含有多原子離子NH₄⁺和硝酸鹽含有多原子離子NO₃⁻。多原子離子被賦予特殊的名稱,<span class="emphasis">必須記住</span>才能命名含有它們的化合物。最重要的多原子離子及其名稱列於表2.5中。</p>
+
+    <div class="table-caption">表2.5</div>
+    <p style="text-align: center; font-weight: bold;">常見多原子離子</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>離子</th>
+                <th>名稱</th>
+                <th>離子</th>
+                <th>名稱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>NH₄⁺</td>
+                <td>Ammonium</td>
+                <td>CO₃²⁻</td>
+                <td>Carbonate</td>
+            </tr>
+            <tr>
+                <td>NO₂⁻</td>
+                <td>Nitrite</td>
+                <td>HCO₃⁻</td>
+                <td>Hydrogen carbonate (bicarbonate is widely used common name)</td>
+            </tr>
+            <tr>
+                <td>NO₃⁻</td>
+                <td>Nitrate</td>
+                <td>C₂H₃O₂⁻</td>
+                <td>Acetate</td>
+            </tr>
+            <tr>
+                <td>SO₃²⁻</td>
+                <td>Sulfite</td>
+                <td>MnO₄⁻</td>
+                <td>Permanganate</td>
+            </tr>
+            <tr>
+                <td>SO₄²⁻</td>
+                <td>Sulfate</td>
+                <td>Cr₂O₇²⁻</td>
+                <td>Dichromate</td>
+            </tr>
+            <tr>
+                <td>HSO₄⁻</td>
+                <td>Hydrogen sulfate (bisulfate is widely used common name)</td>
+                <td>CrO₄²⁻</td>
+                <td>Chromate</td>
+            </tr>
+            <tr>
+                <td>OH⁻</td>
+                <td>Hydroxide</td>
+                <td>O₂²⁻</td>
+                <td>Peroxide</td>
+            </tr>
+            <tr>
+                <td>CN⁻</td>
+                <td>Cyanide</td>
+                <td>ClO⁻</td>
+                <td>Hypochlorite</td>
+            </tr>
+            <tr>
+                <td>PO₄³⁻</td>
+                <td>Phosphate</td>
+                <td>ClO₂⁻</td>
+                <td>Chlorite</td>
+            </tr>
+            <tr>
+                <td>HPO₄²⁻</td>
+                <td>Hydrogen phosphate</td>
+                <td>ClO₃⁻</td>
+                <td>Chlorate</td>
+            </tr>
+            <tr>
+                <td>H₂PO₄⁻</td>
+                <td>Dihydrogen phosphate</td>
+                <td>ClO₄⁻</td>
+                <td>Perchlorate</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>注意在表2.5中,給定元素的幾個系列陰離子含有不同數量的氧原子。這些陰離子稱為<span class="term">含氧陰離子</span>。當這樣的系列中有兩個成員時,氧原子數較少的名稱以<em>-ite</em>結尾,氧原子數較多的名稱以<em>-ate</em>結尾——例如,亞硫酸根(SO₃²⁻)和硫酸根(SO₄²⁻)。當兩個以上的含氧陰離子組成一個系列時,<em>hypo-</em>(少於)和<em>per-</em>(多於)用作前綴來命名氧原子最少和最多的成員。最好的例子涉及含氯的含氧陰離子,如表2.5所示。</p>
+
+    <h2>二元化合物(第III型;共價型——含兩種非金屬)</h2>
+
+    <div class="info-note">
+        在二元共價化合物中,元素名稱遵循與二元離子化合物相同的規則。
+    </div>
+
+    <p><span class="highlight">二元共價化合物</span>是在<span class="emphasis">兩種非金屬</span>之間形成的。雖然這些化合物不含離子,但它們的命名方式與二元離子化合物非常相似。</p>
+
+    <p>在命名二元共價化合物時,適用以下規則:</p>
+
+    <div class="rule-list">
+        <ol>
+            <li>化學式中的第一個元素首先命名,使用完整的元素名稱。</li>
+            <li>第二個元素的命名就像它是陰離子一樣。</li>
+            <li>前綴用於表示存在的原子數。這些前綴見表2.6。</li>
+            <li>前綴<em>mono-</em>從不用於命名第一個元素。例如,CO稱為一氧化碳,<span class="emphasis">不是</span>一氧化一碳。</li>
+        </ol>
+    </div>
+
+    <div class="table-caption">表2.6</div>
+    <p style="text-align: center; font-weight: bold;">化學名稱中用於表示數量的前綴</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>前綴</th>
+                <th>表示的數量</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>mono-</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>di-</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>tri-</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>tetra-</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>penta-</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>hexa-</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>hepta-</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>octa-</td>
+                <td>8</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>要了解這些規則如何應用,我們現在將考慮氮和氧形成的幾種共價化合物的名稱:</p>
+
+    <div class="compound-table">
+        <table style="background: transparent;">
+            <tr>
+                <th>化合物</th>
+                <th>系統名稱</th>
+                <th>俗名</th>
+            </tr>
+            <tr>
+                <td>N₂O</td>
+                <td>Dinitrogen monoxide</td>
+                <td>Nitrous oxide</td>
+            </tr>
+            <tr>
+                <td>NO</td>
+                <td>Nitrogen monoxide</td>
+                <td>Nitric oxide</td>
+            </tr>
+            <tr>
+                <td>NO₂</td>
+                <td>Nitrogen dioxide</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>N₂O₃</td>
+                <td>Dinitrogen trioxide</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>N₂O₄</td>
+                <td>Dinitrogen tetroxide</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>N₂O₅</td>
+                <td>Dinitrogen pentoxide</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <p>從前面的例子中注意到,為了避免難聽的發音,當元素以母音開頭時,我們經常去掉前綴的最後一個<em>o</em>或<em>a</em>。例如,N₂O₄稱為四氧化二氮,<span class="emphasis">不是</span>四氧化二氮;CO稱為一氧化碳,<span class="emphasis">不是</span>一氧化一碳。</p>
+
+    <p>有些化合物總是用它們的俗名來稱呼。兩個最好的例子是水和氨。H₂O和NH₃的系統名稱從不使用。</p>
+
+    <p>命名二元化合物的規則總結在圖2.20中。注意,表示原子數的前綴僅用於第III型二元化合物(含有兩種非金屬的化合物)。命名化合物的整體策略總結在圖2.21中。</p>
+
+    <div class="flowchart">
+        <div class="figure-title">圖2.20</div>
+        <p class="figure-caption">命名二元化合物的流程圖。</p>
+        
+        <div class="flow-box" style="background-color: #c8e6c9;">
+            二元化合物?
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box blue">是</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-box" style="background-color: #c8e6c9;">
+            有金屬存在?
+        </div>
+        <div style="display: flex; justify-content: space-around; margin: 20px 0;">
+            <div style="width: 30%;">
+                <div class="flow-box orange">否</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-box" style="background-color: #d1c4e9;">
+                    第III型:<br>使用前綴。
+                </div>
+            </div>
+            <div style="width: 65%;">
+                <div class="flow-box blue">是</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-box" style="background-color: #c8e6c9;">
+                    金屬是否形成多於一種陽離子?
+                </div>
+                <div style="display: flex; justify-content: space-around; margin: 20px 0;">
+                    <div style="width: 45%;">
+                        <div class="flow-box orange">否</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-box" style="background-color: #b2dfdb;">
+                            第I型:<br>使用元素名稱命名陽離子。
+                        </div>
+                    </div>
+                    <div style="width: 45%;">
+                        <div class="flow-box blue">是</div>
+                        <div class="flow-arrow">↓</div>
+                        <div class="flow-box" style="background-color: #ffe0b2;">
+                            第II型:<br>確定陽離子電荷;<br>在陽離子名稱後使用羅馬數字表示電荷。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flowchart">
+        <div class="figure-title">圖2.21</div>
+        <p class="figure-caption">命名化合物的整體策略。</p>
+        
+        <div class="flow-box" style="background-color: #c8e6c9;">
+            二元化合物?
+        </div>
+        <div style="display: flex; justify-content: space-around; margin: 20px 0;">
+            <div style="width: 45%;">
+                <div class="flow-box orange">否</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-box" style="background-color: #c8e6c9;">
+                    有多原子離子存在?
+                </div>
+                <div style="margin: 20px 0;">
+                    <div class="flow-box orange">否</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-box" style="background-color: #c8e6c9;">
+                        這是尚未考慮的命名程序化合物。
+                    </div>
+                </div>
+                <div style="margin: 20px 0;">
+                    <div class="flow-box blue">是</div>
+                    <div class="flow-arrow">↓</div>
+                    <div class="flow-box" style="background-color: #c8e6c9;">
+                        使用類似於命名二元離子化合物的程序命名化合物。
+                    </div>
+                </div>
+            </div>
+            <div style="width: 45%;">
+                <div class="flow-box blue">是</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-box" style="background-color: #c8e6c9;">
+                    使用圖2.21中總結的策略。
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="example-box">
+        <div class="example-title">互動範例 2.3</div>
+        <h3>命名離子化合物</h3>
+        
+        <p>給出以下每種化合物的系統名稱。</p>
+        <p><strong>a.</strong> Na₂SO₄　　<strong>e.</strong> Na₂SO₃　　<strong>i.</strong> NaOCl</p>
+        <p><strong>b.</strong> KH₂PO₄　　<strong>f.</strong> Na₂CO₃　　<strong>j.</strong> Na₂SeO₄</p>
+        <p><strong>c.</strong> Fe(NO₃)₃　　<strong>g.</strong> NaHCO₃　　<strong>k.</strong> KBrO₃</p>
+        <p><strong>d.</strong> Mn(OH)₂　　<strong>h.</strong> CsClO₄</p>
+        
+        <h4>解答</h4>
+        
+        <table style="margin: 20px 0;">
+            <tr>
+                <th style="width: 20%;">化合物</th>
+                <th style="width: 35%;">名稱</th>
+                <th style="width: 45%;">註解</th>
+            </tr>
+            <tr>
+                <td><strong>a.</strong> Na₂SO₄</td>
+                <td>Sodium sulfate</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>b.</strong> KH₂PO₄</td>
+                <td>Potassium dihydrogen phosphate</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>c.</strong> Fe(NO₃)₃</td>
+                <td>Iron(III) nitrate</td>
+                <td>需要羅馬數字的過渡金屬。Fe³⁺離子平衡三個NO₃⁻離子。</td>
+            </tr>
+            <tr>
+                <td><strong>d.</strong> Mn(OH)₂</td>
+                <td>Manganese(II) hydroxide</td>
+                <td>需要羅馬數字的過渡金屬。Mn²⁺離子平衡兩個OH⁻離子。</td>
+            </tr>
+            <tr>
+                <td><strong>e.</strong> Na₂SO₃</td>
+                <td>Sodium sulfite</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>f.</strong> Na₂CO₃</td>
+                <td>Sodium carbonate</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>g.</strong> NaHCO₃</td>
+                <td>Sodium hydrogen carbonate</td>
+                <td>通常稱為sodium bicarbonate。</td>
+            </tr>
+            <tr>
+                <td><strong>h.</strong> CsClO₄</td>
+                <td>Cesium perchlorate</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>i.</strong> NaOCl</td>
+                <td>Sodium hypochlorite</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><strong>j.</strong> Na₂SeO₄</td>
+                <td>Sodium selenate</td>
+                <td>同族中的原子,如硫和硒,經常形成以類似方式命名的相似離子。因此SeO₄²⁻是selenate,就像SO₄²⁻(sulfate)。</td>
+            </tr>
+            <tr>
+                <td><strong>k.</strong> KBrO₃</td>
+                <td>Potassium bromate</td>
+                <td>如上,BrO₃⁻是bromate,就像ClO₃⁻(chlorate)。</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>從名稱推導化學式</h2>
+
+    <p>到目前為止,我們已經從化合物的化學式開始並決定其系統名稱。反向過程也很重要。例如,給定名稱氫氧化鈣,我們可以寫出化學式為Ca(OH)₂,因為我們知道鈣僅形成Ca²⁺離子,並且由於氫氧根是OH⁻,需要兩個這些陰離子來產生中性化合物。同樣,名稱氧化鐵(II)意味著化學式為FeO,因為羅馬數字II表示存在Fe²⁺陽離子。</p>
+
+    <div class="example-box">
+        <div class="example-title">互動範例 2.4</div>
+        <h3>從各種化合物的名稱推導化學式</h3>
+        
+        <p>給定以下系統名稱,寫出每種化合物的化學式。</p>
+        <p><strong>a.</strong> 硫酸銨　　<strong>c.</strong> 二氟化二氧　　<strong>e.</strong> 氧化鎵</p>
+        <p><strong>b.</strong> 氟化釩(V)　　<strong>d.</strong> 過氧化銣</p>
+        
+        <h4>解答</h4>
+        
+        <table style="margin: 20px 0;">
+            <tr>
+                <th style="width: 25%;">名稱</th>
+                <th style="width: 25%;">化學式</th>
+                <th style="width: 50%;">註解</th>
+            </tr>
+            <tr>
+                <td><strong>a.</strong> Ammonium sulfate</td>
+                <td>(NH₄)₂SO₄</td>
+                <td>每個硫酸根離子(SO₄²⁻)需要兩個銨離子(NH₄⁺)才能達到電荷平衡。</td>
+            </tr>
+            <tr>
+                <td><strong>b.</strong> Vanadium(V) fluoride</td>
+                <td>VF₅</td>
+                <td>該化合物含有V⁵⁺離子,需要五個F⁻離子以達到電荷平衡。</td>
+            </tr>
+            <tr>
+                <td><strong>c.</strong> Dioxygen difluoride</td>
+                <td>O₂F₂</td>
+                <td>前綴<em>di-</em>表示每種原子有兩個。</td>
+            </tr>
+            <tr>
+                <td><strong>d.</strong> Rubidium peroxide</td>
+                <td>Rb₂O₂</td>
+                <td>由於銣在第1A族,它僅形成1+離子。因此需要兩個Rb⁺離子來平衡過氧根離子(O₂²⁻)上的2-電荷。</td>
+            </tr>
+            <tr>
+                <td><strong>e.</strong> Gallium oxide</td>
+                <td>Ga₂O₃</td>
+                <td>第3A族的鎵,像鋁一樣,僅形成3+離子。需要兩個Ga³⁺離子來平衡三個O²⁻離子的電荷。</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>酸</h2>
+
+    <p>當溶解於水中時,某些分子會產生含有游離H⁺離子(質子)的溶液。這些物質——酸——將在第4、7和8章中詳細討論。這裡我們將簡單介紹命名酸的規則。</p>
+
+    <p>酸可以被視為附著於陰離子上的一個或多個H⁺離子的分子。命名酸的規則取決於陰離子是否含有氧。如果<span class="emphasis">陰離子不含氧</span>,則酸以前綴<em>hydro-</em>和後綴<em>-ic</em>命名。例如,當氣態HCl溶解於水中時,它形成鹽酸。同樣,溶解於水中的HCN和H₂S分別稱為氫氰酸和氫硫酸。</p>
+
+    <p>當<span class="emphasis">陰離子含有氧</span>時,酸名稱由陰離子名稱的字根加上後綴<em>-ic</em>或<em>-ous</em>組成。如果陰離子名稱以<em>-ate</em>結尾,酸名稱以<em>-ic</em>(或有時<em>-ric</em>)結尾。例如,H₂SO₄含有硫酸根陰離子(SO₄²⁻),稱為硫酸;H₃PO₄含有磷酸根陰離子(PO₄³⁻),稱為磷酸;HC₂H₃O₂含有乙酸根離子(C₂H₃O₂⁻),稱為乙酸。如果陰離子具有<em>-ite</em>結尾,酸名稱以<em>-ous</em>結尾。例如,含有亞硫酸根(SO₃²⁻)的H₂SO₃稱為亞硫酸;含有亞硝酸根(NO₂⁻)的HNO₂稱為亞硝酸。這些規則的應用可以在氯的含氧陰離子酸的名稱中看到:</p>
+
+    <div class="compound-table">
+        <table style="background: transparent;">
+            <tr>
+                <th>酸</th>
+                <th>陰離子</th>
+                <th>名稱</th>
+            </tr>
+            <tr>
+                <td>HClO₄</td>
+                <td>Perchlorate</td>
+                <td>Perchloric acid</td>
+            </tr>
+            <tr>
+                <td>HClO₃</td>
+                <td>Chlorate</td>
+                <td>Chloric acid</td>
+            </tr>
+            <tr>
+                <td>HClO₂</td>
+                <td>Chlorite</td>
+                <td>Chlorous acid</td>
+            </tr>
+            <tr>
+                <td>HClO</td>
+                <td>Hypochlorite</td>
+                <td>Hypochlorous acid</td>
+            </tr>
+        </table>
+    </div>
+
+    <p>最重要的酸的名稱列於表2.7和2.8中。命名酸的整體策略如圖2.22所示。</p>
+
+    <div class="table-caption">表2.7</div>
+    <p style="text-align: center; font-weight: bold;">不含氧的酸的名稱</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>酸</th>
+                <th>名稱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HF</td>
+                <td>Hydrofluoric acid</td>
+            </tr>
+            <tr>
+                <td>HCl</td>
+                <td>Hydrochloric acid</td>
+            </tr>
+            <tr>
+                <td>HBr</td>
+                <td>Hydrobromic acid</td>
+            </tr>
+            <tr>
+                <td>HI</td>
+                <td>Hydroiodic acid</td>
+            </tr>
+            <tr>
+                <td>HCN</td>
+                <td>Hydrocyanic acid</td>
+            </tr>
+            <tr>
+                <td>H₂S</td>
+                <td>Hydrosulfuric acid</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="table-caption">表2.8</div>
+    <p style="text-align: center; font-weight: bold;">一些含氧酸的名稱</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>酸</th>
+                <th>名稱</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HNO₃</td>
+                <td>Nitric acid</td>
+            </tr>
+            <tr>
+                <td>HNO₂</td>
+                <td>Nitrous acid</td>
+            </tr>
+            <tr>
+                <td>H₂SO₄</td>
+                <td>Sulfuric acid</td>
+            </tr>
+            <tr>
+                <td>H₂SO₃</td>
+                <td>Sulfurous acid</td>
+            </tr>
+            <tr>
+                <td>H₃PO₄</td>
+                <td>Phosphoric acid</td>
+            </tr>
+            <tr>
+                <td>HC₂H₃O₂</td>
+                <td>Acetic acid</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="flowchart">
+        <div class="figure-title">圖2.22</div>
+        <p class="figure-caption">命名酸的流程圖。酸具有附著於陰離子上的一個或多個H⁺離子。</p>
+        
+        <div class="flow-box" style="background-color: #c8e6c9;">
+            陰離子是否含氧?
+        </div>
+        <div style="display: flex; justify-content: space-around; margin: 20px 0;">
+            <div style="width: 45%;">
+                <div class="flow-box orange">否</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-box" style="background-color: #c8e6c9;">
+                    <em>hydro-</em><br>+ 陰離子字根<br>+ <em>-ic</em>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-box" style="background-color: #c8e6c9;">
+                    hydro(陰離子字根)ic acid
+                </div>
+            </div>
+            <div style="width: 45%;">
+                <div class="flow-box blue">是</div>
+                <div class="flow-arrow">↓</div>
+                <div class="flow-box" style="background-color: #c8e6c9;">
+                    檢查陰離子的結尾
+                </div>
+                <div style="margin: 20px 0;">
+                    <div class="flow-box" style="background-color: #d1c4e9; display: inline-block; width: 45%;">
+                        <em>-ite</em>
+                    </div>
+                    <div class="flow-box" style="background-color: #b2dfdb; display: inline-block; width: 45%;">
+                        <em>-ate</em>
+                    </div>
+                </div>
+                <div class="flow-arrow">↓</div>
+                <div style="margin: 20px 0;">
+                    <div class="flow-box" style="background-color: #d1c4e9; display: inline-block; width: 45%;">
+                        陰離子或元素字根<br>+ <em>-ous</em><br>(字根)ous acid
+                    </div>
+                    <div class="flow-box" style="background-color: #b2dfdb; display: inline-block; width: 45%;">
+                        陰離子或元素字根<br>+ <em>-ic</em><br>(字根)ic acid
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="critical-thinking">
+        <div class="critical-title">批判性思考</div>
+        <p>在本章中,您學習了一種系統的化合物命名方法。如果所有化合物都只有俗名,會怎樣?這會造成什麼問題?</p>
+    </div>
+
+    <div class="insight-box">
+        <div class="insight-title">化學洞察</div>
+        <h3>鉿元素恰到好處</h3>
+        
+        <p>鉿,元素108,在自然界中並不存在,但必須在粒子加速器中製造。它於1984年首次被創造出來,可以通過用鎂-26(²⁶Mg)原子射擊鋦-248(²⁴⁸Cm)原子來製造。這些原子之間的碰撞產生了一些鉿-265(²⁶⁵Hs)原子。鉿在週期表中的位置(見圖2.20)在包含鐵、釕和鋨的垂直列中,表明鉿應該具有與這些金屬相似的化學性質。然而,要測試這一預測並不容易——在給定時間內只能製造出少量的鉿,而且它們只持續約9秒。想像一下要在9秒內完成你的下一個實驗室實驗!</p>
+        
+        <p>令人驚訝的是,來自加州<span class="term">勞倫斯伯克利國家實驗室</span>、瑞士伯恩的<span class="term">保羅謝勒研究所</span>和<span class="term">伯恩大學</span>,以及德國<span class="term">核化學研究所</span>的化學家團隊已經進行了實驗來表徵鉿的化學行為。例如,他們觀察到鉿原子與氧反應形成預期類型的鉿氧化物化合物,符合其在週期表上的位置。該團隊還測量了鉿的其他性質,包括它在核衰變到另一個原子時釋放的能量。</p>
+        
+        <p>這項工作肯定會讓<span class="scientist-name">德米特里·門得列夫</span>感到高興,他最初發展了週期表並展示了其預測化學性質的能力。</p>
+    </div>
+
+    <div class="insight-box">
+        <div class="insight-title">化學洞察</div>
+        <h3>玩標記遊戲</h3>
+        
+        <p>炸彈已成為恐怖分子最喜歡的武器,從相對較小且便宜的裝置產生大規模破壞。由於毀滅性造成的破壞,在典型的炸彈案件中,要找到破案的確鑿證據往往很困難。為了協助炸彈案的法醫調查,執法機構建議在爆炸物材料上「標記」,以便可以輕易識別其來源。一種標記爆炸物的方法是在1970年代由<span class="term">3M公司</span>的研究化學家<span class="scientist-name">理查·利夫賽</span>發展的。稱為<span class="term">微標記物</span>(Microtaggant),這種標記材料由直徑約0.1毫米的不規則形狀顆粒組成。在顯微鏡下檢查時,這些微小的斑點顯示出由10層三聚氰胺塑料構成的層狀結構,三聚氰胺塑料是一種化學惰性物質,很難破壞。彩色碎片的彩色層充當一種條碼,識別製造商、生產日期和爆炸物經銷商的名稱。螢光和磁性材料也添加到碎片中,以協助在爆炸現場的檢測。</p>
+        
+        <p>雖然看起來爆炸物的標記應該是不具爭議性的,但事實並非如此。爆炸物材料和槍支所有者協會的製造商反對使用標記物,認為添加的物質會在爆炸物中產生不穩定性。此外,製造商擔心他們會因產品濫用造成的損害而被追究責任。因此,在這個階段,只有瑞士經常使用微標記物來標記爆炸物,瑞士聲稱自1984年以來使用標記證據破獲了近600起爆炸案。</p>
+        
+        <p>休斯頓的<span class="term">Isotag公司</span>開創了一種不同的標記方法。Isotag標籤通過插入爆炸物質中存在的離子或分子的原子的不尋常原子同位素來標記爆炸物。同位素標記的完成方式使標記物質與天然存在的物質明顯不同。例如,如果標記的硝酸銨被用於炸彈,現場收集的殘留物可以用質譜儀分析,以顯示存在的獨特同位素模式,這可以用來追蹤化合物的來源。儘管Isotag聲稱其系統安全有效,但含有硝酸銨的肥料製造商不願意允許標記,因為擔心責任問題。</p>
+        
+        <p>1996年的<span class="term">美國反恐怖主義和有效死刑法</span>授權對標記物進行徹底研究。這項研究的結果以及由此產生的關於標記物的政治鬥爭的結果將決定美國是否會效仿瑞士,要求對某些或所有爆炸性物質使用標記物。</p>
+        
+        <div class="figure-box">
+            <div class="figure-title">圖片說明</div>
+            <p class="figure-caption">微標記物的多層塑料顆粒(左)可以產生超過3700萬個獨特代碼,可用於識別物質。標記物的微小尺寸(右)與一角硬幣上的「R」相比顯示。</p>
+        </div>
+        
+        <p>雖然爆炸物標記物已被證明存在爭議,但大約500種消費品已經含有微標記物來驗證品牌產品並阻止假冒。例如,標記物被發現在洗髮精、油漆和地毯黏合劑中。後者的應用使企業主能夠確認使用了要求的品牌名稱膠水來固定地毯,而不是更便宜的非品牌替代品。Isotag為汽油和香水等物質銷售標記物,其中塑料微標記物碎片不切實際。例如,香水的同位素標記使製造商能夠保護產品免受可能試圖通過銷售稀釋香水來增加利潤的不道德經銷商的侵害。</p>
+        
+        <p>因此,化學標記物代表著一個不斷增長的市場。然而,爆炸物是否會被標記仍然是一個技術和政治問題。</p>
+    </div>
+
+    <h2>關鍵術語與複習</h2>
+
+    <div class="info-box" style="background-color: #fff9c4; border-color: #f9a825;">
+        <h3 style="color: #f57f17;">關鍵術語</h3>
+        
+        <h4>第2.2節</h4>
+        <p><strong>質量守恆定律</strong> | <strong>定比定律</strong> | <strong>倍比定律</strong></p>
+        
+        <h4>第2.3節</h4>
+        <p><strong>原子質量</strong> | <strong>亞佛加厥假說</strong></p>
+        
+        <h4>第2.5節</h4>
+        <p><strong>陰極射線</strong> | <strong>電子</strong> | <strong>放射性</strong> | <strong>核原子</strong> | <strong>原子核</strong></p>
+        
+        <h4>第2.6節</h4>
+        <p><strong>質子</strong> | <strong>中子</strong> | <strong>同位素</strong> | <strong>原子序</strong> | <strong>質量數</strong></p>
+        
+        <h4>第2.7節</h4>
+        <p><strong>化學鍵</strong> | <strong>共價鍵</strong> | <strong>分子</strong> | <strong>化學式</strong> | <strong>結構式</strong> | <strong>空間填充模型</strong> | <strong>球棍模型</strong> | <strong>離子</strong> | <strong>陽離子</strong> | <strong>陰離子</strong> | <strong>離子鍵</strong> | <strong>多原子離子</strong></p>
+        
+        <h4>第2.8節</h4>
+        <p><strong>週期表</strong> | <strong>金屬</strong> | <strong>非金屬</strong> | <strong>族(族群)</strong> | <strong>鹼金屬</strong> | <strong>鹼土金屬</strong> | <strong>鹵素</strong> | <strong>惰性氣體</strong> | <strong>週期</strong></p>
+        
+        <h4>第2.9節</h4>
+        <p><strong>二元化合物</strong> | <strong>二元離子化合物</strong> | <strong>含氧陰離子</strong> | <strong>二元共價化合物</strong></p>
+    </div>
+
+    <div class="info-box" style="background-color: #e8f5e9; border-color: #4caf50;">
+        <h3 style="color: #2e7d32;">複習要點</h3>
+        
+        <h4>基本定律</h4>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>■ 質量守恆</li>
+            <li>■ 定比</li>
+            <li>■ 倍比</li>
+        </ul>
+        
+        <h4>道耳頓原子論</h4>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>■ 所有元素都由原子組成。</li>
+            <li>■ 給定元素的所有原子都是相同的。</li>
+            <li>■ 當原子結合時形成化合物。</li>
+        </ul>
+        
+        <h4>早期原子實驗</h4>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>■ 湯姆森模型:電子在擴散的正電荷雲中</li>
+            <li>■ 密立根實驗:測定電子質量</li>
+            <li>■ 拉塞福實驗:核原子</li>
+        </ul>
+        
+        <h4>原子結構</h4>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>■ 小而密的原子核含有質子和中子。</li>
+            <li>■ 質子——正電荷</li>
+            <li>■ 中子——無電荷</li>
+            <li>■ 電子駐留在原子核外相對較大的剩餘原子體積中。</li>
+            <li>■ 電子——負電荷,質量小(質子的1/1840)</li>
+            <li>■ 同位素具有相同的原子序但不同的質量數。</li>
+        </ul>
+        
+        <h4>分子的形成</h4>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>■ 原子通過共享電子結合形成分子以形成共價鍵。</li>
+            <li>■ 分子由化學式描述。</li>
+            <li>■ 化學式顯示原子的數量和類型。</li>
+            <li>■ 結構式</li>
+            <li>■ 球棍模型</li>
+            <li>■ 空間填充模型</li>
+        </ul>
+        
+        <h4>離子的形成</h4>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>■ 陽離子——通過失去電子形成,正電荷</li>
+            <li>■ 陰離子——通過獲得電子形成,負電荷</li>
+            <li>■ 離子鍵——由陽離子和陰離子的相互作用形成</li>
+        </ul>
+        
+        <h4>週期表</h4>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>■ 元素按原子序遞增的順序組織。</li>
+            <li>■ 具有相似性質的元素位於列或族中。</li>
+            <li>■ 金屬占多數並傾向於形成陽離子。</li>
+            <li>■ 非金屬傾向於形成陰離子。</li>
+        </ul>
+        
+        <h4>化合物的命名</h4>
+        <ul style="list-style-type: none; padding-left: 0;">
+            <li>■ 二元化合物</li>
+            <li style="margin-left: 20px;">- 第I型——含有總是形成相同陽離子的金屬</li>
+            <li style="margin-left: 20px;">- 第II型——含有可以形成多於一種陽離子的金屬</li>
+            <li style="margin-left: 20px;">- 第III型——含有兩種非金屬</li>
+            <li>■ 含有多原子離子的化合物</li>
+            <li>■ 酸</li>
+        </ul>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

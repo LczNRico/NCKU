@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學2-4</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #1a5490;
+            margin-top: 25px;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+            background-color: #e1bee7;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+        }
+        
+        .list-item {
+            margin-left: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th {
+            background-color: #1a5490;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .table-caption {
+            background-color: #2e7d32;
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .example-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-title {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .insight-box {
+            background-color: #f3e5f5;
+            border-left: 5px solid #6a1b9a;
+            padding: 15px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        .insight-title {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .figure-caption {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+        }
+
+        .footnote {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>2.4 坎尼扎羅的詮釋</h1>
+    
+    <p>德國化學家F. August Kekulé深信化學家必須找到一種方法來就共同的原子質量標準達成共識，因此他組織了1860年在德國卡爾斯魯厄舉行的第一屆國際化學大會。在這次會議上，年輕的義大利化學家Stanislao Cannizzaro在正式和非正式的演講中，將他的想法闡述得如此清晰而有力，以至於化學界開始對原子質量形成共識。坎尼扎羅受到兩個主要信念的指導：</p>
+    
+    <div class="list-item">1. 化合物含有整數個原子，正如道耳頓所假設的那樣。</div>
+    <div class="list-item">2. 亞佛加厥假說是正確的——在相同條件下，相同體積的氣體含有相同數量的分子。</div>
+    
+    <p>將亞佛加厥假說應用於給呂薩克的氣體體積化合結果，使坎尼扎羅確信氫氣由H₂分子組成。因此，他任意將氫氣(H₂)的相對分子質量設定為2。然後他著手測量其他氣態物質的相對分子質量。他的方法是比較1公升給定氣體的質量與1公升氫氣的質量（兩種氣體在相同的溫度和壓力條件下）。例如，1公升氧氣樣品和氫氣樣品的質量比為16：</p>
+    
+    <div class="equation">
+        1.0 L 氧氣的質量 / 1.0 L 氫氣的質量 = 16/1 = 32/2
+    </div>
+    
+    <p>根據亞佛加厥假說，由於兩個氣體樣品含有相同數量的分子，因此氧分子的質量（他假設為O₂）相對於H₂分子的質量2，必須是32。由於每個分子含有兩個原子，氧和氫的相對原子質量分別為16和1。使用同樣的方法，坎尼扎羅發現二氧化碳的相對分子質量為44（相對於H₂為2）。化學分析顯示，二氧化碳的碳含量為27%（按質量計）。此百分比對應於(0.27)(44 g)，即44 g二氧化碳中有12 g碳，以及44 g - 12 g = 32 g氧。回想一下，氧原子的相對質量為16。因此，如果假設二氧化碳的化學式為CO₂，則碳的相對質量為12，因為12 + 2(16) = 44。然而，如果二氧化碳的化學式是C₂O₂，則12個碳單位代表兩個碳原子的質量，使碳的相對質量為6。同樣，二氧化碳的化學式C₃O₂給出碳的相對質量為4。因此，如果不知道二氧化碳的化學式，就無法從這些數據確定碳原子的相對質量。這正是一直困擾化學家的問題類型，也是造成如此多不同質量表的原因。</p>
+    
+    <p>坎尼扎羅通過獲得許多其他含碳化合物的相對分子質量來解決這個問題。例如，考慮表2.1中所示的數據。從這些數據中注意到，化合物中存在的碳的相對質量始終是12的倍數。這一觀察結果強烈表明碳的相對質量為12，這反過來意味著二氧化碳的化學式為CO₂。</p>
+
+    <p>坎尼扎羅的工作之所以如此有說服力，是因為他收集了這麼多化合物的數據。儘管他無法絕對證明他的原子質量值是正確的（因為他沒有辦法絕對驗證化合物的化學式），但他收集的大量數據的一致性最終說服了幾乎所有人，他的詮釋是合理的，而且他所確定的相對原子質量值是正確的。混亂終於結束了。化學有了它所需要的通用（相對）質量標準。</p>
+    
+    <p>值得注意的是，坎尼扎羅的工作得出了相對原子質量的<span class="highlight">近似值</span>。他的目標不是確定高度精確的原子質量值，而是確定近似值（例如，表明氧的相對質量是16而不是8）。最精確的原子質量值是通過定量實驗確定的，在這些實驗中仔細測量了元素的化合質量，例如貝采里烏斯的工作。</p>
+    
+    <p>在下一章中，我們將更詳細地討論原子質量，包括當今化學家使用的非常精確值的來源。</p>
+
+    <h2>補充-含碳氣體的相對質量數據</h2>
+
+    <div class="table-caption">表2.1</div>
+    <p style="text-align: center; font-weight: bold;">含碳氣體的相對質量數據</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>化合物</th>
+                <th>相對分子質量</th>
+                <th>碳的百分比<br>（按質量）</th>
+                <th>存在的碳<br>相對質量</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>甲烷</td>
+                <td>16</td>
+                <td>75</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>乙烷</td>
+                <td>30</td>
+                <td>80</td>
+                <td>24</td>
+            </tr>
+            <tr>
+                <td>丙烷</td>
+                <td>44</td>
+                <td>82</td>
+                <td>36</td>
+            </tr>
+            <tr>
+                <td>丁烷</td>
+                <td>58</td>
+                <td>83</td>
+                <td>48</td>
+            </tr>
+            <tr>
+                <td>二氧化碳</td>
+                <td>44</td>
+                <td>27</td>
+                <td>12</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>補充-預測含碳化合物的化學式</h2>
+
+    <div class="example-box">
+        <div class="example-title">範例 2.1</div>
+        <h3>預測含碳化合物的化學式</h3>
+        
+        <p>表2.1中列出的前四種化合物僅含有碳和氫。預測這些化合物的化學式。</p>
+        
+        <p><strong>解答</strong> 由於這些化合物僅含有碳和氫，每種化合物中的氫百分比（按質量）為 100 - % 碳。然後我們可以如下找到存在的氫的相對質量：</p>
+        
+        <div class="equation">
+            氫的相對質量 = (氫的百分比 / 100) × 相對分子質量
+        </div>
+        
+        <p>以表格形式表示結果如下：</p>
+        
+        <table style="margin: 20px auto; width: 90%;">
+            <thead>
+                <tr>
+                    <th>化合物</th>
+                    <th>相對分子質量</th>
+                    <th>氫的百分比</th>
+                    <th>氫的相對質量</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>甲烷</td>
+                    <td>16</td>
+                    <td>25</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>乙烷</td>
+                    <td>30</td>
+                    <td>20</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>丙烷</td>
+                    <td>44</td>
+                    <td>18</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>丁烷</td>
+                    <td>58</td>
+                    <td>17</td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p>將上述結果與表2.1中的結果結合，我們發現甲烷含有碳和氫的相對質量分別為12和4。使用碳和氫的相對原子質量值12和1，可得出甲烷的化學式為CH₄。同樣，乙烷中碳和氫的相對質量分別為24和6，得出乙烷的化學式為C₂H₆。類似的推理得出丙烷和丁烷的化學式分別為C₃H₈和C₄H₁₀。</p>
+    </div>
+
+    <h2>補充-看見原子</h2>
+
+    <div class="insight-box">
+        <div class="insight-title">化學洞察</div>
+        <h3>看見原子</h3>
+        
+        <p>有許多證據令我們確信物質是由原子組成的。其中最令人信服的證據來自掃描探針顯微鏡。這種技術使用一個顯微鏡探針，該探針對表面作出反應以揭示其結構。掃描探針顯微鏡的主要方法有掃描穿隧顯微鏡（STM）和原子力顯微鏡（AFM）。</p>
+        
+        <p>掃描穿隧顯微鏡是由IBM蘇黎世研究實驗室的Gerd K. Binning和Heinrich Rohrer在1980年代初期發明的，他們因這項工作隨後獲得了諾貝爾物理學獎。STM使用一個超銳利的金屬探針，該探針被帶到距離表面約1 nm的範圍內。對探針施加小電壓，在表面和探針之間產生電流流動。這種穿隧*電流強烈依賴於探針與表面的距離。感應電流流動的反饋電路使探針與表面保持恆定距離。探針也可以用來在表面上移動原子，如圖2.4所示的鈷原子橢圓形排列所示。</p>
+
+        <p><strong>圖2.4</strong> 置於銅表面上的鈷原子環的影像。</p>
+        
+        <p>AFM在許多方面與STM相似。在AFM中，測量作用在表面附近微小臂上的吸引力和排斥力，並從結果生成起伏圖。</p>
+        
+        <p>最近，IBM研究員Leo Gross和他的同事發現，通過在金AFM探針的末端插入一氧化碳（CO）分子，可以大大改善AFM產生的影像。這種技術使AFM探針能夠產生整個分子的詳細影像，例如圖2.5中描述的戊烷（C₂₂H₁₄）。</p>
+
+        <p><strong>圖2.5</strong></p>
+        <p class="figure-caption"><em>頂部</em>，在其中將CO分子添加到探針（由金原子組成）末端的EMF探針的描繪。戊烷分子的影像以藍色、綠色和紅色顯示。</p>
+        <p class="figure-caption"><em>底部</em>，戊烷（C₂₂H₁₄）分子的球棒模型（碳原子為黑色，氫原子為白色）。</p>
+
+        <div class="footnote">
+            <p>*「穿隧」一詞是指電子從表面逃逸的能力，即使它們通常不具有足夠的能量來克服阻擋它們的大位能障壁。這種量子力學現象被稱為穿隧（電子「穿過」位能障壁）。</p>
+        </div>
+    </div>
+
+    <script>
+        // 添加列印功能
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

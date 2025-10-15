@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學2-6</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-thinking {
+            background-color: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            color: #e65100;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th {
+            background-color: #00838f;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .table-caption {
+            background-color: #00838f;
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .notation-box {
+            background-color: #e0f7fa;
+            border: 2px solid #00acc1;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .footnote {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>2.6 原子結構的現代觀點：導論</h1>
+    
+    <p>自湯姆森和拉塞福以來的這些年中，人們對原子結構有了很多了解。由於這些材料的大部分將在後面的章節中詳細介紹，這裡只給出一個導論。原子的最簡單觀點是，它由一個直徑約為10⁻¹³ cm的微小原子核和在距離原子核平均約10⁻⁸ cm處移動的電子組成（▶ 圖2.13）。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖2.13</div>
+        <p class="figure-caption">橫截面觀察的核原子。圖示顯示原子核（Nucleus）位於中心，電子在約10⁻⁸ cm的距離處，原子核的大小約為10⁻¹³ cm。</p>
+    </div>
+
+    <p>正如我們稍後將看到的，原子的化學主要來自其電子。因此，化學家可以滿足於一個相對粗略的核模型。原子核被假定包含質子，其具有正電荷，電荷大小等於電子的負電荷，以及<span class="highlight">中子</span>，其質量幾乎與質子相同，但不帶電荷。電子、質子和中子的質量和電荷如表2.2所示。</p>
+
+    <div class="table-caption">表2.2</div>
+    <p style="text-align: center; font-weight: bold;">電子、質子和中子的質量和電荷</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>粒子</th>
+                <th>質量</th>
+                <th>電荷*</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>電子</td>
+                <td>9.11 × 10⁻³¹ kg</td>
+                <td>1−</td>
+            </tr>
+            <tr>
+                <td>質子</td>
+                <td>1.67 × 10⁻²⁷ kg</td>
+                <td>1+</td>
+            </tr>
+            <tr>
+                <td>中子</td>
+                <td>1.67 × 10⁻²⁷ kg</td>
+                <td>無</td>
+            </tr>
+        </tbody>
+    </table>
+    <p class="footnote">*電子和質子的電荷大小為1.60 × 10⁻¹⁹ C。</p>
+
+    <p>關於原子核有兩個顯著的特點：它的小尺寸（與原子的整體尺寸相比）和它極高的密度。微小的原子核幾乎占了原子質量的全部。它的巨大密度可以從以下事實得到戲劇性的證明：一塊豌豆大小的核物質的質量將達到2.5億噸！</p>
+
+    <div class="critical-thinking">
+        <div class="critical-title">批判性思考</div>
+        <p>原子的平均直徑為2 × 10⁻⁸ m。如果原子的平均直徑為1 cm，那麼你會有多高？</p>
+    </div>
+
+    <p>與科學中的任何理論一樣，儘管它提供了問題的答案，但它也帶來了更多的問題。此時需要考慮的一個重要問題是，<span class="emphasis">「如果所有原子都由相同的組成部分組成，為什麼不同的原子具有不同的化學性質？」</span>這個問題的答案在於電子的數量和排列。▶ <span class="info-box" style="display: inline; padding: 2px 8px; margin: 0;">原子的化學來自其電子。</span>電子構成了原子體積的大部分，因此是原子結合形成分子時「相互混合」的部分。因此，給定原子所擁有的電子數量極大地影響其與其他原子相互作用的能力。結果，具有不同質子數和電子數的不同元素的原子表現出不同的化學行為。</p>
+
+    <p>鈉原子的原子核中有11個質子。由於原子沒有淨電荷，電子數必須等於質子數。因此，鈉原子的原子核周圍有11個電子移動。對於鈉原子來說，它<span class="emphasis">總是</span>具有11個質子和11個電子。然而，每個鈉原子的原子核中也有中子，並且存在具有不同中子數的不同類型的鈉原子。例如，考慮圖2.14中所示的鈉原子。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖2.14</div>
+        <p class="figure-caption">鈉的兩種<span class="term">同位素</span>。兩者都有11個質子和11個電子，但它們原子核中的中子數不同。鈉-23是唯一天然存在的鈉形式。鈉-24不會自然產生，但可以人工製造。</p>
+        <p class="figure-caption">圖示顯示兩個鈉原子的結構圖，左側為²³₁₁Na（11質子、12中子、11電子），右側為²⁴₁₁Na（11質子、13中子、11電子）。</p>
+    </div>
+
+    <p>圖2.14中所示的這兩個原子是<span class="term">同位素</span>，或<span class="emphasis">具有相同質子數但中子數不同的原子</span>。請注意，某一特定類型鈉原子的符號寫作</p>
+
+    <div class="notation-box">
+        <div class="equation" style="background: transparent; border: none; padding: 10px;">
+            <sup>質量數</sup>→<sup>23</sup><sub>11</sub>Na ←元素符號<br>
+            <sub>原子序</sub>↗
+        </div>
+        <p style="text-align: center; margin: 10px 0;">
+            <sup>質量數</sup>→<sup>A</sup><sub>Z</sub>X ←元素<br>
+            <sub>原子序</sub>↗
+        </p>
+    </div>
+
+    <p>其中<span class="term">原子序</span>Z（質子數）寫成下標，而<span class="term">質量數</span>A（質子和中子的總數）寫成上標。◀（這裡所代表的特定原子稱為「鈉-23」。它有11個電子、11個質子和12個中子。）由於原子的化學來自其電子，因此同位素表現出幾乎相同的化學性質。</p>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

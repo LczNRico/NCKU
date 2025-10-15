@@ -1,377 +1,447 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>材料科學導論3.4</title>
+    <title>材料科學導論 3.4 金屬晶體結構</title>
     <style>
         @page {
             size: A4;
-            margin: 2.5cm;
+            margin: 2cm;
         }
-        
         body {
             font-family: "Microsoft JhengHei", "PMingLiU", serif;
             line-height: 1.8;
-            max-width: 21cm;
-            margin: 0 auto;
-            padding: 2cm;
-            background-color: white;
             color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 11pt;
         }
-        
         h1 {
-            color: #5533aa;
-            font-size: 28pt;
-            margin-top: 0;
-            margin-bottom: 0.5em;
+            color: #5B3A9E;
+            font-size: 22pt;
             font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #5B3A9E;
+            padding-bottom: 10px;
         }
-        
         h2 {
-            color: #cc0000;
-            font-size: 18pt;
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
+            color: #C41E3A;
+            font-size: 16pt;
             font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
         }
-        
-        .section-number {
-            color: #5533aa;
-            font-size: 28pt;
+        h3 {
+            color: #0066B3;
+            font-size: 13pt;
             font-weight: bold;
-            display: inline-block;
-            margin-right: 0.3em;
+            margin-top: 20px;
+            margin-bottom: 10px;
         }
-        
-        .term {
-            color: #009966;
+        .sidebar {
+            background-color: #E8F4F8;
+            border-left: 4px solid #0066B3;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+        .sidebar-term {
+            color: #00843D;
             font-weight: bold;
+            margin-bottom: 5px;
         }
-        
-        p {
-            text-align: justify;
-            margin-bottom: 1em;
-            text-indent: 2em;
-        }
-        
-        .no-indent {
-            text-indent: 0;
-        }
-        
-        .figure-caption {
-            color: #0066cc;
+        .sidebar-red {
+            color: #C41E3A;
             font-weight: bold;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-            text-indent: 0;
+            margin-bottom: 5px;
         }
-        
-        .equation {
-            text-align: center;
-            margin: 1.5em 0;
-            font-family: "Times New Roman", serif;
-            font-size: 12pt;
-        }
-        
-        .equation-number {
-            float: right;
-            color: #666;
-        }
-        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 2em 0;
+            margin: 20px 0;
+            font-size: 10pt;
         }
-        
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
-        
         th {
-            background-color: #f2f2f2;
+            background-color: #5B3A9E;
+            color: white;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
             font-weight: bold;
         }
-        
-        .sidebar {
-            background-color: #e6f3ff;
-            border-left: 4px solid #0066cc;
-            padding: 1em;
-            margin: 1.5em 0;
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
         }
-        
-        .sidebar h3 {
-            color: #0066cc;
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .equation {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            border-radius: 5px;
             font-size: 12pt;
-            margin-top: 0;
-            margin-bottom: 0.5em;
         }
-        
-        .page-break {
-            page-break-after: always;
+        .example-box {
+            background-color: #E8F4F8;
+            border: 2px solid #0066B3;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
         }
-        
-        sup {
-            font-size: 0.8em;
-            vertical-align: super;
+        .example-title {
+            color: #0066B3;
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
-        
-        sub {
-            font-size: 0.8em;
-            vertical-align: sub;
+        .solution-title {
+            color: #C41E3A;
+            font-size: 12pt;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 15px;
+            margin-bottom: 10px;
         }
-        
-        .footnote {
+        .note {
             font-size: 9pt;
             color: #666;
-            border-top: 1px solid #ccc;
-            padding-top: 0.5em;
-            margin-top: 1em;
+            margin-top: 5px;
         }
-        
-        .highlight-box {
-            background-color: #fff9e6;
-            border: 2px solid #ff9900;
-            padding: 1em;
-            margin: 1.5em 0;
+        p {
+            text-align: justify;
+            margin-bottom: 12px;
+        }
+        .caption {
+            text-align: center;
+            font-size: 10pt;
+            color: #666;
+            margin: 10px 0;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-    <h1><span class="section-number">3.4</span> 金屬晶體結構</h1>
+    <h1>3.4 金屬晶體結構</h1>
     
-    <p class="no-indent">這類材料中的原子鍵結為金屬鍵結，因此本質上是非方向性的。因此，對於最近鄰原子的數量和位置，限制很少；這導致大多數金屬晶體結構具有相對較多的最近鄰原子數量和緻密的原子堆積。此外，對於金屬，當我們使用晶體結構的硬球模型時，每個球體代表一個離子核心。表3.1列出了多種金屬的原子半徑。大多數常見金屬具有三種相對簡單的晶體結構：面心立方、體心立方和六方最密堆積。</p>
-    
+    <p>這類材料的原子鍵結屬於金屬鍵，因此本質上是非方向性的。因此，最近鄰原子的數量和位置所受的限制極小；這使得大多數金屬晶體結構具有相對較大的最近鄰原子數和緻密的原子堆積。此外，對於金屬，當我們使用硬球模型來描述晶體結構時，每個球代表一個離子核心。表3.1列出了許多金屬的原子半徑。大多數常見金屬具有三種相對簡單的晶體結構：面心立方、體心立方和六方最密堆積。</p>
+
     <h2>面心立方晶體結構</h2>
     
-    <p>許多金屬的晶體結構具有立方幾何形狀的單位晶胞，原子位於每個角落和所有立方體面的中心。它被恰當地稱為<span class="term">面心立方</span>（FCC）晶體結構。一些具有這種晶體結構的常見金屬包括銅、鋁、銀和金（另見表3.1）。圖3.1<i>a</i>顯示了FCC單位晶胞的硬球模型，而在圖3.1<i>b</i>中，原子中心由小圓圈表示，以提供更好的原子位置透視圖。圖3.1<i>c</i>中的原子聚集體代表由許多FCC單位晶胞組成的晶體截面。這些球體或離子核心沿面對角線彼此接觸；立方體邊長<i>a</i>與原子半徑<i>R</i>的關係式為</p>
-    
-    <div class="equation">
-        <i>a</i> = 2<i>R</i>√2
-        <span class="equation-number">(3.1)</span>
+    <div class="sidebar">
+        <div class="sidebar-term">面心立方(FCC)</div>
     </div>
-    
-    <p>此結果在範例問題3.1中獲得。</p>
-    
-    <h2 style="color: #0066cc; font-size: 14pt;">表3.1</h2>
-    <p style="text-align: center; font-weight: bold; margin-bottom: 1em; text-indent: 0;">16種金屬的原子半徑和晶體結構</p>
+
+    <p>許多金屬所具有的晶體結構具有立方幾何形狀的單位晶胞，原子位於每個角落和所有立方體面的中心。它被恰當地稱為<strong>面心立方(FCC)</strong>晶體結構。具有這種晶體結構的一些熟悉金屬包括銅、鋁、銀和金(另見表3.1)。圖3.1a顯示了FCC單位晶胞的硬球模型，而在圖3.1b中，原子中心由小圓圈表示，以提供更好的原子位置透視圖。圖3.1c中的原子聚集體代表由許多FCC單位晶胞組成的晶體部分。這些球體或離子核心沿面對角線彼此接觸；立方邊長<em>a</em>和原子半徑<em>R</em>的關係為：</p>
+
+    <div class="sidebar">
+        <div class="sidebar-red">面心立方的單位晶胞邊長</div>
+    </div>
+
+    <div class="equation">
+        <em>a</em> = 2<em>R</em>√2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3.1)
+    </div>
+
+    <p>此結果在例題3.1中獲得。</p>
+
+    <h3>表3.1</h3>
+    <p><strong>16種金屬的原子半徑和晶體結構</strong></p>
     
     <table>
-        <tr>
-            <th>金屬</th>
-            <th>晶體結構<sup>a</sup></th>
-            <th>原子半徑<sup>b</sup><br>(nm)</th>
-            <th>金屬</th>
-            <th>晶體結構</th>
-            <th>原子半徑<br>(nm)</th>
-        </tr>
-        <tr>
-            <td>鋁</td>
-            <td>FCC</td>
-            <td>0.1431</td>
-            <td>鉬</td>
-            <td>BCC</td>
-            <td>0.1363</td>
-        </tr>
-        <tr>
-            <td>鎘</td>
-            <td>HCP</td>
-            <td>0.1490</td>
-            <td>鎳</td>
-            <td>FCC</td>
-            <td>0.1246</td>
-        </tr>
-        <tr>
-            <td>鉻</td>
-            <td>BCC</td>
-            <td>0.1249</td>
-            <td>鉑</td>
-            <td>FCC</td>
-            <td>0.1387</td>
-        </tr>
-        <tr>
-            <td>鈷</td>
-            <td>HCP</td>
-            <td>0.1253</td>
-            <td>銀</td>
-            <td>FCC</td>
-            <td>0.1445</td>
-        </tr>
-        <tr>
-            <td>銅</td>
-            <td>FCC</td>
-            <td>0.1278</td>
-            <td>鉭</td>
-            <td>BCC</td>
-            <td>0.1430</td>
-        </tr>
-        <tr>
-            <td>金</td>
-            <td>FCC</td>
-            <td>0.1442</td>
-            <td>鈦 (α)</td>
-            <td>HCP</td>
-            <td>0.1445</td>
-        </tr>
-        <tr>
-            <td>鐵 (α)</td>
-            <td>BCC</td>
-            <td>0.1241</td>
-            <td>鎢</td>
-            <td>BCC</td>
-            <td>0.1371</td>
-        </tr>
-        <tr>
-            <td>鉛</td>
-            <td>FCC</td>
-            <td>0.1750</td>
-            <td>鋅</td>
-            <td>HCP</td>
-            <td>0.1332</td>
-        </tr>
+        <thead>
+            <tr>
+                <th>金屬</th>
+                <th>晶體結構<sup>a</sup></th>
+                <th>原子半徑<sup>b</sup> (nm)</th>
+                <th>金屬</th>
+                <th>晶體結構</th>
+                <th>原子半徑 (nm)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>鋁</td>
+                <td>FCC</td>
+                <td>0.1431</td>
+                <td>鉬</td>
+                <td>BCC</td>
+                <td>0.1363</td>
+            </tr>
+            <tr>
+                <td>鎘</td>
+                <td>HCP</td>
+                <td>0.1490</td>
+                <td>鎳</td>
+                <td>FCC</td>
+                <td>0.1246</td>
+            </tr>
+            <tr>
+                <td>鉻</td>
+                <td>BCC</td>
+                <td>0.1249</td>
+                <td>鉑</td>
+                <td>FCC</td>
+                <td>0.1387</td>
+            </tr>
+            <tr>
+                <td>鈷</td>
+                <td>HCP</td>
+                <td>0.1253</td>
+                <td>銀</td>
+                <td>FCC</td>
+                <td>0.1445</td>
+            </tr>
+            <tr>
+                <td>銅</td>
+                <td>FCC</td>
+                <td>0.1278</td>
+                <td>鉭</td>
+                <td>BCC</td>
+                <td>0.1430</td>
+            </tr>
+            <tr>
+                <td>金</td>
+                <td>FCC</td>
+                <td>0.1442</td>
+                <td>鈦 (α)</td>
+                <td>HCP</td>
+                <td>0.1445</td>
+            </tr>
+            <tr>
+                <td>鐵 (α)</td>
+                <td>BCC</td>
+                <td>0.1241</td>
+                <td>鎢</td>
+                <td>BCC</td>
+                <td>0.1371</td>
+            </tr>
+            <tr>
+                <td>鉛</td>
+                <td>FCC</td>
+                <td>0.1750</td>
+                <td>鋅</td>
+                <td>HCP</td>
+                <td>0.1332</td>
+            </tr>
+        </tbody>
     </table>
     
-    <div class="footnote">
-        <p class="no-indent"><sup>a</sup>FCC = 面心立方；HCP = 六方最密堆積；BCC = 體心立方。</p>
-        <p class="no-indent"><sup>b</sup>1奈米 (nm) 等於10<sup>-9</sup> m；要從奈米轉換為埃 (Å) 單位，將奈米值乘以10。</p>
+    <div class="note">
+        <sup>a</sup>FCC = 面心立方；HCP = 六方最密堆積；BCC = 體心立方。<br>
+        <sup>b</sup>一奈米(nm)等於10<sup>-9</sup> m；要將奈米轉換為埃(Å)單位，請將奈米值乘以10。
     </div>
-    
-    <div class="page-break"></div>
-    
-    <p>有時，我們需要確定與每個單位晶胞相關的原子數量。根據原子的位置，它可能被認為與相鄰的單位晶胞共享——也就是說，只有原子的某些部分被分配給特定的晶胞。例如，對於立方單位晶胞，完全位於內部的原子「屬於」該單位晶胞，位於晶胞面上的原子與另一個晶胞共享，而位於角落的原子則由八個晶胞共享。每個單位晶胞的原子數<i>N</i>可以使用以下公式計算：</p>
-    
+
+    <p>有時候，我們需要確定與每個單位晶胞相關的原子數量。根據原子的位置，它可能被認為與相鄰單位晶胞共享——也就是說，只有該原子的某部分被分配給特定晶胞。例如，對於立方單位晶胞，完全位於內部的原子「屬於」該單位晶胞，位於晶胞面上的原子與另一個晶胞共享，而位於角上的原子則由八個晶胞共享。每個單位晶胞的原子數<em>N</em>可使用以下公式計算：</p>
+
     <div class="equation">
-        <i>N</i> = <i>N<sub>i</sub></i> + <i>N<sub>f</sub></i>/2 + <i>N<sub>c</sub></i>/8
-        <span class="equation-number">(3.2)</span>
+        <em>N</em> = <em>N</em><sub>i</sub> + <em>N</em><sub>f</sub>/2 + <em>N</em><sub>c</sub>/8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3.2)
     </div>
+
+    <p>其中</p>
     
-    <p class="no-indent">其中</p>
-    
-    <p style="margin-left: 3em; text-indent: 0;">
-        <i>N<sub>i</sub></i> = 內部原子的數量<br>
-        <i>N<sub>f</sub></i> = 面原子的數量<br>
-        <i>N<sub>c</sub></i> = 角原子的數量
+    <p style="margin-left: 40px;">
+        <em>N</em><sub>i</sub> = 內部原子數<br>
+        <em>N</em><sub>f</sub> = 面上原子數<br>
+        <em>N</em><sub>c</sub> = 角上原子數
     </p>
-    
+
     <div class="sidebar">
-        <h3>WileyPLUS</h3>
-        <p style="text-indent: 0;"><strong>教學影片：</strong><br>
-        FCC單位晶胞計算</p>
+        <div style="color: #0066B3; font-weight: bold;">WileyPLUS</div>
+        <div style="color: #C41E3A; font-weight: bold;">教學影片：FCC單位晶胞計算</div>
     </div>
-    
-    <p>對於FCC晶體結構，有八個角原子（<i>N<sub>c</sub></i> = 8）、六個面原子（<i>N<sub>f</sub></i> = 6）和零個內部原子（<i>N<sub>i</sub></i> = 0）。因此，根據方程式3.2，</p>
-    
+
+    <p>對於FCC晶體結構，有八個角原子(<em>N</em><sub>c</sub> = 8)、六個面原子(<em>N</em><sub>f</sub> = 6)，沒有內部原子(<em>N</em><sub>i</sub> = 0)。因此，根據方程式3.2，</p>
+
     <div class="equation">
-        <i>N</i> = 0 + 6/2 + 8/8 = 4
+        <em>N</em> = 0 + 6/2 + 8/8 = 4
     </div>
-    
-    <p>或者說，總共可以將四個完整的原子分配給給定的單位晶胞。這在圖3.1<i>a</i>中描繪出來，其中在立方體的範圍內僅表示球體的部分。該晶胞由從角原子中心產生的立方體體積組成，如圖所示。</p>
-    
+
+    <p>或者說，總共有四個完整的原子可以分配給給定的單位晶胞。這在圖3.1a中描繪出來，其中僅在立方體的範圍內表示球體部分。該晶胞由立方體內部從角原子中心生成的體積組成，如圖所示。</p>
+
     <p>角位置和面位置實際上是等效的——也就是說，將立方體角從原始角原子平移到面原子的中心不會改變晶胞結構。</p>
-    
-    <p>晶體結構的另外兩個重要特徵是<span class="term">配位數</span>和<span class="term">原子堆積因子</span>（APF）。對於金屬，每個原子具有相同數量的最近鄰或接觸原子，這就是配位數。對於面心立方，配位數為12。這可以通過檢查圖3.1<i>a</i>來確認：前面的面原子周圍有四個角最近鄰原子，從後面接觸的四個面原子，以及位於前單位晶胞旁邊的四個其他等效面原子（未顯示）。</p>
-    
-    <p>APF是單位晶胞內所有原子的球體體積（假設原子硬球模型）除以單位晶胞體積的總和——即，</p>
-    
-    <div class="equation">
-        APF = 單位晶胞內原子的體積 / 單位晶胞總體積
-        <span class="equation-number">(3.3)</span>
-    </div>
-    
-    <p>對於FCC結構，原子堆積因子為0.74，這是所有具有相同直徑的球體可能的最大堆積。此APF的計算也作為範例問題包含在內。金屬通常具有相對較大的原子堆積因子，以最大化自由電子雲提供的屏蔽效應。</p>
-    
+
     <div class="sidebar">
-        <h3>WileyPLUS: VMSE</h3>
-        <p style="text-indent: 0;"><strong>金屬的晶體系統和單位晶胞</strong></p>
+        <div class="sidebar-term">配位數</div>
+        <div class="sidebar-term">原子堆積因子(APF)</div>
     </div>
-    
+
+    <p>晶體結構的另外兩個重要特性是<strong>配位數</strong>和<strong>原子堆積因子(APF)</strong>。對於金屬，每個原子都有相同數量的最近鄰或接觸原子，這就是配位數。對於面心立方，配位數為12。這可以通過檢查圖3.1a來確認：前面原子有四個角最近鄰原子圍繞著它，四個面原子在前面單位晶胞中與它接觸，以及四個等效的面原子位於前面(未顯示)的下一個單位晶胞中。</p>
+
+    <p>APF是單位晶胞內所有原子的球體體積總和(假設原子硬球模型)除以單位晶胞體積——即</p>
+
+    <div class="sidebar">
+        <div class="sidebar-red">原子堆積因子的定義</div>
+    </div>
+
+    <div class="equation">
+        APF = 單位晶胞中原子的體積 / 總單位晶胞體積 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3.3)
+    </div>
+
+    <p>對於FCC結構，原子堆積因子為0.74，這是對於所有具有相同直徑的球體可能的最大堆積。此APF的計算也包含在一個例題中。金屬通常具有相對較大的原子堆積因子，以最大化自由電子雲提供的屏蔽效應。</p>
+
+    <div class="sidebar">
+        <div style="color: #C41E3A; font-weight: bold;">WileyPLUS: VMSE</div>
+        <div>金屬的晶體系統和單位晶胞</div>
+    </div>
+
     <h2>體心立方晶體結構</h2>
-    
-    <p>另一種常見的金屬晶體結構也具有立方單位晶胞，原子位於所有八個角和立方體中心的單個原子。這被稱為<span class="term">體心立方</span>（BCC）晶體結構。圖3.2<i>c</i>顯示了描繪此晶體結構的球體集合，而圖3.2<i>a</i>和3.2<i>b</i>分別是BCC單位晶胞的硬球和縮球模型圖。中心原子和角原子沿立方體對角線彼此接觸，單位晶胞長度<i>a</i>與原子半徑<i>R</i>的關係式為</p>
-    
-    <div class="equation">
-        <i>a</i> = 4<i>R</i>/√3
-        <span class="equation-number">(3.4)</span>
+
+    <div class="sidebar">
+        <div class="sidebar-term">體心立方(BCC)</div>
     </div>
-    
-    <p class="figure-caption">圖3.2 體心立方晶體結構：(a) 硬球單位晶胞表示法，(b) 縮球單位晶胞，以及 (c) 許多原子的聚集體。</p>
-    
-    <p style="font-size: 9pt; color: #666; text-indent: 0;">[圖(c)改編自W. G. Moffatt, G. W. Pearsall和J. Wulff, <i>The Structure and Properties of Materials</i>, Vol. 1, <i>Structure</i>, John Wiley & Sons, 1964。經Janet M. Moffatt許可重製。]</p>
-    
-    <p>鉻、鐵、鎢和表3.1中列出的其他幾種金屬顯示BCC結構。</p>
-    
-    <p>每個BCC單位晶胞有八個角原子和一個單一中心原子，該中心原子完全包含在其晶胞內；因此，根據方程式3.2，每個BCC單位晶胞的原子數為</p>
-    
-    <div class="equation">
-        <i>N</i> = <i>N<sub>i</sub></i> + <i>N<sub>f</sub></i>/2 + <i>N<sub>c</sub></i>/8
+
+    <p>另一種常見的金屬晶體結構也具有立方單位晶胞，原子位於所有八個角和立方體中心有一個單一原子。這稱為<strong>體心立方(BCC)</strong>晶體結構。圖3.2c顯示了描繪此晶體結構的球體集合，而圖3.2a和3.2b分別是用硬球和縮球模型表示的BCC單位晶胞示意圖。中心原子和角原子沿立方體對角線彼此接觸，單位晶胞長度<em>a</em>和原子半徑<em>R</em>的關係為：</p>
+
+    <div class="sidebar">
+        <div class="sidebar-red">體心立方的單位晶胞邊長</div>
     </div>
-    
+
     <div class="equation">
+        <em>a</em> = 4<em>R</em>/√3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3.4)
+    </div>
+
+    <p class="caption"><strong>圖3.2</strong> 對於體心立方晶體結構，(a)硬球單位晶胞表示，(b)縮球單位晶胞，以及(c)許多原子的聚集體。<br>[圖(c)改編自W. G. Moffatt, G. W. Pearsall, and J. Wulff, <em>The Structure and Properties of Materials</em>, Vol. I, <em>Structure</em>, John Wiley & Sons, 1964. 經Janet M. Moffatt許可轉載。]</p>
+
+    <div class="sidebar">
+        <div style="color: #C41E3A; font-weight: bold;">WileyPLUS: VMSE</div>
+        <div>金屬的晶體系統和單位晶胞</div>
+    </div>
+
+    <p>表3.1中列出的鉻、鐵、鎢和其他幾種金屬呈現BCC結構。</p>
+
+    <p>每個BCC單位晶胞有八個角原子和一個中心原子，完全包含在其晶胞內；因此，根據方程式3.2，每個BCC單位晶胞的原子數為：</p>
+
+    <div class="equation">
+        <em>N</em> = <em>N</em><sub>i</sub> + <em>N</em><sub>f</sub>/2 + <em>N</em><sub>c</sub>/8<br>
         = 1 + 0 + 8/8 = 2
     </div>
-    
+
     <div class="sidebar">
-        <h3>WileyPLUS: VMSE</h3>
-        <p style="text-indent: 0;"><strong>金屬的晶體系統和單位晶胞</strong></p>
+        <div style="color: #0066B3; font-weight: bold;">WileyPLUS</div>
+        <div style="color: #C41E3A; font-weight: bold;">教學影片：BCC單位晶胞計算</div>
     </div>
-    
-    <div class="sidebar">
-        <h3>WileyPLUS</h3>
-        <p style="text-indent: 0;"><strong>教學影片：</strong><br>
-        BCC單位晶胞計算</p>
-    </div>
-    
-    <p>BCC晶體結構的配位數為8；每個中心原子的最近鄰是其八個角原子。由於BCC的配位數小於FCC，因此BCC的原子堆積因子也較低——0.68對0.74。</p>
-    
-    <p>也可以有一個僅由位於立方體角落的原子組成的單位晶胞。這被稱為<i>簡單立方</i>（SC）<i>晶體結構</i>；硬球和縮球模型分別顯示在圖3.3<i>a</i>和3.3<i>b</i>中。沒有金屬元素具有這種晶體結構，因為其相對較低的原子堆積因子（見概念檢查3.1）。唯一的簡單立方元素是鋇，被認為是類金屬（或半金屬）。</p>
-    
-    <p class="figure-caption">圖3.3 簡單立方晶體結構：(a) 硬球單位晶胞，以及 (b) 縮球單位晶胞。</p>
-    
+
+    <p>BCC晶體結構的配位數為8；每個中心原子具有八個最近鄰角原子。由於BCC的配位數較FCC為小，因此原子堆積因子也較低——BCC為0.68，FCC為0.74。</p>
+
+    <p>也可能有一個僅由位於立方體角的原子組成的單位晶胞。這稱為<strong>簡單立方(SC)晶體結構</strong>；硬球和縮球模型分別顯示在圖3.3a和3.3b中。由於其相對較低的原子堆積因子(見概念檢查3.1)，沒有金屬元素具有這種晶體結構。唯一的簡單立方元素是釙，它被認為是金屬或半金屬。</p>
+
+    <p class="caption"><strong>圖3.3</strong> 對於簡單立方晶體結構，(a)硬球單位晶胞，以及(b)縮球單位晶胞。</p>
+
     <h2>六方最密堆積晶體結構</h2>
-    
-    <p>並非所有金屬都具有立方對稱性的單位晶胞；要討論的最後一個常見金屬晶體結構具有六方形的單位晶胞。圖3.4<i>a</i>顯示了此結構的縮球單位晶胞，該結構被稱為<span class="term">六方最密堆積</span>（HCP）；圖3.4<i>b</i>中呈現了多個HCP單位晶胞的組合。<sup>1</sup>單位晶胞的頂部和底部面由六個形成正六邊形並圍繞單個中心原子的原子組成。</p>
-    
-    <div class="footnote">
-        <p class="no-indent"><sup>1</sup>或者，HCP的單位晶胞可以根據圖3.4<i>a</i>中標記為A到H的原子定義的平行六面體來指定。因此，標記為J的原子位於單位晶胞內部。</p>
-    </div>
-    
-    <div class="page-break"></div>
-    
-    <p>另一個平面提供三個額外的原子到該單位晶胞，該平面位於頂部和底部平面之間。這個中間平面的原子與相鄰兩個平面上的最近鄰原子都有接觸。</p>
-    
+
     <div class="sidebar">
-        <h3>WileyPLUS: VMSE</h3>
-        <p style="text-indent: 0;"><strong>金屬的晶體系統和單位晶胞</strong></p>
+        <div class="sidebar-term">六方最密堆積(HCP)</div>
     </div>
-    
-    <p>為了計算HCP晶體結構每個單位晶胞的原子數，方程式3.2修改為：</p>
-    
+
+    <p>並非所有金屬都具有立方對稱性的單位晶胞；要討論的最後一種常見金屬晶體結構具有六方形的單位晶胞。圖3.4a顯示了這種結構的縮球單位晶胞，稱為<strong>六方最密堆積(HCP)</strong>；圖3.4b中呈現了幾個HCP單位晶胞的組合體。<sup>1</sup>單位晶胞的頂面和底面</p>
+
+    <div class="note">
+        <sup>1</sup>或者，HCP的單位晶胞可以用圖3.4a中標記為A到H的原子定義的平行六面體來指定。因此，標記為J的原子位於單位晶胞內部。
+    </div>
+
+    <div class="sidebar">
+        <div style="color: #C41E3A; font-weight: bold;">WileyPLUS: VMSE</div>
+        <div>金屬的晶體系統和單位晶胞</div>
+    </div>
+
+    <p>由形成規則六邊形的六個原子組成，並圍繞中心的單個原子。另一個提供三個額外原子給單位晶胞的平面位於頂面和底面之間。這個中間平面中的原子在兩個相鄰平面中都有最近鄰原子。</p>
+
+    <p>為了計算HCP晶體結構的每個單位晶胞的原子數，必須修改方程式3.2如下：</p>
+
     <div class="equation">
-        <i>N</i> = <i>N<sub>i</sub></i> + <i>N<sub>f</sub></i>/2 + <i>N<sub>c</sub></i>/6
-        <span class="equation-number">(3.5)</span>
+        <em>N</em> = <em>N</em><sub>i</sub> + <em>N</em><sub>f</sub>/2 + <em>N</em><sub>c</sub>/6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3.5)
     </div>
-    
-    <p>也就是說，六分之一的每個角原子被分配給一個單位晶胞（而不是與立方結構的1/8）。因為對於HCP，在每個頂部和底部面有6個角原子（總共12個角原子）、2個面中心原子（每個頂部和底部面各一個）和3個中間平面內部原子，使用方程式3.5可以得到HCP的<i>N</i>值為</p>
-    
+
+    <p>也就是說，每個角原子的六分之一被分配給一個單位晶胞(而不是如立方結構的八分之一)。因為對於HCP，頂面和底面各有6個角原子(總共12個角原子)、2個面中心原子(來自頂面和底面各一個)和3個中間平面內部原子，使用方程式3.5可以得到HCP的<em>N</em>值為：</p>
+
     <div class="equation">
-        <i>N</i> = 3 + 2/2 + 12/6 = 6
+        <em>N</em> = 3 + 2/2 + 12/6 = 6
     </div>
-    
-    <p>因此，6個原子被分配給每個單位晶胞。</p>
-    
-    <p class="figure-caption">圖3.4 六方最密堆積晶體結構：(a) 縮球單位晶胞（<i>a</i>和<i>c</i>分別代表短邊和長邊長度），以及 (b) 許多原子的聚集體。</p>
-    
-    <p>如果<i>a</i>和<i>c</i>分別代表圖3.4<i>a</i>的短邊和長邊單位晶胞尺寸，<i>c</i>/<i>a</i>比值應為1.633；然而，對於某些HCP金屬，此比值偏離理想值。</p>
-    
-    <p>HCP晶體結構的配位數和原子堆積因子與FCC相同：分別為12和0.74。HCP金屬包括鎘、鎂、鈦和鋅；表3.1中列出了其中一些。</p>
-    
-    <div style="margin-top: 3em; padding-top: 1em; border-top: 2px solid #ccc; text-align: center; color: #666;">
-        <p style="text-indent: 0; margin: 0;">材料科學導論 3.4節</p>
-        <p style="text-indent: 0; margin: 0.5em 0 0 0;">金屬晶體結構</p>
+
+    <p>因此，每個單位晶胞分配有6個原子。</p>
+
+    <p class="caption"><strong>圖3.4</strong> 對於六方最密堆積晶體結構，(a)縮球單位晶胞(<em>a</em>和<em>c</em>分別代表短邊和長邊長度)，以及(b)許多原子的聚集體。</p>
+
+    <p>如果圖3.4a的<em>a</em>和<em>c</em>分別代表短邊和長邊單位晶胞尺寸，則<em>c/a</em>比應為1.633；然而，對於某些HCP金屬，此比偏離理想值。</p>
+
+    <p>HCP晶體結構的配位數和原子堆積因子與FCC相同：分別為12和0.74。HCP金屬包括鎘、鎂、鈦和鋅；其中一些列在表3.1中。</p>
+
+    <div class="example-box">
+        <div class="example-title">例題 3.1</div>
+        
+        <div class="sidebar">
+            <div style="color: #0066B3; font-weight: bold;">WileyPLUS</div>
+            <div style="color: #C41E3A; font-weight: bold;">教學影片</div>
+        </div>
+        
+        <h3 style="color: #C41E3A;">FCC單位晶胞體積的確定</h3>
+        
+        <p>以原子半徑<em>R</em>來計算FCC單位晶胞的體積。</p>
+        
+        <div class="solution-title">解答</div>
+        
+        <p>在所示的FCC單位晶胞中，原子沿面對角線彼此接觸，其長度為4<em>R</em>。因為單位晶胞是立方體，其體積為<em>a</em><sup>3</sup>，其中<em>a</em>是晶胞邊長。從面上的直角三角形，</p>
+        
+        <div class="equation">
+            <em>a</em><sup>2</sup> + <em>a</em><sup>2</sup> = (4<em>R</em>)<sup>2</sup>
+        </div>
+        
+        <p>或者，求解<em>a</em>，</p>
+        
+        <div class="equation">
+            <em>a</em> = 2<em>R</em>√2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3.1)
+        </div>
+        
+        <p>FCC單位晶胞體積<em>V</em><sub>C</sub>可以從以下計算：</p>
+        
+        <div class="equation">
+            <em>V</em><sub>C</sub> = <em>a</em><sup>3</sup> = (2<em>R</em>√2)<sup>3</sup> = 16<em>R</em><sup>3</sup>√2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3.6)
+        </div>
     </div>
+
+    <div class="example-box">
+        <div class="example-title">例題 3.2</div>
+        
+        <div class="sidebar">
+            <div style="color: #0066B3; font-weight: bold;">WileyPLUS</div>
+            <div style="color: #C41E3A; font-weight: bold;">教學影片</div>
+        </div>
+        
+        <h3 style="color: #C41E3A;">FCC原子堆積因子的計算</h3>
+        
+        <p>證明FCC晶體結構的原子堆積因子為0.74。</p>
+        
+        <div class="solution-title">解答</div>
+        
+        <p>APF定義為單位晶胞中固體球體體積的分數，或</p>
+        
+        <div class="equation">
+            APF = 單位晶胞中原子的體積 / 總單位晶胞體積 = <em>V</em><sub>S</sub> / <em>V</em><sub>C</sub>
+        </div>
+        
+        <p>總原子和單位晶胞體積都可以用原子半徑<em>R</em>來計算。球體的體積為(4/3)π<em>R</em><sup>3</sup>，並且因為每個FCC單位晶胞有四個原子，所以FCC原子(或球體)總體積為</p>
+        
+        <div class="equation">
+            <em>V</em><sub>S</sub> = (4)(4/3)π<em>R</em><sup>3</sup> = (16/3)π<em>R</em><sup>3</sup>
+        </div>
+        
+        <p>從例題3.1，總單位晶胞體積為</p>
+        
+        <div class="equation">
+            <em>V</em><sub>C</sub> = 16<em>R</em><sup>3</sup>√2
+        </div>
+        
+        <p>因此，原子堆積因子為</p>
+        
+        <div class="equation">
+            APF = <em>V</em><sub>S</sub> / <em>V</em><sub>C</sub> = [(16/3)π<em>R</em><sup>3</sup>] / [16<em>R</em><sup>3</sup>√2] = 0.74
+        </div>
+    </div>
+
 </body>
 </html>

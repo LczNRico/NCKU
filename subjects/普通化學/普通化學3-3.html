@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學3-3</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .note-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .insight-box {
+            background-color: #f3e5f5;
+            border-left: 5px solid #6a1b9a;
+            padding: 15px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        .insight-title {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>3.3 莫耳質量</h1>
+    
+    <p>化合物最終是原子的集合。例如，甲烷（天然氣的主要成分）由每個含有一個碳原子和四個氫原子（CH₄）的分子組成。我們如何計算1莫耳甲烷的質量；也就是說，6.022 × 10²³個CH₄分子的質量是多少？由於每個CH₄分子含有一個碳原子和四個氫原子，1莫耳CH₄分子由1莫耳碳原子和4莫耳氫原子組成。1莫耳甲烷的質量可以通過對存在的碳和氫的質量求和來找到：</p>
+
+    <div class="equation">
+        <div style="text-align: left; display: inline-block;">
+            1 mol C的質量 = 12.011 g ▶<br>
+            4 mol H的質量 = 4 × 1.008 g<br>
+            1 mol CH₄的質量 = 16.043 g
+        </div>
+    </div>
+
+    <div class="info-box">
+        <p><strong>註：</strong>碳精確到五位有效數字的平均原子質量為12.011。</p>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 3.4</div>
+        <h3>莫耳質量和分子數量</h3>
+        
+        <p>乙酸異戊酯（C₇H₁₄O₂），負責香蕉香味的化合物，可以商業生產。有趣的是，蜜蜂在蜇人以吸引其他蜜蜂加入攻擊時會釋放約1 μg（1 × 10⁻⁶ g）的這種化合物。在典型的蜜蜂蜇傷中釋放了多少個乙酸異戊酯分子？存在多少個碳原子？</p>
+        
+        <p><strong>解答</strong> 由於我們得到了乙酸異戊酯的質量並想要分子數量，我們必須首先計算莫耳質量。</p>
+
+        <div class="equation" style="font-size: 1.1em;">
+            <div style="text-align: left; display: inline-block;">
+                7 mol C × 12.011 g/mol = 84.077 g C<br>
+                14 mol H × 1.0079 g/mol = 14.111 g H<br>
+                2 mol O × 15.999 g/mol = 31.998 g O ◀<br>
+                1 mol C₇H₁₄O₂的質量 = 130.186 g
+            </div>
+        </div>
+
+        <div class="info-box">
+            <p><strong>註：</strong>氫精確到五位有效數字的平均原子質量為1.0079，氧為15.999。</p>
+        </div>
+
+        <p>因此，1莫耳乙酸異戊酯（6.022 × 10²³個分子）的質量為130.186 g。</p>
+
+        <p>要找出在蜇傷中釋放的分子數量，我們必須首先確定1 × 10⁻⁶ g中的乙酸異戊酯莫耳數：</p>
+
+        <div class="equation">
+            1 × 10⁻⁶ g C₇H₁₄O₂ × (1 mol C₇H₁₄O₂)/(130.186 g C₇H₁₄O₂) = 8 × 10⁻⁹ mol C₇H₁₄O₂
+        </div>
+
+        <p>由於1 mol是6.022 × 10²³個單位，我們可以確定分子數量：</p>
+
+        <div class="equation">
+            8 × 10⁻⁹ mol C₇H₁₄O₂ × (6.022 × 10²³ molecules)/(1 mol C₇H₁₄O₂) = 5 × 10¹⁵ molecules
+        </div>
+
+        <p>要確定存在的碳原子數量，我們必須將分子數量乘以7（每個乙酸異戊酯分子含有七個碳原子）：</p>
+
+        <div class="equation">
+            5 × 10¹⁵ molecules × (7 carbon atoms)/(molecule) = 4 × 10¹⁶ carbon atoms
+        </div>
+
+        <div class="note-box">
+            <p><strong>註：</strong>根據我們始終顯示正確有效數字數量的慣例，我們在每一步之後都進行了四捨五入。然而，如果在計算過程中攜帶額外的數字，最終答案將四捨五入為3 × 10¹⁶。◀</p>
+        </div>
+
+        <div class="info-box">
+            <p><strong>註：</strong>為了在每個計算中顯示正確的有效數字數量，我們在每一步之後進行四捨五入。在您的計算中，始終攜帶有效數字到最後；然後四捨五入。</p>
+        </div>
+    </div>
+
+    <p>由於數字16.043代表1莫耳甲烷分子的質量，將其稱為甲烷的<span class="emphasis">莫耳質量</span>是有意義的。然而，傳統上，術語<span class="term">分子量</span>已被用於描述1莫耳物質的質量。因此術語<span class="highlight">莫耳質量</span>和<span class="highlight">分子量</span>的意思完全相同：<span class="emphasis">1莫耳化合物的質量（以克為單位）。</span>◀ 已知物質的莫耳質量是通過對組成原子的質量求和而獲得的，正如我們對甲烷所做的那樣。</p>
+
+    <p>某些物質以離子陣列而不是獨立分子的集合存在。這樣的例子是普通食鹽，氯化鈉（NaCl），它由Na⁺和Cl⁻離子的陣列組成。沒有NaCl分子存在。然而，在本文中，為了方便起見，我們將對離子和分子物質都應用術語<span class="emphasis">莫耳質量</span>。因此，我們將把58.44（22.99 + 35.45）稱為NaCl的莫耳質量。在某些文獻中，術語<span class="emphasis">分子式量</span>用於離子化合物，而不是術語<span class="emphasis">莫耳質量</span>和<span class="emphasis">分子量</span>。</p>
+
+    <h2>補充-測量大分子的質量或讓大象飛翔</h2>
+
+    <div class="insight-box">
+        <div class="insight-title">化學洞察</div>
+        <h3>測量大分子的質量或讓大象飛翔</h3>
+        
+        <p>當化學家產生一種新分子時，對於進行正確鑑定的一個關鍵性質是分子的質量。確定化合物莫耳質量的方法有很多，但最快速和最準確的方法之一涉及質譜法。該方法要求將物質放入氣相並電離。由此產生的離子在通過磁場加速時表現出的偏轉可用於獲得其質量的非常精確的值。這種方法的一個缺點是它難以用於大分子，因為它們難以蒸發。也就是說，含有大分子的物質通常具有非常高的沸點，而這些分子在如此高溫下蒸發時往往會受損。蛋白質就是一個例子，蛋白質是一類極其重要的大型生物分子，在高溫下非常脆弱。用於獲得蛋白質分子質量的典型方法緩慢而繁瑣。</p>
+
+        <p>質譜法以前未被用於獲得蛋白質質量，因為蛋白質會在使其蒸發所需的溫度下分解。然而，一種相對較新的技術，稱為基質輔助雷射解吸，已經發展出一種允許蛋白質莫耳質量的質譜測定的方法。在這種技術中，大型「目標」分子被嵌入較小分子的基質中。然後將該基質放入質譜儀中並用雷射束照射，這會導致其崩解。基質的崩解釋放出大型目標分子，然後將其掃入質譜儀。參與此項目的一位研究人員將此方法比作高樓頂上的大象：「如果建築物突然變成細沙，大象必須飛起來。」</p>
+
+        <p>這種技術使科學家能夠確定巨大分子的質量。到目前為止，研究人員已經測量了質量高達350,000道耳頓（1道耳頓等於1原子質量單位）的蛋白質。這種方法可能會擴展到更大的分子，如DNA，並可能成為生物分子表徵的革命性發展。</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

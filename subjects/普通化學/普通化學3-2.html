@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學3-2</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th {
+            background-color: #00838f;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .table-caption {
+            background-color: #00838f;
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-title {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .critical-thinking {
+            background-color: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            color: #e65100;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .note-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>3.2 莫耳</h1>
+    
+    <p>由於物質樣品通常含有如此多的原子，因此建立了一個稱為<span class="term">莫耳</span>的測量單位用於計數原子。就我們的目的而言，將<span class="highlight">莫耳</span>（縮寫為mol）定義為<span class="emphasis">等於純¹²C的精確12克中碳原子數量的數字</span>最為方便。▶ 允許我們非常精確地計數原子的現代技術已被用於確定這個數字為6.022137 × 10²³（6.022 × 10²³對我們的目的而言已經足夠）。這個數字被稱為<span class="highlight">亞佛加厥數</span>，以紀念他對化學的貢獻。<span class="emphasis">某物質的一莫耳由該物質的6.022 × 10²³個單位組成。</span>正如一打雞蛋是12個雞蛋一樣，一莫耳雞蛋是6.022 × 10²³個雞蛋。</p>
+
+    <div class="info-box">
+        <p><strong>註：</strong>莫耳的SI定義是包含與恰好0.012 kg（12 g）碳-12中相同數量實體的物質量。</p>
+    </div>
+
+    <p>數字6.022 × 10²³的大小非常難以想像。為了給您一些概念，1莫耳的秒代表的時間跨度是地球已經存在時間的400萬倍，而1莫耳的彈珠足以覆蓋整個地球，深度達50英里！然而，由於原子是如此微小，一莫耳的原子或分子是在反應中使用的完全可管理的數量（▶ 圖3.4）。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖3.4</div>
+        <p class="figure-caption">從頂部順時針方向，包含各1莫耳的銅、鋁、鐵、硫、碘和（中心）汞的樣品。</p>
+        <p class="figure-caption"><em>照片顯示六個培養皿，分別裝有不同顏色和形態的元素樣品：藍色粉末（銅）、銀白色粉末（鋁）、紅褐色顆粒（鐵）、黃色粉末（硫）、紫黑色顆粒（碘）和中心的銀色液體（汞）。</em></p>
+    </div>
+
+    <p>我們如何在化學計算中使用莫耳？回想一下，亞佛加厥數被定義為恰好12克¹²C中的原子數。因此，12克¹²C含有6.022 × 10²³個原子。同樣，一個12.01克的天然碳樣品含有6.022 × 10²³個原子（¹²C、¹³C和¹⁴C原子的混合物，平均質量為12.01）。由於樣品質量的比率（12 g/12.01 g）與各個組成部分質量的比率（12 u/12.01 u）相同，因此兩個樣品含有<span class="emphasis">相同數量</span>的組成部分。</p>
+
+    <div class="table-caption">表3.1</div>
+    <p style="text-align: center; font-weight: bold;">各種元素1莫耳樣品的比較</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>元素</th>
+                <th>原子數</th>
+                <th>樣品質量（g）</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>鋁</td>
+                <td>6.022 × 10²³</td>
+                <td>26.98</td>
+            </tr>
+            <tr>
+                <td>金</td>
+                <td>6.022 × 10²³</td>
+                <td>196.97</td>
+            </tr>
+            <tr>
+                <td>鐵</td>
+                <td>6.022 × 10²³</td>
+                <td>55.85</td>
+            </tr>
+            <tr>
+                <td>硫</td>
+                <td>6.022 × 10²³</td>
+                <td>32.07</td>
+            </tr>
+            <tr>
+                <td>硼</td>
+                <td>6.022 × 10²³</td>
+                <td>10.81</td>
+            </tr>
+            <tr>
+                <td>氙</td>
+                <td>6.022 × 10²³</td>
+                <td>131.30</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>為了確保這一點是清楚的，請想像平均質量為0.5磅的橙子和平均質量為1.0磅的葡萄柚。任何兩袋水果，其中葡萄柚袋的重量是橙子袋重量的兩倍，將含有相同數量的水果。同樣的想法適用於原子。比較天然碳（平均質量為12.01）和天然氦（平均質量為4.003）。一個12.01克的天然碳樣品含有與4.003克的天然氦相同數量的原子。兩個樣品都含有1莫耳的原子（6.022 × 10²³）。表3.1 ▲提供了更多說明這個基本概念的例子。</p>
+
+    <div class="critical-thinking">
+        <div class="critical-title">批判性思考</div>
+        <p>如果您發現亞佛加厥數不是6.02 × 10²³而是3.01 × 10²³，會怎樣？這會影響週期表上給出的相對質量嗎？如果會，如何影響？如果不會，為什麼不會？</p>
+    </div>
+
+    <p><span class="emphasis">因此，莫耳的定義使得質量等於元素原子質量（以克表示）的天然元素樣品含有1莫耳原子。</span>◀ 這個定義也確定了原子質量單位和克之間的關係。由於6.022 × 10²³個碳原子（每個質量為12 u）的質量為12克，則</p>
+
+    <div class="equation">
+        (6.022 × 10²³ atoms)(12 u/atom) = 12 g
+    </div>
+
+    <p>並且</p>
+
+    <div class="equation">
+        6.022 × 10²³ u = 1 g
+        <div style="font-size: 0.9em; color: #1976d2; margin-top: 5px;">
+            ↑<br>精確<br>數字
+        </div>
+    </div>
+
+    <div class="note-box">
+        <p><strong>重要關係：</strong>元素的1莫耳質量等於其原子質量（以克表示）。</p>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 3.2</div>
+        <h3>確定原子樣品的質量</h3>
+        
+        <p>鎇是一種在自然界中不存在的元素。它可以在稱為粒子加速器的裝置中以非常少量製造。計算含有六個鎇原子的樣品的質量（以克為單位）。</p>
+        
+        <p><strong>解答</strong> 從本書封面內頁的表格中，注意到一個鎇原子的質量為243 u。因此六個原子的質量為</p>
+        
+        <div class="equation">
+            6 atoms × 243 u/atom = 1.46 × 10³ u
+        </div>
+
+        <p>從關係式6.022 × 10²³ u = 1 g，六個鎇原子的質量（以克為單位）為</p>
+
+        <div class="equation">
+            1.46 × 10³ u × (1 g)/(6.022 × 10²³ u) = 2.42 × 10⁻²¹ g
+        </div>
+    </div>
+
+    <p>這個關係可以用來推導在原子質量單位和克之間轉換所需的因子。▶</p>
+
+    <div class="info-box">
+        <p><strong>參考資訊：</strong>有關單位和從一個單位轉換到另一個單位的討論，請參閱附錄2。</p>
+    </div>
+
+    <p>要進行化學計算，您必須了解莫耳的含義以及如何確定給定質量物質中的莫耳數。這些程序在範例3.3中說明。</p>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 3.3</div>
+        <h3>計算原子數量</h3>
+        
+        <p>用於微電腦積體電路的矽晶片質量為5.68 mg。這個晶片中存在多少個矽（Si）原子？</p>
+        
+        <p><strong>解答</strong> 解決這個問題的策略是從毫克矽轉換為克矽，然後轉換為莫耳矽，最後轉換為矽原子：</p>
+        
+        <div class="equation">
+            5.68 mg Si × (1 g Si)/(1000 mg Si) = 5.68 × 10⁻³ g Si
+        </div>
+
+        <div class="equation">
+            5.68 × 10⁻³ g Si × (1 mol Si)/(28.09 g Si) = 2.02 × 10⁻⁴ mol Si
+        </div>
+
+        <div class="equation">
+            2.02 × 10⁻⁴ mol Si × (6.022 × 10²³ atoms)/(1 mol Si) = 1.22 × 10²⁰ atoms
+        </div>
+    </div>
+
+    <p>在進行計算時，考慮數量級總是有意義的。在範例3.3中，5.68毫克的矽樣品明顯少於1莫耳矽（質量為28.09克），因此1.22 × 10²⁰個原子的最終答案（與6.022 × 10²³個原子相比）至少在正確的方向上。仔細注意單位並確保答案是合理的，可以幫助您檢測到轉換因子倒置或在計算器中輸入錯誤的數字。▶</p>
+
+    <div class="note-box">
+        <p><strong>重要提醒：</strong>始終檢查您的答案是否合理。</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

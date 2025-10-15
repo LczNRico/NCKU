@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學2-7</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .structure-display {
+            background-color: #f0f4ff;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 4px;
+            font-family: "Times New Roman", serif;
+            font-size: 1.2em;
+        }
+
+        .ion-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>2.7 分子和離子</h1>
+    
+    <p>從化學家的觀點來看，原子最有趣的特性是它能夠與其他原子結合形成化合物。正是約翰·道耳頓首先認識到化合物是原子的集合，但他無法確定原子的結構或它們相互結合的方式。在二十世紀期間，科學家們了解到原子具有電子，並且這些電子參與原子之間的鍵結。我們將在第13和14章中徹底討論鍵結；這裡我們將考慮一些在接下來幾章中將有用的定義。</p>
+    
+    <p>將原子結合在化合物中的力稱為<span class="term">化學鍵</span>。原子可以通過<span class="emphasis">共享電子</span>的方式形成鍵。這些鍵稱為<span class="term">共價鍵</span>，由此產生的原子集合稱為<span class="term">分子</span>。分子可以用幾種不同的方式表示。最簡單的方法是<span class="term">化學式</span>，其中使用元素符號來表示存在的原子類型，並使用下標來表示原子的相對數量。例如，二氧化碳的化學式為CO₂，當然是指每個分子含有1個碳原子和2個氧原子。</p>
+
+    <p>含有共價鍵的分子的常見例子有氫氣（H₂）、水（H₂O）、氧氣（O₂）、氨（NH₃）和甲烷（CH₄）。關於分子的更多資訊由其<span class="term">結構式</span>給出，其中各個鍵用線表示。結構式可能表示或不表示分子的實際形狀。例如，水可以表示為</p>
+
+    <div class="structure-display">
+        H−O−H　　或　　
+        <div style="display: inline-block; position: relative;">
+            <div style="text-align: center;">O</div>
+            <div style="text-align: center;">H　　H</div>
+        </div>
+    </div>
+
+    <p>右側的結構顯示了基於實驗證據的水分子的實際形狀。結構式的其他例子有</p>
+
+    <div class="structure-display">
+        <div style="display: inline-block; margin: 0 30px;">
+            <div>H</div>
+            <div>|</div>
+            <div>H−N</div>
+            <div>|</div>
+            <div>H</div>
+            <div style="margin-top: 10px;">氨</div>
+        </div>
+        或
+        <div style="display: inline-block; margin: 0 30px;">
+            <div style="text-align: center;">N</div>
+            <div>H　H　H</div>
+        </div>
+        <div style="display: inline-block; margin: 0 30px;">
+            <div>H</div>
+            <div>|</div>
+            <div>H−C−H</div>
+            <div>|</div>
+            <div>H</div>
+            <div style="margin-top: 10px;">甲烷</div>
+        </div>
+        或
+        <div style="display: inline-block; margin: 0 30px;">
+            <div style="text-align: center;">C</div>
+            <div>H　H　H</div>
+            <div style="text-align: center;">H</div>
+        </div>
+    </div>
+
+    <p>在右側的實際結構中，中心原子和實線理解為在頁面平面上。通過虛線連接到中心原子的原子在頁面平面後方，通過楔形連接到中心原子的原子在頁面平面前方。</p>
+
+    <p>在由分子組成的化合物中，各個分子作為獨立單元移動。例如，甲烷分子在圖2.15中使用<span class="term">空間填充模型</span>表示。這些模型顯示了原子的相對大小以及它們在分子中的相對方向。圖2.16顯示了其他例子。<span class="term">球棍模型</span>也用於表示分子。圖2.17顯示了甲烷的球棍模型。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖2.15</div>
+        <p class="figure-caption">甲烷分子的空間填充模型。這種類型的模型既顯示了分子中原子的相對大小，也顯示了它們的空間關係。圖示顯示一個黑色碳原子被四個青色氫原子包圍。</p>
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖2.16</div>
+        <p class="figure-caption">各種分子的空間填充模型。圖示包含CO₂、H₂O、NH₃和O₂等分子的模型，使用不同顏色表示不同元素。</p>
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖2.17</div>
+        <p class="figure-caption">甲烷的球棍模型。圖示顯示白色氫原子球和黑色碳原子球通過灰色棍狀鍵連接。</p>
+    </div>
+
+    <p>第二種類型的化學鍵是由離子間的吸引力產生的。<span class="term">離子</span>是具有淨正電荷或負電荷的原子或原子團。最著名的離子化合物是食鹽，即氯化鈉，它是在中性氯和鈉反應時形成的。</p>
+
+    <p>要了解離子是如何形成的，請考慮當電子從鈉轉移到氯時會發生什麼（原子核中的中子將被忽略）：</p>
+
+    <div class="figure-box">
+        <div class="figure-caption" style="margin-bottom: 15px;">
+            <strong>中性鈉原子（Na）</strong><br>
+            11個電子，原子核含11個質子
+        </div>
+        <div class="figure-caption" style="text-align: center; margin: 15px 0;">
+            ↓ 失去1個電子 →
+        </div>
+        <div class="figure-caption">
+            <strong>鈉離子（Na⁺）</strong><br>
+            10個電子，原子核含11個質子
+        </div>
+    </div>
+
+    <p>由於去除了一個電子，具有11個質子和只有10個電子的鈉已成為帶有淨1+電荷的<span class="emphasis">正離子</span>。正離子稱為<span class="term">陽離子</span>。該過程可以用簡寫形式表示為</p>
+
+    <div class="equation">
+        Na → Na⁺ + e⁻
+    </div>
+
+    <p>如果將一個電子加到氯上，</p>
+
+    <div class="figure-box">
+        <div class="figure-caption" style="margin-bottom: 15px;">
+            <strong>中性氯原子（Cl）</strong><br>
+            17個電子，原子核含17個質子
+        </div>
+        <div class="figure-caption" style="text-align: center; margin: 15px 0;">
+            ↓ 獲得1個電子 →
+        </div>
+        <div class="figure-caption">
+            <strong>氯離子（Cl⁻）</strong><br>
+            18個電子，原子核含17個質子
+        </div>
+    </div>
+
+    <p>18個電子產生淨1−電荷；氯已成為<span class="emphasis">帶負電荷的離子</span>——<span class="term">陰離子</span>。這個過程表示為</p>
+
+    <div class="equation">
+        Cl + e⁻ → Cl⁻
+    </div>
+
+    <div class="ion-box">
+        <p><strong>離子鍵的形成：</strong></p>
+        <p>由於陰離子和陽離子具有相反的電荷，它們相互吸引。這種<span class="emphasis">帶相反電荷離子之間的吸引力</span>稱為<span class="term">離子鍵</span>。如圖2.18所示，鈉金屬和氯氣（由Cl₂分子組成的綠色氣體）反應形成固體氯化鈉，其中含有許多緊密排列在一起的Na⁺和Cl⁻離子。該固體形成美麗的無色立方晶體。</p>
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖2.18</div>
+        <p class="figure-caption">鈉金屬（如此柔軟以至於可以用刀切割，由個別鈉原子組成）與氯氣（含有Cl₂分子）反應形成固體氯化鈉（含有緊密排列在一起的Na⁺和Cl⁻離子）。</p>
+        <p class="figure-caption">圖示顯示：左上角是鈉金屬塊和其原子結構圖，左下角是裝有黃綠色氯氣的燒瓶和Cl₂分子圖，中間箭頭指向右側形成的氯化鈉晶體和其離子排列圖。</p>
+    </div>
+
+    <p>由帶相反電荷的離子組成的固體稱為<span class="term">離子固體</span>，或（通常）<span class="term">鹽</span>。離子固體可以由簡單離子組成，如氯化鈉中的情況，也可以由<span class="term">多原子</span>（多原子）<span class="term">離子</span>組成，如硝酸銨（NH₄NO₃）中的情況，其中含有銨陽離子（NH₄⁺）和硝酸根陰離子（NO₃⁻）。</p>
+
+    <div class="figure-box">
+        <div class="figure-caption">銨離子（NH₄⁺）和硝酸根離子（NO₃⁻）的球棍模型。圖示顯示兩個分子模型，使用不同顏色的球代表不同原子。</div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>
