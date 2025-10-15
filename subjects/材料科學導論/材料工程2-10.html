@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論2.10</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "PMingLiU", serif;
+            line-height: 1.8;
+            max-width: 21cm;
+            margin: 0 auto;
+            padding: 2cm;
+            background-color: white;
+            color: #333;
+        }
+        
+        h1 {
+            color: #5533aa;
+            font-size: 22pt;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        
+        h2 {
+            color: #0099cc;
+            font-size: 18pt;
+            margin-top: 2em;
+            margin-bottom: 0.8em;
+            font-weight: bold;
+            border-bottom: 2px solid #0099cc;
+            padding-bottom: 0.3em;
+        }
+        
+        h3 {
+            color: #0099cc;
+            font-size: 14pt;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+        
+        .section-number {
+            color: #5533aa;
+            font-size: 26pt;
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 0.3em;
+        }
+        
+        .term {
+            color: #009966;
+            font-weight: bold;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 1em;
+            text-indent: 2em;
+        }
+        
+        .no-indent {
+            text-indent: 0;
+        }
+        
+        .summary-section {
+            margin-bottom: 1.5em;
+        }
+        
+        .summary-title {
+            color: #0099cc;
+            font-weight: bold;
+            font-size: 11pt;
+            margin-bottom: 0.5em;
+            text-indent: 0;
+        }
+        
+        .summary-content {
+            margin-left: 1.5em;
+        }
+        
+        .summary-content p {
+            text-indent: 0;
+            margin-bottom: 0.5em;
+        }
+        
+        .bullet-point {
+            margin-left: 1em;
+            text-indent: -1em;
+            padding-left: 1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        
+        th {
+            background-color: #0099cc;
+            color: white;
+            padding: 0.5em;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            border: 1px solid #ccc;
+            padding: 0.5em;
+            vertical-align: top;
+        }
+        
+        .equation-table td {
+            text-align: center;
+        }
+        
+        .equation-table td:first-child {
+            width: 15%;
+        }
+        
+        .equation-table td:nth-child(2) {
+            width: 45%;
+        }
+        
+        .equation-table td:last-child {
+            width: 40%;
+        }
+        
+        .symbol-table td:first-child {
+            width: 20%;
+            font-style: italic;
+        }
+        
+        .terms-grid {
+            column-count: 3;
+            column-gap: 1em;
+            margin: 1em 0;
+        }
+        
+        .terms-grid div {
+            break-inside: avoid;
+            margin-bottom: 0.3em;
+        }
+        
+        .page-break {
+            page-break-after: always;
+        }
+        
+        sub {
+            font-size: 0.8em;
+            vertical-align: sub;
+        }
+        
+        sup {
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+        
+        .footnote {
+            font-size: 9pt;
+            color: #666;
+            border-top: 1px solid #ccc;
+            padding-top: 0.5em;
+            margin-top: 1em;
+        }
+        
+        .indent-sub {
+            margin-left: 2em;
+        }
+    </style>
+</head>
+<body>
+    <h1><span class="section-number">2.10</span> 鍵結類型—材料分類關聯</h1>
+    
+    <p>在本章前面的討論中，已經在鍵結類型和材料分類之間建立了一些關聯——即離子鍵結（陶瓷）、共價鍵結（聚合物）、金屬鍵結（金屬）和凡得瓦鍵結（分子固體）。我們在圖2.25b所示的材料類型四面體中總結了這些關聯——圖2.25a的鍵結四面體，在其上疊加了每種四種材料分類所代表的鍵結位置/區域。<sup>11</sup>還包括那些具有混合鍵結的材料：金屬間化合物和半金屬。陶瓷的混合離子-共價鍵結也被註明。此外，半導體材料的主要鍵結類型是共價，但有離子成分的可能性。</p>
+    
+    <div class="footnote">
+        <p class="no-indent"><sup>11</sup>儘管聚合物分子中的大多數原子是共價鍵結的，但通常存在一些凡得瓦鍵結。我們選擇不包括聚合物的凡得瓦鍵結，因為它們（凡得瓦鍵結）是<span class="term">分子間</span>（即分子之間）而非<span class="term">分子內</span>（在分子內），並且不是主鍵結類型。</p>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <h2>摘要</h2>
+    
+    <div class="summary-section">
+        <p class="summary-title">原子中的電子</p>
+        <div class="summary-content">
+            <p class="bullet-point">• 兩種原子模型是波耳和波動力學。波耳模型假設電子是在離散路徑上繞原子核運行的粒子，而在波動力學中，我們將它們視為波狀，並根據機率分佈來處理電子位置。</p>
+            <p class="bullet-point">• 電子的能量是<span class="term">量子化的</span>——也就是說，只允許特定的能量值。</p>
+            <p class="bullet-point">• 四個電子量子數是<i>n</i>、<i>l</i>、<i>m<sub>l</sub></i>和<i>m<sub>s</sub></i>。它們分別指定電子軌域大小、軌域形狀、電子軌域數量和自旋動量。</p>
+            <p class="bullet-point">• 根據包立不相容原理，每個電子態最多只能容納兩個電子，且它們必須具有相反的自旋。</p>
+        </div>
+    </div>
+    
+    <div class="summary-section">
+        <p class="summary-title">週期表</p>
+        <div class="summary-content">
+            <p class="bullet-point">• 週期表中每一欄（或族）中的元素都具有獨特的電子組態。例如：</p>
+            <p class="indent-sub">0族元素（惰性氣體）具有填滿的電子殼層。</p>
+            <p class="indent-sub">IA族元素（鹼金屬）比填滿的電子殼層多一個電子。</p>
+        </div>
+    </div>
+    
+    <div class="summary-section">
+        <p class="summary-title">鍵結力與能量</p>
+        <div class="summary-content">
+            <p class="bullet-point">• <span class="term">鍵結力</span>和<span class="term">鍵結能量</span>根據式2.5a和2.5b彼此相關。</p>
+            <p class="bullet-point">• 兩個原子或離子的吸引、排斥和淨能量取決於原子間距離，如圖2.10b的示意圖所示。</p>
+        </div>
+    </div>
+    
+    <div class="summary-section">
+        <p class="summary-title">主原子間鍵結</p>
+        <div class="summary-content">
+            <p class="bullet-point">• 對於離子鍵結，帶電離子是通過價電子從一種原子類型轉移到另一種原子類型而形成的。</p>
+            <p class="bullet-point">• 當鍵結是共價時，相鄰原子之間存在價電子的共享。</p>
+            <p class="bullet-point">• 某些共價鍵結的電子軌域可能重疊或混成。在碳中討論了<i>s</i>和<i>p</i>軌域混成形成<i>sp</i><sup>3</sup>和<i>sp</i><sup>2</sup>軌域。這些混成軌域的組態也被註明。</p>
+            <p class="bullet-point">• 對於金屬鍵結，價電子形成均勻分散在金屬離子核心周圍的「電子海」，並作為它們的黏合劑。</p>
+        </div>
+    </div>
+    
+    <div class="summary-section">
+        <p class="summary-title">次級鍵結或凡得瓦鍵結</p>
+        <div class="summary-content">
+            <p class="bullet-point">• 相對較弱的凡得瓦鍵結是由電偶極之間的吸引力產生的，這些偶極可能是誘導的或永久的。</p>
+            <p class="bullet-point">• 對於氫鍵結，當氫與非金屬元素（如氟）共價鍵結時，會形成高度極性的分子。</p>
+        </div>
+    </div>
+    
+    <div class="summary-section">
+        <p class="summary-title">混合鍵結</p>
+        <div class="summary-content">
+            <p class="bullet-point">• 除了凡得瓦鍵結和三種主要鍵結類型外，還存在共價-離子、共價-金屬和金屬-離子混合鍵結。</p>
+            <p class="bullet-point">• 兩個元素（A和B）之間鍵結的離子性百分比（%IC）取決於它們的電負度（<i>X</i>）根據式2.16。</p>
+        </div>
+    </div>
+    
+    <div class="summary-section">
+        <p class="summary-title">鍵結類型—材料分類關聯</p>
+        <div class="summary-content">
+            <p class="bullet-point">• 注意到鍵結類型和材料類別之間的關聯：</p>
+            <p class="indent-sub">聚合物—共價</p>
+            <p class="indent-sub">金屬—金屬</p>
+            <p class="indent-sub">陶瓷—離子/混合離子-共價</p>
+            <p class="indent-sub">分子固體—凡得瓦</p>
+            <p class="indent-sub">半金屬—混合共價-金屬</p>
+            <p class="indent-sub">金屬間化合物—混合金屬-離子</p>
+        </div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <h2>方程式總結</h2>
+    
+    <table class="equation-table">
+        <tr>
+            <th>方程式編號</th>
+            <th>方程式</th>
+            <th>求解項目</th>
+        </tr>
+        <tr>
+            <td>2.5a</td>
+            <td><i>E</i> = ∫ <i>F dr</i></td>
+            <td>兩個原子之間的位能</td>
+        </tr>
+        <tr>
+            <td>2.5b</td>
+            <td><i>F</i> = <i>dE</i>/<i>dr</i></td>
+            <td>兩個原子之間的力</td>
+        </tr>
+        <tr>
+            <td>2.9</td>
+            <td><i>E<sub>A</sub></i> = −<i>A</i>/<i>r</i></td>
+            <td>兩個原子之間的吸引能</td>
+        </tr>
+        <tr>
+            <td>2.11</td>
+            <td><i>E<sub>R</sub></i> = <i>B</i>/<i>r<sup>n</sup></i></td>
+            <td>兩個原子之間的排斥能</td>
+        </tr>
+        <tr>
+            <td>2.13</td>
+            <td><i>F<sub>A</sub></i> = 1/(4πε<sub>0</sub><i>r</i><sup>2</sup>) (|<i>Z</i><sub>1</sub>|<i>e</i>)(|<i>Z</i><sub>2</sub>|<i>e</i>)</td>
+            <td>兩個孤立離子之間的吸引力</td>
+        </tr>
+        <tr>
+            <td>2.16</td>
+            <td>%IC = {1 − exp[−(0.25)(<i>X<sub>A</sub></i> − <i>X<sub>B</sub></i>)<sup>2</sup>]} × 100</td>
+            <td>離子性百分比</td>
+        </tr>
+    </table>
+    
+    <h2>符號列表</h2>
+    
+    <table class="symbol-table">
+        <tr>
+            <th>符號</th>
+            <th>意義</th>
+        </tr>
+        <tr>
+            <td>A, B, n</td>
+            <td>材料常數</td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td>兩個原子/離子之間的位能</td>
+        </tr>
+        <tr>
+            <td>E<sub>A</sub></td>
+            <td>兩個原子/離子之間的吸引能</td>
+        </tr>
+        <tr>
+            <td>E<sub>R</sub></td>
+            <td>兩個原子/離子之間的排斥能</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>電子電荷</td>
+        </tr>
+        <tr>
+            <td>ε<sub>0</sub></td>
+            <td>真空介電常數</td>
+        </tr>
+        <tr>
+            <td>F</td>
+            <td>兩個原子/離子之間的力</td>
+        </tr>
+        <tr>
+            <td>r</td>
+            <td>兩個原子/離子之間的分離距離</td>
+        </tr>
+        <tr>
+            <td>X<sub>A</sub></td>
+            <td>化合物BA中電負度較大元素的電負度值</td>
+        </tr>
+        <tr>
+            <td>X<sub>B</sub></td>
+            <td>化合物BA中電正性較大元素的電負度值</td>
+        </tr>
+        <tr>
+            <td>Z<sub>1</sub>, Z<sub>2</sub></td>
+            <td>離子1和2的價數</td>
+        </tr>
+    </table>
+    
+    <div class="page-break"></div>
+    
+    <h2>重要術語和概念</h2>
+    
+    <div class="terms-grid">
+        <div>原子質量單位（amu）</div>
+        <div>原子序（Z）</div>
+        <div>原子量（A）</div>
+        <div>波耳原子模型</div>
+        <div>鍵結能量</div>
+        <div>庫侖力</div>
+        <div>共價鍵結</div>
+        <div>偶極（電）</div>
+        <div>電子組態</div>
+        <div>電負性</div>
+        <div>電子態</div>
+        <div>電正性</div>
+        <div>基態</div>
+        <div>氫鍵</div>
+        <div>離子鍵結</div>
+        <div>同位素</div>
+        <div>金屬鍵結</div>
+        <div>莫耳</div>
+        <div>包立不相容原理</div>
+        <div>週期表</div>
+        <div>極性分子</div>
+        <div>主鍵結</div>
+        <div>量子力學</div>
+        <div>量子數</div>
+        <div>次級鍵結</div>
+        <div>價電子</div>
+        <div>凡得瓦鍵結</div>
+        <div>波動力學模型</div>
+    </div>
+    
+    <p class="no-indent" style="margin-top: 1em; font-style: italic; color: #666; font-size: 10pt;"><i>註：</i>在每一章中，重要術語和概念部分列出的大多數術語都在詞彙表中定義，該詞彙表緊接在附錄E之後。其他術語非常重要，足以在正文的完整討論中得到保證，可以在目錄或索引中找到。</p>
+    
+    <div style="margin-top: 3em; padding-top: 1em; border-top: 2px solid #ccc; text-align: center; color: #666;">
+        <p style="text-indent: 0; margin: 0;">材料科學導論 2.10節</p>
+        <p style="text-indent: 0; margin: 0.5em 0 0 0;">鍵結類型—材料分類關聯</p>
+    </div>
+</body>
+</html>

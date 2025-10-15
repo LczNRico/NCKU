@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-5材料科學導論</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        
+        h1 {
+            color: #d32f2f;
+            border-bottom: 3px solid #d32f2f;
+            padding-bottom: 10px;
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: #1976d2;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+            text-indent: 2em;
+        }
+        
+        strong {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+        
+        .download-btn {
+            background-color: #1976d2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+        
+        .download-btn:hover {
+            background-color: #1565c0;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .content-placeholder {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f0f8ff;
+            border: 2px dashed #1976d2;
+            border-radius: 10px;
+            color: #1976d2;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 style="margin: 0; border: none; color: #d32f2f;">2-5材料科學導論</h1>
+        <p style="margin: 10px 0; text-indent: 0;">原子間作用力與結合</p>
+    </div>
+    
+    <div class="no-print">
+        <button class="download-btn" onclick="window.print()">下載PDF</button>
+    </div>
+
+    <h1>原子間作用力</h1>
+
+    <p>理解許多材料物理性質的關鍵在於了解將原子結合在一起的原子間作用力。也許原子結合的原理最好透過考慮兩個孤立原子從無限遠分離處相互接近時的相互作用來說明。在大距離時，相互作用是可忽略的，因為原子相距太遠而無法相互影響；然而，在小分離距離時，每個原子對其他原子施加力。這些力有兩種類型，<strong>吸引力</strong>（F<sub>A</sub>）和<strong>排斥力</strong>（F<sub>R</sub>），每種力的大小取決於分離或原子間距離（r）；圖2.10a是F<sub>A</sub>和F<sub>R</sub>相對於r的示意圖。吸引力F<sub>A</sub>的起源取決於兩原子間存在的特定結合類型，稍後將討論。排斥力來自兩個原子的帶負電電子雲之間的相互作用，並且只有在r的小值處才重要，當兩個原子的外電子殼層開始重疊時（圖2.10a）。</p>
+
+    <p>兩原子間的<strong>淨力</strong>F<sub>N</sub>僅僅是吸引力和排斥力組件的總和；即：</p>
+
+    <p style="text-align: center; font-style: italic;">F<sub>N</sub> = F<sub>A</sub> + F<sub>R</sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2.3)</p>
+
+    <p>這也是原子間分離的函數，如圖2.10a中所繪製的。當F<sub>A</sub>和F<sub>R</sub>在大小上相等但符號相反時，沒有淨力——即：</p>
+
+    <p style="text-align: center; font-style: italic;">F<sub>A</sub> + F<sub>R</sub> = 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2.4)</p>
+
+    <p>存在平衡狀態。兩原子的中心仍然被平衡間距r<sub>0</sub>分離，如圖2.10a所示。對於許多原子，r<sub>0</sub>大約為0.3 nm。一旦處於這個位置，任何嘗試將兩個原子進一步分開的努力都會被吸引力抵消，而將它們推得更近則會被增加的排斥力所阻止。</p>
+
+    <h1>勢能與結合能</h1>
+
+    <p>有時使用兩原子間的勢能而不是力更為方便。在數學上，能量（E）和力（F）的關係為：</p>
+
+    <p style="text-align: center; font-style: italic;">E = ∫ F dr &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2.5a)</p>
+
+    <p>對於原子系統：</p>
+
+    <p style="text-align: center; font-style: italic;">E<sub>N</sub> = ∫<sub>r</sub><sup>∞</sup> F<sub>N</sub> dr &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2.6)</p>
+
+    <p style="text-align: center; font-style: italic;">= ∫<sub>r</sub><sup>∞</sup> F<sub>A</sub> dr + ∫<sub>r</sub><sup>∞</sup> F<sub>R</sub> dr &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2.7)</p>
+
+    <p style="text-align: center; font-style: italic;">= E<sub>A</sub> + E<sub>R</sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2.8a)</p>
+
+    <p>其中E<sub>N</sub>、E<sub>A</sub>和E<sub>R</sub>分別是兩個孤立和相鄰原子的淨、吸引和排斥能量。</p>
+
+    <p>圖2.10b繪製了兩原子的吸引、排斥和淨勢能作為原子間分離的函數。根據方程2.8a，淨曲線是吸引和排斥曲線的總和。淨能量曲線中的最小值對應於平衡間距r<sub>0</sub>。此外，這兩個原子的<strong>結合能</strong>E<sub>0</sub>對應於這個最小點的能量（也顯示在圖2.10b中）；它表示將這兩個原子分離到無限遠距離所需的能量。</p>
+
+    <h1>結合能對材料性質的影響</h1>
+
+    <p>雖然前面的處理涉及僅涉及兩個原子的理想情況，但對於固體材料存在類似但更複雜的條件，因為必須考慮原子間的力和能量相互作用。儘管如此，類似於上述E<sub>0</sub>的結合能可能與每個原子相關。這種結合能的大小和能量-原子間分離曲線的形狀因材料而異，它們都取決於原子結合的類型。此外，許多材料性質取決於E<sub>0</sub>、曲線形狀和結合類型。</p>
+
+    <p>例如，具有大結合能的材料通常也具有高熔點；在室溫下，對於大結合能形成固體物質，而對於小能量，氣態是有利的；當能量是中等大小時，液體占主導地位。此外，如第6章所討論的，材料的機械剛度（或彈性模量）取決於其力-原子間分離曲線的形狀（圖6.7）。在曲線上r = r<sub>0</sub>位置處相對剛性材料的斜率將相當陡峭；對於更靈活的材料，斜率較淺。此外，材料在加熱時膨脹或在冷卻時收縮的程度（即其線性熱膨脹係數）與其E-r曲線的形狀有關（見第19.3節）。深而窄的「槽」通常出現在具有大結合能的材料中，通常與低熱膨脹係數和溫度變化時相對較小的尺寸變化相關。</p>
+
+    <h1>主要結合類型</h1>
+
+    <p>在固體中發現三種不同類型的<strong>主要</strong>或化學<strong>結合</strong>——離子型、共價型和金屬型。對於每種類型，結合都必然涉及價電子；此外，結合的性質取決於組成原子的電子結構。一般來說，這三種結合類型中的每一種都來自原子趨向於採用穩定電子結構（如惰性氣體的穩定電子結構）的傾向，通過完全填充最外層電子殼層。</p>
+
+    <p>在許多固體材料中還發現<strong>次級</strong>或物理力和能量；它們比主要力弱，但仍然影響某些材料的物理性質。接下來的章節將解釋幾種主要和次級原子間結合。</p>
+
+    <script>
+        // 自動觸發列印對話框
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (confirm('是否要立即下載PDF？')) {
+                    window.print();
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
