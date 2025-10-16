@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學4-8</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .example-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-title {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .steps-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .steps-title {
+            background-color: #0288d1;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-box {
+            background-color: #fff3e0;
+            border-left: 5px solid #ff6f00;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            color: #ff6f00;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .flowchart {
+            background-color: #f0f4c3;
+            border: 2px solid #9e9d24;
+            padding: 10px;
+            margin: 20px auto;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .flowchart-item {
+            background-color: #c5e1a5;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .arrow {
+            font-size: 1.5em;
+            color: #1976d2;
+            margin: 5px 0;
+        }
+
+        ol {
+            margin-left: 20px;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>4.8 沉澱反應的化學計量學</h1>
+    
+    <p>在第三章中，我們介紹了化學計量學的原理：計算化學反應中涉及的反應物和產物數量的程序。回想一下，在進行這些計算時，我們首先將所有數量轉換為莫耳數，然後使用平衡方程式的係數來組裝適當的莫耳比。在反應物混合的情況下，我們必須確定哪種反應物是限量反應物，因為首先被消耗的反應物將限制形成的產物量。<span class="emphasis">這些相同的原理適用於在溶液中發生的反應。</span>然而，關於溶液反應需要特別強調兩點。第一點是，當兩種溶液混合時，有時很難立即判斷會發生哪種反應。通常我們必須考慮各種可能性，然後決定會發生什麼。這個過程的第一步<span class="emphasis">始終</span>應該是寫下實際存在於溶液中的物種，就像我們在4.5節中所做的那樣。</p>
+
+    <p>關於溶液反應的第二個特殊點是，為了獲得反應物的莫耳數，我們必須使用特定溶液的體積及其莫耳濃度。此程序在4.3節中已介紹。</p>
+
+    <p>我們將在範例4.7中介紹溶液中反應的化學計量計算。</p>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 4.7</div>
+        <h3>確定形成的產物質量 I</h3>
+        
+        <p>計算必須加入1.50 L的0.100 <em>M</em> AgNO₃溶液中的固體NaCl質量，以沉澱所有以AgCl形式存在的Ag⁺離子。</p>
+        
+        <p><strong>解答</strong></p>
+        
+        <p><strong><em>我們要去哪裡？</em></strong></p>
+        <p>我們想要確定要加入給定量AgNO₃(<em>aq</em>)中的NaCl質量，以沉澱所有Ag⁺離子並形成AgCl。</p>
+
+        <p><strong><em>我們知道什麼？</em></strong></p>
+        <p>我們知道AgNO₃(<em>aq</em>)溶液的體積和濃度。</p>
+
+        <p><strong><em>我們如何達到目標？</em></strong></p>
+        <p>我們需要認識到會發生反應形成AgCl；因此我們需要一個平衡方程式。首先，我們必須考慮在化學上會發生什麼。</p>
+
+        <p>當加入AgNO₃溶液（含有Ag⁺和NO₃⁻離子）時，固體NaCl溶解產生Na⁺和Cl⁻離子。因此混合溶液含有離子</p>
+
+        <div class="equation">
+            Ag⁺、NO₃⁻、Na⁺和Cl⁻
+        </div>
+
+        <p>NaNO₃是可溶的，AgCl是不可溶的（表4.1），所以根據以下淨離子反應形成固體AgCl：</p>
+
+        <div class="equation">
+            Ag⁺(<em>aq</em>) + Cl⁻(<em>aq</em>) ⟶ AgCl(<em>s</em>)
+        </div>
+
+        <p>在這種情況下，必須加入足夠的Cl⁻離子與所有存在的Ag⁺離子反應。因此，我們必須計算1.50 L的0.100 <em>M</em> AgNO₃溶液中存在的Ag⁺離子莫耳數（記住0.100 <em>M</em> AgNO₃溶液含有0.100 <em>M</em> Ag⁺離子和0.100 <em>M</em> NO₃⁻離子）：</p>
+
+        <div class="equation">
+            1.50 L × (0.100 mol Ag⁺)/L = 0.150 mol Ag⁺
+        </div>
+
+        <p>由於Ag⁺和Cl⁻以1:1的比例反應，需要0.150莫耳的Cl⁻離子，因此需要0.150莫耳的NaCl。我們按如下方式計算所需NaCl的質量：</p>
+
+        <div class="equation">
+            0.150 mol NaCl × (58.4 g NaCl)/(mol NaCl) = 8.76 g NaCl
+        </div>
+    </div>
+
+    <p>從範例4.7注意到，進行溶液反應化學計量計算的程序與其他類型反應的程序非常相似。以下列步驟來思考溶液中的反應是有用的。</p>
+
+    <div class="steps-box">
+        <div class="steps-title">步驟：解決涉及溶液中反應的化學計量問題</div>
+        
+        <ol>
+            <li>識別混合溶液中存在的物種，並確定會發生哪種反應。</li>
+            <li>寫出反應的平衡方程式。</li>
+            <li>計算反應物的莫耳數。</li>
+            <li>確定哪種反應物是限量反應物。</li>
+            <li>根據需要計算產物的莫耳數。</li>
+            <li>根據需要轉換為克或其他單位。</li>
+        </ol>
+    </div>
+
+    <div class="flowchart">
+        <div class="flowchart-item" style="background-color: #c5e1a5;">存在的物種</div>
+        <div class="arrow">↓</div>
+        <div style="font-size: 0.9em; color: #1976d2;">寫出反應</div>
+        <div class="arrow">↓</div>
+        <div class="flowchart-item" style="background-color: #c5e1a5;">平衡的淨離子方程式</div>
+        <div class="arrow">↓</div>
+        <div style="font-size: 0.9em; color: #1976d2;">確定反應物莫耳數</div>
+        <div class="arrow">↓</div>
+        <div class="flowchart-item" style="background-color: #c5e1a5;">識別限量反應物</div>
+        <div class="arrow">↓</div>
+        <div style="font-size: 0.9em; color: #1976d2;">確定產物莫耳數</div>
+        <div class="arrow">↓</div>
+        <div class="flowchart-item" style="background-color: #c5e1a5;">檢查產物單位</div>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 4.8</div>
+        <h3>確定形成的產物質量 II</h3>
+        
+        <p>當Na₂SO₄和Pb(NO₃)₂的水溶液混合時，PbSO₄沉澱。計算當1.25 L的0.0500 <em>M</em> Pb(NO₃)₂和2.00 L的0.0250 <em>M</em> Na₂SO₄混合時形成的PbSO₄質量。</p>
+        
+        <p><strong>解答</strong></p>
+        
+        <p><strong><em>我們要去哪裡？</em></strong></p>
+        <p>我們被要求確定沉澱物的質量。</p>
+
+        <p><strong><em>我們知道什麼？</em></strong></p>
+        <p>我們得到反應物的量。</p>
+
+        <p><strong><em>我們如何達到目標？</em></strong></p>
+        <p>這個問題在某種意義上是複雜的，因為它融合了我們在第3章和第4章中學到的許多內容。我們需要知道/做的事情清單很廣泛：</p>
+
+        <ul>
+            <li>我們需要知道溶液在分子層面上「看起來像」什麼。</li>
+            <li>我們需要能夠寫出淨離子方程式。</li>
+            <li>我們必須使用體積和莫耳濃度來確定每種反應物的莫耳數。</li>
+            <li>由於給定了兩種反應物的量，我們必須確定哪種反應物是限量反應物。</li>
+            <li>我們需要使用莫耳質量將莫耳轉換為質量。</li>
+        </ul>
+
+        <p>然而，到目前為止，這個解決方案的每一步對你來說都應該是熟悉的。因此，儘管這個問題的解決方案有很多部分，但一次處理一步會使它不那麼令人生畏。</p>
+
+        <p>當Na₂SO₄的水溶液（含有Na⁺和SO₄²⁻離子）和Pb(NO₃)₂的水溶液（含有Pb²⁺和NO₃⁻離子）混合時，混合溶液含有離子Na⁺、SO₄²⁻、Pb²⁺和NO₃⁻。由於NaNO₃是可溶的，PbSO₄是不可溶的（表4.1），固體PbSO₄將形成。</p>
+
+        <p>淨離子方程式為</p>
+
+        <div class="equation">
+            Pb²⁺(<em>aq</em>) + SO₄²⁻(<em>aq</em>) ⟶ PbSO₄(<em>s</em>)
+        </div>
+
+        <p>由於0.0500 <em>M</em> Pb(NO₃)₂含有0.0500 <em>M</em> Pb²⁺離子，我們可以按如下方式計算1.25 L該溶液中Pb²⁺離子的莫耳數：</p>
+
+        <div class="equation">
+            1.25 L × (0.0500 mol Pb²⁺)/L = 0.0625 mol Pb²⁺
+        </div>
+
+        <p>0.0250 <em>M</em> Na₂SO₄溶液含有0.0250 <em>M</em> SO₄²⁻離子，2.00 L該溶液中SO₄²⁻離子的莫耳數為</p>
+
+        <div class="equation">
+            2.00 L × (0.0250 mol SO₄²⁻)/L = 0.0500 mol SO₄²⁻
+        </div>
+
+        <p>因為Pb²⁺和SO₄²⁻以1:1的比例反應，SO₄²⁻的量將是限量的。</p>
+
+        <p>由於Pb²⁺離子過量存在，只會形成0.0500莫耳的固體PbSO₄。使用PbSO₄的莫耳質量（303.3）可以計算形成的PbSO₄質量：</p>
+
+        <div class="equation">
+            0.0500 mol PbSO₄ × (303.3 g PbSO₄)/(1 mol PbSO₄) = 15.2 g PbSO₄
+        </div>
+    </div>
+
+    <div class="critical-box">
+        <div class="critical-title">批判性思考</div>
+        <p>如果所有離子固體都可溶於水，這將如何影響水溶液中反應的化學計量計算？</p>
+    </div>
+
+    <p>確定溶液中存在的給定物質量的一種方法是形成包含該物質的沉澱。然後過濾、乾燥並稱重沉澱物。這個過程稱為重量分析，在範例4.9中說明。</p>
+
+    <div class="example-box">
+        <div class="example-title">範例 4.9</div>
+        <h3>確定樣品中元素的質量百分比</h3>
+        
+        <p>磷灰石，也稱為<span class="emphasis">磷酸鹽岩</span>，是一種含有PO₄³⁻和OH⁻陰離子以及Ca²⁺陽離子的礦物。它在磷酸鹽肥料的製造中被處理為硫酸（見第三章）。化學家通過稱取0.4367 g樣品，將其溶於水中，並將Ca²⁺離子沉澱為不溶性鹽*CaC₂O₄的方法，測定磷酸鹽岩不純樣品中的鈣含量。在過濾和乾燥（在約100°C的溫度下，以便驅除多餘的水但不是水合水）後，CaC₂O₄·H₂O沉澱物重0.2920 g。計算磷酸鹽岩樣品中鈣的質量百分比。</p>
+
+        <div class="info-box">
+            <p>*水合鹽除了陽離子和陰離子外，每個分子式單位還含有一個或多個H₂O分子。在這些鹽的分子式中使用點。</p>
+        </div>
+
+        <p><strong>解答</strong></p>
+        
+        <p><strong><em>我們要去哪裡？</em></strong></p>
+        <p>我們被要求確定磷酸鹽岩樣品中鈣的質量百分比。</p>
+
+        <p><strong><em>我們知道什麼？</em></strong></p>
+        <p>我們知道樣品的質量和含有樣品中所有鈣的沉澱物的質量。</p>
+
+        <p><strong><em>我們如何達到目標？</em></strong></p>
+
+        <div class="equation">
+            岩石中鈣的質量百分比 = (鈣的質量)/(岩石樣品的質量) × 100%
+        </div>
+
+        <p>我們知道岩石樣品的質量為0.4367 g，因此為了確定鈣的質量百分比，我們將問題改為「<span class="emphasis">岩石樣品中存在的鈣質量是多少？</span>」</p>
+
+        <p>重量分析程序可總結如下：</p>
+
+        <div class="flowchart">
+            <div class="flowchart-item" style="background-color: #c5e1a5;">0.4367 g<br>含有Ca²⁺離子的<br>不純磷酸鹽岩樣品</div>
+            <div class="arrow">↓</div>
+            <div style="font-size: 0.9em;">溶於水</div>
+            <div class="arrow">↓</div>
+            <div class="flowchart-item" style="background-color: #c5e1a5;">溶液中的Ca²⁺離子</div>
+            <div class="arrow">↓</div>
+            <div style="font-size: 0.9em;">加入過量草酸根離子</div>
+            <div class="arrow">↓</div>
+            <div class="flowchart-item" style="background-color: #c5e1a5;">CaC₂O₄·H₂O<br>沉澱物</div>
+            <div class="arrow">↓</div>
+            <div style="font-size: 0.9em;">過濾和乾燥</div>
+            <div class="arrow">↓</div>
+            <div class="flowchart-item" style="background-color: #c5e1a5;">0.2920 g的<br>CaC₂O₄·H₂O樣品</div>
+        </div>
+
+        <p>在此分析中，加入過量的C₂O₄²⁻離子以確保所有Ca²⁺離子都被沉澱。因此，原始樣品中Ca²⁺離子的莫耳數決定了形成的CaC₂O₄·H₂O的莫耳數。使用CaC₂O₄·H₂O的莫耳質量，我們可以計算CaC₂O₄·H₂O的莫耳數：</p>
+
+        <div class="equation">
+            0.2920 g CaC₂O₄·H₂O × (1 mol CaC₂O₄·H₂O)/(146.12 g CaC₂O₄·H₂O)
+            <br><br>
+            = 1.998 × 10⁻³ mol CaC₂O₄·H₂O
+        </div>
+
+        <p>因此，不純磷酸鹽岩的原始樣品含有1.998 × 10⁻³莫耳的Ca²⁺離子，我們將其轉換為克：</p>
+
+        <div class="equation">
+            1.998 × 10⁻³ mol Ca²⁺ × (40.08 g Ca²⁺)/(1 mol Ca²⁺) = 8.009 × 10⁻² g Ca²⁺
+        </div>
+
+        <p>原始樣品中鈣的質量百分比為</p>
+
+        <div class="equation">
+            (8.009 × 10⁻² g)/(0.4367 g) × 100% = 18.34%
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

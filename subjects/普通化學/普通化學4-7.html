@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學4-7</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .step-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .note-box {
+            background-color: #fff3e0;
+            border-left: 5px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        .table-caption {
+            background-color: #0288d1;
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        th {
+            background-color: #1a5490;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 0.95em;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 0.9em;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .flow-diagram {
+            background-color: #e8f5e9;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .flow-step {
+            background-color: #c8e6c9;
+            padding: 12px;
+            margin: 10px auto;
+            border-radius: 4px;
+            max-width: 400px;
+            font-weight: 500;
+        }
+
+        .arrow-down {
+            font-size: 1.5em;
+            color: #4caf50;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .precipitate-label {
+            color: #555;
+            font-size: 0.9em;
+            font-style: italic;
+            margin: 5px 0;
+        }
+
+        .insight-box {
+            background-color: #f3e5f5;
+            border-left: 5px solid #6a1b9a;
+            padding: 15px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        .insight-title {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>4.7 選擇性沉澱</h1>
+    
+    <p>我們可以利用鹽類具有不同溶解度的事實來分離離子混合物。例如，假設我們有一個含有陽離子Ag⁺、Ba²⁺和Fe³⁺以及陰離子NO₃⁻的水溶液。我們想要藉由一次沉澱一種陽離子來分離這些陽離子，這個過程稱為<span class="term">選擇性沉澱</span>。</p>
+
+    <p>如何完成這些陽離子的分離？我們可以進行一些初步測試，觀察每種陽離子對陰離子Cl⁻、SO₄²⁻和OH⁻的反應性。例如，要測試Ag⁺對Cl⁻的反應性，我們可以將AgNO₃溶液與氯化鉀或氯化鈉水溶液混合。如我們所見，這會產生沉澱。當我們使用所有可能的組合進行此類測試時，我們得到表4.2中的結果。</p>
+
+    <p>研究這些結果後，我們可以按以下方式進行陽離子的分離：</p>
+
+    <div class="step-box">
+        <p><strong><span class="emphasis">步驟1：</span></strong>向含有Ag⁺、Ba²⁺和Fe³⁺離子的溶液中加入氯化鈉水溶液。固體AgCl會形成並可被移除，留下Ba²⁺和Fe³⁺離子在溶液中。</p>
+    </div>
+
+    <div class="step-box">
+        <p><strong><span class="emphasis">步驟2：</span></strong>向含有Ba²⁺和Fe³⁺離子的溶液中加入硫酸鈉水溶液。固體BaSO₄會形成並可被移除，留下僅有Fe³⁺離子在溶液中。</p>
+    </div>
+
+    <div class="step-box">
+        <p><strong><span class="emphasis">步驟3：</span></strong>向含有Fe³⁺離子的溶液中加入氫氧化鈉水溶液。固體Fe(OH)₃會形成並可被移除。</p>
+    </div>
+
+    <p>步驟1至步驟3在圖4.17中以示意圖表示。</p>
+
+    <div class="table-caption">表4.2</div>
+    <p style="text-align: center; font-weight: bold; margin-top: -10px;">測試陽離子Ag⁺、Ba²⁺和Fe³⁺對陰離子Cl⁻、SO₄²⁻和OH⁻的反應性</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>陽離子</th>
+                <th>NaCl(<em>aq</em>) (Cl⁻)</th>
+                <th>Na₂SO₄(<em>aq</em>) (SO₄²⁻)</th>
+                <th>NaOH(<em>aq</em>) (OH⁻)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ag⁺</td>
+                <td>白色沉澱<br>(AgCl)</td>
+                <td>無反應</td>
+                <td>白色沉澱變為棕色<br>(AgOH → Ag₂O)<br><span style="color: #1976d2;">白色</span>&nbsp;&nbsp;&nbsp;<span style="color: #8b4513;">棕色</span></td>
+            </tr>
+            <tr>
+                <td>Ba²⁺</td>
+                <td>無反應</td>
+                <td>白色沉澱 (BaSO₄)</td>
+                <td>無反應</td>
+            </tr>
+            <tr>
+                <td>Fe³⁺</td>
+                <td>黃色但無固體</td>
+                <td>無反應</td>
+                <td>紅褐色沉澱 [Fe(OH)₃]</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="flow-diagram">
+        <div class="flow-step">Ag⁺、Ba²⁺、Fe³⁺的溶液</div>
+        
+        <div class="arrow-down">↓</div>
+        <div style="text-align: center; color: #4caf50; font-weight: bold;">步驟1：加入 NaCl(<em>aq</em>)</div>
+        <div class="arrow-down">↓</div>
+        
+        <div class="precipitate-label">AgCl 沉澱</div>
+        
+        <div class="flow-step">Ba²⁺、Fe³⁺的溶液</div>
+        
+        <div class="arrow-down">↓</div>
+        <div style="text-align: center; color: #4caf50; font-weight: bold;">步驟2：加入 Na₂SO₄(<em>aq</em>)</div>
+        <div class="arrow-down">↓</div>
+        
+        <div class="precipitate-label">BaSO₄ 沉澱</div>
+        
+        <div class="flow-step">Fe³⁺的溶液</div>
+        
+        <div class="arrow-down">↓</div>
+        <div style="text-align: center; color: #4caf50; font-weight: bold;">步驟3：加入 NaOH(<em>aq</em>)</div>
+        <div class="arrow-down">↓</div>
+        
+        <div class="precipitate-label">Fe(OH)₃ 沉澱</div>
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.17</div>
+        <p class="figure-caption">Ag⁺、Ba²⁺和Fe³⁺離子的選擇性沉澱。在此示意圖中，雙線表示固體形成，單線表示溶液。</p>
+    </div>
+
+    <p>請注意，按此順序加入陰離子會一次沉澱一種陽離子，從而分離它們。藉由分離和鑑定離子混合物的過程稱為<span class="term">定性分析</span>。在此範例中，定性分析是藉由選擇性沉澱進行的，但也可以藉由使用其他分離技術來完成，這些技術在此不予討論。</p>
+
+    <h2>補充─蟑螂的化學分析</h2>
+
+    <div class="insight-box">
+        <div class="insight-title">化學洞察</div>
+        <h3>蟑螂的化學分析</h3>
+        
+        <p>蟑螂可能是個大問題。這些頑強的害蟲不僅令人不快，而且還會消耗大量世界上珍貴的食物和穀物供應。由於許多不同種類的蟑螂需要不同的控制措施，因此確定是哪個物種造成特定問題是很重要的。仔細檢查蟑螂可以揭示其種類，但此過程非常耗時。然而，一種新的蟑螂鑑定方法，基於氣相層析法，已由美國農業部的D. A. Carlson和R. J. Brenner開發。在氣相層析法中，待分離的化合物分散在通過多孔固體的載氣流中。由於不同物質對固體的附著傾向不同，混合物的組分會以不同的速率移動通過系統，導致它們可以被分離和鑑定。</p>
+
+        <p>在蟑螂鑑定研究中，Carlson和Brenner發現蟑螂外層蠟質層的組成與特定物種不同。因此，藉由溶解這層蠟質塗層並將其注入氣相層析儀的氣流中，科學家可以在不到半小時內明確地鑑定出蟑螂。這項技術對於鑑定亞洲-德國混合種蟑螂特別有用，這種蟑螂已成為食品工業的一個主要問題。</p>
+
+        <p>雖然生物學家可能會爭辯說，氣相層析法使鑑定蟑螂變得不再有趣和具挑戰性，但這項技術應該會帶來控制這些昆蟲方面的重大進展。</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>
