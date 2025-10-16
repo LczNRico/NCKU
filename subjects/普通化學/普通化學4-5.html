@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學4-5</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .important-box {
+            background-color: #ffebee;
+            border-left: 5px solid #c62828;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .note-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-box {
+            background-color: #fff8e1;
+            border-left: 5px solid #f57c00;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th {
+            background-color: #0277bd;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .table-title {
+            background-color: #0277bd;
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .blue-text {
+            color: #0277bd;
+        }
+
+        .underline-text {
+            text-decoration: underline;
+        }
+
+        ol {
+            margin-left: 30px;
+        }
+
+        ol li {
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>4.5 沉澱反應</h1>
+    
+    <p>當兩種溶液混合時，有時會形成不溶性物質；也就是說，固體會形成並從溶液中分離出來。這種反應稱為<span class="highlight">沉澱反應</span>，形成的固體稱為<span class="highlight">沉澱物</span>。例如，當黃色的鉻酸鉀水溶液[K₂CrO₄(<em>aq</em>)]與無色的硝酸鋇水溶液[Ba(NO₃)₂(<em>aq</em>)]混合時，會發生沉澱反應。如圖4.12所示，當這些溶液混合時，會形成黃色固體。描述這個化學變化的方程式是什麼？要寫出方程式，我們必須知道反應物和產物的身份。反應物已經被描述過：K₂CrO₄(<em>aq</em>)和Ba(NO₃)₂(<em>aq</em>)。我們有什麼方法可以預測產物的身份嗎？特別是，黃色固體是什麼？</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.12</div>
+        <p class="figure-caption">當將黃色的鉻酸鉀水溶液加入無色的硝酸鋇溶液中時，會沉澱出黃色的鉻酸鋇。</p>
+    </div>
+
+    <div class="info-box">
+        <p><strong>當離子化合物溶於水時，所得溶液含有分離的離子。</strong></p>
+    </div>
+
+    <p>預測這種固體身份的最佳方法是仔細思考可能的產物。為此，我們需要知道當反應物溶液混合時形成的溶液中存在哪些物種。首先，讓我們思考每種反應物溶液的性質。Ba(NO₃)₂(<em>aq</em>)這個標記意味著硝酸鋇[一種白色固體]已溶於水。注意硝酸鋇含有Ba²⁺和NO₃⁻離子。<span class="emphasis">記住：實際上在每種情況下，當含有離子的固體溶於水時，離子會分離並獨立移動。</span>也就是說，Ba(NO₃)₂(<em>aq</em>)不含Ba(NO₃)₂單元；它含有分離的Ba²⁺和NO₃⁻離子(參見圖4.13)。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.13</div>
+        <p class="figure-caption">反應物溶液：(a) Ba(NO₃)₂(<em>aq</em>)和(b) K₂CrO₄(<em>aq</em>)。</p>
+    </div>
+
+    <p>同樣地，由於固體鉻酸鉀含有K⁺和CrO₄²⁻離子，鉻酸鉀的水溶液(通過將固體K₂CrO₄溶於水中製備)含有這些分離的離子(圖4.13)。</p>
+
+    <p>我們可以用兩種方式表示K₂CrO₄(<em>aq</em>)和Ba(NO₃)₂(<em>aq</em>)的混合。首先，我們可以寫成</p>
+
+    <div class="equation">
+        K₂CrO₄(<em>aq</em>) + Ba(NO₃)₂(<em>aq</em>) ⟶ 產物
+    </div>
+
+    <p>然而，更準確的表示是</p>
+
+    <div class="equation">
+        2K⁺(<em>aq</em>) + CrO₄²⁻(<em>aq</em>) + Ba²⁺(<em>aq</em>) + 2NO₃⁻(<em>aq</em>) ⟶ 產物<br>
+        <span class="blue-text" style="font-size: 0.9em;">K₂CrO₄(<em>aq</em>)中的離子</span> &nbsp;&nbsp;&nbsp;&nbsp; <span class="blue-text" style="font-size: 0.9em;">Ba(NO₃)₂(<em>aq</em>)中的離子</span>
+    </div>
+
+    <p>因此，混合溶液含有以下離子</p>
+
+    <div class="equation">
+        K⁺、CrO₄²⁻、Ba²⁺和NO₃⁻
+    </div>
+
+    <p>這些離子如何結合或全部結合形成觀察到的黃色固體？當原始溶液混合時，這不是一個容易回答的問題。事實上，預測化學反應的產物是要求初學化學的學生做的最困難的事情之一。即使是經驗豐富的化學家，當面對新的反應時，也往往不確定會發生什麼。</p>
+
+    <p>化學家會嘗試思考各種可能性，考慮每種可能性的可能性，然後做出預測(一個有根據的猜測)。只有在<span class="emphasis">實驗性地</span>鑑定每種產物後，化學家才能確定發生了什麼反應。然而，有根據的猜測是有用的，因為它提供了一個起點。它告訴我們最有可能找到什麼樣的產物。</p>
+
+    <p>我們已經知道一些有助於我們預測產物的事情：</p>
+
+    <ol>
+        <li>當離子形成固體化合物時，該化合物必須具有零淨電荷。因此，這個反應的產物必須同時含有<span class="emphasis">陰離子和陽離子</span>。例如，K⁺和Ba²⁺不能結合形成固體，CrO₄²⁻和NO₃⁻也不能。</li>
+        <li>大多數離子材料僅含有兩種類型的離子：一種陽離子和一種陰離子(例如，NaCl、KOH、Na₂SO₄、K₂CrO₄、Co(NO₃)₂、NH₄Cl和Na₂CO₃)。</li>
+    </ol>
+
+    <p>從離子K⁺、CrO₄²⁻、Ba²⁺和NO₃⁻的列表中，給定陽離子和給定陰離子的可能組合是</p>
+
+    <div class="equation">
+        K₂CrO₄、KNO₃、BaCrO₄和Ba(NO₃)₂
+    </div>
+
+    <p>這些可能性中哪一個最有可能代表黃色固體？我們知道它不是K₂CrO₄或Ba(NO₃)₂。它們是反應物。它們(溶解的)存在於混合的分離溶液中。固體形成的唯一真正可能性是</p>
+
+    <div class="equation">
+        KNO₃和BaCrO₄
+    </div>
+
+    <p>為了決定這些可能性中哪一個最有可能代表黃色固體，我們需要更多的事實。有經驗的化學家知道K⁺離子和NO₃⁻離子都是無色的。因此，如果固體是KNO₃，它應該是白色的，而不是黃色的。另一方面，CrO₄²⁻離子是黃色的[注意圖4.12中K₂CrO₄(<em>aq</em>)是黃色的]。因此，黃色固體幾乎肯定是BaCrO₄。進一步的測試表明確實如此。</p>
+
+    <p>到目前為止，我們已經確定K₂CrO₄(<em>aq</em>)和Ba(NO₃)₂(<em>aq</em>)之間反應的一種產物是BaCrO₄(<em>s</em>)，但K⁺和NO₃⁻離子發生了什麼？答案是這些離子留在溶液中溶解。也就是說，當K⁺和NO₃⁻離子存在時，KNO₃不會形成固體。在這麼多水中。換句話說，如果我們取白色固體KNO₃(<em>s</em>)，</p>
+
+    <p>將它放在與混合溶液中存在的相同量的水中，它會溶解。因此，當我們混合K₂CrO₄(<em>aq</em>)和Ba(NO₃)₂(<em>aq</em>)時，BaCrO₄(<em>s</em>)形成，但KNO₃留在溶液中[我們將其寫為KNO₃(<em>aq</em>)]。因此，這個沉澱反應的方程式是</p>
+
+    <div class="equation">
+        K₂CrO₄(<em>aq</em>) + Ba(NO₃)₂(<em>aq</em>) ⟶ BaCrO₄(<em>s</em>) + 2KNO₃(<em>aq</em>)
+    </div>
+
+    <p><strong>如果我們通過過濾除去固體BaCrO₄，然後蒸發水，將獲得白色固體KNO₃。</strong></p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.14</div>
+        <p class="figure-caption">K₂CrO₄(<em>aq</em>)和Ba(NO₃)₂(<em>aq</em>)的反應。(a)反應發生前混合溶液的分子級"圖像"。(b)反應發生後形成溶液的分子級"圖像"。(c)反應發生後溶液的照片，顯示底部的固體BaCrO₄。</p>
+    </div>
+
+    <p>現在讓我們考慮另一個例子。當硝酸銀水溶液加入氯化鉀水溶液中時，會形成白色沉澱物。我們可以將我們所知道的表示為</p>
+
+    <div class="equation">
+        AgNO₃(<em>aq</em>) + KCl(<em>aq</em>) ⟶ 未知的白色固體
+    </div>
+
+    <p>記住當離子物質溶於水時，離子會分離，我們可以寫成</p>
+
+    <div class="equation">
+        Ag⁺、NO₃⁻ + K⁺、Cl⁻ ⟶ Ag⁺、NO₃⁻、K⁺、Cl⁻ ⟶ 白色固體<br>
+        <span class="blue-text" style="font-size: 0.9em;">硝酸銀溶液中</span> &nbsp; <span class="blue-text" style="font-size: 0.9em;">氯化鉀溶液中</span> &nbsp;&nbsp; <span class="blue-text" style="font-size: 0.9em;">反應前的混合溶液</span>
+    </div>
+
+    <p>由於我們知道白色固體必須同時含有正離子和負離子，因此可以從這組離子中組裝的可能化合物是</p>
+
+    <div class="equation">
+        AgNO₃、KCl、AgCl和KNO₃
+    </div>
+
+    <p>由於AgNO₃和KCl是溶解在反應物溶液中的物質，我們知道它們不代表白色固體產物。可能性只剩下</p>
+
+    <div class="equation">
+        AgCl和KNO₃
+    </div>
+
+    <p>從上面考慮的例子中，我們知道KNO₃在水中是相當可溶的。因此，當反應物溶液混合時，固體KNO₃不會形成。產物必須是AgCl(這可以通過實驗證實)。這個反應的方程式現在可以寫成</p>
+
+    <div class="equation">
+        AgNO₃(<em>aq</em>) + KCl(<em>aq</em>) ⟶ AgCl(<em>s</em>) + KNO₃(<em>aq</em>)
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.15</div>
+        <p class="figure-caption">通過混合硝酸銀和氯化鉀溶液沉澱氯化銀。K⁺和NO₃⁻離子留在溶液中。</p>
+    </div>
+
+    <p>圖4.15展示了混合AgNO₃和KCl水溶液的結果。圖4.16提供了反應的可視化。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.16</div>
+        <p class="figure-caption">照片和伴隨的分子級表示說明了KCl(<em>aq</em>)與AgNO₃(<em>aq</em>)形成AgCl(<em>s</em>)的反應。請注意，在反應發生之前有混合溶液的照片並不是可能的，因為它是一個我們用來幫助可視化反應的想像步驟。實際上，當兩種溶液混合時，反應立即發生。</p>
+    </div>
+
+    <p>請注意，要做這兩個例子，我們必須知道概念(固體總是有零淨電荷)和事實(KNO₃在水中非常可溶，CrO₄²⁻是黃色的，等等)。</p>
+
+    <div class="info-box">
+        <p><strong>進行化學需要理解想法和記住事實。</strong></p>
+    </div>
+
+    <p>預測沉澱反應中固體產物的身份需要瞭解常見離子物質的溶解度。作為預測沉澱反應產物的輔助，表4.1中給出了一些簡單的溶解度規則。<strong>您應該記住這些規則。</strong></p>
+
+    <p>溶解度規則中使用的"微溶"一詞表示溶解的固體量很小，不引人注目。固體對肉眼來說似乎是不溶的。因此，<span class="emphasis">不溶</span>和<span class="emphasis">微溶</span>這兩個術語經常互換使用。</p>
+
+    <div class="table-title">表4.1</div>
+    <p style="text-align: center; font-weight: bold; margin-top: 10px;">鹽在水中的簡單溶解度規則</p>
+
+    <table>
+        <tr>
+            <td>1. 大多數硝酸鹽(NO₃⁻)鹽是可溶的。</td>
+        </tr>
+        <tr>
+            <td>2. 大多數Na⁺、K⁺和NH₄⁺的鹽是可溶的。</td>
+        </tr>
+        <tr>
+            <td>3. 大多數氯化物鹽是可溶的。值得注意的例外是AgCl、PbCl₂和Hg₂Cl₂。</td>
+        </tr>
+        <tr>
+            <td>4. 大多數硫酸鹽是可溶的。值得注意的例外是BaSO₄、PbSO₄和CaSO₄。</td>
+        </tr>
+        <tr>
+            <td>5. 大多數氫氧化物鹽僅微溶。重要的可溶氫氧化物是NaOH、KOH和Ca(OH)₂(微溶)。</td>
+        </tr>
+        <tr>
+            <td>6. 大多數硫化物(S²⁻)、碳酸鹽(CO₃²⁻)和磷酸鹽(PO₄³⁻)鹽僅微溶。</td>
+        </tr>
+    </table>
+
+    <p>請注意，表4.1中的信息使我們能夠預測，當混合AgNO₃和KCl溶液時，AgCl是形成的白色固體；規則1和2表明KNO₃是可溶的，規則3指出AgCl是(實際上)不溶的。</p>
+
+    <p>當混合含有離子物質的溶液時，如果您根據<span class="emphasis">離子交換</span>來思考，將有助於確定產物。例如，在前面的討論中，我們考慮了混合AgNO₃(<em>aq</em>)和KCl(<em>aq</em>)的結果。在確定產物時，我們從一個反應物中取陽離子並將其與另一個反應物的陰離子結合：</p>
+
+    <div class="equation">
+        Ag⁺ + NO₃⁻ + K⁺ + Cl⁻ ⟶<br>
+        <span style="font-size: 0.9em; display: block; margin-top: 10px;">可能的固體產物</span>
+    </div>
+
+    <p>表4.1中的溶解度規則使我們能夠預測是否會形成產物作為固體。</p>
+
+    <div class="info-box">
+        <p><strong>處理水溶液化學的關鍵是在任何反應發生之前首先<span class="emphasis">關注溶液的實際成分</span>，然後弄清楚這些成分如何相互反應。</strong></p>
+    </div>
+
+    <p>範例4.5說明了三種不同反應的這個過程。</p>
+
+    <div class="critical-box">
+        <div style="background-color: #f57c00; color: white; padding: 8px; margin: -15px -15px 15px -15px; font-weight: bold;">批判性思維</div>
+        <p>如果沒有離子固體在水中可溶，反應能在水溶液中發生嗎？</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>
