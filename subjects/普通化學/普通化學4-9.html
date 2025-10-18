@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學4-9</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .note-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-title {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .steps-box {
+            background-color: #e3f2fd;
+            border: 2px solid #1976d2;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .steps-title {
+            background-color: #1976d2;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -20px -20px 15px -20px;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .flowchart {
+            background-color: #f1f8e9;
+            border-left: 5px solid #8bc34a;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .flowchart-item {
+            background-color: #8bc34a;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .flowchart-arrow {
+            text-align: center;
+            color: #558b2f;
+            font-size: 1.2em;
+            margin: 5px 0;
+        }
+
+        .flowchart-note {
+            color: #33691e;
+            font-style: italic;
+            font-size: 0.9em;
+            margin-left: 20px;
+        }
+
+        ol, ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>4.9 酸鹼反應</h1>
+    
+    <p>在本章的前面部分，我們考慮了阿瑞尼斯對酸和鹼的概念：酸是一種溶於水時產生H⁺離子的物質，鹼是一種產生OH⁻離子的物質。雖然這些概念在根本上是正確的，但擁有一個更通用的鹼定義會更方便，</p>
+
+    <div class="info-box">
+        <p><strong>注：</strong>第7章將詳細討論Brønsted-Lowry的酸鹼概念。</p>
+    </div>
+
+    <p>該定義涵蓋不產生OH⁻離子的物質。這樣的定義是由Brønsted和Lowry提出的，他們將酸和鹼定義如下：</p>
+
+    <div class="equation">
+        酸是質子供給者。<br>
+        鹼是質子接受者。
+    </div>
+
+    <p>我們如何識別酸鹼反應？對於化學初學者來說，最困難的任務之一是預測當兩種溶液混合時可能發生的反應。對於沉澱反應，我們發現處理這個問題的最佳方法是關注混合溶液中實際存在的物種。這也適用於酸鹼反應。例如，當將氯化氫（HCl）的水溶液與氫氧化鈉（NaOH）的水溶液混合時，混合溶液含有H⁺、Cl⁻、Na⁺和OH⁻離子，因為HCl是強酸而NaOH是強鹼。會發生什麼反應（如果有的話）？首先，NaCl會沉澱嗎？從表4.1我們知道NaCl在水中是可溶的，因此不會沉澱。Na⁺和Cl⁻離子是旁觀離子。另一方面，由於水是非電解質，大量的H⁺和OH⁻離子不能在溶液中共存。它們會反應形成H₂O分子：</p>
+
+    <div class="equation">
+        H⁺(aq) + OH⁻(aq) ⟶ H₂O(l)
+    </div>
+
+    <p>這是當HCl和NaOH的水溶液混合時發生反應的淨離子方程式。</p>
+
+    <p>接下來，考慮將醋酸（HC₂H₃O₂）的水溶液與氫氧化鉀（KOH）的水溶液混合。在我們之前對電導率的討論中，我們說醋酸的水溶液是弱電解質。因此，醋酸在任何很大程度上都不會解離成離子。事實上，在水溶液中，99%的HC₂H₃O₂分子保持未解離。然而，當固體KOH溶於水中時，它會完全解離以產生K⁺和OH⁻離子。因此，在混合HC₂H₃O₂和KOH水溶液之前，<span class="highlight">在任何反應發生之前</span>，主要物種是H₂O、HC₂H₃O₂、K⁺和OH⁻。哪個反應會發生？一個可能的沉澱反應涉及K⁺和OH⁻，但我們知道KOH是可溶的。另一個可能性是涉及氫氧根離子和質子供給者的反應。在溶液中有質子來源嗎？答案是肯定的——HC₂H₃O₂分子。OH⁻離子對質子具有如此強的親和力，以至於它可以從HC₂H₃O₂分子中剝離它們。因此該反應的淨離子方程式是</p>
+
+    <div class="equation">
+        OH⁻(aq) + HC₂H₃O₂(aq) ⟶ H₂O(l) + C₂H₃O₂⁻(aq)
+    </div>
+
+    <p>這個反應說明了一個非常重要的一般原理：<span class="highlight">氫氧根離子是如此強的鹼，對於任何弱酸，它被假定與溶於水中的任何弱酸完全反應。</span>當然，OH⁻離子也與強酸溶液中的H⁺離子完全反應。</p>
+
+    <p>我們現在將處理水溶液中酸鹼反應的化學計量。該過程與之前使用的基本相同。</p>
+
+    <div class="flowchart">
+        <div class="flowchart-item">列出存在的物種</div>
+        <div class="flowchart-arrow">↓</div>
+        <div class="flowchart-note">撰寫反應式</div>
+        <div class="flowchart-item">平衡淨離子方程式</div>
+        <div class="flowchart-arrow">↓</div>
+        <div class="flowchart-note">確定反應物的莫耳數</div>
+        <div class="flowchart-item">確定限量反應物</div>
+        <div class="flowchart-arrow">↓</div>
+        <div class="flowchart-note">確定產物的莫耳數</div>
+        <div class="flowchart-item">檢查產物的單位</div>
+    </div>
+
+    <div class="steps-box">
+        <div class="steps-title">步驟 酸鹼反應的計算</div>
+        <ol>
+            <li>列出在任何反應發生<span class="highlight">之前</span>，混合溶液中存在的物種，並判斷將發生哪個反應。</li>
+            <li>為這個反應寫出平衡淨離子方程式。</li>
+            <li>將給定的反應物量轉換為莫耳數。對於溶液中的反應，使用原始溶液的體積及其莫耳濃度。</li>
+            <li>在適當情況下確定限量反應物。</li>
+            <li>計算所需反應物或產物的莫耳數。</li>
+            <li>根據問題的要求，轉換為克數或溶液體積。</li>
+        </ol>
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.18</div>
+        <p class="figure-caption">用鹼滴定酸。(a)滴定劑（鹼）在滴定管中，而燒杯中含有酸溶液以及少量指示劑。(b)在滴定過程中，當鹼一滴一滴地加入到燒杯中的酸性溶液時，指示劑會改變顏色，但混合後顏色會消失。(c)化學計量（當量）點由永久的指示劑顏色變化標記。所加入鹼的體積是最終和初始滴定管讀數之間的差值。</p>
+    </div>
+
+    <p>酸鹼反應通常被稱為<span class="term">中和反應</span>。當剛好加入足夠的鹼與溶液中的所有酸完全反應時，我們說酸已被<span class="highlight">中和</span>。</p>
+
+    <h2>酸鹼滴定</h2>
+
+    <p>酸鹼<span class="term">滴定</span>是<span class="term">容量分析</span>的一個例子，這是一種技術，其中使用一種溶液來分析另一種溶液。用於進行分析的溶液稱為<span class="term">滴定劑</span>，並從稱為<span class="term">滴定管</span>的裝置中輸送，該裝置可以精確測量體積。滴定中的點，即加入了足夠的滴定劑以與被測定物質完全反應，稱為<span class="term">當量點</span>或<span class="term">化學計量點</span>。該點通常通過稱為<span class="term">指示劑</span>的化學物質的顏色變化來標記。滴定過程如圖4.18所示。</p>
+
+    <p>要使滴定成功，必須滿足以下要求：</p>
+
+    <ul>
+        <li>滴定劑的濃度必須已知。這種滴定劑稱為<span class="term">標準溶液</span>。</li>
+        <li>滴定劑與被分析物質之間的確切反應必須已知。</li>
+        <li>化學計量（當量）點必須已知。通常使用在化學計量點或非常接近化學計量點改變顏色的指示劑。</li>
+        <li>指示劑改變顏色的點稱為<span class="term">終點</span>。目標是選擇一個終點與化學計量點重合的指示劑。酸鹼滴定中非常常用的指示劑是<span class="term">酚酞</span>，它在酸中無色，當用鹼滴定酸時在終點變成粉紅色。</li>
+        <li>達到化學計量點所需的滴定劑體積必須盡可能準確地知道。</li>
+    </ul>
+
+    <div class="info-box">
+        <p><strong>注：</strong>理想情況下，終點和化學計量點應該重合。</p>
+    </div>
+
+    <p>我們將在此僅簡要處理酸鹼滴定，但將在第8章更詳細地回到滴定和指示劑的主題。當被分析物質含有酸時，存在的酸量通常通過用含有氫氧根離子的標準溶液滴定來確定。</p>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 4.10</div>
+        <h3>中和反應 I</h3>
+        
+        <p>中和25.0 mL的0.350 <em>M</em> NaOH溶液需要多少體積的0.100 <em>M</em> HCl溶液？</p>
+        
+        <p><strong>解答</strong></p>
+        
+        <p><em>我們要去哪裡？</em></p>
+        <p>我們被要求確定中和給定體積的NaOH溶液所需的HCl溶液體積。</p>
+
+        <p><em>我們知道什麼？</em></p>
+        <p>我們知道NaOH溶液的濃度和體積以及HCl溶液的濃度。</p>
+
+        <p><em>我們如何到達那裡？</em></p>
+        <p>HCl和NaOH相互反應，因此我們需要使用平衡方程式來確定兩種反應物之間的莫耳比。由於我們同時具有體積和莫耳濃度，因此可以確定每種反應物的莫耳數。為此，我們必須考慮反應物溶液中的成分。</p>
+
+        <p>在任何反應發生之前，混合溶液中存在的物種是</p>
+
+        <div class="equation">
+            H⁺, Cl⁻, <span style="color: #1976d2;">從HCl(aq)</span><br>
+            Na⁺, OH⁻, <span style="color: #1976d2;">從NaOH(aq)</span><br>
+            和 H₂O
+        </div>
+
+        <p>將發生哪個反應？兩種可能性是</p>
+
+        <div class="equation">
+            Na⁺(aq) + Cl⁻(aq) ⟶ NaCl(s)<br>
+            H⁺(aq) + OH⁻(aq) ⟶ H₂O(l)
+        </div>
+
+        <p>由於NaCl是可溶的，第一個反應不會發生（Na⁺和Cl⁻是旁觀離子）。然而，正如我們之前所見，H⁺和OH⁻離子形成H₂O的反應確實會發生。</p>
+
+        <p>該反應的平衡淨離子方程式是</p>
+
+        <div class="equation">
+            H⁺(aq) + OH⁻(aq) ⟶ H₂O(l)
+        </div>
+
+        <p>接下來，我們計算0.350 <em>M</em> NaOH的25.0 mL樣品中OH⁻離子的莫耳數：</p>
+
+        <div class="equation">
+            25.0 mL NaOH × (1 L)/(1000 mL) × (0.350 mol OH⁻)/(L NaOH) = 8.75 × 10⁻³ mol OH⁻
+        </div>
+
+        <p>這個問題需要添加剛好足夠的H⁺離子來與存在的OH⁻離子完全反應。因此，我們不需要擔心確定限量反應物。</p>
+
+        <p>由於H⁺和OH⁻以1:1的比例反應，因此需要8.75 × 10⁻³莫耳的H⁺離子來中和存在的OH⁻離子。</p>
+
+        <p>可以按如下方式計算提供此量H⁺離子所需的0.100 <em>M</em> HCl的體積（<em>V</em>）：</p>
+
+        <div class="equation">
+            <em>V</em> × (0.100 mol H⁺)/(L) = 8.75 × 10⁻³ mol H⁺
+        </div>
+
+        <p>求解<em>V</em>得到</p>
+
+        <div class="equation">
+            <em>V</em> = 8.75 × 10⁻² L
+        </div>
+
+        <p>因此需要8.75 × 10⁻² L（87.5 mL）的0.100 <em>M</em> HCl來中和25.0 mL的0.350 <em>M</em> NaOH。</p>
+
+        <p><em>答案合理嗎？</em></p>
+        <p>反應物之間的莫耳比是1:1。NaOH比HCl更濃縮，因此HCl的體積大於NaOH的體積是合理的。</p>
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖片說明</div>
+        <p class="figure-caption">Hazmat（危險材料）小組中和氯化氫（HCl）洩漏。</p>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 4.11</div>
+        <h3>中和反應 II</h3>
+        
+        <p>在某個實驗中，混合了28.0 mL的0.250 <em>M</em> HNO₃和53.0 mL的0.320 <em>M</em> KOH。計算反應完成後過量的H⁺或OH⁻離子的量以及水的形成量。反應完成後，過量的H⁺或OH⁻離子的濃度是多少？</p>
+        
+        <p><strong>解答</strong></p>
+        
+        <p><em>我們要去哪裡？</em></p>
+        <p>我們被要求確定當酸和鹼反應時形成的水量和過量反應物的量。</p>
+
+        <p><em>我們知道什麼？</em></p>
+        <p>我們知道反應物的體積和濃度。</p>
+
+        <p><em>我們如何到達那裡？</em></p>
+        <p>酸和鹼相互反應，因此我們需要使用平衡方程式來確定兩種反應物之間的莫耳比。由於我們同時具有體積和莫耳濃度，因此可以確定每種反應物的莫耳數。為此，我們必須考慮反應物溶液中的成分。</p>
+
+        <p>可供反應的物種是</p>
+
+        <div class="equation">
+            H⁺, NO₃⁻, <span style="color: #1976d2;">從HNO₃溶液</span><br>
+            K⁺, OH⁻, <span style="color: #1976d2;">從KOH溶液</span><br>
+            和 H₂O
+        </div>
+
+        <p>由於KNO₃是可溶的，K⁺和NO₃⁻是旁觀離子，因此淨離子方程式是</p>
+
+        <div class="equation">
+            H⁺(aq) + OH⁻(aq) ⟶ H₂O(l)
+        </div>
+
+        <p>我們接下來計算存在的H⁺和OH⁻離子的量。</p>
+
+        <div class="equation">
+            28.0 mL HNO₃ × (1 L)/(1000 mL) × (0.250 mol H⁺)/(L) = 7.00 × 10⁻³ mol H⁺
+        </div>
+
+        <div class="equation">
+            53.0 mL KOH × (1 L)/(1000 mL) × (0.320 mol OH⁻)/(L) = 1.70 × 10⁻² mol OH⁻
+        </div>
+
+        <p>由於H⁺和OH⁻以1:1的比例反應，限量反應物是H⁺。因此7.00 × 10⁻³莫耳的H⁺離子將與7.00 × 10⁻³莫耳的OH⁻離子反應，形成7.00 × 10⁻³莫耳的H₂O。</p>
+
+        <p>從以下差值獲得過量的OH⁻離子量：</p>
+
+        <div class="equation">
+            原始量 - 消耗量 = 過量量<br>
+            1.70 × 10⁻² mol OH⁻ - 7.00 × 10⁻³ mol OH⁻ = 1.00 × 10⁻² mol OH⁻
+        </div>
+
+        <p>混合溶液的體積是各個體積的總和：</p>
+
+        <div class="equation">
+            HNO₃的原始體積 + KOH的原始體積 = 總體積<br>
+            28.0 mL + 53.0 mL = 81.0 mL = 8.10 × 10⁻² L
+        </div>
+
+        <p>因此過量OH⁻離子的莫耳濃度是</p>
+
+        <div class="equation">
+            <em>M</em> = (mol OH⁻)/(L 溶液)<br><br>
+            = (1.00 × 10⁻² mol OH⁻)/(8.10 × 10⁻² L)<br><br>
+            = 0.123 <em>M</em> OH⁻
+        </div>
+
+        <p><em>答案合理嗎？</em></p>
+        <p>反應物之間的莫耳比是1:1。KOH比HNO₃更濃縮，並且使用了更大體積的KOH。因此OH⁻過量是合理的。</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-title">範例 4.12</div>
+        <h3>中和分析</h3>
+        
+        <p>一位環境化學家分析了來自已知產生化合物四氯化碳（CCl₄）和苯甲酸（HC₇H₅O₂）的工業過程的廢水（釋放的廢料）。苯甲酸是一種弱酸，每個分子有一個酸性氫原子。將重0.3518 g的該廢水樣品放入水中並劇烈搖動以溶解苯甲酸。所得水溶液需要10.59 mL的0.1546 <em>M</em> NaOH進行中和。計算原始樣品中HC₇H₅O₂的質量百分比。</p>
+        
+        <p><strong>解答</strong></p>
+        
+        <p><em>我們要去哪裡？</em></p>
+        <p>我們被要求確定混合物（廢水）中酸的質量百分比。</p>
+
+        <p><em>我們知道什麼？</em></p>
+        <p>我們知道廢水的質量以及將其滴定至終點所需鹼的體積和濃度。</p>
+
+        <p><em>我們如何到達那裡？</em></p>
+
+        <div class="equation">
+            苯甲酸的質量百分比 = (苯甲酸的質量)/(混合物的質量) × 100%
+        </div>
+
+        <p>我們知道混合物的質量是0.3518 g，所以我們將問題改為「<em>混合物中苯甲酸的質量是多少？</em>」</p>
+
+        <p>在這種情況下，樣品是含有CCl₄和HC₇H₅O₂的混合物，它用OH⁻離子滴定。顯然，CCl₄不是酸（它不含氫原子），因此我們可以假設它不與OH⁻離子反應。然而，HC₇H₅O₂是酸。它每個分子提供一個H⁺離子與OH⁻離子反應，如下所示：</p>
+
+        <div class="equation">
+            HC₇H₅O₂(aq) + OH⁻(aq) ⟶ H₂O(l) + C₇H₅O₂⁻(aq)
+        </div>
+
+        <p>雖然HC₇H₅O₂是弱酸，但OH⁻離子是如此強的鹼，我們可以假設每個加入的OH⁻離子都會與HC₇H₅O₂分子反應，直到所有苯甲酸都被消耗。</p>
+
+        <p>我們必須首先確定與所有HC₇H₅O₂反應所需的OH⁻離子的莫耳數：</p>
+
+        <div class="equation">
+            10.59 mL NaOH × (1 L)/(1000 mL) × (0.1546 mol OH⁻)/(L NaOH)<br>
+            = 1.637 × 10⁻³ mol OH⁻
+        </div>
+
+        <p>雖然HC₇H₅O₂是弱酸，但OH⁻離子是如此強的鹼，我們可以假設每個加入的OH⁻離子都會與HC₇H₅O₂分子反應，直到所有苯甲酸都被消耗。</p>
+
+        <p>我們必須首先確定與所有HC₇H₅O₂反應所需的OH⁻離子的莫耳數：</p>
+
+        <div class="equation">
+            10.59 mL NaOH × (1 L)/(1000 mL) × (0.1546 mol OH⁻)/(L NaOH)<br>
+            = 1.637 × 10⁻³ mol OH⁻
+        </div>
+
+        <p>這個數字也是存在的HC₇H₅O₂的莫耳數。酸的克數是使用其莫耳質量計算的：</p>
+
+        <div class="equation">
+            1.637 × 10⁻³ mol HC₇H₅O₂ × (122.125 g HC₇H₅O₂)/(1 mol HC₇H₅O₂) = 0.1999 g HC₇H₅O₂
+        </div>
+
+        <p>原始樣品中HC₇H₅O₂的質量百分比是</p>
+
+        <div class="equation">
+            (0.1999 g)/(0.3518 g) × 100% = 56.82%
+        </div>
+    </div>
+
+    <div class="info-box">
+        <p>化學系統通常看起來很難處理，僅僅是因為有許多成分。如果你<span class="highlight">思考</span>所涉及的<span class="highlight">化學性質</span>，解決涉及存在多個成分的溶液問題就會變得簡單。<em>成功的關鍵是寫下溶液中的所有成分，並專注於每個成分的化學性質。</em>我們一直在強調這種方法來處理溶液中離子之間的反應。養成在試圖決定可能發生哪些反應之前先寫下溶液成分的習慣。</p>
+    </div>
+
+    <div class="note-box">
+        <p><strong>注：</strong>分析複雜溶液的第一步是寫下存在的成分，並專注於每個成分的化學性質。</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

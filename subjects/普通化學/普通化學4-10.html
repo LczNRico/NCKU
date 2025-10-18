@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學4-10</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th {
+            background-color: #1a5490;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .table-caption {
+            background-color: #2e7d32;
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .critical-thinking {
+            background-color: #fff3cd;
+            border-left: 5px solid #f5a623;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            background-color: #f5a623;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .oxidation-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .reduction-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #03a9f4;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .summary-box {
+            background-color: #f3e5f5;
+            border: 2px solid #6a1b9a;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .mnemonic {
+            background-color: #fff9c4;
+            border-left: 5px solid #fbc02d;
+            padding: 10px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>4.10 氧化還原反應</h1>
+    
+    <p>如我們所見，許多重要物質是離子化合物。例如，氯化鈉可由元素態的鈉和氯反應生成：</p>
+
+    <div class="equation">
+        2Na(s) + Cl₂(g) ⟶ 2NaCl(s)
+    </div>
+
+    <p>在此反應中，固態鈉含有中性鈉原子，與含有雙原子Cl₂分子的氯氣反應，生成含有Na⁺和Cl⁻離子的離子固體NaCl。此過程如圖4.19所示。<span class="emphasis">像這樣涉及一個或多個電子轉移的反應，稱為</span><span class="highlight">氧化還原反應</span><span class="emphasis">或</span><span class="highlight">氧還反應</span>。</p>
+
+    <p>許多重要的化學反應涉及氧化和還原。事實上，大多數用於能源生產的反應都是氧還反應。在人類體內，糖類、脂肪和蛋白質的氧化提供了生命所需的能量。燃燒反應也涉及氧化和還原，它提供了大部分用於驅動我們文明的能源。一個例子是甲烷與氧氣的反應：</p>
+
+    <div class="equation">
+        CH₄(g) + 2O₂(g) ⟶ CO₂(g) + 2H₂O(g) + 能量
+    </div>
+
+    <p>儘管此反應中的反應物或生成物都不是離子化合物，但該反應仍被認為涉及電子從碳轉移到氧。為了解釋這一點，我們必須引入氧化數的概念。</p>
+
+    <h2>氧化數</h2>
+
+    <p><span class="term">氧化數</span>（又稱<span class="term">氧化態</span>）的概念提供了一種在氧化還原反應中追蹤電子的方法。氧化數是由一組規則定義的，這些規則大多描述如何分配含有共價鍵的化合物中的共用電子。然而，在討論這些規則之前，我們需要討論鍵中電子的分布。</p>
+
+    <p>回想第4.1節中對水分子的討論，氧對電子的吸引力大於氫，導致水分子中的O—H鍵具有極性。這種現象也發生在其他鍵中，我們將在第13章詳細討論極性這個主題。現在，我們將滿足於一些一般性指導原則，以幫助我們</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.19</div>
+        <p class="figure-caption">固態鈉和氣態氯反應生成固態氯化鈉的反應示意圖。圖中顯示從左到右：塊狀金屬鈉、裝有黃綠色氯氣的瓶子、反應後的白色氯化鈉粉末。下方以球棍模型展示：鈉原子（灰色球）+ 氯分子（綠色球對）⟶ 離子化合物氯化鈉（Na⁺和Cl⁻交替排列的晶格結構）。</p>
+    </div>
+
+    <p>在氧化還原反應中追蹤電子。對共用電子吸引力最強的非金屬位於週期表右上角。它們是氟、氧、氮和氯。這些原子吸引共用電子的相對能力為：</p>
+
+    <div class="equation">
+        F > O > N ≈ Cl<br>
+        <span style="color: #1976d2; font-size: 0.9em;">
+        最強吸引力&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最弱吸引力<br>
+        對電子&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;對電子
+        </span>
+    </div>
+
+    <p>也就是說，氟吸引共用電子的程度最大，其次是氧，然後是氮和氯。</p>
+
+    <p>分配氧化數的規則列於表4.3中。應用這些規則可以分配大多數化合物中的氧化數。這些原理在範例4.13中說明。</p>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 4.13</div>
+        <h3>分配氧化數</h3>
+        
+        <p>為以下原子中的所有原子分配氧化數。</p>
+        
+        <p><strong>a.</strong> CO₂&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>b.</strong> SF₆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>c.</strong> NO₃⁻</p>
+        
+        <p><strong>解答</strong></p>
+        
+        <p><strong>a.</strong> 此處優先適用的規則是氧被分配氧化數-2。碳的氧化數可以通過認識到由於CO₂沒有電荷，氧化數的總和必須為0來確定。由於每個氧為-2且有兩個氧原子，碳原子必須被分配氧化數+4：</p>
+
+        <div class="equation" style="font-size: 1.2em;">
+            CO₂<br>
+            <span style="color: #f44336;">+4</span>&nbsp;&nbsp;<span style="color: #2196f3;">-2（每個氧）</span>
+        </div>
+
+        <p><strong>b.</strong> 由於氟對共用電子的吸引力較大，我們首先分配其氧化數。因為氟在離子化合物中的電荷為1-，我們將每個氟原子的氧化數分配為-1。然後必須為硫分配氧化數+6，以平衡六個氟原子的總共-6：</p>
+
+        <div class="equation" style="font-size: 1.2em;">
+            SF₆<br>
+            <span style="color: #f44336;">+6</span>&nbsp;&nbsp;<span style="color: #2196f3;">-1（每個氟）</span>
+        </div>
+
+        <p><strong>c.</strong> 由於氧對共用電子的吸引力大於氮，我們首先分配其氧化數為-2。因為三個氧的氧化數總和為-6，且NO₃⁻離子上的淨電荷為1-，氮必須具有氧化數+5：</p>
+
+        <div class="equation" style="font-size: 1.2em;">
+            NO₃⁻<br>
+            <span style="color: #f44336;">+5</span>&nbsp;&nbsp;<span style="color: #2196f3;">-2（每個氧）</span>
+        </div>
+
+        <div class="info-box">
+            <p><strong>實際電荷以<em>n</em>-或<em>n</em>+表示。氧化數（非實際電荷）以-<em>n</em>或+<em>n</em>表示。</strong>例如，對於NO₃⁻，整體電荷為1-；N的氧化數為+5，O的氧化數為-2。</p>
+        </div>
+    </div>
+
+    <p>接下來，讓我們考慮Fe₃O₄中原子的氧化數，這是磁鐵礦的主要成分，是一種鐵礦石，導致許多類型岩石和土壤呈紅褐色。我們為每個氧原子分配其常見的氧化數-2。三個鐵原子必須產生總共+8的氧化數以平衡</p>
+
+    <div class="table-caption">表4.3</div>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">分配氧化數的規則</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.</td>
+                <td>元素態原子的氧化數為0。例如，Na(s)、O₂(g)、O₃(g)和Hg(l)中每個原子的氧化數為0。</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>單原子離子的氧化數與其電荷相同。例如，Na⁺離子的氧化數為+1。</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>在其與非金屬的共價化合物中，氫被分配氧化數+1。例如，在化合物HCl、NH₃、H₂O和CH₄中，氫被分配氧化數+1。</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>氧在其共價化合物中被分配氧化數-2，例如CO、CO₂、SO₂和SO₃。此規則的例外情況發生在過氧化物（含有O₂²⁻基團的化合物）中，其中每個氧被分配氧化數-1。最著名的過氧化物例子是過氧化氫（H₂O₂）。</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>在二元化合物中，對鍵中電子吸引力較大的元素被分配一個負氧化數，等於其在離子化合物中的電荷。例如，氟總是被分配氧化數-1。也就是說，為了計算電子，假設氟為F⁻。氮通常被分配-3。例如，在NH₃中，氮被分配氧化數-3；在H₂S中，硫的氧化數為-2；在HI中，碘被分配氧化數-1；依此類推。</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>電中性化合物的氧化數總和必須為零，對於任何離子物種，氧化數總和必須等於整體電荷。例如，對於水中的氫和氧原子，氧化數之和為0；對於CO₃²⁻，碳和氧原子的氧化數之和為-2；對於NH₄⁺，氮和氫原子的氧化數之和為+1。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="critical-thinking">
+        <div class="critical-title">批判性思考</div>
+        <p>如果氧的氧化數被定義為-1而不是-2，會產生什麼影響（如果有的話）？這對氫的氧化數會有什麼影響？</p>
+    </div>
+
+    <p>四個氧的總共-8。因此每個鐵原子的氧化數為+8/3。氧化數為非整數值可能看起來奇怪，因為電荷以整數表示。然而，儘管它們很少見，非整數氧化數確實會出現，這是因為表4.3中的規則劃分電子的方式相當任意。在化合物Fe₃O₄中，例如，規則假設所有鐵原子都相等，而實際上這種化合物最好被視為含有四個O²⁻離子、兩個Fe³⁺離子和一個Fe²⁺離子（每個化學式單位）。（注意鐵的「平均」電荷為8/3+，等於我們上面確定的氧化數。）非整數氧化數不應使您感到困惑。它們的作用與整數氧化數相同——用於追蹤電子。</p>
+
+    <h2>氧化還原反應的特徵</h2>
+
+    <p>氧化還原反應的特徵是電子轉移。在某些情況下，這種轉移以字面意義發生形成離子，例如在此反應中：</p>
+
+    <div class="equation">
+        2Na(s) + Cl₂(g) ⟶ 2NaCl(s)
+    </div>
+
+    <p>然而，有時這種轉移是以更形式化的意義發生，例如在甲烷的燃燒中（給出每個原子的氧化數）：</p>
+
+    <div class="equation">
+        CH₄(g) + 2O₂(g) ⟶ CO₂(g) + 2H₂O(g)<br>
+        <span style="color: #1976d2; font-size: 0.9em;">氧化數：</span><br>
+        <span style="color: #f44336;">-4</span> <span style="color: #2196f3;">+1</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #2196f3;">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #f44336;">+4</span> <span style="color: #2196f3;">-2</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #2196f3;">+1</span> <span style="color: #2196f3;">-2</span><br>
+        <span style="font-size: 0.85em;">（每個H）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（每個O）&nbsp;&nbsp;（每個H）</span>
+    </div>
+
+    <p>請注意，O₂中氧的氧化數為0，因為它是元素態形式。在此反應中沒有離子化合物，但我們仍然可以用電子轉移的術語來描述這個過程。請注意，碳在CH₄中的氧化數從-4變為在CO₂中的+4。這樣的變化可以通過失去八個電子（符號e⁻代表一個電子）來解釋：</p>
+
+    <div class="equation">
+        CH₄ ⟶ CO₂ + 8e⁻<br>
+        <span style="color: #f44336;">-4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+4</span>
+    </div>
+
+    <p>另一方面，每個氧從O₂中的氧化數0變為H₂O和CO₂中的-2，表示每個原子獲得兩個電子。由於涉及四個氧原子，這是獲得八個電子的過程：</p>
+
+    <div class="equation">
+        2O₂ + 8e⁻ ⟶ CO₂ + 2H₂O<br>
+        <span style="color: #2196f3;">0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4(-2) = -8</span>
+    </div>
+
+    <p>氫的氧化數沒有發生變化，因此它在形式上不涉及電子轉移過程。</p>
+
+    <p>有了這個背景，我們現在可以定義一些重要術語。<span class="highlight">氧化</span>是氧化數的<span class="emphasis">增加</span>（失去電子）。<span class="highlight">還原</span>是氧化數的<span class="emphasis">減少</span>（獲得電子）。因此在反應</p>
+
+    <div class="equation">
+        2Na(s) + Cl₂(g) ⟶ 2NaCl(s)<br>
+        <span style="color: #2196f3; font-size: 0.9em;">0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+1&nbsp;&nbsp;-1</span>
+    </div>
+
+    <p>鈉被氧化，氯被還原。此外，Cl₂被稱為<span class="highlight">氧化劑</span>（電子接受體），Na被稱為<span class="highlight">還原劑</span>（電子給體）。這些概念總結於圖4.20中。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖4.20</div>
+        <p class="figure-caption">氧化還原過程的摘要，其中M被氧化，X被還原。圖中顯示兩個圓形區域，左側是金黃色的M和藍綠色的X，通過「電子轉移」箭頭連接到右側的M⁺（較小的金黃色球）和X⁻（較大的藍綠色球）。</p>
+        
+        <table style="margin-top: 15px;">
+            <tr>
+                <th style="background-color: #4caf50;">被氧化</th>
+                <th style="background-color: #03a9f4;">被還原</th>
+            </tr>
+            <tr>
+                <td><span class="emphasis">失去</span>電子</td>
+                <td><span class="emphasis">獲得</span>電子</td>
+            </tr>
+            <tr>
+                <td>氧化數<span class="emphasis">增加</span></td>
+                <td>氧化數<span class="emphasis">減少</span></td>
+            </tr>
+            <tr>
+                <td>還原劑</td>
+                <td>氧化劑</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-box">
+        <p><strong>氧化是氧化數的增加。還原是氧化數的減少。</strong></p>
+    </div>
+
+    <div class="mnemonic">
+        <p>一個有用的記憶工具是<strong>OIL RIG</strong>（<strong>O</strong>xidation <strong>I</strong>nvolves <strong>L</strong>oss；<strong>R</strong>eduction <strong>I</strong>nvolves <strong>G</strong>ain，氧化涉及失去；還原涉及獲得）。</p>
+    </div>
+
+    <p>關於反應</p>
+
+    <div class="equation">
+        CH₄(g) + 2O₂(g) ⟶ CO₂(g) + 2H₂O(g)<br>
+        <span style="color: #2196f3; font-size: 0.9em;">-4&nbsp;&nbsp;+1&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+4&nbsp;&nbsp;-2&nbsp;&nbsp;&nbsp;&nbsp;+1&nbsp;&nbsp;-2</span>
+    </div>
+
+    <p>我們可以說以下內容：</p>
+
+    <div class="summary-box">
+        <p>碳被氧化，因為其氧化數增加（碳在形式上失去了電子）。</p>
+        
+        <p>氧被還原，如其氧化數的減少所示（氧在形式上獲得了電子）。</p>
+        
+        <p>CH₄是還原劑。</p>
+        
+        <p>O₂是氧化劑。</p>
+    </div>
+
+    <div class="info-box">
+        <p><strong>氧化劑被還原，還原劑在氧還反應中被氧化。</strong></p>
+    </div>
+
+    <p>請注意，當命名氧化劑或還原劑時，指定的是<span class="emphasis">整個化合物</span>，而不僅僅是經歷氧化數變化的元素。</p>
+
+    <div class="critical-thinking">
+        <div class="critical-title">批判性思考</div>
+        <p>道爾頓認為原子是不可分割的。湯姆森和拉塞福幫助證明這不是真的。如果原子是不可分割的呢？這將如何影響您在本章中學到的反應類型？</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>
