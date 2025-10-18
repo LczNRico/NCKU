@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學5-3</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+
+        .law-box {
+            background-color: #e8f5e9;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .law-item {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .note-box {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffd54f;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .solution-section {
+            margin: 15px 0;
+        }
+
+        .solution-heading {
+            font-weight: bold;
+            color: #1976d2;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        .check-box {
+            background-color: #f3e5f5;
+            border-left: 5px solid #9c27b0;
+            padding: 12px;
+            margin: 15px 0;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>5.3 理想氣體定律</h1>
+    
+    <p>我們已經考慮了三個通過實驗觀察揭示氣體行為的定律：</p>
+
+    <div class="law-box">
+        <div class="law-item">
+            <strong>波以耳定律：</strong> 
+            <span style="font-family: 'Times New Roman', serif; font-size: 1.1em;">
+                <em>V</em> = <em>k</em>/<em>P</em>
+            </span>
+            （在恆定 <em>T</em> 和 <em>n</em> 時）
+        </div>
+        <div class="law-item">
+            <strong>查理定律：</strong> 
+            <span style="font-family: 'Times New Roman', serif; font-size: 1.1em;">
+                <em>V</em> = <em>bT</em>
+            </span>
+            （在恆定 <em>P</em> 和 <em>n</em> 時）
+        </div>
+        <div class="law-item">
+            <strong>亞佛加厥定律：</strong> 
+            <span style="font-family: 'Times New Roman', serif; font-size: 1.1em;">
+                <em>V</em> = <em>an</em>
+            </span>
+            （在恆定 <em>T</em> 和 <em>P</em> 時）
+        </div>
+    </div>
+
+    <p>這些關係顯示氣體體積如何依賴於壓力、溫度和存在的氣體莫耳數，可以如下組合：</p>
+
+    <div class="equation">
+        <em>V</em> = <em>R</em>(<em>Tn</em>/<em>P</em>)
+    </div>
+
+    <p>其中 <em>R</em> 是組合比例常數，稱為<span class="highlight">通用氣體常數</span>。當壓力以大氣壓表示且體積以公升表示時，<em>R</em> 的值為 0.08206 L atm K<sup>−1</sup> mol<sup>−1</sup>。前述方程式可以重新排列為更熟悉的理想氣體定律形式：</p>
+
+    <div class="equation" style="font-size: 1.5em;">
+        <em>PV</em> = <em>nRT</em>
+    </div>
+
+    <p>理想氣體定律是氣體的<span class="term">狀態方程式</span>，其中氣體的狀態是其特定<span class="term">狀態</span>的條件，由壓力、體積、溫度和莫耳數描述。知道這四個性質中的任何三個就足以完全定義氣體的狀態，因為第四個性質可以從理想氣體定律的方程式中確定。</p>
+
+    <p>重要的是要認識到理想氣體定律是一個<span class="term">經驗方程式</span>——它是基於對氣體性質的實驗測量而得出的。實質上，遵守此方程式的氣體被稱為<span class="highlight">理想</span>行為。換句話說，這個方程式定義了理想氣體的行為，這是一個假設的物質。理想氣體方程式最好被視為<span class="term">極限定律</span>——它表達了真實氣體在低壓和高溫下<span class="emphasis">接近</span>的行為。大多數氣體在 1 atm 以下的壓力下遵守此方程式，只會產生極小的誤差。<span class="highlight">除非給您相反的資訊，否則在本書中處理涉及氣體的問題時，您應該假設理想氣體行為。</span></p>
+
+    <div class="note-box">
+        <p><strong>註：</strong><em>R</em> = 0.08206 L atm K<sup>−1</sup> mol<sup>−1</sup></p>
+        <p><strong>註：</strong>理想氣體定律在 1 atm 以下的壓力下最適用。</p>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 5.2</div>
+        <h3>理想氣體定律 I</h3>
+        
+        <p>氫氣 (H₂) 樣品在 0°C 的溫度和 1.5 atm 的壓力下具有 8.56 L 的體積。計算此氣體樣品中存在的 H₂ 莫耳數。</p>
+        
+        <div class="solution-section">
+            <p><strong>解答</strong> 對 <em>n</em> 求解理想氣體定律得到</p>
+
+            <div class="equation">
+                <em>n</em> = <em>PV</em>/(<em>RT</em>)
+            </div>
+
+            <p>在此情況下 <em>P</em> = 1.5 atm，<em>V</em> = 8.56 L，<em>T</em> = 0°C + 273 = 273 K，且 <em>R</em> = 0.08206 L atm K<sup>−1</sup> mol<sup>−1</sup>。因此</p>
+
+            <div class="equation">
+                <em>n</em> = (1.5 atm)(8.56 L) / [(0.08206 L atm / K mol)(273 K)] = 0.57 mol
+            </div>
+        </div>
+    </div>
+
+    <p>理想氣體定律經常用於計算當氣體條件改變時將發生的變化，如下所述。</p>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 5.3</div>
+        <h3>理想氣體定律 II</h3>
+        
+        <p>假設我們有一個氨氣樣品，在 1.68 atm 的壓力下體積為 3.5 L。氣體在恆溫下被壓縮至 1.35 L 的體積。使用理想氣體定律計算最終壓力。</p>
+        
+        <div class="solution-section">
+            <p><strong>解答</strong> 當使用理想氣體定律描述氣體狀態變化時，我們所做的基本假設是該方程式同樣適用於初始和最終狀態。</p>
+
+            <p class="solution-heading">我們要去哪裡？</p>
+            <p>我們試圖確定在恆溫下被壓縮的氣體樣品的壓力。</p>
+
+            <p class="solution-heading">我們知道什麼？</p>
+            <p>我們知道氣體樣品的原始體積和壓力以及新體積。我們也知道溫度保持恆定。</p>
+
+            <p class="solution-heading">我們如何到達那裡？</p>
+            <p>在處理氣體時，我們對壓力、體積、溫度和莫耳數等狀態變化因素感興趣。在處理狀態變化時，我們應該總是問：「<span class="emphasis">哪些因素改變，哪些因素保持不變？</span>」然後我們將從理想氣體定律開始，並以這樣的方式重寫它，使得<span class="emphasis">改變的因素在方程式的一側，保持不變的因素在方程式的另一側</span>。在這種情況下，壓力和體積改變，而溫度和莫耳數保持不變（<em>R</em> 當然也是，根據定義）。因此我們將理想氣體定律寫為</p>
+
+            <div class="equation">
+                <em>PV</em> = <em>nRT</em><br>
+                <span style="color: #0288d1; font-size: 0.9em;">改變</span> 
+                <span style="padding-left: 40px; color: #00695c; font-size: 0.9em;">保持不變</span>
+            </div>
+
+            <p>由於 <em>n</em> 和 <em>T</em> 在此情況下保持相同，我們可以寫 <em>P</em>₁<em>V</em>₁ = <em>nRT</em> 和 <em>P</em>₂<em>V</em>₂ = <em>nRT</em>。組合這些方程式得到</p>
+
+            <div class="equation">
+                <em>P</em>₁<em>V</em>₁ = <em>nRT</em> = <em>P</em>₂<em>V</em>₂　　或　　<em>P</em>₁<em>V</em>₁ = <em>P</em>₂<em>V</em>₂
+            </div>
+
+            <p>我們已知 <em>P</em>₁ = 1.68 atm，<em>V</em>₁ = 3.5 L，<em>V</em>₂ = 1.35 L。對 <em>P</em>₂ 求解得到</p>
+
+            <div class="equation">
+                <em>P</em>₂ = (<em>V</em>₁/<em>V</em>₂)<em>P</em>₁ = (3.5 L / 1.35 L) × 1.68 atm = 4.4 atm
+            </div>
+
+            <div class="check-box">
+                <p><strong>檢查：</strong>這個答案有意義嗎？體積減少（在恆溫下），所以壓力應該增加，正如計算結果所示。請注意，計算出的最終壓力為 4.4 atm。因為大多數氣體在 1 atm 以上不會理想地行為，我們可能會發現，如果我們<span class="emphasis">測量</span>此氣體樣品的壓力，觀察到的壓力會與 4.4 atm 略有不同。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 5.4</div>
+        <h3>理想氣體定律 III</h3>
+        
+        <p>在 5°C 下體積為 3.8 L 的甲烷氣體樣品在恆壓下被加熱至 86°C。計算其新體積。</p>
+        
+        <div class="solution-section">
+            <p><strong>解答</strong></p>
+
+            <p class="solution-heading">我們要去哪裡？</p>
+            <p>我們試圖確定在恆壓下被加熱的氣體樣品的新體積。</p>
+
+            <p class="solution-heading">我們知道什麼？</p>
+            <p>我們知道氣體樣品的原始體積和溫度以及新溫度。我們也知道壓力保持恆定。</p>
+
+            <p class="solution-heading">我們如何到達那裡？</p>
+            <p>在處理狀態變化時，我們應該總是問並回答以下兩個問題：</p>
+
+            <p style="font-style: italic; margin-left: 20px;">哪些因素在改變？哪些因素保持不變？</p>
+
+            <p>溫度和體積在改變，壓力和氣體莫耳數保持不變。</p>
+
+            <p>為了解決這個問題，我們採用理想氣體定律，並通過將它們放在方程式的相對兩側來分離變化的變量和常數。在這種情況下，體積和溫度改變，莫耳數和壓力（當然還有 <em>R</em>）保持不變。因此 <em>PV</em> = <em>nRT</em> 變成</p>
+
+            <div class="equation">
+                <em>V</em>/<em>T</em> = <em>nR</em>/<em>P</em>
+            </div>
+
+            <p>這導致</p>
+
+            <div class="equation">
+                <em>V</em>₁/<em>T</em>₁ = <em>nR</em>/<em>P</em>　　和　　<em>V</em>₂/<em>T</em>₂ = <em>nR</em>/<em>P</em>
+            </div>
+
+            <p>組合這些方程式得到</p>
+
+            <div class="equation">
+                <em>V</em>₁/<em>T</em>₁ = <em>nR</em>/<em>P</em> = <em>V</em>₂/<em>T</em>₂　　或　　<em>V</em>₁/<em>T</em>₁ = <em>V</em>₂/<em>T</em>₂
+            </div>
+
+            <p>我們已知</p>
+
+            <div class="equation" style="text-align: left; display: inline-block;">
+                <em>T</em>₁ = 5°C + 273 = 278 K　　<em>T</em>₂ = 86°C + 273 = 359 K<br>
+                <em>V</em>₁ = 3.8 L　　<em>V</em>₂ = ?
+            </div>
+
+            <p>因此</p>
+
+            <div class="equation">
+                <em>V</em>₂ = (<em>T</em>₂<em>V</em>₁)/<em>T</em>₁ = (359 K)(3.8 L) / 278 K = 4.9 L
+            </div>
+
+            <div class="check-box">
+                <p><strong>檢查：</strong>答案合理嗎？在這種情況下，溫度升高（在恆壓下），所以體積應該增加。因此答案是合理的。</p>
+            </div>
+        </div>
+    </div>
+
+    <p>範例 5.4 中的問題可以描述為查理定律問題，而範例 5.3 中的問題可以說是波以耳定律問題。然而，在這兩種情況下，我們都從理想氣體定律開始。使用理想氣體定律的真正優勢在於它適用於幾乎任何涉及氣體的問題，並且易於記憶。</p>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 5.5</div>
+        <h3>理想氣體定律 IV</h3>
+        
+        <p>一個乙硼烷氣體 (B₂H₆) 樣品，一種暴露在空氣中會爆炸成火焰的物質，在 −15°C 的溫度和 345 torr 的壓力下具有 3.48 L 的體積。如果條件改變使得溫度為 36°C 且壓力為 468 torr，樣品的體積會是多少？</p>
+        
+        <div class="solution-section">
+            <p><strong>解答</strong></p>
+
+            <p class="solution-heading">我們要去哪裡？</p>
+            <p>我們試圖確定壓力和溫度都改變的氣體樣品的新體積。</p>
+
+            <p class="solution-heading">我們知道什麼？</p>
+            <p>我們知道氣體樣品的原始體積、壓力和溫度以及新的壓力和溫度。</p>
+
+            <p class="solution-heading">我們如何到達那裡？</p>
+            <p>在處理狀態變化時，我們應該總是問並回答以下兩個問題：</p>
+
+            <p style="font-style: italic; margin-left: 20px;">哪些因素在改變？哪些因素保持不變？</p>
+
+            <p>壓力、體積和溫度在改變，氣體莫耳數保持不變。</p>
+
+            <p>讓我們以這樣的方式重寫理想氣體定律，使得改變的因素在方程式的一側，保持不變的因素在方程式的另一側。</p>
+
+            <p>由於對於此樣品，壓力、溫度和體積都改變，而莫耳數保持不變，我們使用以下形式的理想氣體定律</p>
+
+            <div class="equation">
+                <em>PV</em>/<em>T</em> = <em>nR</em>
+            </div>
+
+            <p>這導致</p>
+
+            <div class="equation">
+                <em>P</em>₁<em>V</em>₁/<em>T</em>₁ = <em>nR</em> = <em>P</em>₂<em>V</em>₂/<em>T</em>₂　　或　　<em>P</em>₁<em>V</em>₁/<em>T</em>₁ = <em>P</em>₂<em>V</em>₂/<em>T</em>₂
+            </div>
+
+            <p>然後</p>
+
+            <div class="equation">
+                <em>V</em>₂ = (<em>T</em>₂<em>P</em>₁<em>V</em>₁) / (<em>T</em>₁<em>P</em>₂)
+            </div>
+
+            <p>我們有</p>
+
+            <div class="equation" style="text-align: left; display: inline-block;">
+                <em>P</em>₁ = 345 torr　　<em>P</em>₂ = 468 torr<br>
+                <em>T</em>₁ = −15°C + 273 = 258 K　　<em>T</em>₂ = 36°C + 273 = 309 K<br>
+                <em>V</em>₁ = 3.48 L　　<em>V</em>₂ = ?
+            </div>
+
+            <p>因此</p>
+
+            <div class="equation">
+                <em>V</em>₂ = (309 K)(345 torr)(3.48 L) / (258 K)(468 torr) = 3.07 L
+            </div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <p>由於範例 5.5 中使用的方程式涉及壓力的<span class="emphasis">比值</span>，因此不必將壓力轉換為大氣壓單位。torr 單位會抵消。（您可以通過將 <em>P</em>₁ = 345/760 和 <em>P</em>₂ = 468/760 代入方程式來獲得相同的答案。）然而，溫度<span class="emphasis">必須始終</span>轉換為克耳文標度；由於此轉換涉及 273 的<span class="emphasis">加法</span>，轉換因子不會抵消。要小心。</p>
+    </div>
+
+    <div class="note-box">
+        <p><strong>註：</strong>在應用理想氣體定律時，始終將溫度轉換為克耳文標度。</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

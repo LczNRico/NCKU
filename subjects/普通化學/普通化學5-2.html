@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學5-2</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th {
+            background-color: #1a5490;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .table-caption {
+            background-color: #26a69a;
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .example-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-title {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .note-box {
+            background-color: #fff9c4;
+            border-left: 5px solid #fbc02d;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-thinking {
+            background-color: #fff3cd;
+            border-left: 5px solid #f5a623;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            background-color: #f5a623;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>5.2 波以耳、查理和亞佛加厥的氣體定律</h1>
+    
+    <h2>波以耳定律</h2>
+
+    <p>第一批關於氣體的定量實驗是由愛爾蘭化學家羅伯特·波以耳（Robert Boyle，1627-1691）進行的。使用一端封閉的J形管（▶ 圖5.3），據報導他在自家的多層樓梯井中設置了實驗裝置，波以耳研究了被捕獲氣體的壓力與其體積之間的關係。表5.1中給出了波以耳實驗的代表性數值。這些</p>
+
+    <div class="table-caption">表5.1</div>
+    <p style="text-align: center; font-weight: bold;">波以耳實驗的實際數據</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>體積<br>(in³)</th>
+                <th>壓力<br>(in Hg)</th>
+                <th>壓力 × 體積<br>(in Hg × in³)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>48.0</td>
+                <td>29.1</td>
+                <td>14.0 × 10²</td>
+            </tr>
+            <tr>
+                <td>40.0</td>
+                <td>35.3</td>
+                <td>14.1 × 10²</td>
+            </tr>
+            <tr>
+                <td>32.0</td>
+                <td>44.2</td>
+                <td>14.1 × 10²</td>
+            </tr>
+            <tr>
+                <td>24.0</td>
+                <td>58.8</td>
+                <td>14.1 × 10²</td>
+            </tr>
+            <tr>
+                <td>20.0</td>
+                <td>70.7</td>
+                <td>14.1 × 10²</td>
+            </tr>
+            <tr>
+                <td>16.0</td>
+                <td>87.2</td>
+                <td>14.0 × 10²</td>
+            </tr>
+            <tr>
+                <td>12.0</td>
+                <td>117.5</td>
+                <td>14.1 × 10²</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.3</div>
+        <p class="figure-caption">類似於波以耳使用的J形管。圖中顯示兩個狀態：左側為初始狀態的氣體柱，右側為添加汞後氣體柱高度（h）減少的情況。</p>
+    </div>
+
+    <p>數據顯示，在波以耳測量的精確度範圍內，被捕獲空氣樣本的壓力和體積的乘積為常數（注意表5.1中的第三欄）。這種行為可以用方程式表示為</p>
+
+    <div class="equation">
+        <em>PV</em> = <em>k</em>
+    </div>
+
+    <p>這被稱為<span class="highlight">波以耳定律</span>，其中<em>k</em>是在特定溫度下給定空氣樣本的常數。</p>
+
+    <p>用兩種不同的圖來表示表5.1中的數據是很方便的。圖5.4(a)顯示了<em>P</em>對<em>V</em>的圖，產生了一條雙曲線。請注意，當壓力降低一半時，體積加倍。因此壓力和體積之間存在<span class="emphasis">反比關係</span>。第二種類型的圖可以通過重新排列波以耳定律來獲得：</p>
+
+    <div class="equation">
+        <em>V</em> = <em>k</em>/<em>P</em>
+    </div>
+
+    <p>這是以下類型的直線方程式</p>
+
+    <div class="equation">
+        <em>y</em> = <em>mx</em> + <em>b</em>
+    </div>
+
+    <p>其中<em>m</em>代表斜率，<em>b</em>是直線的截距。在這種情況下，<em>y</em> = <em>V</em>，<em>x</em> = 1/<em>P</em>，<em>m</em> = <em>k</em>，以及<em>b</em> = 0。因此，使用波以耳的數據繪製<em>V</em>對1/<em>P</em>的圖會得到一條截距為零的直線，如圖5.4(b)所示。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.4</div>
+        <p class="figure-caption">繪製表5.1中波以耳的數據。(a) <em>P</em>對<em>V</em>的圖顯示當壓力減半時體積加倍。(b) <em>V</em>對1/<em>P</em>的圖給出一條直線。這條線的斜率等於常數<em>k</em>的值。</p>
+        <p class="figure-caption" style="margin-top: 15px;">圖中顯示兩個圖表：(a)左圖為雙曲線，y軸為P (in Hg)從0到100以上，x軸為V (in³)從0到60，標示V和2V的關係；(b)右圖為直線，y軸為V (in³)從0到40以上，x軸為1/P (in Hg)從0到0.03，斜率標示為k。</p>
+    </div>
+
+    <div class="info-box">
+        <p><strong>波以耳定律：<em>V</em> ∝ 1/<em>P</em>（溫度恆定）</strong></p>
+    </div>
+
+    <p>波以耳定律只能近似地描述氣體的壓力和體積之間的關係。在恆溫下對各種氣體進行的高度精確測量顯示，乘積<em>PV</em>並不完全是常數，而是隨壓力變化。幾種氣體的結果如圖5.5所示。請注意當壓力改變時乘積<em>PV</em>中發生的微小變化。這種變化在遠高於正常大氣壓的壓力下變得非常顯著。我們將在5.10節詳細討論這些偏差及其原因。<span class="highlight">遵循波以耳定律的氣體稱為理想氣體。</span>我們將在5.3節更完整地描述理想氣體的特性。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.5</div>
+        <p class="figure-caption">幾種氣體的<em>PV</em>對<em>P</em>的圖。理想氣體預期具有恆定的<em>PV</em>值，如虛線所示。二氧化碳顯示<em>PV</em>的最大變化，這種變化實際上相當小：在0.25 atm時<em>PV</em>從約22.39 L atm變化到在1.00 atm時的22.26 L atm。因此，波以耳定律在這些相對較低的壓力下是一個很好的近似。</p>
+        <p class="figure-caption" style="margin-top: 15px;">圖中顯示<em>PV</em> (L atm)對<em>P</em> (atm)的圖，理想氣體為水平虛線，Ne、O₂和CO₂的曲線稍有下降，CO₂下降最多。</p>
+    </div>
+
+    <p>波以耳定律的一個常見用途是預測當壓力改變（在恆溫下）時氣體的新體積，反之亦然。我們之前提到，波以耳定律只能近似地遵循於實際氣體。為了確定偏差的重要性，經常進行關於壓力變化對氣體體積影響的研究，如範例5.1所示。</p>
+
+    <div class="example-box">
+        <div class="example-title">範例 5.1</div>
+        <h3>波以耳定律</h3>
+        
+        <p>在一項研究中，為了觀察氣態氨遵循波以耳定律的緊密程度，在0°C的溫度下使用1.0莫耳NH₃氣體在各種壓力下進行了幾次體積測量。使用下面列出的結果，計算NH₃在各種壓力下的波以耳定律常數。</p>
+
+        <table style="margin: 20px auto; width: 80%;">
+            <thead>
+                <tr>
+                    <th>實驗</th>
+                    <th>壓力 (atm)</th>
+                    <th>體積 (L)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>0.1300</td>
+                    <td>172.1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>0.2500</td>
+                    <td>89.28</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>0.3000</td>
+                    <td>74.35</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>0.5000</td>
+                    <td>44.49</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>0.7500</td>
+                    <td>29.55</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>1.000</td>
+                    <td>22.08</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>解答</strong> 為了確定NH₃氣體在這些條件下遵循波以耳定律的緊密程度，我們計算每組數值的<em>k</em>值（單位為L atm）：</p>
+
+        <table style="margin: 20px auto; width: 90%;">
+            <thead>
+                <tr>
+                    <th>實驗</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><em>k</em> = <em>PV</em></td>
+                    <td>22.37</td>
+                    <td>22.32</td>
+                    <td>22.31</td>
+                    <td>22.25</td>
+                    <td>22.16</td>
+                    <td>22.08</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>儘管在這些低壓下偏離真正的波以耳定律行為相當小，但<em>k</em>的值隨著壓力增加而規律性地在一個方向上變化。因此，為了計算NH₃的「理想」<em>k</em>值，如圖5.6所示，繪製<em>PV</em>對<em>P</em>的圖，並將直線（外推超過實驗點）外推回到零壓力，在那裡，出於我們稍後將討論的原因，氣體表現得最理想。通過這種外推獲得的<em>k</em>值為22.41 L atm。這與從0°C時氣體CO₂、O₂和Ne的類似圖獲得的值相同，如圖5.5所示。</p>
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.6</div>
+        <p class="figure-caption">1莫耳氨的<em>PV</em>對<em>P</em>圖。虛線顯示將數據外推至零壓力以給出<em>PV</em>的「理想」值22.41 L atm。</p>
+        <p class="figure-caption" style="margin-top: 15px;">圖中y軸為<em>PV</em> (L·atm)從22.1到22.6，x軸為<em>P</em> (atm)從0到1.00，實線連接實驗數據點並向下傾斜，虛線外推至y軸截距22.41。</p>
+    </div>
+
+    <h2>查理定律</h2>
+
+    <p>在波以耳的發現之後的世紀中，科學家們繼續研究氣體的性質。這些科學家之一是法國物理學家雅克·查理（Jacques Charles，1746-1823），他是第一個用氫氣充氣球並進行首次單人氣球飛行的人。1787年查理發現</p>
+
+    <p>在恆定壓力下氣體的體積隨氣體溫度<span class="emphasis">呈線性</span>增加。也就是說，在恆定壓力下繪製氣體體積（對溫度（°C））的圖會得到一條直線。幾種氣體的這種行為如圖5.7所示。這些圖的一個非常有趣的特徵是所有氣體的體積都外推至零點在相同溫度-273.2°C。在克耳文溫標上，這個點被定義為0 K，這導致了克耳文溫標和攝氏溫標之間的以下關係：</p>
+
+    <div class="equation">
+        溫度 (K) = 0°C + 273
+    </div>
+
+    <p>當圖5.7中所示氣體的體積在克耳文溫標上對溫度繪圖時，產生了圖5.8中的圖。在這種情況下，每種氣體的體積與溫度<span class="emphasis">成正比</span>，並在溫度為0 K時外推至零。這種行為由以下方程式表示，稱為<span class="highlight">查理定律</span>，</p>
+
+    <div class="equation">
+        <em>V</em> = <em>bT</em>
+    </div>
+
+    <p>其中<em>T</em>是溫度（克耳文），<em>b</em>是比例常數。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.7</div>
+        <p class="figure-caption">幾種氣體的<em>V</em>對<em>T</em>（°C）的圖。實線代表氣體的實驗測量。虛線代表將數據外推至氣體會成為液體或固體的區域。請注意，各種氣體的樣本含有不同的莫耳數。</p>
+        <p class="figure-caption" style="margin-top: 15px;">圖中顯示多條直線：He、CH₄、H₂O、H₂、N₂O，所有線都外推至-273.2°C時的零體積。y軸為<em>V</em> (L)從0到6，x軸為<em>T</em> (°C)從-300到300。</p>
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.8</div>
+        <p class="figure-caption">如圖5.7中的<em>V</em>對<em>T</em>的圖，但這裡使用克耳文溫標表示溫度。</p>
+        <p class="figure-caption" style="margin-top: 15px;">圖中顯示與圖5.7相同的氣體，但所有線都通過原點(0,0)。y軸為<em>V</em> (L)從0到6，x軸為<em>T</em> (K)從0到600。</p>
+    </div>
+
+    <div class="info-box">
+        <p><strong>與波以耳定律一樣，查理定律只有在相對較低的壓力下才能準確地遵循。</strong></p>
+    </div>
+
+    <p>在說明查理定律的用途之前，讓我們考慮0 K的重要性。在這個點以下的溫度，外推的體積會變成負值。由於氣體不能有負體積，這表明0 K具有特殊意義。事實上，0 K被稱為<span class="highlight">絕對零度</span>，許多證據表明這個溫度無法達到。實驗室中已經產生了約10⁻⁶ K的溫度，但從未達到0 K。</p>
+
+    <h2>亞佛加厥定律</h2>
+
+    <p>在第2章中我們注意到，1811年義大利化學家亞佛加厥假設在相同溫度和壓力下，等體積的氣體含有相同數量的「粒子」。這個觀察稱為<span class="highlight">亞佛加厥定律</span>（或假說），可以用數學方式表述為</p>
+
+    <div class="equation">
+        <em>V</em> = <em>an</em>
+    </div>
+
+    <p>其中<em>V</em>是氣體的體積，<em>n</em>是莫耳數，<em>a</em>是比例常數。這個方程式指出，<span class="emphasis">對於在恆定溫度和壓力下的氣體，體積與氣體的莫耳數成正比</span>。這種關係在低壓下被氣體緊密遵循。</p>
+
+    <div class="critical-thinking">
+        <div class="critical-title">批判性思考</div>
+        <p>根據查理定律，</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

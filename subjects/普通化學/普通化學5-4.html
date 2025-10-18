@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學5-4</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .note-box {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffd54f;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-thinking {
+            background-color: #fff9c4;
+            border-left: 5px solid #f57f17;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            color: #f57f17;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .solution-section {
+            margin: 15px 0;
+        }
+
+        .solution-heading {
+            font-weight: bold;
+            color: #1976d2;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th {
+            background-color: #00acc1;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .table-caption {
+            background-color: #00acc1;
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .reaction-box {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            border-radius: 4px;
+            font-family: "Times New Roman", serif;
+            font-size: 1.2em;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>5.4 氣體化學計量</h1>
+    
+    <p>假設我們有 1 莫耳理想氣體在 0°C (273.2 K) 和 1 atm。根據理想氣體定律，該氣體的體積由下式給出</p>
+
+    <div class="equation">
+        <em>V</em> = <em>nRT</em>/<em>P</em> = (1.000 mol)(0.08206 L atm K<sup>−1</sup> mol<sup>−1</sup>)(273.2 K) / 1.000 atm = 22.42 L
+    </div>
+
+    <p>這個 22.42 公升的體積稱為理想氣體的<span class="highlight">莫耳體積</span>。表 5.2 列出了幾種氣體的測量莫耳體積。請注意，某些氣體的莫耳體積非常接近理想值，但其他氣體明顯偏離。在本章後面，我們將討論這些偏離的一些原因。</p>
+
+    <p>0°C 和 1 atm 的條件稱為<span class="highlight">標準溫度和壓力</span>（縮寫為 <span class="term">STP</span>），是氣體性質的常見參考條件。例如，理想氣體的莫耳體積在 STP 下為 22.42 L。</p>
+
+    <p>許多化學反應涉及氣體。通過假設這些氣體的理想行為，如果知道氣體的壓力、體積和溫度，我們就可以進行化學計量計算。</p>
+
+    <div class="table-caption">表 5.2</div>
+    <p style="text-align: center; font-weight: bold;">各種氣體在 0°C 和 1 atm 下的莫耳體積</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>氣體</th>
+                <th>莫耳體積 (L)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>氧氣 (O₂)</td>
+                <td>22.397</td>
+            </tr>
+            <tr>
+                <td>氮氣 (N₂)</td>
+                <td>22.402</td>
+            </tr>
+            <tr>
+                <td>氫氣 (H₂)</td>
+                <td>22.433</td>
+            </tr>
+            <tr>
+                <td>氦氣 (He)</td>
+                <td>22.434</td>
+            </tr>
+            <tr>
+                <td>氬氣 (Ar)</td>
+                <td>22.397</td>
+            </tr>
+            <tr>
+                <td>二氧化碳 (CO₂)</td>
+                <td>22.260</td>
+            </tr>
+            <tr>
+                <td>氨氣 (NH₃)</td>
+                <td>22.079</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="critical-thinking">
+        <div class="critical-title">批判性思考</div>
+        <p>如果 STP 被定義為常溫 (22°C) 和 1 atm，這將如何影響理想氣體的莫耳體積？請包括解釋和數字。</p>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 5.6</div>
+        <h3>氣體化學計量</h3>
+        
+        <p>生石灰 (CaO) 是通過碳酸鈣 (CaCO₃) 的熱分解產生的。根據以下反應，計算在 STP 下從 152 g CaCO₃ 分解產生的 CO₂ 體積</p>
+
+        <div class="reaction-box">
+            CaCO₃(s) ⟶ CaO(s) + CO₂(g)
+        </div>
+        
+        <div class="solution-section">
+            <p><strong>解答</strong></p>
+
+            <p class="solution-heading">我們要去哪裡？</p>
+            <p>我們被要求確定從 CaCO₃(s) 在 STP 下產生的 CO₂(g) 的體積。</p>
+
+            <p class="solution-heading">我們知道什麼？</p>
+            <p>我們得到了平衡化學方程式、CaCO₃(s) 的質量，以及 CO₂(g) 的溫度和壓力。</p>
+
+            <p class="solution-heading">我們如何到達那裡？</p>
+            <p>要求解給定溫度和壓力的氣體體積，我們需要知道氣體的莫耳數。</p>
+
+            <p>我們使用本書前面化學計量問題中使用的相同策略。也就是說，我們計算消耗的 CaCO₃ 莫耳數和產生的 CO₂ 莫耳數。然後可以通過使用理想氣體的莫耳體積將 CO₂ 的莫耳數轉換為體積。</p>
+
+            <p>使用 CaCO₃ 的莫耳質量，我們可以計算 CaCO₃ 的莫耳數：</p>
+
+            <div class="equation">
+                152 g CaCO₃ × (1 mol CaCO₃)/(100.1 g CaCO₃) = 1.52 mol CaCO₃
+            </div>
+
+            <p>由於每莫耳 CaCO₃ 產生 1 莫耳 CO₂，將形成 1.52 莫耳 CO₂。我們可以通過使用莫耳體積在 STP 下計算 CO₂ 的體積：</p>
+
+            <div class="equation">
+                1.52 mol CO₂ × (22.42 L CO₂)/(1 mol CO₂) = 34.1 L CO₂
+            </div>
+
+            <p>因此，152 g CaCO₃ 的分解將在 STP 下產生 34.1 L CO₂。</p>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <p>請注意，在範例 5.6 中，最後一步涉及從莫耳數計算氣體體積。由於條件被指定為 STP，我們能夠使用氣體在 STP 下的莫耳體積。<span class="highlight">如果問題的條件與 STP 不同，則必須使用理想氣體定律來計算體積。</span></p>
+    </div>
+
+    <div class="note-box">
+        <p><strong>註：</strong>記住理想氣體在 STP 下的莫耳體積為 22.42 L。</p>
+    </div>
+
+    <h2>莫耳質量</h2>
+
+    <p>理想氣體定律的一個非常重要的用途是從測量的密度計算氣體的莫耳質量（分子量）。為了理解氣體密度和莫耳質量之間的關係，請注意氣體的莫耳數 <em>n</em> 可以表示為</p>
+
+    <div class="equation">
+        <em>n</em> = (氣體克數)/(莫耳質量) = 質量/(莫耳質量) = <em>m</em>/(莫耳質量)
+    </div>
+
+    <p>代入理想氣體方程式得到</p>
+
+    <div class="equation">
+        <em>P</em> = <em>nRT</em>/<em>V</em> = (<em>m</em>/莫耳質量)<em>RT</em>/<em>V</em> = <em>m</em>(<em>RT</em>)/[<em>V</em>(莫耳質量)]
+    </div>
+
+    <p>但是 <em>m</em>/<em>V</em> 是以克每公升為單位的氣體密度 <em>d</em>。因此</p>
+
+    <div class="equation">
+        <em>P</em> = <em>dRT</em>/(莫耳質量)
+    </div>
+
+    <p>或</p>
+
+    <div class="equation">
+        莫耳質量 = <em>dRT</em>/<em>P</em>　　(5.1)
+    </div>
+
+    <p>因此，如果已知給定溫度和壓力下氣體的密度，就可以計算其莫耳質量。</p>
+
+    <p>您可以記住涉及氣體密度和莫耳質量的方程式，但更好的是簡單地記住理想氣體方程式、密度的定義以及莫耳數與莫耳質量之間的關係。然後您可以在需要時推導此方程式。這種方法證明您理解了概念，並且意味著少記一個方程式。</p>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>
