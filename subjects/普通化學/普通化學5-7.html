@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學5-7</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .note-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>5.7 溢流與擴散</h1>
+    
+    <p>我們已經看到，分子動力論的假設結合適當的物理原理，產生了一個方程式，成功地擬合了氣體在接近理想行為時的實驗觀察性質。涉及氣體的兩種現象為這個模型提供了進一步的測試。</p>
+
+    <p><span class="term">擴散</span>是用來描述氣體混合速率的術語。當教室前方釋放少量刺鼻氣味的氨氣時，需要一些時間才能讓教室裡的每個人都聞到它，因為氨氣與空氣混合需要時間。擴散速率就是氣體混合的速率。<span class="term">溢流</span>（effusion）是用來描述氣體通過微小孔口進入真空腔室的過程的術語（▼ 圖5.18）。溢流速率測量的是氣體轉移到腔室中的速率。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.17</div>
+        <p class="figure-caption">氮氣在273 K時的速度分布，標示了最可能速度 <em>u</em><sub>mp</sub>（曲線的最大值處的速度）、平均速度 <em>u</em><sub>avg</sub> 和均方根速度 <em>u</em><sub>rms</sub>。</p>
+    </div>
+
+    <h2>溢流</h2>
+    
+    <p>蘇格蘭化學家Thomas Graham（1805-1869）通過實驗發現，氣體的溢流速率與其粒子質量的平方根成反比。換句話說，在相同溫度和壓力下，兩種氣體的相對溢流速率由氣體粒子質量的平方根的反比給出：</p>
+
+    <div class="equation">
+        氣體1的溢流速率 / 氣體2的溢流速率 = √<span style="text-decoration: overline;">M₂</span> / √<span style="text-decoration: overline;">M₁</span>
+    </div>
+
+    <p>其中 M₁ 和 M₂ 代表氣體的莫耳質量。▶ 這個方程式被稱為<span class="highlight">葛蘭姆溢流定律</span>（Graham's law of effusion）。</p>
+
+    <div class="info-box">
+        <p><strong>注意：</strong>在葛蘭姆定律中，莫耳質量的單位可以是 g/mol 或 kg/mol，因為在比值 √M₂/√M₁ 中單位會相消。</p>
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.18</div>
+        <p class="figure-caption">氣體溢流進入真空腔室。溢流速率（氣體通過針孔屏障轉移的速率）與氣體分子質量的平方根成反比。</p>
+    </div>
+
+    <p>分子動力論模型是否正確預測了葛蘭姆定律所總結的氣體相對溢流速率？要回答這個問題，我們必須認識到氣體的溢流速率直接取決於其粒子的平均速度。氣體粒子移動得越快，它們越有可能通過溢流孔口。這個推理導致以下對在相同溫度 T 下兩種氣體的<span class="term">預測</span>：</p>
+
+    <div class="equation">
+        氣體1的溢流速率 / 氣體2的溢流速率 = 氣體1的 <em>u</em><sub>avg</sub> / 氣體2的 <em>u</em><sub>avg</sub> = √<span style="text-decoration: overline;">8RT/πM₁</span> / √<span style="text-decoration: overline;">8RT/πM₂</span> = √<span style="text-decoration: overline;">M₂</span> / √<span style="text-decoration: overline;">M₁</span>
+    </div>
+
+    <p>這個方程式就是葛蘭姆定律，因此分子動力論模型符合氣體溢流的實驗結果。</p>
+
+    <h2>擴散</h2>
+    
+    <p>擴散經常通過圖5.19 ▼所示的課堂演示來說明，其中兩個棉塞，一個浸泡在氨水中，另一個浸泡在鹽酸中，同時放置在長管的兩端。在管中形成氯化銨（NH₄Cl）的白環，數分鐘後NH₃和HCl分子相遇：</p>
+
+    <div class="equation">
+        NH₃(g) + HCl(g) ——→ NH₄Cl(s)<br>
+        <span style="color: #0288d1; font-size: 0.9em;">白色固體</span>
+    </div>
+
+    <p>氣體通過管子的過程令人驚訝地緩慢，考慮到在25°C時HCl和NH₃分子的速度分別約為450和660 m/s。為什麼NH₃和HCl分子需要幾分鐘才能相遇？答案是管子含有空氣，因此NH₃和HCl分子在通過管子時與O₂和N₂分子發生許多碰撞。雖然這些碰撞大大減慢了它們通過管子的進度，但仍然可以合理地預期NH₃和HCl分子所移動的相對距離與它們的速度有關：</p>
+
+    <div class="equation">
+        d<sub>NH₃</sub> / d<sub>HCl</sub> = NH₃移動的距離 / HCl移動的距離 = <em>u</em><sub>avg(NH₃)</sub> / <em>u</em><sub>avg(HCl)</sub> = √<span style="text-decoration: overline;">M<sub>HCl</sub></span> / √<span style="text-decoration: overline;">M<sub>NH₃</sub></span> = √<span style="text-decoration: overline;">36.5</span> / √<span style="text-decoration: overline;">17</span> = 1.5
+    </div>
+
+    <p>然而，仔細的實驗顯示，這個預測並不成立——觀察到的距離比為1.3，而不是葛蘭姆定律預測的1.5。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.19</div>
+        <p class="figure-caption">(a) NH₃和HCl分子通過空氣的相對擴散速率的演示。兩個棉塞，一個浸有HCl(aq)，另一個浸有NH₃(aq)，同時插入管子兩端。從棉塞蒸發的氣態NH₃和HCl向彼此擴散，在它們相遇的地方反應形成NH₄Cl(s)的白環。</p>
+        <p class="figure-caption">(b) 當HCl(g)和NH₃(g)在管中相遇時，會形成NH₄Cl(s)的白環。</p>
+    </div>
+
+    <p>這種差異並非由於分子動力論或葛蘭姆定律的失敗；它的存在是因為這個「擴散」實驗並不涉及簡單的擴散過程。相反，它涉及氨和氯化氫氣體通過管中空氣的<span class="term">流動</span>（flow）。因為NH₃和HCl分子與管中的N₂和O₂分子經歷許多碰撞，NH₃和HCl的流速與它們的分子速度不成直接比例。較高的速度導致更多的分子間碰撞，這反過來阻礙了氣體的流動。因為氨氣的質量較小（因此平均速度較高），氨氣的流動受到的阻礙比氯化氫氣體更大。因此，NH₃(g)移動的距離比從葛蘭姆定律預期的要小（觀察到的距離比小於1.5）。▶</p>
+
+    <div class="info-box">
+        <p><strong>注意：</strong>如果管中沒有空氣，距離比將如葛蘭姆定律所預測的為1.5。</p>
+    </div>
+
+    <p>雖然我們在這裡只給出了定性的處理，但伴隨氣體混合的現象已經得到很好的理解，這個實驗的結果可以用定量理論非常準確地描述。</p>
+
+    <p>儘管目前正在使用其他技術，但氣體擴散在核反應器用鈾的濃縮中發揮了重要作用。天然鈾主要是²³⁸U，它不能裂變產生能量。它只含有約0.7%的可裂變核素²³⁵U。為了使鈾作為核燃料有用，²³⁵U的相對含量必須增加到約3%。在氣體擴散濃縮過程中，天然鈾（含有²³⁸U和少量²³⁵U）與氟反應形成²³⁸UF₆和²³⁵UF₆的混合物。由於這些分子的質量略有不同，在給定溫度下它們具有略微不同的速度，這使得它們能夠通過多級擴散過程分離。</p>
+
+    <p>為了理解這個過程如何運作，想像一系列被半透膜隔開的腔室，這些膜允許一些UF₆分子通過，但防止氣體的大量流動。實際上，每個多孔壁的作用很像溢流池中的一個小孔。假設來自天然鈾的UF₆被放入腔室1中。因此，腔室1含有99.3% ²³⁸UF₆和0.7% ²³⁵UF₆（即每993個²³⁸UF₆分子對應1個²³⁵UF₆分子）。這種UF₆的一些分子通過半透膜擴散到腔室2中，該腔室最初是空的。由於其質量較小，²³⁵UF₆的速度略高於²³⁸UF₆，因此以略高的速率擴散。因此，腔室2將含有²³⁵UF₆與²³⁸UF₆的比值略高於7比993。</p>
+
+    <p>雖然這個過程被稱為<span class="highlight">氣體擴散</span>，因為腔室被僅有效允許單個UF₆分子通過的屏障隔開，但它的行為像一個溢流過程。因此，我們可以從葛蘭姆定律找到腔室2中兩種類型UF₆的實際比值：</p>
+
+    <div class="equation">
+        ²³⁵UF₆的擴散速率 / ²³⁸UF₆的擴散速率 = √<span style="text-decoration: overline;">mass(²³⁸UF₆)</span> / √<span style="text-decoration: overline;">mass(²³⁵UF₆)</span><br><br>
+        = √<span style="text-decoration: overline;">352.05 g/mol</span> / √<span style="text-decoration: overline;">349.03 g/mol</span><br><br>
+        = 1.0043
+    </div>
+
+    <p>我們可以使用這個因子來計算腔室2中²³⁵UF₆/²³⁸UF₆的比值：</p>
+
+    <div class="equation">
+        ²³⁵UF₆ / ²³⁸UF₆ = 1.0043 × (²³⁵UF₆ / ²³⁸UF₆) = 1.0043(7/993)<br>
+        <span style="color: #0288d1; font-size: 0.9em;">↑<br>腔室2</span> <span style="color: #0288d1; font-size: 0.9em;">↑<br>腔室1</span><br><br>
+        = 1.0043(7.0493 × 10⁻³)<br>
+        = 7.0797 × 10⁻³
+    </div>
+
+    <p>這個非常小的增加代表從腔室1中每10,000,000個²³⁸UF₆分子對應70,493個²³⁵UF₆分子的比值，變化到腔室2中每10,000,000個²³⁸UF₆分子對應70,797個²³⁵UF₆分子。</p>
+
+    <p>這個濃縮過程（在²³⁵UF₆中）隨著腔室2中的稍微濃縮的氣體擴散到腔室3中而繼續，並再次被因子1.0043濃縮。重複相同的過程，直到發生足夠的濃縮。顯然，這個過程需要很多階段。例如，要計算從0.700% ²³⁵U濃縮到3.00% ²³⁵U所需的步驟數，我們有以下方程式：</p>
+
+    <div class="equation">
+        0.700 ²³⁵UF₆ / 99.3 ²³⁸UF₆ × (1.0043)<sup>N</sup> = 3.00 ²³⁵UF₆ / 97.0 ²³⁸UF₆<br>
+        <span style="color: #0288d1; font-size: 0.9em;">↑<br>原始比值</span> <span style="color: #0288d1; font-size: 0.9em;">↑<br>所需比值</span>
+    </div>
+
+    <p>其中 N 代表階段數。這個方程式源於每個階段都會產生因子1.0043的濃縮這一事實。因此：</p>
+
+    <div class="equation">
+        原始比值 × 1.0043 × 1.0043 × 1.0043 × ··· = 最終比值<br>
+        <span style="color: #0288d1; font-size: 0.9em;">第一階段</span> <span style="color: #0288d1; font-size: 0.9em;">第二階段</span> <span style="color: #0288d1; font-size: 0.9em;">第三階段</span>
+    </div>
+
+    <p>求解這個方程式得到 N = 345。因此，我們預測需要345個階段才能獲得所需的濃縮度。</p>
+
+    <p>儘管我們在這裡大大簡化了*實際的濃縮過程，但這個討論讓您了解了它是如何完成的。圖5.20顯示了實際擴散池的照片。</p>
+
+    <p>鈾的氣體擴散濃縮已經過時。越來越多地，使用氣體離心機的過程已成為首選方法。這樣的過程使用大量旋轉的圓筒（離心機），使質量較大的²³⁸UF₆相對於較輕的²³⁵UF₆移動到每個圓筒的外側，²³⁵UF₆則保持更靠近中心。氣體離心技術所需的能量比氣體擴散少得多，每一步的分離係數為1.3，而氣體擴散為1.0043。目前也正在探索其他鈾濃縮技術，但我們不會在此討論它們。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.20</div>
+        <p class="figure-caption">肯塔基州帕迪尤卡氣體擴散工廠的鈾濃縮轉換器。</p>
+    </div>
+
+    <div class="note-box">
+        <p><strong>注意：</strong>*雖然我們大大簡化了實際的濃縮過程，但這個討論讓您了解了它是如何完成的。</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

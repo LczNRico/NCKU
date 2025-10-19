@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學5-6</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-box {
+            background-color: #fff9c4;
+            border-left: 5px solid #f9a825;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            background-color: #f9a825;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .insight-box {
+            background-color: #f3e5f5;
+            border-left: 5px solid #6a1b9a;
+            padding: 15px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        .insight-title {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .theory-box {
+            background-color: #f1f8e9;
+            border: 2px solid #7cb342;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .theory-title {
+            color: #33691e;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.15em;
+        }
+
+        .photo-series {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            gap: 10px;
+        }
+
+        .photo-item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .photo-caption {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        ul.theory-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.theory-list li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul.theory-list li:before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: #7cb342;
+            font-size: 1.2em;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>5.6 氣體的動力分子理論</h1>
+    
+    <p>到目前為止，我們從實驗的角度考慮了氣體的行為。根據不同類型實驗的觀察，我們知道在低於1 atm的壓力下，大多數氣體非常接近理想氣體定律所描述的行為。現在我們想建構一個模型來解釋這種行為。</p>
+    
+    <p>在建構模型之前，我們將簡要回顧科學方法。回想一下，定律是一種概括在許多實驗中觀察到的行為的方式。定律非常有用，因為它們允許我們預測類似系統的行為。例如，如果化學家製備了一種新的氣態化合物，在已知壓力和溫度下測量氣體密度可以提供該化合物莫耳質量的可靠數值。</p>
+    
+    <p>然而，儘管定律總結了觀察到的行為，但它們並沒有告訴我們<span class="emphasis">為什麼</span>自然以觀察到的方式行為。這是科學家的核心問題。為了嘗試回答這個問題，我們建構理論（建立模型）。化學中的模型包含對個別原子或分子（微觀粒子）可能在做什麼的推測，以引起宏觀系統（大量原子和分子的集合）的觀察行為。</p>
+    
+    <p>如果模型能夠解釋所討論的觀察行為並正確預測未來實驗的結果，則認為該模型是成功的。請注意，<span class="highlight">模型永遠無法被證明是絕對正確的</span>。事實上，<span class="emphasis">任何模型本質上都是一種近似</span>，註定會在某個時候失效。模型的範圍從簡單到極其複雜。我們使用簡單的模型來預測近似行為，使用更複雜的模型來非常精確地解釋觀察到的定量行為。在本文中，我們將強調提供可能發生的事情的近似圖像並符合最重要實驗結果的簡單模型。</p>
+
+    <p>這種模型的一個例子是<span class="term">動力分子理論</span>，這是一個試圖解釋理想氣體性質的簡單模型。該模型基於對個別氣體粒子（原子或分子）行為的推測。動力分子理論的假設可以陳述如下：</p>
+
+    <div class="theory-box">
+        <div class="theory-title">動力分子理論</div>
+        <ul class="theory-list">
+            <li>粒子與它們之間的距離相比非常小，以至於<span class="emphasis">個別粒子的體積被假設為可忽略的</span>（零）。</li>
+            <li><span class="emphasis">粒子處於恆定運動中</span>。粒子與容器壁的碰撞是氣體施加壓力的原因。</li>
+            <li>假設粒子<span class="emphasis">彼此不施加力</span>；它們被假設為既不互相吸引也不互相排斥。</li>
+            <li>假設一群氣體粒子的<span class="emphasis">平均動能</span>與氣體的克耳文溫度成正比。</li>
+        </ul>
+    </div>
+
+    <p>當然，真實的氣體粒子確實具有有限的體積並且確實對彼此施加力。因此它們並不完全符合這些假設。但我們將看到這些假設確實解釋了<span class="emphasis">理想</span>氣體行為。</p>
+
+    <p>模型的真正檢驗是其預測與實驗觀察的吻合程度。動力分子模型的假設將理想氣體描繪為由沒有體積且彼此沒有吸引力的粒子組成，該模型假設氣體通過與容器壁的碰撞產生壓力。為了檢驗此模型的有效性，我們需要考慮這個問題：「當我們將物理學原理應用於這些氣體粒子的集合時，我們能否推導出一個與理想氣體定律一致的壓力表達式？」答案是，「是的，我們可以。」我們現在將詳細考慮這個推導。</p>
+
+    <div class="critical-box">
+        <div class="critical-title">批判性思考</div>
+        <p>您已經學習了動力分子理論的假設。如果我們不能假設第三個假設是真的會怎樣？這將如何影響測量的氣體壓力？</p>
+    </div>
+
+    <h2>定量動力分子模型</h2>
+
+    <p>假設在一個邊長各為<em>L</em>米的立方容器中有<em>n</em>莫耳理想氣體。假設每個氣體粒子的質量為<em>m</em>，並且處於快速、隨機、直線運動中，與壁碰撞（▶ 圖5.11）。碰撞將被假設為<span class="emphasis">彈性</span>—不發生動能損失。我們想要計算來自碰撞氣體粒子對壁的力，然後，由於壓力是單位面積的力，得到氣體壓力的表達式。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.11</div>
+        <p class="figure-caption">一個理想氣體粒子在邊長為<em>L</em>（以米為單位）的立方體中。粒子以隨機、直線運動與壁碰撞。</p>
+    </div>
+
+    <p>在我們推導氣體壓力的表達式之前，我們必須首先討論速度的一些特徵。氣體中的每個粒子都有一個特定的速度<em>u</em>，它可以分解為分量<em>u<sub>x</sub></em>、<em>u<sub>y</sub></em>和<em>u<sub>z</sub></em>（▼ 圖5.12）。首先，使用<em>u<sub>x</sub></em>和<em>u<sub>y</sub></em>並應用畢達哥拉斯定理，我們可以得到<em>u<sub>xy</sub></em>（圖5.12）：</p>
+
+    <div class="equation">
+        <em>u<sub>xy</sub></em><sup>2</sup> = <em>u<sub>x</sub></em><sup>2</sup> + <em>u<sub>y</sub></em><sup>2</sup>
+    </div>
+
+    <p>然後，如圖5.12所示構造另一個三角形，我們發現</p>
+
+    <div class="equation">
+        <em>u</em><sup>2</sup> = <em>u<sub>xy</sub></em><sup>2</sup> + <em>u<sub>z</sub></em><sup>2</sup>
+    </div>
+
+    <p>或</p>
+
+    <div class="equation">
+        <em>u</em><sup>2</sup> = <em>u<sub>x</sub></em><sup>2</sup> + <em>u<sub>y</sub></em><sup>2</sup> + <em>u<sub>z</sub></em><sup>2</sup>
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.12</div>
+        <p class="figure-caption">(a) 笛卡爾坐標軸。<br>
+        (b) 任何氣體粒子的速度<em>u</em>可以分解為三個相互垂直的分量<em>u<sub>x</sub></em>、<em>u<sub>y</sub></em>和<em>u<sub>z</sub></em>。這可以表示為邊長為<em>u<sub>x</sub></em>、<em>u<sub>y</sub></em>和<em>u<sub>z</sub></em>以及體對角線<em>u</em>的長方體。<br>
+        (c) 在<em>xy</em>平面中，<br>
+        <em>u<sub>xy</sub></em><sup>2</sup> + <em>u<sub>z</sub></em><sup>2</sup> = <em>u<sub>xy</sub></em><sup>2</sup><br>
+        根據畢達哥拉斯定理。由於<em>u<sub>xy</sub></em>和<em>u<sub>z</sub></em>也是垂直的，<br>
+        <em>u</em><sup>2</sup> = <em>u<sub>xy</sub></em><sup>2</sup> + <em>u<sub>z</sub></em><sup>2</sup> = <em>u<sub>x</sub></em><sup>2</sup> + <em>u<sub>y</sub></em><sup>2</sup> + <em>u<sub>z</sub></em><sup>2</sup></p>
+    </div>
+
+    <p>現在讓我們考慮一個個別氣體粒子如何運動。例如，這個粒子多久會撞擊垂直於<em>x</em>軸的盒子的兩個壁？請注意，只有速度的<em>x</em>分量會影響粒子對這兩個壁的撞擊（▼ 圖5.13）。速度的<em>x</em>分量越大，粒子在這兩個壁之間移動的速度就越快，從而在單位時間內對這些壁產生更多的撞擊。請記住，氣體的壓力是由這些與壁的碰撞引起的。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.13</div>
+        <p class="figure-caption">(a) 只有氣體粒子速度的<em>x</em>分量會影響垂直於<em>x</em>軸的壁的撞擊頻率。<br>
+        (b) 對於彈性碰撞，速度的<em>x</em>分量和總速度的方向發生完全反轉。動量的變化（終態−初態）為<br>
+        −<em>mu<sub>x</sub></em> − <em>mu<sub>x</sub></em> = −2<em>mu<sub>x</sub></em></p>
+    </div>
+
+    <p>垂直於<em>x</em>軸的兩個壁的碰撞頻率（單位時間的碰撞次數）由下式給出：</p>
+
+    <div class="equation">
+        （碰撞頻率）<sub>x</sub> = <em>x</em>方向的速度 / 壁之間的距離 = <em>u<sub>x</sub></em> / <em>L</em>
+    </div>
+
+    <p>接下來，碰撞的力是多少？力被定義為質量乘以加速度（單位時間內速度的變化）：</p>
+
+    <div class="equation">
+        <em>F</em> = <em>ma</em> = <em>m</em>(Δ<em>u</em> / Δ<em>t</em>)
+    </div>
+
+    <p>其中<em>F</em>代表力，<em>a</em>代表加速度，Δ<em>u</em>代表速度的變化，Δ<em>t</em>代表給定的時間長度。</p>
+
+    <p>由於我們假設粒子具有恆定的質量，我們可以寫成</p>
+
+    <div class="equation">
+        <em>F</em> = <em>m</em>Δ<em>u</em> / Δ<em>t</em> = Δ(<em>mu</em>) / Δ<em>t</em>
+    </div>
+
+    <p>量<em>mu</em>是粒子的動量（動量是質量和速度的乘積），表達式<em>F</em> = Δ(<em>mu</em>)/Δ<em>t</em>意味著力是單位時間內動量的變化。當粒子撞擊垂直於<em>x</em>軸的壁時，如圖5.13所示，發生彈性碰撞，導致速度的<em>x</em>分量發生<span class="emphasis">完全反轉</span>。也就是說，<em>u<sub>x</sub></em>的<span class="emphasis">符號</span>或<span class="emphasis">方向</span>，當粒子與壁之一碰撞時會反轉。因此，最終動量是<span class="emphasis">負的</span>或與初始動量相反的。請記住，彈性碰撞意味著速度的<span class="emphasis">大小</span>沒有變化。<em>x</em>方向的動量變化為</p>
+
+    <div class="equation">
+        動量的變化 = Δ(<em>mu<sub>x</sub></em>)<br>
+        = 終態動量 − 初態動量<br>
+        = −<em>mu<sub>x</sub></em> − <em>mu<sub>x</sub></em><br>
+        = −2<em>mu<sub>x</sub></em>
+    </div>
+
+    <p>我們對氣體粒子對盒子壁施加的力的大小感興趣。由於我們知道每個作用都會產生一個相等但相反的反作用，因此撞擊時相對於壁的動量變化為−(−2<em>mu<sub>x</sub></em>)，或2<em>mu<sub>x</sub></em>。</p>
+
+    <p>回想一下，由於力是單位時間內動量的變化，那麼</p>
+
+    <div class="equation">
+        Force<sub>x</sub> = Δ(<em>mu<sub>x</sub></em>) / Δ<em>t</em>
+    </div>
+
+    <p>對於垂直於<em>x</em>軸的壁。</p>
+
+    <p>這個表達式可以通過將每次撞擊的動量變化乘以單位時間的撞擊次數來獲得：</p>
+
+    <div class="equation">
+        Force<sub>x</sub> = (2<em>mu<sub>x</sub></em>)(<em>u<sub>x</sub></em> / <em>L</em>) = 單位時間內動量的變化
+    </div>
+
+    <p>也就是說，</p>
+
+    <div class="equation">
+        Force<sub>x</sub> = 2<em>mu<sub>x</sub></em><sup>2</sup> / <em>L</em>
+    </div>
+
+    <p>到目前為止，我們只考慮了垂直於<em>x</em>軸的盒子的兩個壁。我們可以假設垂直於<em>y</em>軸的兩個壁的力的大小由下式給出：</p>
+
+    <div class="equation">
+        Force<sub>y</sub> = 2<em>mu<sub>y</sub></em><sup>2</sup> / <em>L</em>
+    </div>
+
+    <p>並且垂直於<em>z</em>軸的兩個壁的力的大小由下式給出：</p>
+
+    <div class="equation">
+        Force<sub>z</sub> = 2<em>mu<sub>z</sub></em><sup>2</sup> / <em>L</em>
+    </div>
+
+    <p>壓力是單位面積的力，或者是撞擊壁的所有分子的力的總和除以壁的面積。壓力為：</p>
+
+    <div class="equation">
+        Pressure = [2<em>mu<sub>x</sub></em><sup>2</sup> / <em>L</em> + 2<em>mu<sub>y</sub></em><sup>2</sup> / <em>L</em> + 2<em>mu<sub>z</sub></em><sup>2</sup> / <em>L</em>] / 6<em>L</em><sup>2</sup>
+    </div>
+
+    <p>由於我們已經證明</p>
+
+    <div class="equation">
+        <em>u</em><sup>2</sup> = <em>u<sub>x</sub></em><sup>2</sup> + <em>u<sub>y</sub></em><sup>2</sup> + <em>u<sub>z</sub></em><sup>2</sup>
+    </div>
+
+    <p>壓力等於</p>
+
+    <div class="equation">
+        Pressure = [2<em>m</em> / <em>L</em>(<em>u<sub>x</sub></em><sup>2</sup> + <em>u<sub>y</sub></em><sup>2</sup> + <em>u<sub>z</sub></em><sup>2</sup>)] / 6<em>L</em><sup>2</sup> = [2<em>m</em> / <em>L</em>(<em>u</em><sup>2</sup>)] / 6<em>L</em><sup>2</sup>
+    </div>
+
+    <p>現在，由於我們想要「平均」粒子引起的壓力，我們使用速度平方的平均值<em>ū</em><sup>2</sup>來獲得：</p>
+
+    <div class="equation">
+        「平均」粒子引起的壓力 = 2<em>mū</em><sup>2</sup><em>L</em> / 6<em>L</em><sup>3</sup> = <em>mū</em><sup>2</sup> / 3<em>L</em><sup>3</sup>
+    </div>
+
+    <div class="photo-series">
+        <div class="photo-item">
+            <p class="photo-caption">在室溫下充滿空氣的氣球。</p>
+        </div>
+        <div class="photo-item">
+            <p class="photo-caption">氣球浸入77 K的液氮中。</p>
+        </div>
+        <div class="photo-item">
+            <p class="photo-caption">由於溫度降低，內部分子減速，氣球塌陷。較慢的分子產生較低的壓力。</p>
+        </div>
+    </div>
+
+    <h2>補充－分離氣體</h2>
+
+    <div class="insight-box">
+        <div class="insight-title">化學洞察</div>
+        <h3>分離氣體</h3>
+        
+        <p>假設您為一家擁有巨大天然氣儲層的石油公司工作，該儲層含有甲烷和氮氣的混合物。事實上，氣體混合物含有如此多的氮氣，以至於它不適合作為燃料。您的工作是從甲烷（CH₄）中分離氮氣（N₂）。您如何完成這項任務？您顯然需要某種「分子過濾器」，它能阻止稍大的甲烷分子（尺寸≈430 pm）並允許較小的氮分子（尺寸≈410 pm）通過。要完成這種尺寸相近的分子的分離，將需要非常精確的「過濾器」。</p>
+        
+        <p>好消息是存在這樣的過濾器。新澤西州恩格爾哈德公司的Steven Kuznicki和Valerie Bell以及麻薩諸塞大學的Michael Tsapatsis製造了一種「分子篩」，其中的孔隙（通道）尺寸可以精確調整，以分離N₂分子和CH₄分子。所涉及的材料是一種特殊的水合鈦矽酸鹽（含有H₂O、Ti、Si、O和Sr），由恩格爾哈德申請專利並稱為ETS-4（恩格爾哈德鈦矽酸鹽-4）。當用於交換ETS-4中的鍶離子的鈉離子被替換並且新材料被仔細脫水時，會發生均勻且可控制的孔徑縮小（見圖）。研究人員已經表明，該材料可用於將N₂（≈410 pm）與O₂（≈390 pm）分離。他們還表明，有可能將天然氣的氮含量從18%降低到不到5%，甲烷回收率為90%。</p>
+
+        <div class="figure-box">
+            <p class="figure-caption">鈦（藍色）、矽（綠色）和氧（紅色）原子在加熱時收縮的分子篩框架——在室溫下（左）<em>d</em> = 4.27 Å；在250°C時（右）<em>d</em> = 3.94 Å。</p>
+        </div>
+    </div>
+
+    <p>由於立方體的體積<em>V</em>等於<em>L</em><sup>3</sup>，我們可以寫成</p>
+
+    <div class="equation">
+        Pressure = <em>P</em> = <em>mū</em><sup>2</sup> / 3<em>V</em>
+    </div>
+
+    <p>到目前為止，我們只考慮了由單個「平均」粒子對壁造成的壓力。當然，我們想要整個氣體樣品造成的壓力。給定氣體樣品中的粒子數可以表示為：</p>
+
+    <div class="equation">
+        氣體粒子數 = <em>n</em>N<sub>A</sub>
+    </div>
+
+    <p>其中<em>n</em>是莫耳數，N<sub>A</sub>是亞佛加厥常數。</p>
+    
+    <p>因此，<em>n</em>莫耳氣體對盒子造成的總壓力為</p>
+
+    <div class="equation">
+        <em>P</em> = <em>n</em>N<sub>A</sub> <em>mū</em><sup>2</sup> / 3<em>V</em>
+    </div>
+
+    <p>接下來，我們想根據氣體分子的動能來表示壓力。動能（由運動引起的能量）由½<em>mu</em><sup>2</sup>給出，<span class="emphasis">其中<em>m</em>是質量，<em>u</em>是速度。由於我們使用速度平方的平均值</span>（<em>ū</em><sup>2</sup>），並且由於<em>mū</em><sup>2</sup> = 2(½<em>mū</em><sup>2</sup>)，我們有</p>
+
+    <div class="equation">
+        <em>P</em> = 2/3[<em>n</em>N<sub>A</sub>(½<em>mū</em><sup>2</sup>) / <em>V</em>]
+    </div>
+
+    <p>回想一下，<em>P</em>是氣體的壓力，<em>n</em>是氣體的莫耳數，N<sub>A</sub>是亞佛加厥常數，<em>m</em>是每個粒子的質量，<em>ū</em><sup>2</sup>是粒子速度平方的平均值，<em>V</em>是容器的體積。</p>
+
+    <div class="info-box">
+        <p><strong>KE = ½ <em>mu</em><sup>2</sup>，由粒子運動引起的能量。</strong></p>
+    </div>
+
+    <p>量½<em>mū</em><sup>2</sup>代表平均動能，屬於一個粒子。◀ 如果將個別粒子的平均動能乘以N<sub>A</sub>（一莫耳中的粒子數），我們得到一莫耳氣體粒子的平均動能：</p>
+
+    <div class="equation">
+        (KE)<sub>avg</sub> = N<sub>A</sub>(½<em>mū</em><sup>2</sup>)
+    </div>
+
+    <p>使用這個定義，我們可以將壓力的表達式重寫為</p>
+
+    <div class="equation">
+        <em>P</em> = 2/3[<em>n</em>(KE)<sub>avg</sub> / <em>V</em>] &nbsp;&nbsp;&nbsp; 或 &nbsp;&nbsp;&nbsp; <em>PV</em> / <em>n</em> = 2/3(KE)<sub>avg</sub>
+    </div>
+
+    <p>動力分子理論的第四個假設是，氣體樣品中粒子的平均動能與克耳文溫度成正比。因此，由於(KE)<sub>avg</sub> ∝ <em>T</em>，我們可以寫成</p>
+
+    <div class="equation">
+        <em>PV</em> / <em>n</em> = 2/3(KE)<sub>avg</sub> ∝ <em>T</em> &nbsp;&nbsp;&nbsp; 或 &nbsp;&nbsp;&nbsp; <em>PV</em> / <em>n</em> ∝ <em>T</em>
+    </div>
+
+    <p>請注意，這個表達式是從動力分子理論的假設<span class="emphasis">推導</span>出來的。它與理想氣體定律相比如何——從實驗得到的方程式？比較理想氣體定律，</p>
+
+    <div class="equation">
+        <em>PV</em> / <em>n</em> = <em>RT</em> &nbsp;&nbsp;&nbsp; <span style="color: #0288d1;">來自實驗</span>
+    </div>
+
+    <p>與動力分子理論的結果，</p>
+
+    <div class="equation">
+        <em>PV</em> / <em>n</em> ∝ <em>T</em> &nbsp;&nbsp;&nbsp; <span style="color: #0288d1;">來自理論</span>
+    </div>
+
+    <p>這些表達式具有完全相同的形式，如果將<em>R</em>（通用氣體常數）視為第二種情況下的比例常數。</p>
+
+    <p>理想氣體定律與動力分子理論之間的一致性使我們對該模型的有效性充滿信心。我們為理想氣體粒子假設的特性必須在至少某些條件下與它們的實際行為一致。</p>
+
+    <h2>溫度的意義</h2>
+
+    <p>我們從動力分子理論中看到，克耳文溫度是氣體粒子平均動能的量度。可以通過組合以下方程式來獲得溫度與平均動能之間的確切關係</p>
+
+    <div class="equation">
+        <em>PV</em> / <em>n</em> = <em>RT</em> = 2/3(KE)<sub>avg</sub>
+    </div>
+
+    <p>這得出表達式</p>
+
+    <div class="equation">
+        (KE)<sub>avg</sub> = 3/2<em>RT</em>
+    </div>
+
+    <p>這是一個非常重要的關係。它總結了氣體的克耳文溫度的意義：克耳文溫度是氣體粒子隨機運動的指標，溫度越高意味著運動越大。</p>
+
+    <h2>均方根速度</h2>
+
+    <p>在來自動力分子理論的方程式中，氣體粒子的平均速度是一種特殊的平均值。符號<em>ū</em><sup>2</sup>表示粒子速度<span class="emphasis">平方</span>的平均值。<em>ū</em><sup>2</sup>的平方根稱為<span class="term">均方根速度</span>，並用符號<em>u</em><sub>rms</sub>表示：</p>
+
+    <div class="equation">
+        <em>u</em><sub>rms</sub> = √<em>ū</em><sup>2</sup>
+    </div>
+
+    <p>我們可以從以下方程式獲得<em>u</em><sub>rms</sub>的表達式</p>
+
+    <div class="equation">
+        (KE)<sub>avg</sub> = N<sub>A</sub>(½<em>mū</em><sup>2</sup>) &nbsp;&nbsp;&nbsp; 和 &nbsp;&nbsp;&nbsp; (KE)<sub>avg</sub> = 3/2<em>RT</em>
+    </div>
+
+    <p>組合這些方程式得到</p>
+
+    <div class="equation">
+        N<sub>A</sub>(½<em>mū</em><sup>2</sup>) = 3/2<em>RT</em> &nbsp;&nbsp;&nbsp; 或 &nbsp;&nbsp;&nbsp; <em>ū</em><sup>2</sup> = 3<em>RT</em> / N<sub>A</sub><em>m</em>
+    </div>
+
+    <p>對最後一個方程式的兩邊取平方根得到</p>
+
+    <div class="equation">
+        √<em>ū</em><sup>2</sup> = <em>u</em><sub>rms</sub> = √(3<em>RT</em> / N<sub>A</sub><em>m</em>)
+    </div>
+
+    <p>在這個表達式中，<em>m</em>代表以公斤為單位的單個氣體粒子的質量。當N<sub>A</sub>（一莫耳中的粒子數）乘以<em>m</em>時，其乘積是一<span class="emphasis">莫耳</span>氣體粒子以<span class="emphasis">公斤</span>為單位的質量。我們將這個量稱為<em>M</em>。將<em>M</em>代入N<sub>A</sub><em>m</em>到<em>u</em><sub>rms</sub>的方程式中，我們得到</p>
+
+    <div class="equation">
+        <em>u</em><sub>rms</sub> = √(3<em>RT</em> / <em>M</em>)
+    </div>
+
+    <p>在我們使用這個方程式之前，我們需要考慮<em>R</em>的單位。到目前為止，我們使用0.08206 L atm K<sup>−1</sup> mol<sup>−1</sup>作為<em>R</em>的值。但是為了獲得<em>u</em><sub>rms</sub>所需的單位（米每秒），<em>R</em>必須以不同的單位表示。如第5章所述，能量的SI單位是焦耳（J）。焦耳定義為公斤米平方每秒平方（kg m<sup>2</sup>/s<sup>2</sup>）。當<em>R</em>從升大氣壓轉換為焦耳時，它的值為8.3145 J K<sup>−1</sup> mol<sup>−1</sup>。當<em>R</em>使用這些單位時</p>
+
+    <div class="info-box">
+        <p><em>R</em> = 0.08206 L atm K<sup>−1</sup> mol<sup>−1</sup><br>
+        <em>R</em> = 8.3145 J K<sup>−1</sup> mol<sup>−1</sup></p>
+    </div>
+
+    <p>在表達式√(3<em>RT</em>/<em>M</em>)中使用時，<em>u</em><sub>rms</sub>的單位為米每秒，如所需。</p>
+
+    <p>到目前為止，我們對氣體樣品中實際發現的速度範圍沒有任何說明。在真實氣體中，粒子之間存在大量碰撞。例如，當釋放氨等有臭味的氣體時，氣味需要一些時間才能滲透空氣，如我們將在5.7節中看到的。這種延遲是由於NH<sub>3</sub>分子和O<sub>2</sub>和N<sub>2</sub>分子之間在空氣中進行混合過程的碰撞所致。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.14</div>
+        <p class="figure-caption">氣體中一個粒子的路徑。任何給定的粒子都會因與其他粒子以及與容器壁的碰撞而不斷改變其路線。</p>
+    </div>
+
+    <p>如果可以監控特定氣體粒子的路徑，它可能看起來非常不規則，如圖5.14 ◀ 所示。粒子在特定氣體樣品中碰撞之間移動的平均距離稱為<span class="term">平均自由徑</span>。它通常是一個非常小的距離（在STP下，O<sub>2</sub>為1 × 10<sup>−7</sup> m）。氣體粒子之間的許多碰撞的一個影響是產生大範圍的速度，因為粒子碰撞並交換動能。雖然在STP下氧氣的<em>u</em><sub>rms</sub>約為500 m/s，但大多數O<sub>2</sub>分子沒有這個速度。在STP下氧氣的分子速度的實際分布如圖5.15 ◀ 所示。該圖顯示了在氧氣分子中具有每個特定速度的相對數量。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.15</div>
+        <p class="figure-caption">在STP下具有給定速度的O<sub>2</sub>分子的相對數量的圖。</p>
+    </div>
+
+    <p>我們也對<span class="emphasis">溫度</span>對速度分布的影響感興趣。圖5.16 ◀ 顯示了在三個溫度下氮氣的速度分布。請注意，隨著溫度升高，曲線的最大值（反映平均速度）向更高的值移動，速度範圍變得更大。</p>
+
+    <p>理想氣體中粒子的速度分布由<span class="term">馬克士威-波茲曼分布定律</span>描述：</p>
+
+    <div class="equation">
+        <em>f</em>(<em>u</em>) = 4π(<em>m</em> / 2<em>k</em><sub>B</sub><em>T</em>)<sup>3/2</sup> <em>u</em><sup>2</sup><em>e</em><sup>−<em>mu</em><sup>2</sup>/2<em>k</em><sub>B</sub><em>T</em></sup>
+    </div>
+
+    <p>其中</p>
+
+    <div class="equation" style="text-align: left; padding-left: 50px;">
+        <em>u</em> = 速度，以m/s為單位<br>
+        <em>m</em> = 氣體粒子的質量，以kg為單位<br>
+        <em>k</em><sub>B</sub> = 波茲曼常數 = 1.38066 × 10<sup>−23</sup> J/K<br>
+        <em>T</em> = 溫度，以K為單位
+    </div>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.16</div>
+        <p class="figure-caption">在三個溫度下具有給定速度的N<sub>2</sub>分子的相對數量的圖。請注意，隨著溫度升高，平均速度（反映在曲線峰值處）和速度範圍都會增加。</p>
+    </div>
+
+    <p>這個方程式是由蘇格蘭物理學家James C. Maxwell和奧地利物理學家Ludwig E. Boltzmann獨立推導的，他們在理想氣體的動力分子描述的基礎理論工作中做了大量工作。函數<em>f</em>(<em>u</em>)<em>du</em>代表速度在<em>u</em>和<em>u</em> + <em>du</em>之間的氣體分子的分數，其中<em>du</em>代表一個無窮小的速度增量。這個函數就是在圖5.15和5.16中繪製的函數。</p>
+
+    <p>分析這個表達式可以得到以下方程式，用於<span class="term">最可幾速度</span> <em>u</em><sub>mp</sub>（由最大數量的氣體粒子所擁有的速度）：</p>
+
+    <div class="equation">
+        <em>u</em><sub>mp</sub> = √(2<em>k</em><sub>B</sub><em>T</em> / <em>m</em>) = √(2<em>RT</em> / <em>M</em>)
+    </div>
+
+    <p>其中</p>
+
+    <div class="equation" style="text-align: left; padding-left: 50px;">
+        <em>M</em> = 氣體粒子的莫耳質量，以kg為單位 = 6.022 × 10<sup>23</sup> × <em>m</em><br>
+        <em>R</em> = 氣體常數 = 6.022 × 10<sup>23</sup> × <em>k</em><sub>B</sub>
+    </div>
+
+    <p>請注意，<em>R</em>和<em>k</em><sub>B</sub>由亞佛加厥常數相關。事實上，將<em>k</em><sub>B</sub>視為每個粒子（每個分子）的氣體定律常數是有用的。</p>
+
+    <p>可以從<em>f</em>(<em>u</em>)獲得的另一種速度類型是<span class="term">平均速度</span> <em>u</em><sub>avg</sub>（有時寫作<em>ū</em>），由以下方程式給出：</p>
+
+    <div class="equation">
+        <em>u</em><sub>avg</sub> = <em>ū</em> = √(8<em>k</em><sub>B</sub><em>T</em> / π<em>m</em>) = √(8<em>RT</em> / π<em>M</em>)
+    </div>
+
+    <p>因此，我們有三種方法來描述理想氣體中粒子的「典型」速度：均方根速度、最可幾速度和平均速度。從<em>u</em><sub>rms</sub>、<em>u</em><sub>mp</sub>和<em>u</em><sub>avg</sub>的方程式可以看出，這些速度並不相同。事實上，它們的比率為</p>
+
+    <div class="equation">
+        <em>u</em><sub>mp</sub> : <em>u</em><sub>avg</sub> : <em>u</em><sub>rms</sub> = 1.000 : 1.128 : 1.225
+    </div>
+
+    <p>這種關係在圖5.17 ▶ 中顯示了0°C下的氮氣。</p>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

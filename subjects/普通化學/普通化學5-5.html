@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學5-5</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .important-box {
+            background-color: #ffebee;
+            border-left: 5px solid #c62828;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .insight-box {
+            background-color: #f3e5f5;
+            border-left: 5px solid #6a1b9a;
+            padding: 15px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        .insight-title {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .note-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>5.5 道爾頓分壓定律</h1>
+    
+    <p>引導約翰·道爾頓提出原子理論的實驗中，包括他對混合氣體的研究。1803年，道爾頓將他的觀察總結如下：<span class="emphasis">對於容器中的混合氣體，其施加的總壓力等於每種氣體單獨存在時所施加的壓力之和。</span>這個陳述，被稱為<span class="term">道爾頓分壓定律</span>，可以表示如下：</p>
+
+    <div class="equation">
+        P<sub>總</sub> = P<sub>1</sub> + P<sub>2</sub> + P<sub>3</sub> + ···
+    </div>
+
+    <p>其中下標指的是各個氣體（氣體1、氣體2等）。壓力P<sub>1</sub>、P<sub>2</sub>、P<sub>3</sub>等被稱為<span class="term">分壓</span>，也就是說，每種氣體單獨存在於容器中時所施加的壓力。</p>
+
+    <p>假設每種氣體都表現得理想，則每種氣體的分壓可以從理想氣體定律計算：</p>
+
+    <div class="equation">
+        P<sub>1</sub> = <sup>n<sub>1</sub>RT</sup>/<sub>V</sub>, &nbsp;&nbsp; P<sub>2</sub> = <sup>n<sub>2</sub>RT</sup>/<sub>V</sub>, &nbsp;&nbsp; P<sub>3</sub> = <sup>n<sub>3</sub>RT</sup>/<sub>V</sub>, &nbsp;&nbsp; ···
+    </div>
+
+    <p>混合物的總壓力P<sub>總</sub>可以表示為</p>
+
+    <div class="equation">
+        P<sub>總</sub> = P<sub>1</sub> + P<sub>2</sub> + P<sub>3</sub> + ··· = <sup>n<sub>1</sub>RT</sup>/<sub>V</sub> + <sup>n<sub>2</sub>RT</sup>/<sub>V</sub> + <sup>n<sub>3</sub>RT</sup>/<sub>V</sub> + ···<br><br>
+        = (n<sub>1</sub> + n<sub>2</sub> + n<sub>3</sub> + ···)<span style="font-size: 1.2em;">(</span><sup>RT</sup>/<sub>V</sub><span style="font-size: 1.2em;">)</span> = n<sub>總</sub><span style="font-size: 1.2em;">(</span><sup>RT</sup>/<sub>V</sub><span style="font-size: 1.2em;">)</span>
+    </div>
+
+    <p>其中n<sub>總</sub>是各種氣體的莫耳數總和。因此，對於理想氣體的混合物，<span class="highlight">重要的是粒子的總莫耳數</span>，而不是各個氣體粒子的身份或組成。這個概念如圖5.9所示。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.9</div>
+        <p class="figure-caption">混合氣體中每種氣體的分壓取決於該氣體的莫耳數。總壓力是各分壓的總和，並取決於氣體粒子的總莫耳數，無論其身份如何。</p>
+    </div>
+
+    <div class="important-box">
+        <p><strong>重要結論：</strong>這個重要結果表明了理想氣體的一些基本特徵。由理想氣體所施加的壓力由氣體粒子的身份（結構）揭示了關於理想氣體的兩件事：（1）個別氣體粒子的體積必定不重要，以及（2）粒子之間的作用力必定不重要。如果這些因素很重要，則施加的壓力將取決於個別粒子的性質。這些觀察將強烈影響我們最終構建來解釋理想氣體行為的模型。</p>
+    </div>
+
+    <p>此時我們需要定義<span class="term">莫耳分率</span>：<span class="emphasis">混合物中給定組分的莫耳數與混合物中總莫耳數的比值。</span>希臘字母χ（chi）用來表示莫耳分率。對於混合物中的給定組分i，莫耳分率χ<sub>i</sub>為</p>
+
+    <div class="equation">
+        χ<sub>1</sub> = <sup>n<sub>1</sub></sup>/<sub>n<sub>總</sub></sub> = <sup>n<sub>1</sub></sup>/<sub>n<sub>1</sub> + n<sub>2</sub> + n<sub>3</sub> + ···</sub>
+    </div>
+
+    <p>從理想氣體方程式，我們知道氣體的莫耳數與氣體的壓力成正比，因為</p>
+
+    <div class="equation">
+        n = P<span style="font-size: 1.2em;">(</span><sup>V</sup>/<sub>RT</sub><span style="font-size: 1.2em;">)</span>
+    </div>
+
+    <p>也就是說，對於混合物中的每種組分，</p>
+
+    <div class="equation">
+        n<sub>1</sub> = P<sub>1</sub><span style="font-size: 1.2em;">(</span><sup>V</sup>/<sub>RT</sub><span style="font-size: 1.2em;">)</span>, &nbsp;&nbsp; n<sub>2</sub> = P<sub>2</sub><span style="font-size: 1.2em;">(</span><sup>V</sup>/<sub>RT</sub><span style="font-size: 1.2em;">)</span>, &nbsp;&nbsp; ···
+    </div>
+
+    <p>因此，我們可以用壓力來表示莫耳分率：</p>
+
+    <div class="equation">
+        χ<sub>1</sub> = <sup>n<sub>1</sub></sup>/<sub>n<sub>總</sub></sub> = <sup>P<sub>1</sub>(V/RT)</sup>/<sub>P<sub>1</sub>(V/RT) + P<sub>2</sub>(V/RT) + P<sub>3</sub>(V/RT) + ···</sub><br><br>
+        = <sup>(V/RT)P<sub>1</sub></sup>/<sub>(V/RT)(P<sub>1</sub> + P<sub>2</sub> + P<sub>3</sub> + ···)</sub><br><br>
+        = <sup>P<sub>1</sub></sup>/<sub>P<sub>1</sub> + P<sub>2</sub> + P<sub>3</sub> + ···</sub> = <sup>P<sub>1</sub></sup>/<sub>P<sub>總</sub></sub>
+    </div>
+
+    <p>同樣地，</p>
+
+    <div class="equation">
+        χ<sub>2</sub> = <sup>n<sub>2</sub></sup>/<sub>n<sub>總</sub></sub> = <sup>P<sub>2</sub></sup>/<sub>P<sub>總</sub></sub>
+    </div>
+
+    <p>依此類推。因此，理想氣體混合物中特定組分的莫耳分率與其分壓直接相關。</p>
+
+    <p>莫耳分率的表達式，</p>
+
+    <div class="equation">
+        χ<sub>1</sub> = <sup>P<sub>1</sub></sup>/<sub>P<sub>總</sub></sub>
+    </div>
+
+    <p>可以重新排列為：</p>
+
+    <div class="equation" style="background-color: #e3f2fd;">
+        P<sub>1</sub> = χ<sub>1</sub> × P<sub>總</sub>
+    </div>
+
+    <p>也就是說，<span class="emphasis">氣體混合物中特定組分的分壓等於該組分的莫耳分率乘以總壓力。</span></p>
+
+    <p>當氣體通過水的置換收集時，就會出現氣體混合物。例如，圖5.10顯示了通過氯酸鉀的固體分解產生的氧氣的收集。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.10</div>
+        <p class="figure-caption">通過熱分解KClO<sub>3</sub>產生氧氣。MnO<sub>2</sub>催化劑與KClO<sub>3</sub>混合，使反應更快。</p>
+    </div>
+
+    <p>通過氯酸鉀固體的分解，在這種情況下，瓶中的氣體是水蒸氣和所收集氣體的混合物。水蒸氣的存在是因為水分子從液體表面逃逸並聚集在液體上方的空間中。水分子也會返回液體。</p>
+
+    <div class="note-box">
+        <p><strong>註：</strong>蒸氣壓將在第16章詳細討論。</p>
+    </div>
+
+    <p>當逃逸速率等於返回速率時，蒸氣狀態中的水分子數量保持恆定，因此水蒸氣的壓力保持恆定。這個壓力取決於溫度，稱為<span class="term">水的蒸氣壓</span>。</p>
+
+    <h2>互動範例</h2>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 5.7</div>
+        <h3>道爾頓定律</h3>
+        
+        <p>空氣中氮氣的莫耳分率為0.7808。當大氣壓力為760. torr時，計算空氣中N<sub>2</sub>的分壓。</p>
+        
+        <p><strong>解答</strong> N<sub>2</sub>的分壓可以如下計算：</p>
+
+        <div class="equation">
+            P<sub>N₂</sub> = χ<sub>N₂</sub> × P<sub>總</sub> = 0.7808 × 760. torr = 593 torr
+        </div>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 5.8</div>
+        <h3>水上收集氣體</h3>
+        
+        <p>在試管中加熱氯酸鉀（KClO<sub>3</sub>）固體樣品（圖5.10），並根據以下反應分解：</p>
+
+        <div class="equation">
+            2KClO<sub>3</sub>(s) ⟶ 2KCl(s) + 3O<sub>2</sub>(g)
+        </div>
+
+        <p>產生的氧氣在22°C下通過水的置換收集，總壓力為754 torr。收集的氣體體積為0.650 L，而22°C時水的蒸氣壓為21 torr。計算收集氣體中O<sub>2</sub>的分壓以及分解的樣品中KClO<sub>3</sub>的質量。</p>
+        
+        <p><strong>解答</strong></p>
+        
+        <p><strong>我們要去哪裡？</strong><br>
+        我們被要求找出收集氣體中O<sub>2</sub>的分壓和原始樣品中反應物（KClO<sub>3</sub>）的質量</p>
+
+        <p><strong>我們知道什麼？</strong><br>
+        我們有平衡方程式，並給出了氣體混合物的體積、溫度和總壓力，以及該溫度下水的蒸氣壓。</p>
+
+        <p><strong>我們如何到達那裡？</strong><br>
+        由於氧氣和水蒸氣是混合物中唯一的氣體，我們可以從道爾頓分壓定律確定氧氣的分壓：</p>
+
+        <div class="equation">
+            P<sub>總</sub> = P<sub>O₂</sub> + P<sub>H₂O</sub> = P<sub>O₂</sub> + 21 torr = 754 torr
+        </div>
+
+        <p>因此</p>
+
+        <div class="equation">
+            P<sub>O₂</sub> = 754 torr − 21 torr = 733 torr
+        </div>
+
+        <p>現在我們必須從氧氣的分壓確定KClO<sub>3</sub>的質量。回想一下我們在化學計量問題中使用的策略。也就是說，我們可以從O<sub>2</sub>的莫耳數確定KClO<sub>3</sub>的質量，而我們可以從O<sub>2</sub>的莫耳數確定KClO<sub>3</sub>的莫耳數。我們知道O<sub>2</sub>的分壓。伴隨體積和溫度，我們可以使用理想氣體定律找出O<sub>2</sub>的莫耳數：</p>
+
+        <div class="equation">
+            n<sub>O₂</sub> = <sup>P<sub>O₂</sub>V</sup>/<sub>RT</sub>
+        </div>
+
+        <p>在這種情況下</p>
+
+        <div class="equation">
+            P<sub>O₂</sub> = 733 torr = <sup>733 torr</sup>/<sub>760 torr/atm</sub> = 0.964 atm
+        </div>
+
+        <div class="equation">
+            V = 0.650 L
+        </div>
+
+        <div class="equation">
+            T = 22°C + 273 = 295 K
+        </div>
+
+        <div class="equation">
+            R = 0.08206 L atm K<sup>−1</sup> mol<sup>−1</sup>
+        </div>
+
+        <p>因此</p>
+
+        <div class="equation">
+            n<sub>O₂</sub> = <sup>(0.964 atm)(0.650 L)</sup>/<sub>(0.08206 L atm K<sup>−1</sup> mol<sup>−1</sup>)(295 K)</sub> = 2.59 × 10<sup>−2</sup> mol
+        </div>
+
+        <p>接下來，我們從分解KClO<sub>3</sub>的平衡方程式使用莫耳比來計算產生這個數量O<sub>2</sub>所需的KClO<sub>3</sub>莫耳數：</p>
+
+        <div class="equation">
+            2.59 × 10<sup>−2</sup> mol O<sub>2</sub> × <sup>2 mol KClO<sub>3</sub></sup>/<sub>3 mol O<sub>2</sub></sub> = 1.73 × 10<sup>−2</sup> mol KClO<sub>3</sub>
+        </div>
+
+        <p>使用KClO<sub>3</sub>的莫耳質量，我們計算KClO<sub>3</sub>的克數：</p>
+
+        <div class="equation">
+            1.73 × 10<sup>−2</sup> mol KClO<sub>3</sub> × <sup>122.6 g KClO<sub>3</sub></sup>/<sub>1 mol KClO<sub>3</sub></sub> = 2.12 g KClO<sub>3</sub>
+        </div>
+
+        <p>因此原始樣品含有2.12 g的KClO<sub>3</sub>。</p>
+    </div>
+
+    <h2>補充-安全氣囊的化學</h2>
+
+    <div class="insight-box">
+        <div class="insight-title">化學洞察</div>
+        <h3>安全氣囊的化學</h3>
+        
+        <p>在現代汽車中加入安全氣囊已導致因車禍造成的傷害數量顯著減少。安全氣囊儲存在所有汽車的方向盤和儀表板中，許多汽車現在還配備了額外的安全氣囊來保護乘客的膝蓋、頭部和肩部。事實上，一些汽車製造商現在甚至在座椅安全帶中配備了安全氣囊。此外，由於安全氣囊的展開可能會嚴重傷害兒童，所有汽車現在都配備了"智能"安全氣囊，其展開力度與座位乘客的體重成比例。</p>
+
+        <p>術語"安全氣囊"實際上是一個誤稱，因為空氣並不參與充氣過程。相反，安全氣囊是由於爆炸性產生N<sub>2</sub>氣體而迅速充氣（約30毫秒）。最初使用的是疊氮化鈉，它會分解產生N<sub>2</sub>，</p>
+
+        <div class="equation">
+            2NaN<sub>3</sub>(s) → 2Na(s) + 3N<sub>2</sub>(g)
+        </div>
+
+        <p>但現在已被毒性較低的材料取代。</p>
+
+        <p>觸發安全氣囊的感應裝置必須反應非常迅速。例如，考慮一輛汽車撞到混凝土橋墩。當這種情況發生時，內部加速度計會向控制模組發送消息，表明可能發生碰撞。然後微處理器分析來自幾個加速度計和車門壓力感應器的測量減速度，並決定是否適合展開安全氣囊。所有這些都發生在初始撞擊的40毫秒內。</p>
+
+        <p>由於安全氣囊必須提供適當的緩衝效果，因此在充氣時氣囊就開始排氣。事實上，在碰撞事件的中期，氣囊中的最大壓力為5磅每平方英寸（psi）。安全氣囊代表了一個案例，其中爆炸性化學反應挽救了生命，而不是相反。</p>
+
+        <div class="figure-box">
+            <p class="figure-caption" style="text-align: center;"><em>充氣的安全氣囊。</em></p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>
