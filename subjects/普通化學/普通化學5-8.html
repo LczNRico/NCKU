@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學5-8</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .list-item {
+            margin-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .note-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>5.8 氣體粒子與容器壁的碰撞</h1>
+    
+    <p>在導出理想氣體方程式的分子動力論模型分析中，我們假設氣體施加的壓力是由其粒子與容器壁的碰撞所引起的。在本節中，我們將考慮該現象的細節。</p>
+
+    <p>我們的目標是獲得一個方程式，該方程式描述每秒與壁的給定區域碰撞的粒子數量。儘管可以從分子動力論理論的細節進行這種方程式的嚴格推導，但我們不會這樣做。相反，我們將追求一種定性策略，試圖從我們對理想氣體預期行為的概念性理解中獲得基本關係。我們將定義要尋找的量為 Z<sub>A</sub>，即碰撞率（每秒）與面積為 A（以 m² 為單位）的壁截面的碰撞。我們預期 Z<sub>A</sub> 取決於以下因素：</p>
+
+    <div class="list-item">1. 氣體粒子的平均速度</div>
+    <div class="list-item">2. 所考慮區域的大小</div>
+    <div class="list-item">3. 容器中的粒子數量</div>
+
+    <p>Z<sub>A</sub> 如何取決於氣體粒子的平均速度？例如，如果我們將平均速度加倍，我們就會將壁碰撞的數量加倍，因此 Z<sub>A</sub> 應該加倍。因此 Z<sub>A</sub> 直接取決於 <em>u</em><sub>avg</sub>：</p>
+
+    <div class="equation">
+        Z<sub>A</sub> ∝ <em>u</em><sub>avg</sub>
+    </div>
+
+    <p>類似地，Z<sub>A</sub> 直接取決於 A，即所考慮的壁面積。也就是說，如果我們將面積加倍，我們將在該壁截面內每秒發生的碰撞次數加倍。因此 Z<sub>A</sub> ∝ A。</p>
+
+    <p>同樣地，如果容器中的粒子數量加倍，與壁的碰撞也會加倍。然而，對於一般情況，我們需要考慮的不是粒子的絕對數量，而是單位體積的粒子數量（粒子的數密度），可以用 N/V 表示，N 是粒子數除以體積 V（以 m³ 為單位）。因此 Z<sub>A</sub> 預期直接取決於 N/V。也就是說，Z<sub>A</sub> ∝ N/V。</p>
+
+    <p>總之，Z<sub>A</sub> 應該與 <em>u</em><sub>avg</sub>、A 和 N/V 成正比：</p>
+
+    <div class="equation">
+        Z<sub>A</sub> ∝ <em>u</em><sub>avg</sub> × A × (N/V)
+    </div>
+
+    <p>請注意，從這個關係式預期的 Z<sub>A</sub> 單位為：</p>
+
+    <div class="equation">
+        (m/s) × m² × (粒子/m³) ——→ (粒子/s) 或 (碰撞/s)
+    </div>
+
+    <p>這裡使用括號是因為粒子和碰撞是被理解的，而不是實際的單位。Z<sub>A</sub> 的正確單位是 1/s 或 s⁻¹。<em>u</em><sub>avg</sub> × A × N/V 的乘積對 Z<sub>A</sub> 預期的單位這一事實表明我們正在考慮所有影響 Z<sub>A</sub> 的氣體性質。代入 <em>u</em><sub>avg</sub> 的表達式給出：</p>
+
+    <div class="equation">
+        Z<sub>A</sub> ∝ (N/V)√<span style="text-decoration: overline;">8RT/πM</span>
+    </div>
+
+    <p>對情況的更詳細分析表明，比例常數為 ¼。因此 Z<sub>A</sub> 的精確方程式為：</p>
+
+    <div class="equation">
+        Z<sub>A</sub> = (1/4)(N/V)A√<span style="text-decoration: overline;">8RT/πM</span> = A(N/V)√<span style="text-decoration: overline;">RT/2πM</span>
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 5.9</div>
+        <h3>氣體的撞擊率</h3>
+        
+        <p>計算在壓力為 1.00 atm 和 27°C 下，含有氧氣的容器中 1.00-cm² 截面的撞擊率。</p>
+        
+        <p><strong>解答</strong> 要計算 Z<sub>A</sub>，我們必須確定方程式中變數的值：</p>
+
+        <div class="equation">
+            Z<sub>A</sub> = A(N/V)√<span style="text-decoration: overline;">RT/2πM</span>
+        </div>
+
+        <p>在這種情況下，A 給定為 1.00 cm²。然而，要插入到 Z<sub>A</sub> 的表達式中，A 必須具有 m² 的單位。適當的轉換給出：</p>
+
+        <div class="equation">
+            A = 1.00 × 10⁻⁴ m²
+        </div>
+
+        <p>N/V 的量可以從理想氣體定律通過求解 n/V 然後轉換為適當的單位來獲得：</p>
+
+        <div class="equation">
+            n/V = P/RT = 1.00 atm / [(0.08206 L atm/K mol)(300. K)] = 4.06 × 10⁻² mol/L
+        </div>
+
+        <p>要獲得 N/V，其單位為（分子）/m³，從 n/V，我們進行以下轉換：</p>
+
+        <div class="equation">
+            N/V = 4.06 × 10⁻² (mol/L) × 6.022 × 10²³ (分子/mol) × (1000 L/m³)<br>
+            = 2.44 × 10²⁵（分子）/m³
+        </div>
+
+        <p>M 的量代表 O₂ 的莫耳質量，以 kg 為單位。因此：</p>
+
+        <div class="equation">
+            M = 32.0 (g/mol) × (1 kg/1000 g) = 3.20 × 10⁻² kg/mol
+        </div>
+
+        <p>接下來，我們將這些量插入 Z<sub>A</sub> 的表達式中：</p>
+
+        <div class="equation">
+            Z<sub>A</sub> = A(N/V)√<span style="text-decoration: overline;">RT/2πM</span> = (1.00 × 10⁻⁴ m²)(2.44 × 10²⁵ m⁻³)<br><br>
+            × √<span style="text-decoration: overline;">[(8.3145 J/K mol)(300. K)] / [(2)(3.14)(3.20 × 10⁻² kg/mol)]</span><br><br>
+            = 2.72 × 10²³ s⁻¹
+        </div>
+
+        <p>也就是說，在這種氣體中，每秒在容器的每個 1.00-cm² 區域上發生 2.72 × 10²³ 次碰撞。</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

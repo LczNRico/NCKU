@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學5-10</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .note-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        th {
+            background-color: #00897b;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .table-caption {
+            background-color: #00897b;
+            color: white;
+            padding: 8px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .critical-box {
+            background-color: #fff9c4;
+            border-left: 5px solid #f57f17;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-title {
+            background-color: #f57f17;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .insight-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #2e7d32;
+            padding: 15px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        .insight-title {
+            background-color: #2e7d32;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .photo-caption {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>5.10 真實氣體</h1>
+    
+    <p>理想氣體是一個假設性的概念。沒有氣體<span class="emphasis">完全</span>遵循理想氣體定律，儘管許多氣體在低壓和/或高溫下非常接近。因此，理想氣體行為最好被認為是在某些條件下<span class="emphasis">真實氣體所接近的行為</span>。</p>
+
+    <p>我們已經看到，通過做出一些相當激烈的假設（無粒子間交互作用和氣體粒子的體積為零），一個非常簡單的模型——動力學分子理論——成功地解釋了理想行為。然而，重要的是我們檢查真實氣體行為，以了解它與理想氣體定律預測的行為有何不同，並確定需要對動力學分子理論進行哪些修改以解釋觀察到的行為。由於模型是一種近似，將不可避免地失敗，我們必須準備好從這種失敗中學習。事實上，我們常常從模型的失敗中學到的關於自然的知識比從它們的成功中學到的更多。</p>
+
+    <p>我們將通過測量氣體的壓力、體積、溫度和莫耳數，並注意量<em>PV</em>/<em>nRT</em>如何依賴於壓力，來檢驗真實氣體的實驗觀察行為。幾種氣體的<em>PV</em>/<em>nRT</em>對<em>P</em>的圖示如圖5.22<strong>▶</strong>所示。對於理想氣體，<em>PV</em>/<em>nRT</em>在所有條件下都等於1，但請注意，對於真實氣體，<em>PV</em>/<em>nRT</em>僅在低壓下（通常為1 atm）接近1。為了說明溫度的影響，我們已經繪製了氮氣在幾種溫度下的<em>PV</em>/<em>nRT</em>對<em>P</em>的圖，如圖5.23<strong>▶</strong>所示。注意到隨著溫度升高，氣體的行為似乎變得更接近理想。從這些圖中得出的最重要結論是，真實氣體通常表現出在<span class="emphasis">低壓</span>和<span class="emphasis">高溫</span>下最接近理想行為的行為。<strong>▶</strong></p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.23</div>
+        <p class="figure-caption">氮氣在幾種溫度下的<em>PV</em>/<em>nRT</em>對<em>P</em>的圖。注意，雖然在每種情況下都明顯存在非理想行為，但在較高溫度下的偏差較小。</p>
+        <p class="figure-caption" style="margin-top: 15px;">圖中顯示一個座標系，橫軸為<em>P</em>（atm），範圍從0到800，縱軸為<em>PV</em>/<em>nRT</em>，範圍從0.6到1.8。有四條曲線分別代表203 K、293 K、673 K和理想氣體。在低壓下，所有曲線接近1.0。</p>
+    </div>
+
+    <div class="info-box">
+        <p style="color: #0277bd; font-weight: 500;"><em>PV</em>/<em>nRT</em>對於許多氣體在高壓下也等於1，這是由於非理想效應的抵消。</p>
+    </div>
+
+    <p>我們如何修改動力學分子理論的假設以符合真實氣體的行為？真實氣體的方程式是在1873年由約翰尼斯·范德瓦（Johannes van der Waals）開發的，他是阿姆斯特丹大學的物理學教授，並於1910年因其工作獲得諾貝爾獎。為了遵循他的分析，我們從理想氣體定律開始，</p>
+
+    <div class="equation">
+        <em>P</em> = <em>nRT</em>/<em>V</em>
+    </div>
+
+    <p>請記住，這個方程式描述了由不具有體積且彼此不相互作用的無體積實體組成的假設性氣體的行為。相比之下，真實氣體由具有有限體積的原子或分子組成。因此，在真實氣體中，給定粒子可用的體積小於容器的體積，因為氣體粒子本身佔據了一些空間。為了解釋這種差異，范德瓦將實際體積</p>
+
+    <div class="info-box">
+        <p style="color: #0277bd; font-weight: 500;"><em>P'</em>已針對粒子的有限體積進行了修正。吸引力尚未被考慮在內。</p>
+        <p style="color: #0277bd; font-weight: 500; margin-top: 10px;"><em>P</em><sub>obs</sub>通常僅稱為<em>P</em>。</p>
+    </div>
+
+    <p>表示為容器的體積<em>V</em>減去分子體積的修正因子<em>nb</em>，其中<em>n</em>是氣體的莫耳數，<em>b</em>是一個經驗常數（通過將方程式擬合到實驗結果而確定）。因此，對於給定氣體分子<span class="emphasis">實際可用</span>的體積由差值<em>V</em> − <em>nb</em>給出。</p>
+
+    <p>對理想氣體方程式的這種修改導致表達式</p>
+
+    <div class="equation">
+        <em>P'</em> = <em>nRT</em>/(<em>V</em> − <em>nb</em>)
+    </div>
+
+    <p>氣體粒子的體積現在已被考慮在內。<strong>◀</strong></p>
+
+    <p>下一步是考慮在真實氣體中粒子之間發生的吸引力。這些吸引力的影響是使觀察到的壓力<em>P</em><sub>obs</sub>小於如果氣體粒子不相互作用時的壓力：<strong>◀</strong></p>
+
+    <div class="equation">
+        <em>P</em><sub>obs</sub> = (<em>P'</em> − 修正因子) = (<em>nRT</em>/(<em>V</em> − <em>nb</em>) − 修正因子)
+    </div>
+
+    <p>這種效應可以通過使用以下模型來理解。當氣體粒子靠近在一起時，會發生吸引力，這導致粒子相互碰撞的頻率比在沒有這些相互作用的情況下稍微少一些（<strong>◀</strong>圖5.24）。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.24</div>
+        <p class="figure-caption">(a) 低濃度的氣體——相對較少的粒子間相互作用。所指示的氣體粒子對靠近預測的理想值的位置對壁施加壓力。</p>
+        <p class="figure-caption" style="margin-top: 10px;">(b) 高濃度的氣體——許多更多的粒子間相互作用。由於這些相互作用，與壁的碰撞頻率降低，因此如果氣體表現理想，觀察到的壓力會更小。</p>
+    </div>
+
+    <p>修正因子的大小取決於以莫耳氣體粒子每公升（<em>n</em>/<em>V</em>）定義的氣體分子濃度。濃度越高，一對氣體粒子彼此足夠接近以相互吸引的可能性就越大。對於大量的粒子，相互作用的粒子<span class="emphasis">對</span>的數量取決於粒子數量的平方，因此取決於濃度的平方，或（<em>n</em>/<em>V</em>）²。這種推理可以如下合理化：在包含N個粒子的氣體樣品中，有N − 1個夥伴可用於每個粒子，如圖5.25<strong>▶</strong>所示。由於1 ··· 2對與2 ··· 1對相同，這種分析將每對計數兩次。因此，對於N個粒子，有N(N − 1)/2對。如果N是一個非常大的數字，N − 1約等於N，給出N²/2個可能的對。因此，對於粒子吸引力的理想壓力修正具有形式</p>
+
+    <div class="equation">
+        <em>P</em><sub>obs</sub> = <em>P'</em> − <em>a</em>(<em>n</em>/<em>V</em>)²
+    </div>
+
+    <p>其中<em>a</em>是一個比例常數（包括來自N²/2的½因子）。給定真實氣體的<em>a</em>值可以通過觀察該氣體的實際行為來確定。插入對粒子體積和粒子吸引力的修正給出方程式<strong>◀</strong></p>
+
+    <div class="equation">
+        <em>P</em><sub>obs</sub> = <em>nRT</em>/(<em>V</em> − <em>nb</em>) − <em>a</em>(<em>n</em>/<em>V</em>)²
+        <div style="margin-top: 15px; font-size: 0.8em; color: #0288d1;">
+            ↗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↗<br>
+            觀察到的&nbsp;&nbsp;&nbsp;&nbsp;容器的&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;體積&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;壓力<br>
+            壓力&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;體積&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修正&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修正
+        </div>
+    </div>
+
+    <p>這個方程式可以重新排列以給出<span class="term">范德瓦方程式</span>：</p>
+
+    <div class="equation">
+        [<em>P</em><sub>obs</sub> + <em>a</em>(<em>n</em>/<em>V</em>)²] (<em>V</em> − <em>nb</em>) = <em>nRT</em>
+        <div style="margin-top: 15px; font-size: 0.8em; color: #0288d1;">
+            ︸&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;︸&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;︸<br>
+            修正後的壓力&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;修正後的體積<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<em>P</em><sub>ideal</sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>V</em><sub>ideal</sub>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <p style="color: #0277bd; font-weight: 500;">我們現在已經對粒子的有限體積和吸引力都進行了修正。</p>
+    </div>
+
+    <div class="table-caption">表5.3</div>
+    <p style="text-align: center; font-weight: bold; margin-top: -10px;">一些常見氣體的范德瓦常數值</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>氣體</th>
+                <th><em>a</em> (atm L² mol⁻²)</th>
+                <th><em>b</em> (L mol⁻¹)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>He</td>
+                <td>0.034</td>
+                <td>0.0237</td>
+            </tr>
+            <tr>
+                <td>Ne</td>
+                <td>0.211</td>
+                <td>0.0171</td>
+            </tr>
+            <tr>
+                <td>Ar</td>
+                <td>1.35</td>
+                <td>0.0322</td>
+            </tr>
+            <tr>
+                <td>Kr</td>
+                <td>2.32</td>
+                <td>0.0398</td>
+            </tr>
+            <tr>
+                <td>Xe</td>
+                <td>4.19</td>
+                <td>0.0511</td>
+            </tr>
+            <tr>
+                <td>H₂</td>
+                <td>0.244</td>
+                <td>0.0266</td>
+            </tr>
+            <tr>
+                <td>N₂</td>
+                <td>1.39</td>
+                <td>0.0391</td>
+            </tr>
+            <tr>
+                <td>O₂</td>
+                <td>1.36</td>
+                <td>0.0318</td>
+            </tr>
+            <tr>
+                <td>Cl₂</td>
+                <td>6.49</td>
+                <td>0.0562</td>
+            </tr>
+            <tr>
+                <td>CO₂</td>
+                <td>3.59</td>
+                <td>0.0427</td>
+            </tr>
+            <tr>
+                <td>CH₄</td>
+                <td>2.25</td>
+                <td>0.0428</td>
+            </tr>
+            <tr>
+                <td>NH₃</td>
+                <td>4.17</td>
+                <td>0.0371</td>
+            </tr>
+            <tr>
+                <td>H₂O</td>
+                <td>5.46</td>
+                <td>0.0305</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>權重因子<em>a</em>和<em>b</em>的值是通過擬合實驗行為為給定氣體確定的。也就是說，<em>a</em>和<em>b</em>被改變直到在所有條件下獲得觀察壓力的最佳擬合。各種氣體的<em>a</em>和<em>b</em>值在表5.3中給出<strong>◀</strong>。</p>
+
+    <p>實驗研究表明，范德瓦對動力學分子理論基本假設所做的改變修正了模型中的主要缺陷。首先，考慮體積的影響。對於低壓（大體積）的氣體，容器的體積與氣體粒子的體積相比非常大。也就是說，氣體可用的體積基本上等於容器的體積，因此氣體表現理想。另一方面，對於高壓（小體積）的氣體，粒子變得顯著，因此粒子可用的體積明顯小於容器體積。這些觀察在圖5.26<strong>▼</strong>中說明。注意體積修正常數<em>b</em>通常隨氣體分子的大小而增加，這進一步支持了這些論點。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.26</div>
+        <p class="figure-caption">氣體粒子本身所佔據的體積在(a)大容器體積（低壓）時比在(b)小容器體積（高壓）時不太重要。</p>
+        <p class="figure-caption" style="margin-top: 15px;">圖中顯示兩個圓柱形容器，(a)容器較大且粒子較少，(b)容器較小且粒子較多且更密集。</p>
+    </div>
+
+    <p>真實氣體在高溫下趨於更理想地表現的事實也可以用范德瓦模型來解釋。在高溫下，粒子移動得如此迅速，以至於粒子間相互作用的影響不是很重要。</p>
+
+    <p>范德瓦對動力學分子理論所做的修正使物理意義明確，這使我們相信我們理解了氣體行為在粒子層面的基本原理。這很重要，因為如此多的重要化學反應發生在氣相中。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.25</div>
+        <p class="figure-caption">氣體粒子之間成對相互作用的說明。在具有10個粒子的樣品中，每個粒子有9個可能的夥伴，總共給出10(9)/2 = 45個不同的對。½因子的產生是因為當粒子<span style="color: red;">❶</span>是感興趣的粒子時，我們計數了<span style="color: red;">❶</span> ··· <span style="color: blue;">❷</span>對，而當粒子<span style="color: blue;">❷</span>是感興趣的粒子時，我們計數<span style="color: blue;">❷</span> ··· <span style="color: red;">❶</span>對。然而，<span style="color: red;">❶</span> ··· <span style="color: blue;">❷</span>和<span style="color: blue;">❷</span> ··· <span style="color: red;">❶</span>是相同的，因此我們必須除以2以獲得正確的對數。</p>
+        <p class="figure-caption" style="margin-top: 15px;">圖中顯示一個包含10個粒子的氣體樣品，其中標記了給定粒子<span style="color: red;">❶</span>與其他9個粒子之間的連線。</p>
+    </div>
+
+    <div class="critical-box">
+        <div class="critical-title">批判性思考</div>
+        <p>氣體粒子本身所佔據的體積在粒子層面的氣體行為基本原理上不太重要。這很重要，因為如此多的重要化學反應發生在氣相中。</p>
+    </div>
+
+    <h2>化學探索者</h2>
+
+    <div class="insight-box">
+        <div class="insight-title">化學探索者</div>
+        <h3>Kenneth Suslick 實踐健全的化學</h3>
+        
+        <p>Kenneth S. Suslick教授從加州理工學院獲得理學士學位和從史丹佛大學獲得博士學位，他的整個學術生涯都在伊利諾大學厄巴納-香檳分校度過。儘管他的研究興趣涵蓋了化學的傳統領域，但Suslick教授和他的團隊特別對<span class="term">聲化學</span>感興趣，這是超音波（高於人類聽覺範圍的聲波）應用於溶液的化學效應。</p>
+
+        <p>高強度聲波對溶液的影響來自於<span class="term">氣穴現象</span>：液體中氣泡的形成、生長和內爆性坍塌。氣穴性坍塌產生非常高的壓力，導致局部加熱如此強烈，以至於它們引起需要高能量才能發生的反應，通常伴隨著光的發射。</p>
+
+        <p>事實上，Suslick的研究剛剛表明，當氣泡內爆時，內部可以達到高於15,000 K的溫度——大約是太陽表面溫度的三倍。</p>
+
+        <p class="photo-caption"><em>Suslick教授的幽默照片。圖片顯示一個乾冰和冷液氮產生的煙霧從他的頭部散發出來，這凍結了空氣中的水分。照片由Jim Zellmer/伊利諾大學提供。</em></p>
+
+        <p>在這些溫度下，原子分離形成電漿，其中包含離子和電子。因此，氣穴現象可以在其他冷的液體中產生異常熱的點。</p>
+
+        <p>除了用於研究高能反應外，超音波在奈米結構材料的合成中也被證明是有價值的。一個例子是含有蛋白質微球的液體形成，這些微球可以注射到身體的循環系統中以輸送藥物。</p>
+
+        <p>另一個應用涉及表面化學。當氣穴現象發生在固體表面附近時，液體的高速噴射流和相關的聲波可以改變固體的表面性質。這已被證明對於活化用作催化劑的金屬表面很有用。</p>
+
+        <p>聲化學確實是健全的化學。</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>

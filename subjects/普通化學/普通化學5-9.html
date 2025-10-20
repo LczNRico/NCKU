@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通化學5-9</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
+        body {
+            font-family: "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a5490;
+            border-bottom: 3px solid #f5a623;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        
+        h2 {
+            color: #c62828;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            color: #6a1b9a;
+            margin-top: 20px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.3em;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #1a5490;
+            font-family: "Times New Roman", serif;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            font-weight: 500;
+        }
+
+        .term {
+            color: #6a1b9a;
+            font-weight: 500;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #00695c;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 5px solid #1976d2;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-box {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-title {
+            background-color: #4caf50;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .interactive-example {
+            background-color: #e8eaf6;
+            border-left: 5px solid #3f51b5;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .interactive-title {
+            background-color: #3f51b5;
+            color: white;
+            padding: 8px 12px;
+            font-weight: bold;
+            margin: -15px -15px 15px -15px;
+        }
+
+        .figure-box {
+            background-color: #f5f5f5;
+            border: 2px solid #757575;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .figure-title {
+            color: #1a5490;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .figure-caption {
+            color: #555;
+            margin-top: 10px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .note-box {
+            background-color: #e1f5fe;
+            border-left: 5px solid #0288d1;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        @media print {
+            body {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>5.9 分子間碰撞</h1>
+    
+    <p>回想一下，動力學分子模型的假設並未考慮氣體粒子之間的碰撞。由於這個模型正確地符合理想氣體行為（也就是說，真實氣體在高溫<em>T</em>和低壓<em>P</em>時所接近的行為），我們的結論是分子間碰撞顯然對於理想行為的氣體的壓力、體積或溫度沒有重要影響。也就是說，碰撞的影響必須以某種方式相對於理想氣體的性質<em>P</em>、<em>V</em>和<em>T</em>而「相互抵消」。然而，有許多證據表明碰撞確實發生在真實氣體的氣體粒子之間。例如，一個以某種方式偏離馬克士威-波茲曼速度分布的氣體將迅速改變，直到它再次達到馬克士威-波茲曼分布。這種行為必定是由通過碰撞的能量交換所引起的。</p>
+
+    <p>在本節中，我們將考慮氣體中粒子的碰撞頻率。我們將從考慮一個直徑為<em>d</em>（以公尺為單位）的單一球形氣體粒子開始，該粒子以速度<em>u</em><sub>avg</sub>移動。當這個粒子沿直線通過氣體時，只有當另一個粒子的中心位於半徑為<em>d</em>的圓柱體內時，它才會與另一個粒子碰撞，如圖5.21<strong>▲</strong>所示。</p>
+
+    <div class="figure-box">
+        <div class="figure-title">圖5.21</div>
+        <p class="figure-caption">直徑為<em>d</em>的氣體粒子所掃過的圓柱體。</p>
+        <p class="figure-caption" style="margin-top: 15px;">圖中顯示一個圓柱體，其半徑為<em>d</em>，高度為2<em>d</em>，長度為<em>u</em><sub>avg</sub>。體積為π<em>d</em>²<em>u</em><sub>avg</sub>。一些粒子的中心位於圓柱體內部，而一些粒子的中心位於圓柱體外部，外部的粒子標註為「不會碰撞」。</p>
+    </div>
+
+    <p>任何中心位於這個圓柱體外部的粒子都不會被我們的粒子擊中。因此，我們的粒子在其飛行的每一秒鐘內「掃過」一個半徑為<em>d</em>和長度為<em>u</em><sub>avg</sub> × 1秒的圓柱體。因此，每秒掃過的圓柱體體積為</p>
+
+    <div class="equation">
+        V = 體積 = (π<em>d</em>²) (<em>u</em><sub>avg</sub>)(1 s)
+        <div style="margin-top: 10px; font-size: 0.8em; color: #0288d1;">
+            ↑&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>
+            圓柱體&nbsp;&nbsp;&nbsp;&nbsp;圓柱體<br>
+            截面積&nbsp;&nbsp;&nbsp;&nbsp;長度
+        </div>
+    </div>
+
+    <p>當粒子通過這個圓柱體時，碰撞的次數取決於該體積中的氣體粒子數量。為了指定氣體粒子的數量，我們使用氣體的數密度<em>N</em>/<em>V</em>，它表示每單位體積的氣體粒子數。因此我們可以寫成</p>
+
+    <div class="equation">
+        每秒碰撞次數 = (掃過的體積) × <em>N</em>/<em>V</em> = π<em>d</em>²(<em>u</em><sub>avg</sub>)(<em>N</em>/<em>V</em>)
+        <div style="margin-top: 15px;">
+        = π<em>d</em>²(√(8<em>RT</em>/π<em>M</em>))(<em>N</em>/<em>V</em>) = <em>N</em>/<em>V</em> <em>d</em>²√(8π<em>RT</em>/<em>M</em>)
+        </div>
+    </div>
+
+    <p>這個方程式並不完全正確。如果你仔細思考這種情況，你可能會問自己這個問題：「其他粒子的運動如何？」也就是說，我們已經假設主要粒子具有速度<em>u</em><sub>avg</sub>，但我們假設其他粒子是靜止的。當然，它們實際上並非靜止。它們以各種速度朝各個方向移動。當考慮其他粒子的運動時（我們在此不會顯示的推導），主要粒子的<span class="emphasis">相對速度</span>變為√2 <em>u</em><sub>avg</sub> <span class="emphasis">而非我們一直使用的值</span> <em>u</em><sub>avg</sub>。因此，碰撞速率的表達式變為</p>
+
+    <div class="equation">
+        碰撞速率（每秒）= <em>Z</em> = √2 <em>N</em>/<em>V</em> <em>d</em>²√(8π<em>RT</em>/<em>M</em>) = 4<em>N</em>/<em>V</em> <em>d</em>²√(π<em>RT</em>/<em>M</em>)
+    </div>
+
+    <div class="interactive-example">
+        <div class="interactive-title">互動範例 5.10</div>
+        <h3>氣體的碰撞頻率</h3>
+        
+        <p>計算在27°C和1.0 atm的純氧氣樣品中，一個氧分子的碰撞頻率。假設O₂分子的直徑為300 pm。</p>
+        
+        <p><strong>解答</strong> 為了獲得碰撞頻率，我們必須確定表達式中適合此情況的量</p>
+
+        <div class="equation">
+            <em>Z</em> = 4 <em>N</em>/<em>V</em> <em>d</em>²√(π<em>RT</em>/<em>M</em>)
+        </div>
+
+        <p>我們可以通過假設理想行為從理想氣體定律獲得這個氧氣樣品的<em>N</em>/<em>V</em>值：</p>
+
+        <div class="equation">
+            <em>n</em>/<em>V</em> = <em>P</em>/<em>RT</em> = 1.0 atm / (0.08206 L atm/(K mol))(300. K) = 4.1 × 10⁻² mol/L
+        </div>
+
+        <p>因此</p>
+
+        <div class="equation">
+            <em>N</em>/<em>V</em> = (4.1 × 10⁻² mol/L)(6.022 × 10²³ molecules/mol)(1000 L/m³)
+            <div style="margin-top: 10px;">
+            = 2.5 × 10²⁵ (molecules)/m³
+            </div>
+        </div>
+
+        <p>從給定的資訊，我們知道</p>
+
+        <div class="equation">
+            <em>d</em> = 300 pm = 300 × 10⁻¹² m 或 3 × 10⁻¹⁰ m
+        </div>
+
+        <p>此外，對於O₂，<em>M</em> = 3.20 × 10⁻² kg/mol。因此</p>
+
+        <div class="equation">
+            <em>Z</em> = 4(2.5 × 10²⁵ m⁻³)(3 × 10⁻¹⁰ m)² × √(π(8.3145 J K⁻¹ mol⁻¹)(300 K)/(3.20 × 10⁻² kg/mol))
+            <div style="margin-top: 10px;">
+            = 4 × 10⁹ (collisions)/s = 4 × 10⁹ s⁻¹
+            </div>
+        </div>
+
+        <p>注意這個數字有多大。在這個氣體樣品中，每個O₂分子每秒經歷大約40億次碰撞。</p>
+    </div>
+
+    <h2>平均自由徑</h2>
+
+    <p>如我們之前所見，碰撞頻率<em>Z</em>代表在給定氣體樣品中每秒發生的碰撞次數。另一方面，<em>Z</em>的倒數給出了碰撞之間的時間（以秒為單位）。因此，如果<em>Z</em> = 4 × 10⁹（碰撞）每秒，那麼1/<em>Z</em> = 2.5 × 10⁻¹⁰秒在碰撞之間。現在，如果我們將1/<em>Z</em>乘以平均速度，我們得到<span class="term">平均自由徑</span><strong>▲</strong>：</p>
+
+    <div class="equation">
+        λ = 1/<em>Z</em> × <em>u</em><sub>avg</sub> = 碰撞之間的距離
+        <div style="margin-top: 10px; font-size: 0.8em; color: #0288d1;">
+            ↗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>
+            碰撞之間&nbsp;&nbsp;&nbsp;每秒行進<br>
+            的時間(s)&nbsp;&nbsp;&nbsp;&nbsp;的距離
+        </div>
+    </div>
+
+    <p>代入1/<em>Z</em>和<em>u</em><sub>avg</sub>的表達式得到</p>
+
+    <div class="equation">
+        λ = [1/(4(<em>N</em>/<em>V</em>)(<em>d</em>²)√<em>RT</em>/<em>M</em>)](√(8<em>RT</em>/π<em>M</em>)) = 1/(√2(<em>N</em>/<em>V</em>)(π<em>d</em>²))
+    </div>
+
+    <div class="example-box">
+        <div class="example-title">範例 5.11</div>
+        <h3>平均自由徑</h3>
+        
+        <p>計算在27°C和1.0 atm的氧氣樣品中的平均自由徑。</p>
+        
+        <p><strong>解答</strong> 使用前一個範例的數據，我們有</p>
+
+        <div class="equation">
+            λ = 1/(√2(2.5 × 10²⁵ m⁻³)(π)(3 × 10⁻¹⁰ m)²) = 1 × 10⁻⁷ m
+        </div>
+
+        <p>注意，在與另一個O₂分子碰撞之前，O₂分子只行進非常短的距離。這為給定的O₂分子產生了如圖5.14所示的路徑，其中每條直線的長度為 ~10⁻⁷ m。</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const printBtn = document.createElement('button');
+            printBtn.textContent = '列印/儲存為PDF';
+            printBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; padding: 10px 20px; background: #1a5490; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;';
+            printBtn.onclick = () => window.print();
+            document.body.appendChild(printBtn);
+        }
+    </script>
+</body>
+</html>
