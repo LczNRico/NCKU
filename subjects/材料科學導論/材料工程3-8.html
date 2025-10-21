@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 3.8 點座標</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: "Microsoft JhengHei", "PMingLiU", serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 11pt;
+        }
+        h1 {
+            color: #5B3A9E;
+            font-size: 22pt;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #5B3A9E;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #C41E3A;
+            font-size: 16pt;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #0066B3;
+            font-size: 13pt;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 12px;
+        }
+        .equation {
+            background-color: #f5f5f5;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 11pt;
+        }
+        .equation-group {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .equation-line {
+            text-align: center;
+            margin: 8px 0;
+            font-size: 11pt;
+        }
+        .example-box {
+            background-color: #E8F4F8;
+            border: 2px solid #0066B3;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        .example-title {
+            color: #0066B3;
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .solution-title {
+            color: #C41E3A;
+            font-size: 12pt;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .figure-caption {
+            color: #0099CC;
+            font-size: 11pt;
+            font-weight: bold;
+            margin: 15px 0 8px 0;
+        }
+        .figure-description {
+            font-size: 10pt;
+            color: #666;
+            margin: 5px 0 15px 0;
+            line-height: 1.6;
+        }
+        .image-placeholder {
+            width: 500px;
+            height: 350px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 10pt;
+            background-color: #f9f9f9;
+            margin: 15px auto;
+        }
+        .dual-image {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .dual-image-item {
+            text-align: center;
+        }
+        .small-image-placeholder {
+            width: 350px;
+            height: 280px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 10pt;
+            background-color: #f9f9f9;
+        }
+        .image-label {
+            font-size: 11pt;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #333;
+        }
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 10pt;
+        }
+        th {
+            background-color: #0099CC;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-weight: bold;
+        }
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .note {
+            font-size: 9pt;
+            color: #666;
+            margin-top: 5px;
+        }
+        sup {
+            font-size: 8pt;
+        }
+        sub {
+            font-size: 8pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>3.8 點座標</h1>
+    
+    <p>有時需要指定單位晶胞內的晶格位置。晶格位置以三個<em>晶格位置座標</em>的形式表示，這些座標與<em>x</em>、<em>y</em>和<em>z</em>軸相關——我們選擇將這些座標標記為<em>P<sub>x</sub></em>、<em>P<sub>y</sub></em>和<em>P<sub>z</sub></em>。座標規格可以使用三個<em>點指數</em>：<em>q</em>、<em>r</em>和<em>s</em>。這些指數是<em>a</em>、<em>b</em>和<em>c</em>單位晶胞長度的分數倍數——也就是說，<em>q</em>是<em>a</em>沿<em>x</em>軸的某個分數長度，<em>r</em>是<em>b</em>沿<em>y</em>軸的某個分數長度，<em>s</em>同樣適用於<em>x</em>。換句話說，晶格位置座標（即<em>P</em>s）等於其各自點指數與單位晶胞邊長的乘積——即：</p>
+
+    <div class="equation-group">
+        <div class="equation-line"><em>P<sub>x</sub></em> = <em>qa</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3.9a)</div>
+        <div class="equation-line"><em>P<sub>y</sub></em> = <em>rb</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3.9b)</div>
+        <div class="equation-line"><em>P<sub>z</sub></em> = <em>sc</em> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3.9c)</div>
+    </div>
+
+    <p>為了說明，考慮圖3.6中的單位晶胞、<em>x-y-z</em>座標系統，其原點位於單位晶胞角上，以及位於點<em>P</em>的晶格位點。注意<em>P</em>的位置如何與其<em>q</em>、<em>r</em>和<em>s</em>點指數和單位晶胞邊長的乘積相關。<sup>4</sup></p>
+
+    <div class="figure-caption">圖3.6</div>
+    <div class="figure-description">確定單位晶胞內點<em>P</em>的<em>q</em>、<em>r</em>和<em>s</em>座標的方式。<em>q</em>指數（為分數）對應於沿<em>x</em>軸的距離<em>qa</em>，其中<em>a</em>是單位晶胞邊長。<em>y</em>和<em>z</em>軸的各自<em>r</em>和<em>s</em>指數以類似方式確定。</div>
+    <div class="image-placeholder">[單位晶胞點座標示意圖]</div>
+
+    <div class="example-box">
+        <div class="example-title">例題 3.5</div>
+        
+        <h3 style="color: #C41E3A;">具有指定座標的點的位置</h3>
+        
+        <p>對於附圖(a)中所示的單位晶胞，定位具有指數¼ 1 ½的點。</p>
+        
+        <div class="dual-image">
+            <div class="dual-image-item">
+                <div class="small-image-placeholder">[單位晶胞(a)示意圖]</div>
+                <div class="image-label">(a)</div>
+            </div>
+            <div class="dual-image-item">
+                <div class="small-image-placeholder">[單位晶胞(b)示意圖]</div>
+                <div class="image-label">(b)</div>
+            </div>
+        </div>
+        
+        <div class="solution-title">解答</div>
+        
+        <p>從草圖(a)，此單位晶胞的邊長如下：<em>a</em> = 0.48 nm，<em>b</em> = 0.46 nm，以及<em>c</em> = 0.40 nm。此外，根據前述討論，三個點指數為<em>q</em> = ¼，<em>r</em> = 1，以及<em>s</em> = ½。我們使用方程式3.9a到3.9c來確定此點的晶格位置座標如下：</p>
+        
+        <div class="equation-group">
+            <div class="equation-line"><em>P<sub>x</sub></em> = <em>qa</em></div>
+            <div class="equation-line">= (¼)<em>a</em> = ¼ (0.48 nm) = 0.12 nm</div>
+            <div class="equation-line" style="margin-top: 10px;"><em>P<sub>y</sub></em> = <em>rb</em></div>
+            <div class="equation-line">= (1)<em>b</em> = 1(0.46 nm) = 0.46 nm</div>
+            <div class="equation-line" style="margin-top: 10px;"><em>P<sub>z</sub></em> = <em>sc</em></div>
+            <div class="equation-line">= (½)<em>c</em> = ½ (0.40 nm) = 0.20 nm</div>
+        </div>
+        
+        <p>要在單位晶胞內定位具有這些座標的點，首先使用<em>x</em>晶格位置座標並從原點（點<em>M</em>）沿<em>x</em>軸移動0.12 nm單位（到點<em>N</em>），如(b)所示。類似地，使用<em>y</em>晶格位置座標，從點<em>N</em>平行於<em>y</em>軸移動0.46 nm到點<em>O</em>。最後，從該位置沿<em>z</em>軸移動0.20 nm單位到點<em>P</em>（根據<em>z</em>晶格位置），如(b)中再次註明。因此，點<em>P</em>對應於¼ 1 ½點指數。</p>
+    </div>
+
+    <div class="example-box">
+        <div class="example-title">例題 3.6</div>
+        
+        <h3 style="color: #C41E3A;">點指數的規格</h3>
+        
+        <p>為下一頁插圖中單位晶胞的所有編號點指定指數。</p>
+        
+        <div class="solution-title">解答</div>
+        
+        <p>對於此單位晶胞，晶格點位於所有八個角上，中心位置有一個單一點。</p>
+        
+        <p>點1位於座標系統的原點，因此，其相對於<em>x</em>、<em>y</em>和<em>z</em>軸參考的晶格位置座標分別為0<em>a</em>、0<em>b</em>和0<em>c</em>。並且從方程式3.9a到3.9c，</p>
+        
+        <div class="equation-group">
+            <div class="equation-line"><em>P<sub>x</sub></em> = <em>qa</em> = 0<em>a</em></div>
+            <div class="equation-line"><em>P<sub>y</sub></em> = <em>rb</em> = 0<em>b</em></div>
+            <div class="equation-line"><em>P<sub>z</sub></em> = <em>sc</em> = 0<em>c</em></div>
+        </div>
+        
+        <p>對上述三個表達式求解<em>q</em>、<em>r</em>和<em>s</em>指數的值得到：</p>
+        
+        <div class="equation-group">
+            <div class="equation-line"><em>q</em> = 0<em>a</em>/<em>a</em> = 0</div>
+            <div class="equation-line"><em>r</em> = 0<em>b</em>/<em>b</em> = 0</div>
+            <div class="equation-line"><em>s</em> = 0<em>c</em>/<em>c</em> = 0</div>
+        </div>
+        
+        <p>因此這是0 0 0點。</p>
+        
+        <div class="image-placeholder" style="width: 400px; height: 300px;">[編號點的單位晶胞示意圖]</div>
+        
+        <p>因為點2位於沿<em>x</em>軸一個單位晶胞邊長處，其相對於<em>x</em>、<em>y</em>和<em>z</em>軸參考的晶格位置座標為<em>a</em>、0<em>b</em>和0<em>c</em>，並且</p>
+        
+        <div class="equation-group">
+            <div class="equation-line"><em>P<sub>x</sub></em> = <em>qa</em> = <em>a</em></div>
+            <div class="equation-line"><em>P<sub>y</sub></em> = <em>rb</em> = 0<em>b</em></div>
+            <div class="equation-line"><em>P<sub>z</sub></em> = <em>sc</em> = 0<em>c</em></div>
+        </div>
+        
+        <p>因此我們確定<em>q</em>、<em>r</em>和<em>s</em>指數的值如下：</p>
+        
+        <div class="equation">
+            <em>q</em> = 1 &nbsp;&nbsp;&nbsp;&nbsp; <em>r</em> = 0 &nbsp;&nbsp;&nbsp;&nbsp; <em>s</em> = 0
+        </div>
+        
+        <p>因此，點2是1 0 0。</p>
+        
+        <p>這個相同的過程對單位晶胞中剩餘的七個點進行。所有九個點的點指數列在下表中。</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>點編號</th>
+                    <th><em>q</em></th>
+                    <th><em>r</em></th>
+                    <th><em>s</em></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>½</td>
+                    <td>½</td>
+                    <td>½</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

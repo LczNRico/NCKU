@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 3.7 晶系</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: "Microsoft JhengHei", "PMingLiU", serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 11pt;
+        }
+        h1 {
+            color: #5B3A9E;
+            font-size: 22pt;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #5B3A9E;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #0099CC;
+            font-size: 18pt;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #0066B3;
+            font-size: 13pt;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .sidebar {
+            background-color: #E8F4F8;
+            border-left: 4px solid #0066B3;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+        .sidebar-term {
+            color: #00843D;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .vmse-box {
+            background-color: #FFF9E6;
+            border-left: 4px solid #C41E3A;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+        .vmse-title {
+            color: #0066B3;
+            font-weight: bold;
+        }
+        .vmse-subtitle {
+            color: #C41E3A;
+            font-weight: bold;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 12px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 10pt;
+        }
+        th {
+            background-color: #0099CC;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-weight: bold;
+        }
+        td {
+            padding: 15px 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+            vertical-align: middle;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .table-title {
+            color: #0099CC;
+            font-size: 13pt;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .crystal-name {
+            font-weight: bold;
+            text-align: left;
+            padding-left: 20px;
+        }
+        .concept-check {
+            background-color: #FFF9E6;
+            border: 2px solid #FF9933;
+            border-left: 6px solid #FF9933;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        .concept-check-title {
+            color: #FF9933;
+            font-size: 13pt;
+            font-weight: bold;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .concept-check-content {
+            color: #333;
+            font-size: 10pt;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        .figure-caption {
+            text-align: center;
+            font-size: 10pt;
+            color: #0099CC;
+            font-weight: bold;
+            margin: 15px 0 5px 0;
+        }
+        .figure-description {
+            text-align: left;
+            font-size: 10pt;
+            color: #666;
+            margin: 5px 0 15px 0;
+        }
+        .image-placeholder {
+            width: 300px;
+            height: 250px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 10pt;
+            background-color: #f9f9f9;
+            margin: 15px auto;
+        }
+        .cell-diagram {
+            width: 100px;
+            height: 100px;
+            margin: 10px auto;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 9pt;
+        }
+        sup {
+            font-size: 8pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>3.7 晶系</h1>
+    
+    <div class="vmse-box">
+        <div class="vmse-title">WileyPLUS: VMSE</div>
+        <div class="vmse-subtitle">金屬的晶系和單位晶胞</div>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-term">晶格參數</div>
+        <div class="sidebar-term">晶系</div>
+    </div>
+
+    <p>由於存在許多不同可能的晶體結構，有時根據單位晶胞構型和/或原子排列將它們分成若干群組是方便的。其中一種方案基於單位晶胞幾何形狀，即適當單位晶胞平行六面體的形狀，而不考慮晶胞內的原子位置。在此框架內，一個<em>x-y-z</em>座標系是建立的，其原點位於單位晶胞的一個角上；<em>x</em>、<em>y</em>和<em>z</em>軸中的每一個都與從該角延伸的三條平行六面體邊之一重合，如圖3.5所示。單位晶胞幾何形狀完全由六個參數定義：三個邊長<em>a</em>、<em>b</em>和<em>c</em>，以及三個軸間角α、β和γ。這些在圖3.5中有所標示，並且被稱為晶體結構的<strong>晶格參數</strong>。</p>
+
+    <p>在此基礎上，<em>a</em>、<em>b</em>和<em>c</em>以及α、β和γ有七種不同的可能組合，每種組合代表一個獨特的<strong>晶系</strong>。這七個晶系是立方、正方、六方、斜方、菱方<sup>2</sup>、單斜和三斜。每種晶系的晶格參數關係和單位晶胞草圖在表3.2中表示。立方晶系，其中<em>a</em> = <em>b</em> = <em>c</em>且α = β = γ = 90°，具有最大程度的對稱性。對稱性最小的是三斜晶系，因為<em>a</em> ≠ <em>b</em> ≠ <em>c</em>且α ≠ β ≠ γ。<sup>3</sup></p>
+
+    <div class="figure-caption">圖3.5</div>
+    <div class="figure-description">具有<em>x</em>、<em>y</em>和<em>z</em>座標軸的單位晶胞，顯示軸向長度(<em>a</em>、<em>b</em>和<em>c</em>)和軸間角(α、β和γ)。</div>
+    <div class="image-placeholder">[單位晶胞座標軸示意圖]</div>
+
+    <p>從金屬晶體結構的討論中，應該明顯看出FCC和BCC結構都屬於立方晶系，而HCP則屬於六方晶系。習慣的六方單位晶胞實際上由三個平行六面體組成，如表3.2所示。</p>
+
+    <div class="concept-check">
+        <div class="concept-check-title">概念檢查 3.2</div>
+        <p><strong>晶體結構和晶系之間有什麼區別？</strong></p>
+        <div class="concept-check-content">
+            [答案可以在本文的所有數位版本中找到，網址為 www.wiley.com/college/callister (學生配套網站)。]
+        </div>
+    </div>
+
+    <p>重要的是要注意，本章先前討論中涉及的許多原理和概念也適用於結晶陶瓷和聚合物系統(第12章和第14章)。例如，晶體結構最常用單位晶胞來描述，這些單位晶胞通常比FCC、BCC和HCP的單位晶胞更複雜。此外，對於這些其他系統，我們通常有興趣使用方程式3.3和3.8的修改形式來確定原子堆積因子和密度。此外，根據單位晶胞幾何形狀，這些其他材料類型的晶體結構被分組在七個晶系內。</p>
+
+    <div class="table-title">表3.2 七個晶系的晶格參數關係和顯示單位晶胞幾何圖形</div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 20%;">晶系</th>
+                <th style="width: 25%;">軸向關係</th>
+                <th style="width: 30%;">軸間角</th>
+                <th style="width: 25%;">單位晶胞幾何形狀</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="crystal-name">立方</td>
+                <td><em>a</em> = <em>b</em> = <em>c</em></td>
+                <td>α = β = γ = 90°</td>
+                <td><div class="cell-diagram">[立方晶胞圖]</div></td>
+            </tr>
+            <tr>
+                <td class="crystal-name">六方</td>
+                <td><em>a</em> = <em>b</em> ≠ <em>c</em></td>
+                <td>α = β = 90°, γ = 120°</td>
+                <td><div class="cell-diagram">[六方晶胞圖]</div></td>
+            </tr>
+            <tr>
+                <td class="crystal-name">正方</td>
+                <td><em>a</em> = <em>b</em> ≠ <em>c</em></td>
+                <td>α = β = γ = 90°</td>
+                <td><div class="cell-diagram">[正方晶胞圖]</div></td>
+            </tr>
+            <tr>
+                <td class="crystal-name">菱方<br>(三方)</td>
+                <td><em>a</em> = <em>b</em> = <em>c</em></td>
+                <td>α = β = γ ≠ 90°</td>
+                <td><div class="cell-diagram">[菱方晶胞圖]</div></td>
+            </tr>
+            <tr>
+                <td class="crystal-name">斜方</td>
+                <td><em>a</em> ≠ <em>b</em> ≠ <em>c</em></td>
+                <td>α = β = γ = 90°</td>
+                <td><div class="cell-diagram">[斜方晶胞圖]</div></td>
+            </tr>
+            <tr>
+                <td class="crystal-name">單斜</td>
+                <td><em>a</em> ≠ <em>b</em> ≠ <em>c</em></td>
+                <td>α = γ = 90° ≠ β</td>
+                <td><div class="cell-diagram">[單斜晶胞圖]</div></td>
+            </tr>
+            <tr>
+                <td class="crystal-name">三斜</td>
+                <td><em>a</em> ≠ <em>b</em> ≠ <em>c</em></td>
+                <td>α ≠ β ≠ γ ≠ 90°</td>
+                <td><div class="cell-diagram">[三斜晶胞圖]</div></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>晶體學點、方向和平面</h2>
+
+    <p>在處理結晶材料時，經常需要指定單位晶胞內的特定點、晶體學方向或某些原子平面。已經建立了標記慣例，其中使用三個數字或指數來指定點位置、方向和平面。確定指數值的基礎是單位晶胞，具有右手座標系，由位於其中一個角上並與單位晶胞邊重合的三個(<em>x</em>、<em>y</em>和<em>z</em>)軸組成，如圖3.5所示。對於某些晶系——即六方、菱方、單斜和三斜——三個軸<em>並非</em>相互垂直，這與熟悉的笛卡爾座標方案不同。</p>
+
+</body>
+</html>

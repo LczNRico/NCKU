@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 3.6 多晶型與同素異形體</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: "Microsoft JhengHei", "PMingLiU", serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 11pt;
+        }
+        h1 {
+            color: #5B3A9E;
+            font-size: 22pt;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #5B3A9E;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #C41E3A;
+            font-size: 16pt;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #0066B3;
+            font-size: 13pt;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .sidebar {
+            background-color: #E8F4F8;
+            border-left: 4px solid #0066B3;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+        .sidebar-term {
+            color: #00843D;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .sidebar-red {
+            color: #C41E3A;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 12px;
+        }
+        .material-importance {
+            background: linear-gradient(to bottom, #FF8C42 60px, #FFF9E6 60px);
+            border: 3px solid #FF8C42;
+            padding: 0;
+            margin: 30px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .material-header {
+            background-color: #FF8C42;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18pt;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-align: center;
+        }
+        .material-title {
+            background-color: #FFF9E6;
+            color: #C41E3A;
+            padding: 15px 20px;
+            font-size: 16pt;
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            border-bottom: 2px solid #FFD700;
+        }
+        .material-content {
+            background-color: #FFF9E6;
+            padding: 20px;
+        }
+        .material-content p {
+            color: #333;
+        }
+        .initial-letter {
+            float: left;
+            font-size: 60pt;
+            line-height: 50pt;
+            padding-right: 8px;
+            padding-top: 4px;
+            font-weight: bold;
+            color: #C41E3A;
+        }
+        .diagram-container {
+            text-align: center;
+            margin: 25px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+        }
+        .diagram-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 20px 0;
+        }
+        .diagram-item {
+            text-align: center;
+        }
+        .diagram-label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        .arrow {
+            font-size: 24pt;
+            color: #FF8C42;
+            font-weight: bold;
+        }
+        .arrow-label {
+            font-size: 10pt;
+            color: #666;
+            margin: 5px 0;
+        }
+        .image-placeholder {
+            width: 180px;
+            height: 180px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 10pt;
+            background-color: #f9f9f9;
+        }
+        .photo-caption {
+            text-align: center;
+            font-size: 9pt;
+            color: #666;
+            margin-top: 15px;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+        .photo-container {
+            text-align: center;
+            margin: 25px 0;
+            padding: 20px;
+            background-color: #B8E6F0;
+            border-radius: 5px;
+        }
+        .photo-box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>3.6 多晶型與同素異形體</h1>
+    
+    <div class="sidebar">
+        <div class="sidebar-term">多晶型</div>
+        <div class="sidebar-term">同素異形體</div>
+    </div>
+
+    <p>某些金屬以及非金屬可能具有一種以上的晶體結構，這種現象稱為<strong>多晶型</strong>。當出現在元素固體中時，這種情況通常稱為<strong>同素異形體</strong>。盛行的晶體結構取決於溫度和外部壓力。一個熟悉的例子出現在碳中：石墨在環境條件下是穩定的多晶型體，而鑽石則是在極高壓力下形成的。此外，純鐵在室溫下具有BCC晶體結構，在912°C (1674°F)時轉變為FCC。通常，密度和其他物理性質的改變會伴隨著多晶型轉變。</p>
+
+    <div class="material-importance">
+        <div class="material-header">重要材料 3.1</div>
+        
+        <div class="material-title">錫（其同素異形轉變）</div>
+        
+        <div class="material-content">
+            <p><span class="initial-letter">另</span>一種經歷同素異形變化的常見金屬是錫。白錫(或β錫)在室溫下具有體心正方晶體結構，在13.2°C (55.8°F)時轉變為灰錫(或α錫)，後者的晶體結構類似於鑽石(即鑽石立方晶體結構)；此轉變可以示意表示如下：</p>
+            
+            <div class="diagram-container">
+                <div class="diagram-row">
+                    <div class="diagram-item">
+                        <div class="image-placeholder">[白錫(β)晶體結構圖]</div>
+                        <div class="diagram-label">白錫 (β)</div>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                        <div class="arrow">→</div>
+                        <div class="arrow-label">13.2°C</div>
+                        <div class="arrow-label">冷卻</div>
+                    </div>
+                    
+                    <div class="diagram-item">
+                        <div class="image-placeholder">[灰錫(α)晶體結構圖]</div>
+                        <div class="diagram-label">灰錫 (α)</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>這種變化發生的速度極其緩慢；然而，溫度越低(低於13.2°C)，速率越快。伴隨這種白錫到灰錫的轉變的是體積增加(27%)，並且相應地密度降低(從7.30 g/cm<sup>3</sup>到5.77 g/cm<sup>3</sup>)。因此，這種體積膨脹導致錫金屬崩解成粗糙的灰色同素異形體粉末。對於正常的亞環境溫度，不需要擔心錫製品的這種崩解過程，因為轉變發生的速度非常緩慢。</p>
+            
+            <p>這種白錫到灰錫的轉變在1850年的俄羅斯產生了一些相當戲劇性的結果。那年的冬天特別寒冷，並且創紀錄的低溫持續了很長時間。俄羅斯士兵的制服有許多鈕扣因這些極端寒冷條件而碎裂，許多錫製教堂風琴管也是如此。這個問題後來被稱為<em>錫疫</em>。</p>
+            
+            <div class="photo-container">
+                <div class="photo-box">
+                    <div class="image-placeholder" style="width: 400px; height: 250px;">[白錫與灰錫樣品照片]</div>
+                </div>
+                <div class="photo-caption">
+                    白錫樣品(左)。另一個樣品在冷卻至13.2°C以下並保持在該溫度一段時間後，轉變為灰錫時崩解(右)。<br>
+                    (照片由Professor Bill Plumbridge提供，Department of Materials Engineering, The Open University, Milton Keynes, England。)
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

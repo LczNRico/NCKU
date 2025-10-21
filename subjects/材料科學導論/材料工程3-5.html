@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 3.5 密度計算</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        body {
+            font-family: "Microsoft JhengHei", "PMingLiU", serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 11pt;
+        }
+        h1 {
+            color: #5B3A9E;
+            font-size: 22pt;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #5B3A9E;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #C41E3A;
+            font-size: 16pt;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #0066B3;
+            font-size: 13pt;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .sidebar {
+            background-color: #E8F4F8;
+            border-left: 4px solid #0066B3;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+        .sidebar-term {
+            color: #00843D;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .sidebar-red {
+            color: #C41E3A;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .equation {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 12pt;
+        }
+        .example-box {
+            background-color: #E8F4F8;
+            border: 2px solid #0066B3;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        .example-title {
+            color: #0066B3;
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .solution-title {
+            color: #C41E3A;
+            font-size: 12pt;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .note {
+            font-size: 9pt;
+            color: #666;
+            margin-top: 5px;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 12px;
+        }
+        .definition-list {
+            margin-left: 60px;
+            line-height: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>3.5 密度計算</h1>
+    
+    <p>了解金屬固體的晶體結構可以通過以下關係式來計算其理論密度ρ：</p>
+
+    <div class="sidebar">
+        <div class="sidebar-red">金屬的理論密度</div>
+    </div>
+
+    <div class="equation">
+        ρ = <i>nA</i> / <i>V</i><sub>C</sub><i>N</i><sub>A</sub> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3.8)
+    </div>
+
+    <p>其中</p>
+    
+    <div class="definition-list">
+        <i>n</i> = 與每個單位晶胞相關的原子數<br>
+        <i>A</i> = 原子量<br>
+        <i>V</i><sub>C</sub> = 單位晶胞的體積<br>
+        <i>N</i><sub>A</sub> = 亞佛加厥數 (6.022 × 10<sup>23</sup> atoms/mol)
+    </div>
+
+    <div class="example-box">
+        <div class="example-title">例題 3.4</div>
+        
+        <h3 style="color: #C41E3A;">銅的理論密度計算</h3>
+        
+        <p>銅的原子半徑為0.128 nm，具有FCC晶體結構，原子量為63.5 g/mol。計算其理論密度，並將答案與其測量密度進行比較。</p>
+        
+        <div class="solution-title">解答</div>
+        
+        <p>本題的解答採用方程式3.8。因為晶體結構是FCC，所以每個單位晶胞的原子數<i>n</i>為4。此外，銅的原子量<i>A</i><sub>Cu</sub>為63.5 g/mol。FCC的單位晶胞體積<i>V</i><sub>C</sub>在例題3.1中已確定為16<i>R</i><sup>3</sup>√2，其中<i>R</i>為原子半徑，為0.128 nm。</p>
+        
+        <p>將各參數代入方程式3.8可得：</p>
+        
+        <div class="equation" style="text-align: left; padding-left: 40px;">
+            ρ<sub>Cu</sub> = <i>nA</i><sub>Cu</sub> / <i>V</i><sub>C</sub><i>N</i><sub>A</sub> = <i>nA</i><sub>Cu</sub> / (16<i>R</i><sup>3</sup>√2)<i>N</i><sub>A</sub>
+        </div>
+        
+        <div class="equation" style="text-align: center;">
+            = (4 atoms/unit cell)(63.5 g/mol) / [16√2(1.28 × 10<sup>-8</sup> cm)<sup>3</sup>/unit cell](6.022 × 10<sup>23</sup> atoms/mol)
+        </div>
+        
+        <div class="equation" style="text-align: center;">
+            = 8.89 g/cm<sup>3</sup>
+        </div>
+        
+        <p>文獻中銅的密度值為8.94 g/cm<sup>3</sup>，與上述計算結果非常接近。</p>
+    </div>
+
+</body>
+</html>
