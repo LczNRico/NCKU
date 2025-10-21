@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 5.7 - 其他擴散路徑及章節摘要</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "PMingLiU", sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a235a;
+            border-bottom: 3px solid #4a235a;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #2874a6;
+            margin-top: 30px;
+            font-size: 22px;
+            border-bottom: 2px solid #2874a6;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 25px;
+            font-size: 18px;
+        }
+        p {
+            text-align: justify;
+            margin: 15px 0;
+        }
+        .summary-section {
+            background-color: #e8f4f8;
+            border-left: 5px solid #2874a6;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .summary-header {
+            color: #2874a6;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .summary-item {
+            margin: 20px 0;
+        }
+        .summary-item h3 {
+            color: #16a085;
+            margin-bottom: 10px;
+        }
+        .bullet-point {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #2874a6;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .equation-table th {
+            background-color: #16a085;
+        }
+        .symbol-table th {
+            background-color: #2874a6;
+        }
+        .equation {
+            text-align: center;
+            margin: 15px 0;
+            font-family: "Times New Roman", serif;
+            font-size: 16px;
+        }
+        .terms-section {
+            background-color: #f3e5f5;
+            border: 2px solid #7b1fa2;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        .terms-section h2 {
+            color: #7b1fa2;
+            border-bottom: 2px solid #7b1fa2;
+        }
+        .terms-list {
+            column-count: 3;
+            column-gap: 20px;
+            margin-top: 15px;
+        }
+        .terms-list div {
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+        .references-section {
+            background-color: #fff3e0;
+            border: 2px solid #f57c00;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        .references-section h2 {
+            color: #e65100;
+            border-bottom: 2px solid #f57c00;
+            margin-top: 0;
+        }
+        .reference-item {
+            margin: 12px 0;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+        sup {
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+        sub {
+            font-size: 0.8em;
+            vertical-align: sub;
+        }
+        em {
+            font-style: italic;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>5.7 其他擴散路徑</h1>
+        
+        <p>
+            原子遷移也可能沿著差排、晶界和外表面發生。這些有時被稱為<strong>短路擴散路徑</strong>，因為它們的速率遠快於體擴散。然而，在大多數情況下，短路對整體擴散通量的貢獻是微不足道的，因為這些路徑的橫截面積極小。
+        </p>
+
+        <div class="summary-section">
+            <div class="summary-header">摘要</div>
+
+            <div class="summary-item">
+                <h3>簡介</h3>
+                <div class="bullet-point">• 固態擴散是固體材料內藉由逐步原子運動進行質量傳輸的一種方式。</div>
+                <div class="bullet-point">• 術語<em>互擴散</em>指的是雜質原子的遷移；對於主體原子，則使用術語<em>自擴散</em>。</div>
+            </div>
+
+            <div class="summary-item">
+                <h3>擴散機制</h3>
+                <div class="bullet-point">• 擴散有兩種可能的機制：空位和間隙。</div>
+                <div class="bullet-point" style="margin-left: 40px;">
+                    <em>空位擴散</em>通過位於正常晶格位置的原子與相鄰空位的交換而發生。
+                </div>
+                <div class="bullet-point" style="margin-left: 40px;">
+                    對於<em>間隙擴散</em>，原子從一個間隙位置遷移到相鄰的空間隙位置。
+                </div>
+                <div class="bullet-point">• 對於給定的主體金屬，間隙原子物種通常擴散得更快。</div>
+            </div>
+
+            <div class="summary-item">
+                <h3>費克第一定律</h3>
+                <div class="bullet-point">• 擴散通量根據費克第一定律（方程式5.2）與濃度梯度的負值成正比。</div>
+                <div class="bullet-point">• 通量與時間無關的擴散條件稱為<em>穩態</em>。</div>
+                <div class="bullet-point">• 穩態擴散的驅動力是濃度梯度（<em>dC</em>/<em>dx</em>）。</div>
+            </div>
+
+            <div class="summary-item">
+                <h3>費克第二定律——非穩態擴散</h3>
+                <div class="bullet-point">• 對於非穩態擴散，存在擴散物種的淨累積或消耗，且通量取決於時間。</div>
+                <div class="bullet-point">• 單一（<em>x</em>）方向的非穩態數學關係式（以及當擴散係數與濃度無關時）可由費克第二定律（方程式5.4b）描述。</div>
+                <div class="bullet-point">• 對於恆定表面組成邊界條件，費克第二定律（方程式5.4b）的解是方程式5.5，其中涉及高斯誤差函數（erf）。</div>
+            </div>
+
+            <div class="summary-item">
+                <h3>影響擴散的因素</h3>
+                <div class="bullet-point">• 擴散係數的大小指示了原子運動的速率，並取決於主體和擴散物種以及溫度。</div>
+                <div class="bullet-point">• 擴散係數根據方程式5.8是溫度的函數。</div>
+            </div>
+
+            <div class="summary-item">
+                <h3>半導體材料中的擴散</h3>
+                <div class="bullet-point">• 在積體電路製造期間用於將雜質擴散到矽中的兩種熱處理是預沉積和驅入。</div>
+                <div class="bullet-point" style="margin-left: 40px;">
+                    在預沉積期間，雜質原子從氣相擴散到矽中，其分壓保持恆定。
+                </div>
+                <div class="bullet-point" style="margin-left: 40px;">
+                    對於驅入步驟，雜質原子被傳輸到矽中更深處，以提供更合適的濃度分布，而不增加總雜質含量。
+                </div>
+                <div class="bullet-point">• 積體電路互連線通常由鋁製成——而不是具有更高電導率的銅、銀和金等金屬——基於擴散考量。在高溫熱處理期間，互連線金屬原子擴散到矽中；可觀的濃度會損害晶片的功能。</div>
+            </div>
+        </div>
+
+        <h2>方程式總結</h2>
+        
+        <table class="equation-table">
+            <thead>
+                <tr>
+                    <th>方程式編號</th>
+                    <th>方程式</th>
+                    <th>求解對象</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5.1</td>
+                    <td class="equation"><em>J</em> = <em>M</em> / <em>At</em></td>
+                    <td>擴散通量</td>
+                </tr>
+                <tr>
+                    <td>5.2</td>
+                    <td class="equation"><em>J</em> = −<em>D</em> d<em>C</em> / d<em>x</em></td>
+                    <td>費克第一定律</td>
+                </tr>
+                <tr>
+                    <td>5.4b</td>
+                    <td class="equation">∂<em>C</em> / ∂<em>t</em> = <em>D</em> ∂²<em>C</em> / ∂<em>x</em>²</td>
+                    <td>費克第二定律</td>
+                </tr>
+                <tr>
+                    <td>5.5</td>
+                    <td class="equation">(<em>C<sub>x</sub></em> − <em>C</em><sub>0</sub>) / (<em>C<sub>s</sub></em> − <em>C</em><sub>0</sub>) = 1 − erf(<em>x</em> / 2√<em>Dt</em>)</td>
+                    <td>費克第二定律的解——恆定表面組成</td>
+                </tr>
+                <tr>
+                    <td>5.8</td>
+                    <td class="equation"><em>D</em> = <em>D</em><sub>0</sub> exp(−<em>Q<sub>d</sub></em> / <em>RT</em>)</td>
+                    <td>擴散係數的溫度相依性</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>符號列表</h2>
+        
+        <table class="symbol-table">
+            <thead>
+                <tr>
+                    <th>符號</th>
+                    <th>意義</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><em>A</em></td>
+                    <td>垂直於擴散方向的橫截面積</td>
+                </tr>
+                <tr>
+                    <td><em>C</em></td>
+                    <td>擴散物種的濃度</td>
+                </tr>
+                <tr>
+                    <td><em>C</em><sub>0</sub></td>
+                    <td>在擴散過程開始之前擴散物種的初始濃度</td>
+                </tr>
+                <tr>
+                    <td><em>C<sub>s</sub></em></td>
+                    <td>擴散物種的表面濃度</td>
+                </tr>
+                <tr>
+                    <td><em>C<sub>x</sub></em></td>
+                    <td>在擴散時間<em>t</em>後位置<em>x</em>處的濃度</td>
+                </tr>
+                <tr>
+                    <td><em>D</em></td>
+                    <td>擴散係數</td>
+                </tr>
+                <tr>
+                    <td><em>D</em><sub>0</sub></td>
+                    <td>與溫度無關的常數</td>
+                </tr>
+                <tr>
+                    <td><em>M</em></td>
+                    <td>擴散物質的質量</td>
+                </tr>
+                <tr>
+                    <td><em>Q<sub>d</sub></em></td>
+                    <td>擴散的活化能</td>
+                </tr>
+                <tr>
+                    <td><em>R</em></td>
+                    <td>氣體常數（8.31 J/mol·K）</td>
+                </tr>
+                <tr>
+                    <td><em>t</em></td>
+                    <td>已經過的擴散時間</td>
+                </tr>
+                <tr>
+                    <td><em>x</em></td>
+                    <td>在擴散方向測量的位置座標（或距離），通常從固體表面測量</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="terms-section">
+            <h2>重要術語和概念</h2>
+            <div class="terms-list">
+                <div>活化能</div>
+                <div>滲碳</div>
+                <div>濃度梯度</div>
+                <div>濃度分布</div>
+                <div>擴散</div>
+                <div>擴散係數</div>
+                <div>擴散通量</div>
+                <div>驅動力</div>
+                <div>費克第一定律</div>
+                <div>費克第二定律</div>
+                <div>互擴散（雜質擴散）</div>
+                <div>間隙擴散</div>
+                <div>非穩態擴散</div>
+                <div>自擴散</div>
+                <div>穩態擴散</div>
+                <div>空位擴散</div>
+            </div>
+        </div>
+
+        <div class="references-section">
+            <h2>參考文獻</h2>
+            
+            <div class="reference-item">
+                Carslaw, H. S., and J. C. Jaeger, <em>Conduction of Heat in Solids</em>, 2nd edition, Oxford University Press, Oxford, 1986.
+            </div>
+            
+            <div class="reference-item">
+                Crank, J., <em>The Mathematics of Diffusion</em>, Oxford University Press, Oxford, 1980.
+            </div>
+            
+            <div class="reference-item">
+                Gale, W. F., and T. C. Totemeier (Editors), <em>Smithells Metals Reference Book</em>, 8th edition, Elsevier Butterworth-Heinemann, Oxford, 2004.
+            </div>
+            
+            <div class="reference-item">
+                Glicksman, M., <em>Diffusion in Solids</em>, Wiley-Interscience, New York, 2000.
+            </div>
+            
+            <div class="reference-item">
+                Shewmon, P. G., <em>Diffusion in Solids</em>, 2nd edition, The Minerals, Metals and Materials Society, Warrendale, PA, 1989.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

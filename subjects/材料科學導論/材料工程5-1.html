@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 5-1</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "微軟正黑體", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            color: #333;
+        }
+        
+        h1 {
+            color: #4a148c;
+            font-size: 28px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #4a148c;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #4a148c;
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .definition {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #00838f;
+            border-radius: 4px;
+        }
+        
+        .term {
+            color: #00838f;
+            font-weight: bold;
+        }
+        
+        .note {
+            background-color: #fff9e6;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+            border-radius: 4px;
+        }
+        
+        p {
+            text-indent: 2em;
+            margin: 15px 0;
+            text-align: justify;
+        }
+        
+        .no-indent {
+            text-indent: 0;
+        }
+        
+        .figure {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .figure-title {
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+        
+        .figure-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 40px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>5.1 簡介</h1>
+    
+    <p>許多在材料處理上至關重要的反應和過程，都仰賴於質量在特定固體內部（通常在微觀層級）或從液體、氣體或另一個固相的轉移。這必然是由<span class="term">擴散</span>來完成的，擴散是物質藉由原子運動進行傳輸的現象。本章將討論擴散發生的原子機制、擴散的數學原理，以及溫度和擴散物種對擴散速率的影響。</p>
+    
+    <p>擴散現象可以透過使用<span class="term">擴散偶</span>來展示，擴散偶是將兩種不同金屬的棒材接合在一起，使兩個界面之間有緊密接觸而形成的；銅和鎳的情況如圖5.1<i>a</i>所示，圖中包含了跨越界面的原子位置和組成的示意圖。將此擴散偶在升高的溫度下（但低於兩種金屬的熔點）加熱一段延長的時間，然後冷卻至室溫。化學分析顯示出類似於圖5.1<i>b</i>所示的狀況——即在擴散偶的兩個端點處為純銅和純鎳，並由合金區域分隔開來。如圖5.1<i>b</i>（底部）所示，兩種金屬的濃度隨著位置而變化。這個結果表明銅原子已經遷移或擴散進入鎳中，而鎳也擴散進入銅中。一種金屬的原子擴散進入另一種金屬的過程稱為<span class="term">互擴散</span>，或稱為<span class="term">雜質擴散</span>。</p>
+    
+    <p>從宏觀的角度來看，互擴散可以透過濃度隨時間發生的變化來識別，如銅-鎳擴散偶的例子。原子從高濃度區域淨漂移或傳輸到低濃度區域。擴散也會發生在純金屬中，但所有交換位置的原子都是相同類型；這稱為<span class="term">自擴散</span>。當然，自擴散通常不會透過觀察組成變化而受到注意。</p>
+    
+    <div class="figure">
+        <p class="figure-title">圖5.1</p>
+        <p class="figure-description">銅-鎳擴散偶在高溫熱處理<i>(a)</i>之前和<i>(b)</i>之後的比較。<i>(a)</i>和<i>(b)</i>兩部分的三個圖表分別表示以下內容：頂部——擴散偶的性質；中間——擴散偶內Cu（紅色圓圈）和Ni（藍色圓圈）原子位置分布的示意圖；以及底部——銅和鎳的濃度作為跨越擴散偶位置的函數。</p>
+    </div>
+    
+    <div class="definition">
+        <p class="no-indent"><strong>關鍵術語定義：</strong></p>
+        <ul>
+            <li><span class="term">擴散（Diffusion）</span>：物質藉由原子運動進行傳輸的現象</li>
+            <li><span class="term">擴散偶（Diffusion Couple）</span>：將兩種不同金屬的棒材緊密接合在一起形成的試樣</li>
+            <li><span class="term">互擴散（Interdiffusion）</span>：一種金屬的原子擴散進入另一種金屬的過程</li>
+            <li><span class="term">雜質擴散（Impurity Diffusion）</span>：互擴散的另一種稱呼</li>
+            <li><span class="term">自擴散（Self-Diffusion）</span>：純金屬中相同類型原子的位置交換</li>
+        </ul>
+    </div>
+    
+    <div class="note">
+        <p class="no-indent"><strong>WileyPLUS 教學影片：什麼是擴散？</strong></p>
+        <p class="no-indent">本章節配有互動式教學資源，可進一步了解擴散的基本概念。</p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 5-2</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "微軟正黑體", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            color: #333;
+        }
+        
+        h1 {
+            color: #4a148c;
+            font-size: 28px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #4a148c;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #c62828;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .definition {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #00838f;
+            border-radius: 4px;
+        }
+        
+        .term {
+            color: #00838f;
+            font-weight: bold;
+        }
+        
+        .note {
+            background-color: #fff9e6;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+            border-radius: 4px;
+        }
+        
+        p {
+            text-indent: 2em;
+            margin: 15px 0;
+            text-align: justify;
+        }
+        
+        .no-indent {
+            text-indent: 0;
+        }
+        
+        .figure {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .figure-title {
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+        
+        .figure-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            text-indent: 0;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 40px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .emphasis {
+            background-color: #fffde7;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>5.2 擴散機制</h1>
+    
+    <p>從原子的角度來看，擴散只是原子從一個晶格位置逐步遷移到另一個晶格位置。事實上，固體材料中的原子處於不斷運動狀態，快速地改變位置。要讓原子進行這樣的移動，必須滿足兩個條件：(1) 必須有一個相鄰的空位，以及 (2) 原子必須具有足夠的能量來打破與其鄰近原子的鍵結，然後在位移過程中引起一些晶格扭曲。此能量在本質上是振動性的（第4.8節）。在特定溫度下，總原子數中只有一小部分能夠進行擴散運動，這是由於它們的振動能量大小的緣故。這個比例隨著溫度升高而增加。</p>
+    
+    <p>對於這種原子運動，已經提出了幾種不同的模型；在這些可能性中，有兩種主導了金屬的擴散。</p>
+    
+    <h2>空位擴散</h2>
+    
+    <p>其中一種機制涉及原子從正常的晶格位置與相鄰的空晶格位置或<span class="term">空位</span>進行交換，如圖5.2<i>a</i>所示的示意圖。此機制被恰當地稱為<span class="term">空位擴散</span>。當然，此過程必須存在空位，而空位擴散發生的程度取決於存在的這些缺陷數量；在升高的溫度下，金屬中可能存在顯著濃度的空位（第4.2節）。由於擴散原子和空位交換位置，在一個方向上的原子擴散對應於空位在相反方向上的運動。自擴散和互擴散都通過此機制發生；對於後者，雜質原子必須替代主體原子。</p>
+    
+    <h2>間隙擴散</h2>
+    
+    <p>第二種擴散類型涉及原子從間隙位置遷移到相鄰的空位置。此機制見於雜質原子的互擴散，</p>
+    
+    <div class="figure">
+        <p class="figure-title">圖5.2</p>
+        <p class="figure-description"><i>(a)</i> 空位擴散和 <i>(b)</i> 間隙擴散的示意圖。</p>
+    </div>
+    
+    <p class="no-indent">例如氫、碳、氮和氧，其原子小到足以嵌入間隙位置中。主體原子或置換性雜質原子很少形成間隙位置，並且通常不會通過此機制進行擴散。此現象被恰當地稱為<span class="term">間隙擴散</span>（圖5.2<i>b</i>）。</p>
+    
+    <p>在大多數金屬合金中，間隙擴散的發生速度遠快於空位模式的擴散，這是因為間隙原子較小，因此更具移動性。此外，存在的空間隙位置比空位多；因此，間隙原子運動的可能性大於空位擴散。</p>
+    
+    <div class="definition">
+        <p class="no-indent"><strong>關鍵術語定義：</strong></p>
+        <ul>
+            <li><span class="term">晶格位置（Lattice site）</span>：晶體結構中原子的正常位置</li>
+            <li><span class="term">空位（Vacancy）</span>：晶格中缺少原子的位置，屬於點缺陷</li>
+            <li><span class="term">空位擴散（Vacancy diffusion）</span>：原子與相鄰空位交換位置的擴散機制</li>
+            <li><span class="term">間隙位置（Interstitial position）</span>：晶格中原子之間的空間位置</li>
+            <li><span class="term">間隙擴散（Interstitial diffusion）</span>：原子在間隙位置間移動的擴散機制</li>
+            <li><span class="term">主體原子（Host atom）</span>：構成基體材料的原子</li>
+            <li><span class="term">置換原子（Substitutional atom）</span>：取代主體原子位置的雜質原子</li>
+        </ul>
+    </div>
+    
+    <div class="note">
+        <p class="no-indent"><strong>重要觀念：</strong></p>
+        <ul>
+            <li>原子擴散需要兩個條件：<span class="emphasis">相鄰空位</span>和<span class="emphasis">足夠的能量</span></li>
+            <li>具有擴散能力的原子比例隨溫度升高而增加</li>
+            <li>間隙擴散通常比空位擴散快得多</li>
+            <li>小原子（如H、C、N、O）主要通過間隙擴散</li>
+            <li>大原子（主體原子、置換原子）主要通過空位擴散</li>
+        </ul>
+    </div>
+    
+    <div class="note">
+        <p class="no-indent"><strong>WileyPLUS 教學影片：擴散機制</strong></p>
+        <p class="no-indent">本章節配有互動式教學資源，可進一步了解空位擴散與間隙擴散的動態過程。</p>
+    </div>
+    
+</body>
+</html>

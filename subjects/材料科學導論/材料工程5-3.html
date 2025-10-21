@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 5-3</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "微軟正黑體", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            color: #333;
+        }
+        
+        h1 {
+            color: #4a148c;
+            font-size: 28px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #4a148c;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #c62828;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .definition {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #00838f;
+            border-radius: 4px;
+        }
+        
+        .term {
+            color: #00838f;
+            font-weight: bold;
+        }
+        
+        .equation-box {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #9e9e9e;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .equation {
+            font-size: 18px;
+            font-family: "Times New Roman", serif;
+            margin: 10px 0;
+        }
+        
+        .equation-number {
+            float: right;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .note {
+            background-color: #fff9e6;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+            border-radius: 4px;
+        }
+        
+        .example {
+            background-color: #e3f2fd;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #1976d2;
+            border-radius: 6px;
+        }
+        
+        .example-title {
+            color: #1976d2;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .solution {
+            color: #c62828;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 15px 0 10px 0;
+        }
+        
+        p {
+            text-indent: 2em;
+            margin: 15px 0;
+            text-align: justify;
+        }
+        
+        .no-indent {
+            text-indent: 0;
+        }
+        
+        .figure {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .figure-title {
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+        
+        .figure-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            text-indent: 0;
+        }
+        
+        ul {
+            margin: 15px 0;
+            padding-left: 40px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .emphasis {
+            background-color: #fffde7;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        .italic {
+            font-style: italic;
+        }
+        
+        sup {
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+        
+        sub {
+            font-size: 0.8em;
+            vertical-align: sub;
+        }
+    </style>
+</head>
+<body>
+    <h1>5.3 菲克第一定律</h1>
+    
+    <p>擴散是一個<span class="italic">時變過程</span>——也就是說，從宏觀意義上來看，在經過一段時間後，一種化學物質從另一種物質內部傳輸的量。通常有必要了解擴散發生的速度有多快，或稱為<span class="italic">質量傳遞速率</span>。此速率通常表示為<span class="term">擴散通量</span> (<i>J</i>)，定義為單位時間內，擴散通過固體的單位橫截面積並垂直於該面積的質量（或等效地，原子數量）<i>M</i>。在數學形式上，這可以表示為</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            <i>J</i> = <i>M</i> / <i>At</i>
+            <span class="equation-number">(5.1)</span>
+        </div>
+    </div>
+    
+    <p>其中 <i>A</i> 表示發生擴散的面積，<i>t</i> 是經過的擴散時間。<i>J</i> 的單位為千克或原子數每平方公尺每秒 (kg/m<sup>2</sup>·s 或 atoms/m<sup>2</sup>·s)。</p>
+    
+    <p>單一 (<i>x</i>) 方向的穩態擴散數學相對簡單，</p>
+    
+    <p class="no-indent" style="text-indent: 0; margin-left: 2em;">因為通量與濃度梯度 <span style="display: inline-block; vertical-align: middle; font-size: 16px;"><i>dC</i>/<i>dx</i></span> 成正比，通過以下表達式</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            <i>J</i> = −<i>D</i> <span style="display: inline-block; vertical-align: middle;"><i>dC</i>/<i>dx</i></span>
+            <span class="equation-number">(5.2)</span>
+        </div>
+    </div>
+    
+    <div class="figure">
+        <p class="figure-title">圖5.3</p>
+        <p class="figure-description"><i>(a)</i> 穿過薄板的穩態擴散。<i>(b)</i> 在 <i>(a)</i> 的擴散情況下的線性濃度分布。</p>
+    </div>
+    
+    <p>此方程式有時稱為<span class="term">菲克第一定律</span>。比例常數 <i>D</i> 稱為<span class="term">擴散係數</span>，以平方公尺每秒表示。此表達式中的負號表示擴散的方向是沿著濃度梯度向下，從高濃度到低濃度。</p>
+    
+    <p>菲克第一定律可以應用於氣體原子通過薄金屬板的擴散，該板的兩個表面上擴散物種的濃度（或壓力）保持恆定，此情況如圖5.3<i>a</i>所示的示意圖。此擴散過程最終達到一種狀態，其中擴散通量不隨時間變化——也就是說，進入高壓側板中的擴散物種質量等於從低壓表面離開的質量——使得板中沒有擴散物種的淨累積。這是所謂的<span class="term">穩態擴散</span>的一個例子。</p>
+    
+    <p>當濃度 <i>C</i> 相對於固體內的位置（或距離）<i>x</i> 作圖時，所得曲線稱為<span class="term">濃度分布</span>；此外，<span class="term">濃度梯度</span>是該曲線上特定點的斜率。在目前的處理中，假設濃度分布是線性的，如圖5.3<i>b</i>所示，並且</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            濃度梯度 = <span style="display: inline-block; vertical-align: middle;"><i>dC</i>/<i>dx</i></span> = <span style="display: inline-block; vertical-align: middle;">Δ<i>C</i>/Δ<i>x</i></span> = <span style="display: inline-block; vertical-align: middle;">(<i>C</i><sub>A</sub> − <i>C</i><sub>B</sub>)/(<i>x</i><sub>A</sub> − <i>x</i><sub>B</sub>)</span>
+            <span class="equation-number">(5.3)</span>
+        </div>
+    </div>
+    
+    <p>對於擴散問題，有時方便地以固體單位體積的擴散物種質量來表示濃度（kg/m<sup>3</sup> 或 g/cm<sup>3</sup>）。<sup>1</sup></p>
+    
+    <div class="note">
+        <p class="no-indent"><strong>關鍵概念：</strong></p>
+        <p class="no-indent">有時術語<span class="term">驅動力</span>用於描述促使反應發生的因素。對於擴散反應，有幾種這樣的力是可能的；但當擴散根據方程式5.2時，濃度梯度就是驅動力。<sup>2</sup></p>
+    </div>
+    
+    <p>穩態擴散的一個實際例子見於氫氣的純化。鈀金屬薄片的一側暴露於由氫和其他氣體物種（如氮、氧和水蒸氣）組成的不純氣體中。氫選擇性地擴散通過該薄片到相反側，該側保持恆定且較低的氫壓力。</p>
+    
+    <div class="example">
+        <p class="example-title">範例問題 5.1</p>
+        <h3 style="color: #c62828; margin: 15px 0;">擴散通量計算</h3>
+        
+        <p class="no-indent">將一塊鐵板的一側暴露於滲碳（富碳）氣氛中，另一側暴露於脫碳（缺碳）氣氛中，溫度為700°C（1300°F）。如果達到穩態條件，在滲碳表面下方5和10 mm（5 × 10<sup>−3</sup> 和 10<sup>−2</sup> m）位置處的碳濃度分別為1.2和0.8 kg/m<sup>3</sup>，請計算通過該板的碳擴散通量。假設在此溫度下的擴散係數為3 × 10<sup>−11</sup> m<sup>2</sup>/s。</p>
+        
+        <p class="solution">解答</p>
+        
+        <p class="no-indent">使用菲克第一定律，方程式5.2，來確定擴散通量。將剛給出的值代入此表達式得到</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                <i>J</i> = −<i>D</i> <span style="display: inline-block; vertical-align: middle;">(<i>C</i><sub>A</sub> − <i>C</i><sub>B</sub>)/(<i>x</i><sub>A</sub> − <i>x</i><sub>B</sub>)</span> = −(3 × 10<sup>−11</sup> m<sup>2</sup>/s) <span style="display: inline-block; vertical-align: middle;">(1.2 − 0.8) kg/m<sup>3</sup> / (5 × 10<sup>−3</sup> − 10<sup>−2</sup>) m</span>
+            </div>
+            <div class="equation" style="margin-top: 15px;">
+                = 2.4 × 10<sup>−9</sup> kg/m<sup>2</sup>·s
+            </div>
+        </div>
+    </div>
+    
+    <div class="definition">
+        <p class="no-indent"><strong>關鍵術語定義：</strong></p>
+        <ul>
+            <li><span class="term">擴散通量（Diffusion flux, <i>J</i>）</span>：單位時間內通過單位橫截面積的擴散質量或原子數量</li>
+            <li><span class="term">菲克第一定律（Fick's first law）</span>：描述穩態擴散的基本定律，通量與濃度梯度成正比</li>
+            <li><span class="term">擴散係數（Diffusion coefficient, <i>D</i>）</span>：表示材料擴散難易程度的比例常數</li>
+            <li><span class="term">穩態擴散（Steady-state diffusion）</span>：擴散通量不隨時間變化的擴散過程</li>
+            <li><span class="term">濃度分布（Concentration profile）</span>：濃度與位置關係的曲線</li>
+            <li><span class="term">濃度梯度（Concentration gradient）</span>：濃度分布曲線在特定點的斜率，dC/dx</li>
+            <li><span class="term">驅動力（Driving force）</span>：促使反應或過程發生的因素，對於擴散即為濃度梯度</li>
+        </ul>
+    </div>
+    
+    <div class="note">
+        <p class="no-indent"><strong>WileyPLUS 教學影片：穩態擴散與非穩態擴散</strong></p>
+        <p class="no-indent">本章節配有互動式教學資源，可進一步了解穩態與非穩態擴散的差異。</p>
+    </div>
+    
+    <div class="note">
+        <p class="no-indent"><strong>註釋：</strong></p>
+        <p class="no-indent"><sup>1</sup> 關於擴散問題中濃度的不同表示方式，請參考相關教材的詳細說明。</p>
+        <p class="no-indent"><sup>2</sup> 驅動力的概念在材料科學中廣泛應用，不僅限於擴散過程。</p>
+    </div>
+    
+</body>
+</html>

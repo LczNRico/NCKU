@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 5-4</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "微軟正黑體", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            color: #333;
+        }
+        
+        h1 {
+            color: #4a148c;
+            font-size: 26px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #4a148c;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #c62828;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        
+        .equation-box {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #9e9e9e;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .equation {
+            font-size: 18px;
+            font-family: "Times New Roman", serif;
+            margin: 10px 0;
+        }
+        
+        .equation-number {
+            float: right;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .example {
+            background-color: #e3f2fd;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #1976d2;
+            border-radius: 6px;
+            page-break-inside: avoid;
+        }
+        
+        .example-title {
+            color: #1976d2;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .solution {
+            color: #c62828;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 15px 0 10px 0;
+        }
+        
+        .note {
+            background-color: #fff9e6;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+            border-radius: 4px;
+        }
+        
+        .definition {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #00838f;
+            border-radius: 4px;
+        }
+        
+        .term {
+            color: #00838f;
+            font-weight: bold;
+        }
+        
+        p {
+            text-indent: 2em;
+            margin: 15px 0;
+            text-align: justify;
+        }
+        
+        .no-indent {
+            text-indent: 0;
+        }
+        
+        .figure {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .figure-title {
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+        
+        .figure-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            text-indent: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #1976d2;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 40px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .italic {
+            font-style: italic;
+        }
+        
+        sup {
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+        
+        sub {
+            font-size: 0.8em;
+            vertical-align: sub;
+        }
+        
+        .indent-block {
+            margin-left: 3em;
+            margin-right: 2em;
+        }
+        
+        .footnote {
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>5.4 菲克第二定律—非穩態擴散</h1>
+    
+    <p>大多數實際的擴散情況是非穩態的——也就是說，在固體中某特定點的擴散通量和濃度梯度隨時間變化，導致擴散物種的淨累積或耗損。這在圖5.4中得到說明，該圖顯示了三個不同擴散時間的濃度分布。在非穩態條件下，使用方程式5.2是可能的但不方便；相反地，使用偏微分方程式</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            ∂<i>C</i>/∂<i>t</i> = ∂/<i>x</i> (<i>D</i> ∂<i>C</i>/∂<i>x</i>)
+            <span class="equation-number">(5.4a)</span>
+        </div>
+    </div>
+    
+    <div class="figure">
+        <p class="figure-title">圖5.4</p>
+        <p class="figure-description">在三個不同時間 <i>t</i><sub>1</sub>、<i>t</i><sub>2</sub> 和 <i>t</i><sub>3</sub> 下的非穩態擴散濃度分布。</p>
+    </div>
+    
+    <p>被稱為<span class="term">菲克第二定律</span>。如果擴散係數獨立於組成（這應該針對每個特定的擴散情況進行驗證），方程式5.4a簡化為</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            ∂<i>C</i>/∂<i>t</i> = <i>D</i> ∂<sup>2</sup><i>C</i>/∂<i>x</i><sup>2</sup>
+            <span class="equation-number">(5.4b)</span>
+        </div>
+    </div>
+    
+    <p>當指定了具有物理意義的邊界條件時，此表達式的解（濃度以位置和時間表示）是可能的。Crank 和 Carslow 和 Jaeger 給出了這些解的綜合集合（見參考文獻）。</p>
+    
+    <p>一個在實際上重要的解是針對<span class="term">半無限固體</span><sup>3</sup>，其中表面濃度保持恆定。通常，擴散物種的來源是氣相，其分壓保持在恆定值。此外，做出以下假設：</p>
+    
+    <ol>
+        <li>在擴散之前，固體中任何擴散溶質原子均均勻分布，濃度為 <i>C</i><sub>0</sub>。</li>
+        <li>表面處 <i>x</i> 的值為零，並隨著進入固體的距離而增加。</li>
+        <li>時間被認為在擴散過程開始之前的瞬間為零。</li>
+    </ol>
+    
+    <p class="no-indent" style="margin-left: 2em;">這些條件簡單地陳述如下：</p>
+    
+    <div class="indent-block">
+        <p class="no-indent"><strong>初始條件</strong></p>
+        <p class="no-indent" style="margin-left: 2em;">對於 <i>t</i> = 0，<i>C</i> = <i>C</i><sub>0</sub> 在 0 ≤ <i>x</i> ≤ ∞</p>
+        
+        <p class="no-indent"><strong>邊界條件</strong></p>
+        <p class="no-indent" style="margin-left: 2em;">對於 <i>t</i> > 0，<i>C</i> = <i>C</i><sub>s</sub>（恆定表面濃度）在 <i>x</i> = 0</p>
+        <p class="no-indent" style="margin-left: 2em;">對於 <i>t</i> > 0，<i>C</i> = <i>C</i><sub>0</sub> 在 <i>x</i> = ∞</p>
+    </div>
+    
+    <p>將這些條件應用於方程式5.4b 得到解</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            (<i>C</i><sub>x</sub> − <i>C</i><sub>0</sub>)/(<i>C</i><sub>s</sub> − <i>C</i><sub>0</sub>) = 1 − erf(<i>x</i>/(2√<i>Dt</i>))
+            <span class="equation-number">(5.5)</span>
+        </div>
+    </div>
+    
+    <p>其中 <i>C</i><sub>x</sub> 代表時間 <i>t</i> 後深度 <i>x</i> 處的濃度。表達式 erf(<i>x</i>/2√<i>Dt</i>) 是<span class="term">高斯誤差函數</span><sup>4</sup>，其值在數學表中給出，用於各種 <i>x</i>/2√<i>Dt</i> 值；表5.1給出了部分列表。出現在方程式5.5中的濃度參數在圖5.5中標示，這是在特定時間拍攝的濃度分布。因此，方程式5.5展示了濃度、位置和時間之間的關係——即，<i>C</i><sub>x</sub> 作為無因次參數 <i>x</i>/√<i>Dt</i> 的函數，如果已知參數 <i>C</i><sub>0</sub>、<i>C</i><sub>s</sub> 和 <i>D</i>，則可以在任何時間和位置確定。</p>
+    
+    <p>假設希望在合金中達到某個特定的溶質濃度 <i>C</i><sub>1</sub>；方程式5.5的左側現在變為</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            (<i>C</i><sub>1</sub> − <i>C</i><sub>0</sub>)/(<i>C</i><sub>s</sub> − <i>C</i><sub>0</sub>) = 常數
+        </div>
+    </div>
+    
+    <div class="figure" style="background-color: #f9f9f9;">
+        <p class="figure-title">表5.1 誤差函數值表</p>
+        <table>
+            <tr>
+                <th><i>z</i></th>
+                <th>erf(<i>z</i>)</th>
+                <th><i>z</i></th>
+                <th>erf(<i>z</i>)</th>
+                <th><i>z</i></th>
+                <th>erf(<i>z</i>)</th>
+            </tr>
+            <tr><td>0</td><td>0</td><td>0.55</td><td>0.5633</td><td>1.3</td><td>0.9340</td></tr>
+            <tr><td>0.025</td><td>0.0282</td><td>0.60</td><td>0.6039</td><td>1.4</td><td>0.9523</td></tr>
+            <tr><td>0.05</td><td>0.0564</td><td>0.65</td><td>0.6420</td><td>1.5</td><td>0.9661</td></tr>
+            <tr><td>0.10</td><td>0.1125</td><td>0.70</td><td>0.6778</td><td>1.6</td><td>0.9763</td></tr>
+            <tr><td>0.15</td><td>0.1680</td><td>0.75</td><td>0.7112</td><td>1.7</td><td>0.9838</td></tr>
+            <tr><td>0.20</td><td>0.2227</td><td>0.80</td><td>0.7421</td><td>1.8</td><td>0.9891</td></tr>
+            <tr><td>0.25</td><td>0.2763</td><td>0.85</td><td>0.7707</td><td>1.9</td><td>0.9928</td></tr>
+            <tr><td>0.30</td><td>0.3286</td><td>0.90</td><td>0.7970</td><td>2.0</td><td>0.9953</td></tr>
+            <tr><td>0.35</td><td>0.3794</td><td>0.95</td><td>0.8209</td><td>2.2</td><td>0.9981</td></tr>
+            <tr><td>0.40</td><td>0.4284</td><td>1.0</td><td>0.8427</td><td>2.4</td><td>0.9993</td></tr>
+            <tr><td>0.45</td><td>0.4755</td><td>1.1</td><td>0.8802</td><td>2.6</td><td>0.9998</td></tr>
+            <tr><td>0.50</td><td>0.5205</td><td>1.2</td><td>0.9103</td><td>2.8</td><td>0.9999</td></tr>
+        </table>
+    </div>
+    
+    <p>既然如此，方程式5.5的右側也是一個常數，隨後</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            <i>x</i>/(2√<i>Dt</i>) = 常數
+            <span class="equation-number">(5.6a)</span>
+        </div>
+    </div>
+    
+    <p class="no-indent">或</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            <i>x</i><sup>2</sup>/(<i>Dt</i>) = 常數
+            <span class="equation-number">(5.6b)</span>
+        </div>
+    </div>
+    
+    <p>某些擴散計算是基於這種關係來進行的，如範例問題5.3所示。</p>
+    
+    <div class="figure">
+        <p class="figure-title">圖5.5</p>
+        <p class="figure-description">非穩態擴散的濃度分布；濃度參數與方程式5.5相關。</p>
+    </div>
+    
+    <div class="example">
+        <p class="example-title">範例問題 5.2</p>
+        <h3 style="color: #c62828; margin: 15px 0;">非穩態擴散時間計算 I</h3>
+        
+        <p class="no-indent">對於某些應用，有必要使鋼（或鐵-碳合金）的表面硬化程度高於其內部。這可以通過在稱為<span class="term">滲碳</span>的過程中增加碳的表面濃度來實現；在升高的溫度下，將鋼件暴露於富含碳氫化合物氣體（如甲烷，CH<sub>4</sub>）的氣氛中。</p>
+        
+        <p class="no-indent" style="margin-top: 10px;">考慮一種這樣的合金，其初始碳濃度均勻為0.25 wt%，在950°C（1750°F）下進行處理。如果表面的碳濃度突然提升並保持在1.20 wt%，需要多長時間才能在表面下方0.5 mm的位置達到0.80 wt%的碳含量？</p>
+        
+        <p class="no-indent" style="margin-top: 10px;">在此溫度下，鐵中碳的擴散係數為1.6 × 10<sup>−11</sup> m<sup>2</sup>/s；假設鋼件為半無限。</p>
+        
+        <p class="solution">解答</p>
+        
+        <p class="no-indent">因為這是一個表面組成保持恆定的非穩態擴散問題，使用方程式5.5。此表達式中除時間 <i>t</i> 外的所有參數值在問題中均已指定如下：</p>
+        
+        <div style="margin: 15px 0; padding: 15px; background-color: #f5f5f5; border-radius: 4px;">
+            <p class="no-indent"><i>C</i><sub>0</sub> = 0.25 wt% C</p>
+            <p class="no-indent"><i>C</i><sub>s</sub> = 1.20 wt% C</p>
+            <p class="no-indent"><i>C</i><sub>x</sub> = 0.80 wt% C</p>
+            <p class="no-indent"><i>x</i> = 0.50 mm = 5 × 10<sup>−4</sup> m</p>
+            <p class="no-indent"><i>D</i> = 1.6 × 10<sup>−11</sup> m<sup>2</sup>/s</p>
+        </div>
+        
+        <p class="no-indent">因此，</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                (<i>C</i><sub>x</sub> − <i>C</i><sub>0</sub>)/(<i>C</i><sub>s</sub> − <i>C</i><sub>0</sub>) = (0.80 − 0.25)/(1.20 − 0.25) = 1 − erf[<span style="display: inline-block; vertical-align: middle;">(5 × 10<sup>−4</sup> m)/(2√(1.6 × 10<sup>−11</sup> m<sup>2</sup>/s)(<i>t</i>))</span>]
+            </div>
+            <div class="equation" style="margin-top: 15px;">
+                0.4210 = erf(62.5 s<sup>1/2</sup>/√<i>t</i>)
+            </div>
+        </div>
+        
+        <p class="no-indent">我們現在必須從表5.1確定誤差函數為0.4210的 <i>z</i> 值。需要進行內插，如下所示</p>
+        
+        <table style="width: 50%; margin: 15px auto;">
+            <tr><th><i>z</i></th><th>erf(<i>z</i>)</th></tr>
+            <tr><td>0.35</td><td>0.3794</td></tr>
+            <tr><td><i>z</i></td><td>0.4210</td></tr>
+            <tr><td>0.40</td><td>0.4284</td></tr>
+        </table>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                (<i>z</i> − 0.35)/(0.40 − 0.35) = (0.4210 − 0.3794)/(0.4284 − 0.3794)
+            </div>
+        </div>
+        
+        <p class="no-indent">或</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                <i>z</i> = 0.392
+            </div>
+        </div>
+        
+        <p class="no-indent">因此，</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                62.5 s<sup>1/2</sup>/√<i>t</i> = 0.392
+            </div>
+        </div>
+        
+        <p class="no-indent">並求解 <i>t</i>，我們發現</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                <i>t</i> = (62.5 s<sup>1/2</sup>/0.392)<sup>2</sup> = 25,400 s = 7.1 h
+            </div>
+        </div>
+    </div>
+    
+    <div class="example">
+        <p class="example-title">範例問題 5.3</p>
+        <h3 style="color: #c62828; margin: 15px 0;">非穩態擴散時間計算 II</h3>
+        
+        <p class="no-indent">銅在鋁中於500°C和600°C的擴散係數分別為4.8 × 10<sup>−14</sup> 和 5.3 × 10<sup>−13</sup> m<sup>2</sup>/s。確定在500°C下的大約時間，該時間將產生與在Al中某個特定點的銅濃度相同的擴散結果（就銅濃度而言），作為在600°C下10小時熱處理的結果。</p>
+    </div>
+    
+    <div class="example">
+        <p class="solution">解答</p>
+        
+        <p class="no-indent">這是一個可以使用方程式5.6b的擴散問題。因為在500°C和600°C下，組成在某個位置 <i>x</i><sub>0</sub> 保持相同，方程式5.6b可以寫為</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                <i>x</i><sub>0</sub><sup>2</sup>/(<i>D</i><sub>500</sub><i>t</i><sub>500</sub>) = <i>x</i><sub>0</sub><sup>2</sup>/(<i>D</i><sub>600</sub><i>t</i><sub>600</sub>)
+            </div>
+        </div>
+        
+        <p class="no-indent">結果為<sup>5</sup></p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                <i>D</i><sub>500</sub><i>t</i><sub>500</sub> = <i>D</i><sub>600</sub><i>t</i><sub>600</sub>
+            </div>
+        </div>
+        
+        <p class="no-indent">或</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                <i>t</i><sub>500</sub> = <span style="display: inline-block; vertical-align: middle;"><i>D</i><sub>600</sub><i>t</i><sub>600</sub>/<i>D</i><sub>500</sub></span> = <span style="display: inline-block; vertical-align: middle;">(5.3 × 10<sup>−13</sup> m<sup>2</sup>/s)(10 h)/(4.8 × 10<sup>−14</sup> m<sup>2</sup>/s)</span> = 110.4 h
+            </div>
+        </div>
+    </div>
+    
+    <div class="definition">
+        <p class="no-indent"><strong>關鍵術語定義：</strong></p>
+        <ul>
+            <li><span class="term">菲克第二定律（Fick's second law）</span>：描述非穩態擴散的偏微分方程式</li>
+            <li><span class="term">非穩態擴散（Nonsteady-state diffusion）</span>：擴散通量和濃度梯度隨時間變化的擴散過程</li>
+            <li><span class="term">半無限固體（Semi-infinite solid）</span>：在擴散時間內，擴散原子不會到達棒端的固體</li>
+            <li><span class="term">高斯誤差函數（Gaussian error function, erf）</span>：用於描述非穩態擴散的數學函數</li>
+            <li><span class="term">滲碳（Carburizing）</span>：增加鋼表面碳濃度的熱處理過程</li>
+            <li><span class="term">邊界條件（Boundary conditions）</span>：描述邊界處狀態的條件</li>
+            <li><span class="term">初始條件（Initial condition）</span>：描述初始狀態的條件</li>
+        </ul>
+    </div>
+    
+    <div class="note">
+        <p class="no-indent"><strong>WileyPLUS 教學影片：</strong></p>
+        <ul>
+            <li>穩態擴散與非穩態擴散的差異</li>
+            <li>如何使用誤差函數值表</li>
+            <li>如何決定在特定非穩態擴散情況下使用哪個方程式</li>
+        </ul>
+    </div>
+    
+    <div class="footnote">
+        <p><sup>3</sup> 如果在擴散發生的時間內，沒有任何擴散原子到達棒端，則固體棒被認為是半無限的。當 <i>l</i> > 10√<i>Dt</i> 時，長度為 <i>l</i> 的棒被認為是半無限的。</p>
+        <p><sup>4</sup> 此高斯誤差函數定義為</p>
+        <p style="text-align: center; margin: 10px 0;">erf(<i>z</i>) = (2/√π) ∫<sub>0</sub><sup><i>z</i></sup> e<sup>−<i>y</i><sup>2</sup></sup> d<i>y</i></p>
+        <p>其中 <i>x</i>/2√<i>Dt</i> 已被變數 <i>z</i> 取代。</p>
+        <p><sup>5</sup> 此關係成立是因為擴散係數和時間的乘積在兩個溫度下相同，意味著擴散程度相同。</p>
+    </div>
+    
+</body>
+</html>

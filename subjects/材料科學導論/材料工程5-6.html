@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 5.6 - 半導體材料中的擴散</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "PMingLiU", sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a235a;
+            border-bottom: 3px solid #4a235a;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #2874a6;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 25px;
+            font-size: 18px;
+        }
+        p {
+            text-align: justify;
+            margin: 15px 0;
+        }
+        .equation {
+            text-align: center;
+            margin: 25px 0;
+            font-family: "Times New Roman", serif;
+            font-size: 18px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #2874a6;
+        }
+        .example {
+            background-color: #e8f4f8;
+            border-left: 5px solid #2874a6;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .example h3 {
+            color: #c0392b;
+            margin-top: 0;
+        }
+        .solution {
+            background-color: #fff9e6;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .figure-caption {
+            text-align: center;
+            font-style: italic;
+            color: #555;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        .materials-importance {
+            background-color: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        .materials-importance h2 {
+            color: #e65100;
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #4a235a;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .note {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        sup {
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+        sub {
+            font-size: 0.8em;
+            vertical-align: sub;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>5.6 半導體材料中的擴散<sup>7</sup></h1>
+        
+        <p>
+            固態擴散的應用技術之一是半導體積體電路（IC）的製造（見第18.15節）。每個積體電路晶片都是一個薄的方形晶圓，尺寸約為6 mm × 6 mm × 0.4 mm；此外，數百萬個相互連接的電子元件和電路嵌入在晶片的其中一個表面上。單晶矽是大多數積體電路的基材。為了使這些積體電路元件能夠令人滿意地運作，必須將非常精確濃度的雜質（或多種雜質）以非常複雜和詳細的圖案摻入矽晶片的微小空間區域中；其中一種實現方法是通過原子擴散。
+        </p>
+
+        <p>
+            通常，在此過程中使用兩種熱處理。在第一種或稱為<strong>預沉積步驟</strong>中，雜質原子從氣相擴散到矽中，該氣相的分壓保持恆定。因此，雜質的表面組成也隨時間保持恆定，使得矽內的雜質濃度是位置和時間的函數，根據方程式5.5——即：
+        </p>
+
+        <div class="equation">
+            <i>C<sub>x</sub></i> − <i>C</i><sub>0</sub><br>
+            ――――――――― = 1 − erf(<i>x</i> / 2√<i>Dt</i>)<br>
+            <i>C<sub>s</sub></i> − <i>C</i><sub>0</sub>
+        </div>
+
+        <p>
+            預沉積處理通常在900°C至1000°C的溫度範圍內進行，並且時間通常少於1小時。
+        </p>
+
+        <p>
+            第二種處理，有時稱為<strong>驅入擴散</strong>，用於將雜質原子進一步傳輸到矽中，以提供更合適的濃度分布，而不增加總雜質含量。此處理在比預沉積更高的溫度下進行（高達約1200°C），並且在氧化氣氛中進行，以便在表面上形成氧化物層。通過此SiO<sub>2</sub>層的擴散速率相對較慢，使得很少有雜質原子從矽中擴散出去和逸出。圖5.8顯示了此擴散情況在三個不同時間所採樣的示意濃度分布圖；這些分布圖可以與圖5.4進行比較和對比，圖5.4是擴散物種的表面濃度保持恆定的情況。此外，圖5.9（示意性地）比較了預沉積和驅入處理的濃度分布圖。
+        </p>
+
+        <div class="figure-caption">
+            <strong>圖5.8</strong> 半導體在三個不同時間<i>t</i><sub>1</sub>、<i>t</i><sub>2</sub>和<i>t</i><sub>3</sub>（其中<i>t</i><sub>3</sub> > <i>t</i><sub>2</sub> > <i>t</i><sub>1</sub>）的驅入擴散示意濃度分布圖。
+        </div>
+
+        <div class="figure-caption">
+            <strong>圖5.9</strong> 半導體在(1)預沉積和(2)驅入擴散處理後的示意濃度分布圖。圖中也顯示了接面深度<i>x<sub>j</sub></i>。
+        </div>
+
+        <p>
+            如果我們假設在預沉積處理期間引入的雜質原子被限制在矽表面的非常薄的層中（當然，這只是一個近似），那麼費克第二定律（方程式5.4b）對於驅入擴散的解採取以下形式：
+        </p>
+
+        <div class="equation">
+            <i>C</i>(<i>x</i>,<i>t</i>) = <i>Q</i><sub>0</sub> / √π<i>Dt</i> exp(−<i>x</i><sup>2</sup> / 4<i>Dt</i>)　　(5.11)
+        </div>
+
+        <p>
+            這裡，<i>Q</i><sub>0</sub>代表在預沉積處理期間引入固體中的雜質總量（以每單位面積的雜質原子數表示）；此方程式中的所有其他參數具有與先前相同的含義。此外，可以證明：
+        </p>
+
+        <div class="equation">
+            <i>Q</i><sub>0</sub> = 2<i>C<sub>s</sub></i>√<i>D<sub>p</sub>t<sub>p</sub></i> / π　　(5.12)
+        </div>
+
+        <p>
+            其中<i>C<sub>s</sub></i>是預沉積步驟的表面濃度（圖5.9），其保持恆定，<i>D<sub>p</sub></i>是擴散係數，<i>t<sub>p</sub></i>是預沉積處理時間。
+        </p>
+
+        <p>
+            另一個重要的擴散參數是<strong>接面深度</strong>，<i>x<sub>j</sub></i>。它代表深度（即<i>x</i>的值），在該深度處擴散雜質濃度恰好等於矽中該雜質的背景濃度（<i>C<sub>B</sub></i>）（圖5.9）。對於驅入擴散，<i>x<sub>j</sub></i>可以使用以下表達式計算：
+        </p>
+
+        <div class="equation">
+            <i>x<sub>j</sub></i> = [(4<i>D<sub>d</sub>t<sub>d</sub></i>)ln(<i>Q</i><sub>0</sub> / <i>C<sub>B</sub></i>√π<i>D<sub>d</sub>t<sub>d</sub></i>)]<sup>1/2</sup>　　(5.13)
+        </div>
+
+        <p>
+            這裡，<i>D<sub>d</sub></i>和<i>t<sub>d</sub></i>分別代表驅入處理的擴散係數和時間。
+        </p>
+
+        <div class="example">
+            <h3>範例問題5.6</h3>
+            <h4>硼擴散進入矽</h4>
+            
+            <p>
+                硼原子將使用預沉積和驅入熱處理擴散到矽晶圓中；此矽材料中B的背景濃度已知為1 × 10<sup>20</sup> atoms/m<sup>3</sup>。預沉積處理將在900°C下進行30分鐘；B的表面濃度將保持在3 × 10<sup>26</sup> atoms/m<sup>3</sup>的恆定水平。驅入擴散將在1100°C下進行2小時。對於B在Si中的擴散係數，<i>Q<sub>d</sub></i>和<i>D</i><sub>0</sub>的值分別為3.87 eV/atom和2.4 × 10<sup>−3</sup> m<sup>2</sup>/s。
+            </p>
+
+            <p><strong>(a)</strong> 計算<i>Q</i><sub>0</sub>的值。</p>
+            <p><strong>(b)</strong> 確定驅入擴散處理的<i>x<sub>j</sub></i>值。</p>
+            <p><strong>(c)</strong> 同樣對於驅入處理，計算矽晶圓表面下1 μm位置處的B原子濃度。</p>
+
+            <div class="solution">
+                <h4>解答</h4>
+                
+                <p>
+                    <strong>(a)</strong> <i>Q</i><sub>0</sub>的值使用方程式5.12計算。然而，在此之前，首先需要確定預沉積處理的<i>D</i>值[<i>D<sub>p</sub></i>在<i>T</i> = <i>T<sub>p</sub></i> = 900°C (1173 K)]，使用方程式5.8。（<em>注意</em>：對於方程式5.8中的氣體常數<i>R</i>，我們使用波茲曼常數<i>k</i>，其值為8.62 × 10<sup>−5</sup> eV/atom·K）。因此，
+                </p>
+
+                <div class="equation">
+                    <i>D<sub>p</sub></i> = <i>D</i><sub>0</sub>exp(−<i>Q<sub>d</sub></i> / <i>kT<sub>p</sub></i>)<br><br>
+                    = (2.4 × 10<sup>−3</sup> m<sup>2</sup>/s)exp[−3.87 eV/atom / (8.62 × 10<sup>−5</sup> eV/atom·K)(1173 K)]<br><br>
+                    = 5.73 × 10<sup>−20</sup> m<sup>2</sup>/s
+                </div>
+
+                <p><i>Q</i><sub>0</sub>的值可以確定如下：</p>
+
+                <div class="equation">
+                    <i>Q</i><sub>0</sub> = 2<i>C<sub>s</sub></i>√<i>D<sub>p</sub>t<sub>p</sub></i> / π<br><br>
+                    = (2)(3 × 10<sup>26</sup> atoms/m<sup>3</sup>)√(5.73 × 10<sup>−20</sup> m<sup>2</sup>/s)(30 min)(60 s/min) / π<br><br>
+                    = 3.44 × 10<sup>18</sup> atoms/m<sup>2</sup>
+                </div>
+
+                <p>
+                    <strong>(b)</strong> 接面深度的計算需要我們使用方程式5.13。然而，在此之前，必須在驅入處理的溫度下計算<i>D</i>[<i>D<sub>d</sub></i>在1100°C (1373 K)]。因此，
+                </p>
+
+                <div class="equation">
+                    <i>D<sub>d</sub></i> = (2.4 × 10<sup>−3</sup> m<sup>2</sup>/s)exp[−3.87 eV/atom / (8.62 × 10<sup>−5</sup> eV/atom·K)(1373 K)]<br><br>
+                    = 1.51 × 10<sup>−17</sup> m<sup>2</sup>/s
+                </div>
+
+                <p>現在，從方程式5.13，</p>
+
+                <div class="equation">
+                    <i>x<sub>j</sub></i> = [(4<i>D<sub>d</sub>t<sub>d</sub></i>)ln(<i>Q</i><sub>0</sub> / <i>C<sub>B</sub></i>√π<i>D<sub>d</sub>t<sub>d</sub></i>)]<sup>1/2</sup><br><br>
+                    = {(4)(1.51 × 10<sup>−17</sup> m<sup>2</sup>/s)(7200 s) × <br>
+                    ln[3.44 × 10<sup>18</sup> atoms/m<sup>2</sup> / ((1 × 10<sup>20</sup> atoms/m<sup>3</sup>)√(π)(1.51 × 10<sup>−17</sup> m<sup>2</sup>/s)(7200 s))]}<sup>1/2</sup><br><br>
+                    = 2.19 × 10<sup>−6</sup> m = 2.19 μm
+                </div>
+
+                <p>
+                    <strong>(c)</strong> 在驅入處理的<i>x</i> = 1 μm處，我們使用方程式5.11和先前確定的<i>Q</i><sub>0</sub>和<i>D<sub>d</sub></i>值計算B原子的濃度，如下所示：
+                </p>
+
+                <div class="equation">
+                    <i>C</i>(<i>x</i>,<i>t</i>) = <i>Q</i><sub>0</sub> / √π<i>D<sub>d</sub>t</i> exp(−<i>x</i><sup>2</sup> / 4<i>D<sub>d</sub>t</i>)<br><br>
+                    = 3.44 × 10<sup>18</sup> atoms/m<sup>2</sup> / √(π)(1.51 × 10<sup>−17</sup> m<sup>2</sup>/s)(7200 s) exp[−(1 × 10<sup>−6</sup> m)<sup>2</sup> / (4)(1.51 × 10<sup>−17</sup> m<sup>2</sup>/s)(7200 s)]<br><br>
+                    = 5.90 × 10<sup>23</sup> atoms/m<sup>3</sup>
+                </div>
+            </div>
+        </div>
+
+        <div class="materials-importance">
+            <h2>材料重要性 5.1</h2>
+            <h3>積體電路互連的鋁</h3>
+            
+            <p>
+                在剛才描述的預沉積和驅入熱處理之後，積體電路製造過程中的另一個重要步驟是沉積非常薄且狹窄的導電電路路徑，以促進電流從一個元件傳遞到另一個元件；這些路徑稱為<strong>互連線</strong>，圖5.10顯示了積體電路晶片的掃描電子顯微照片，其中有幾條互連線。當然，用於互連線的材料必須具有高電導率——在所有材料中，金屬具有最高的電導率。表5.3給出了銀、銅、金和鋁這四種最具導電性的金屬的電導率值。基於這些電導率，並且在不考慮材料成本的情況下，Ag是首選的金屬，其次是Cu、Au和Al。
+            </p>
+
+            <div class="figure-caption">
+                <strong>圖5.10</strong> 積體電路晶片的掃描電子顯微照片，其上標示了鋁互連線區域。約2000倍。<br>
+                （照片由National Semiconductor Corporation提供。）
+            </div>
+
+            <p>
+                一旦沉積了這些互連線，仍然需要對積體電路晶片進行其他熱處理，溫度可能高達500°C。如果在這些處理期間，互連線金屬顯著擴散到矽中，則積體電路的電氣功能將被破壞。因此，由於擴散的程度取決於擴散係數的大小，有必要選擇具有較小擴散係數值的互連線金屬。
+            </p>
+
+            <table>
+                <caption><strong>表5.3</strong> 銀、銅、金和鋁（四種最具導電性的金屬）的室溫電導率值</caption>
+                <thead>
+                    <tr>
+                        <th>金屬</th>
+                        <th>電導率 [(<i>ohm-m</i>)<sup>−1</sup>]</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>銀</td>
+                        <td>6.8 × 10<sup>7</sup></td>
+                    </tr>
+                    <tr>
+                        <td>銅</td>
+                        <td>6.0 × 10<sup>7</sup></td>
+                    </tr>
+                    <tr>
+                        <td>金</td>
+                        <td>4.3 × 10<sup>7</sup></td>
+                    </tr>
+                    <tr>
+                        <td>鋁</td>
+                        <td>3.8 × 10<sup>7</sup></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                圖5.11繪製了矽中銅、金、銀和鋁擴散的<i>D</i>對1/<i>T</i>的對數曲線圖。這裡可以看到，矽中鋁的擴散係數（3.6 × 10<sup>−26</sup> m<sup>2</sup>/s）比其他三種金屬的值至少低八個數量級（即10<sup>8</sup>倍）。
+            </p>
+
+            <div class="figure-caption">
+                <strong>圖5.11</strong> 銅、金、銀和鋁在矽中擴散的<i>D</i>對1/<i>T</i> (K)曲線的對數圖（線）。圖中也標示了500°C時的<i>D</i>值。
+            </div>
+
+            <p>
+                鋁確實在某些積體電路中用於互連線；即使其電導率略低於銀、銅和金的值，其極低的擴散係數使其成為此應用的首選材料。鋁-銅-矽合金（94.5 wt% Al-4 wt% Cu-1.5 wt% Si）有時也用於互連線；它不僅容易結合到晶片表面，而且也比純鋁更耐腐蝕。
+            </p>
+
+            <p>
+                最近，銅互連線也已被使用。然而，首先需要在銅下方沉積一層非常薄的鉭或氮化鉭，作為阻擋層以阻止銅擴散到矽中。
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

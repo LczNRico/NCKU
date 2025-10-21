@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 5-5</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "微軟正黑體", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #ffffff;
+            color: #333;
+        }
+        
+        h1 {
+            color: #4a148c;
+            font-size: 26px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #4a148c;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #c62828;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        
+        .equation-box {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #9e9e9e;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .equation {
+            font-size: 18px;
+            font-family: "Times New Roman", serif;
+            margin: 10px 0;
+        }
+        
+        .equation-number {
+            float: right;
+            color: #666;
+            font-weight: bold;
+        }
+        
+        .example {
+            background-color: #e3f2fd;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #1976d2;
+            border-radius: 6px;
+            page-break-inside: avoid;
+        }
+        
+        .example-title {
+            color: #1976d2;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .design-example {
+            background-color: #fff3e0;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #e65100;
+            border-radius: 6px;
+        }
+        
+        .design-title {
+            color: #e65100;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .solution {
+            color: #c62828;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 15px 0 10px 0;
+        }
+        
+        .note {
+            background-color: #fff9e6;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+            border-radius: 4px;
+        }
+        
+        .concept-check {
+            background-color: #f1f8e9;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #558b2f;
+            border-radius: 4px;
+        }
+        
+        .concept-title {
+            color: #558b2f;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .definition {
+            background-color: #f0f0f0;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #00838f;
+            border-radius: 4px;
+        }
+        
+        .term {
+            color: #00838f;
+            font-weight: bold;
+        }
+        
+        p {
+            text-indent: 2em;
+            margin: 15px 0;
+            text-align: justify;
+        }
+        
+        .no-indent {
+            text-indent: 0;
+        }
+        
+        .figure {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .figure-title {
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+        
+        .figure-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+            text-indent: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 13px;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #1976d2;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 40px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .italic {
+            font-style: italic;
+        }
+        
+        sup {
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+        
+        sub {
+            font-size: 0.8em;
+            vertical-align: sub;
+        }
+        
+        .indent-block {
+            margin-left: 3em;
+            margin-right: 2em;
+        }
+        
+        .footnote {
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            margin-top: 30px;
+        }
+        
+        .highlight {
+            background-color: #fffde7;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>5.5 影響擴散的因素</h1>
+    
+    <h2>擴散物種</h2>
+    
+    <p>擴散係數 <i>D</i> 的大小指示原子擴散的速率。擴散物種和主體材料影響擴散係數。例如，在500°C的α-鐵中，自擴散和碳的互擴散之間在數量級上存在顯著差異，碳的互擴散的 <i>D</i> 值較大（3.0 × 10<sup>−21</sup> 對比 1.4 × 10<sup>−12</sup> m<sup>2</sup>/s）。此比較也提供了空位和間隙模式擴散速率之間的對比，如前面所討論的。自擴散通過空位機制發生，而鐵中的碳擴散是間隙性的。</p>
+    
+    <h2>溫度</h2>
+    
+    <p>溫度對擴散係數和擴散速率有深遠的影響。例如，對於Fe在α-Fe中的自擴散，擴散係數在溫度從500°C上升到900°C時，大約增加了六個數量級（從3.0 × 10<sup>−21</sup>到1.8 × 10<sup>−15</sup> m<sup>2</sup>/s）。擴散係數對溫度的依賴性為</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            <i>D</i> = <i>D</i><sub>0</sub> exp(−<i>Q</i><sub>d</sub>/<i>RT</i>)
+            <span class="equation-number">(5.8)</span>
+        </div>
+    </div>
+    
+    <p class="no-indent">其中</p>
+    
+    <div class="indent-block">
+        <p class="no-indent"><i>D</i><sub>0</sub> = 與溫度無關的預指數因子（m<sup>2</sup>/s）</p>
+        <p class="no-indent"><i>Q</i><sub>d</sub> = 擴散的<span class="term">活化能</span>（J/mol 或 eV/atom）</p>
+        <p class="no-indent"><i>R</i> = 氣體常數，8.31 J/mol·K 或 8.62 × 10<sup>−5</sup> eV/atom·K</p>
+        <p class="no-indent"><i>T</i> = 絕對溫度（K）</p>
+    </div>
+    
+    <p>活化能可以被認為是產生一莫耳原子的擴散運動所需的能量。較大的活化能導致相對較小的擴散係數。表5.2列出了幾個擴散系統的 <i>D</i><sub>0</sub> 和 <i>Q</i><sub>d</sub> 值。</p>
+    
+    <p>對方程式5.8取自然對數得到</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            ln <i>D</i> = ln <i>D</i><sub>0</sub> − (<i>Q</i><sub>d</sub>/<i>R</i>)(1/<i>T</i>)
+            <span class="equation-number">(5.9a)</span>
+        </div>
+    </div>
+    
+    <div class="figure" style="background-color: #f9f9f9;">
+        <p class="figure-title">表5.2 擴散數據表</p>
+        <table style="font-size: 12px;">
+            <tr>
+                <th>擴散物種</th>
+                <th>主體金屬</th>
+                <th><i>D</i><sub>0</sub> (m<sup>2</sup>/s)</th>
+                <th><i>Q</i><sub>d</sub> (J/mol)</th>
+            </tr>
+            <tr style="background-color: #e3f2fd;">
+                <td colspan="4"><strong>間隙擴散</strong></td>
+            </tr>
+            <tr>
+                <td>C<sup><i>b</i></sup></td>
+                <td>Fe (α 或 BCC)<sup><i>a</i></sup></td>
+                <td>1.1 × 10<sup>−6</sup></td>
+                <td>87,400</td>
+            </tr>
+            <tr>
+                <td>C<sup><i>c</i></sup></td>
+                <td>Fe (γ 或 FCC)<sup><i>a</i></sup></td>
+                <td>2.3 × 10<sup>−5</sup></td>
+                <td>148,000</td>
+            </tr>
+            <tr>
+                <td>N<sup><i>b</i></sup></td>
+                <td>Fe (α 或 BCC)<sup><i>a</i></sup></td>
+                <td>5.0 × 10<sup>−7</sup></td>
+                <td>77,000</td>
+            </tr>
+            <tr>
+                <td>N<sup><i>c</i></sup></td>
+                <td>Fe (γ 或 FCC)<sup><i>a</i></sup></td>
+                <td>9.1 × 10<sup>−5</sup></td>
+                <td>168,000</td>
+            </tr>
+            <tr style="background-color: #e3f2fd;">
+                <td colspan="4"><strong>自擴散</strong></td>
+            </tr>
+            <tr>
+                <td>Fe<sup><i>c</i></sup></td>
+                <td>Fe (α 或 BCC)<sup><i>a</i></sup></td>
+                <td>2.8 × 10<sup>−4</sup></td>
+                <td>251,000</td>
+            </tr>
+            <tr>
+                <td>Fe<sup><i>c</i></sup></td>
+                <td>Fe (γ 或 FCC)<sup><i>a</i></sup></td>
+                <td>5.0 × 10<sup>−5</sup></td>
+                <td>284,000</td>
+            </tr>
+            <tr>
+                <td>Cu<sup><i>d</i></sup></td>
+                <td>Cu (FCC)</td>
+                <td>2.5 × 10<sup>−5</sup></td>
+                <td>200,000</td>
+            </tr>
+            <tr>
+                <td>Al<sup><i>c</i></sup></td>
+                <td>Al (FCC)</td>
+                <td>2.3 × 10<sup>−4</sup></td>
+                <td>144,000</td>
+            </tr>
+            <tr>
+                <td>Mg<sup><i>c</i></sup></td>
+                <td>Mg (HCP)</td>
+                <td>1.5 × 10<sup>−4</sup></td>
+                <td>136,000</td>
+            </tr>
+            <tr>
+                <td>Zn<sup><i>c</i></sup></td>
+                <td>Zn (HCP)</td>
+                <td>1.5 × 10<sup>−5</sup></td>
+                <td>94,000</td>
+            </tr>
+            <tr>
+                <td>Mo<sup><i>d</i></sup></td>
+                <td>Mo (BCC)</td>
+                <td>1.8 × 10<sup>−4</sup></td>
+                <td>461,000</td>
+            </tr>
+            <tr>
+                <td>Ni<sup><i>d</i></sup></td>
+                <td>Ni (FCC)</td>
+                <td>1.9 × 10<sup>−4</sup></td>
+                <td>285,000</td>
+            </tr>
+            <tr style="background-color: #e3f2fd;">
+                <td colspan="4"><strong>互擴散（空位）</strong></td>
+            </tr>
+            <tr>
+                <td>Zn<sup><i>c</i></sup></td>
+                <td>Cu (FCC)</td>
+                <td>2.4 × 10<sup>−5</sup></td>
+                <td>189,000</td>
+            </tr>
+            <tr>
+                <td>Cu<sup><i>c</i></sup></td>
+                <td>Zn (HCP)</td>
+                <td>2.1 × 10<sup>−4</sup></td>
+                <td>124,000</td>
+            </tr>
+            <tr>
+                <td>Cu<sup><i>c</i></sup></td>
+                <td>Al (FCC)</td>
+                <td>6.5 × 10<sup>−5</sup></td>
+                <td>136,000</td>
+            </tr>
+            <tr>
+                <td>Mg<sup><i>c</i></sup></td>
+                <td>Al (FCC)</td>
+                <td>1.2 × 10<sup>−4</sup></td>
+                <td>130,000</td>
+            </tr>
+            <tr>
+                <td>Cu<sup><i>c</i></sup></td>
+                <td>Ni (FCC)</td>
+                <td>2.7 × 10<sup>−5</sup></td>
+                <td>256,000</td>
+            </tr>
+            <tr>
+                <td>Ni<sup><i>d</i></sup></td>
+                <td>Cu (FCC)</td>
+                <td>1.9 × 10<sup>−4</sup></td>
+                <td>230,000</td>
+            </tr>
+        </table>
+        <div class="footnote" style="border: none; margin-top: 10px;">
+            <p><sup><i>a</i></sup>鐵有兩組擴散係數，因為鐵在912°C時經歷相變；在低於912°C的溫度下存在體心立方（BCC）α-鐵；在高於912°C的溫度下，面心立方（FCC）γ-鐵是穩定相。</p>
+            <p><sup><i>b</i></sup>Y. Adda and J. Philibert, <i>Diffusion Dans Les Solides</i>, Universitaires de France, Paris, 1966.</p>
+            <p><sup><i>c</i></sup>E. A. Brandes and G. B. Brook (Editors), <i>Smithells Metals Reference Book</i>, 7th edition, Butterworth-Heinemann, Oxford, 1992.</p>
+            <p><sup><i>d</i></sup>J. Askill, <i>Tracer Diffusion Data for Metals, Alloys, and Simple Oxides</i>, IFI/Plenum, New York, 1970.</p>
+        </div>
+    </div>
+    
+    <p>或者，以10為底的對數形式，<sup>6</sup></p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            log <i>D</i> = log <i>D</i><sub>0</sub> − (<i>Q</i><sub>d</sub>/2.3<i>R</i>)(1/<i>T</i>)
+            <span class="equation-number">(5.9b)</span>
+        </div>
+    </div>
+    
+    <div class="figure">
+        <p class="figure-title">圖5.6</p>
+        <p class="figure-description">擴散係數對數相對於絕對溫度倒數對於幾種金屬的圖。[數據取自 E. A. Brandes and G. B. Brook (Editors), <i>Smithells Metals Reference Book</i>, 7th edition, Butterworth-Heinemann, Oxford, 1992.]</p>
+    </div>
+    
+    <p>因為 <i>D</i><sub>0</sub>、<i>Q</i><sub>d</sub> 和 <i>R</i> 都是常數，方程式5.9b採用直線方程式的形式：</p>
+    
+    <div class="equation-box">
+        <div class="equation">
+            <i>y</i> = <i>b</i> + <i>mx</i>
+        </div>
+    </div>
+    
+    <p>其中 <i>y</i> 和 <i>x</i> 分別類比於變數 log <i>D</i> 和 1/<i>T</i>。因此，如果將 log <i>D</i> 相對於絕對溫度的倒數作圖，應該會得到一條直線，其斜率和截距分別為 −<i>Q</i><sub>d</sub>/2.3<i>R</i> 和 log <i>D</i><sub>0</sub>。這實際上是實驗確定 <i>Q</i><sub>d</sub> 和 <i>D</i><sub>0</sub> 值的方式。從幾個合金系統的這種圖（圖5.6）可以注意到，對於所有顯示的情況都存在線性關係。</p>
+    
+    <div class="concept-check">
+        <p class="concept-title">概念檢查 5.1</p>
+        <p class="no-indent">將以下系統的擴散係數大小從最大到最小排序：</p>
+        <ul style="list-style: none; padding-left: 20px;">
+            <li>N在Fe中，700°C</li>
+            <li>Cr在Fe中，700°C</li>
+            <li>N在Fe中，900°C</li>
+            <li>Cr在Fe中，900°C</li>
+        </ul>
+        <p class="no-indent" style="margin-top: 10px;">現在證明此排序的合理性。（<i>注意：</i>Fe和Cr都具有體心立方晶體結構，Fe、Cr和N的原子半徑分別為0.124、0.125和0.065 nm。您可能還想參考第4.3節。）</p>
+        <p class="no-indent" style="margin-top: 10px; font-style: italic;">[答案可在所有數位版本的教科書和/或 www.wiley.com/college/callister (學生網站) 中找到。]</p>
+    </div>
+    
+    <div class="concept-check">
+        <p class="concept-title">概念檢查 5.2</p>
+        <p class="no-indent">考慮兩個假想金屬A和B的自擴散。在ln <i>D</i> 對 1/<i>T</i> 的示意圖上，繪製（並標示）兩種金屬的線，給定 <i>D</i><sub>0</sub>(A) > <i>D</i><sub>0</sub>(B) 且 <i>Q</i><sub>d</sub>(A) > <i>Q</i><sub>d</sub>(B)。</p>
+        <p class="no-indent" style="margin-top: 10px; font-style: italic;">[答案可在所有數位版本的教科書和/或 www.wiley.com/college/callister (學生網站) 中找到。]</p>
+    </div>
+    
+    <div class="example">
+        <p class="example-title">範例問題 5.4</p>
+        <h3 style="color: #c62828; margin: 15px 0;">擴散係數的確定</h3>
+        
+        <p class="no-indent">使用表5.2中的數據，計算鎂在鋁中於550°C時的擴散係數。</p>
+        
+        <p class="solution">解答</p>
+        
+        <p class="no-indent">此擴散係數可以通過應用方程式5.8來確定；來自表5.2的 <i>D</i><sub>0</sub> 和 <i>Q</i><sub>d</sub> 值分別為1.2 × 10<sup>−4</sup> m<sup>2</sup>/s 和 130 kJ/mol。因此，</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                <i>D</i> = (1.2 × 10<sup>−4</sup> m<sup>2</sup>/s) exp[−(130,000 J/mol)/((8.31 J/mol·K)(550 + 273 K))]
+            </div>
+            <div class="equation" style="margin-top: 15px;">
+                = 6.7 × 10<sup>−13</sup> m<sup>2</sup>/s
+            </div>
+        </div>
+    </div>
+    
+    <div class="example">
+        <p class="example-title">範例問題 5.5</p>
+        <h3 style="color: #c62828; margin: 15px 0;">擴散係數活化能和預指數計算</h3>
+        
+        <p class="no-indent">圖5.7顯示了銅在金中擴散的擴散係數對數（以10為底）相對於絕對溫度倒數的圖。確定活化能和預指數的值。</p>
+        
+        <p class="solution">解答</p>
+        
+        <p class="no-indent">根據方程式5.9b，圖5.7中線段的斜率等於 −<i>Q</i><sub>d</sub>/2.3<i>R</i>，並且在1/<i>T</i> = 0時的截距給出 log <i>D</i><sub>0</sub> 的值。因此，活化能可以確定為</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                <i>Q</i><sub>d</sub> = −2.3<i>R</i>(斜率) = −2.3<i>R</i> [Δ(log<i>D</i>)/Δ(1/<i>T</i>)]
+            </div>
+            <div class="equation" style="margin-top: 15px;">
+                = −2.3<i>R</i> [(log <i>D</i><sub>1</sub> − log <i>D</i><sub>2</sub>)/(1/<i>T</i><sub>1</sub> − 1/<i>T</i><sub>2</sub>)]
+            </div>
+        </div>
+        
+        <p class="no-indent" style="margin-top: 15px;">其中 <i>D</i><sub>1</sub> 和 <i>D</i><sub>2</sub> 分別是在1/<i>T</i><sub>1</sub> 和 1/<i>T</i><sub>2</sub> 處的擴散係數值。讓我們任意取 1/<i>T</i><sub>1</sub> = 0.8 × 10<sup>−3</sup> (K)<sup>−1</sup> 和 1/<i>T</i><sub>2</sub> = 1.1 × 10<sup>−3</sup> (K)<sup>−1</sup>。我們現在可以從圖5.7中線段讀取相應的 log <i>D</i><sub>1</sub> 和 log <i>D</i><sub>2</sub> 值。</p>
+        
+        <p class="no-indent" style="margin-top: 10px;">[然而，在執行此操作之前，需要注意：圖5.7中的縱軸按對數（以10為底）縮放；但是，實際的擴散係數值在此軸上標示。例如，對於 <i>D</i> = 10<sup>−14</sup> m<sup>2</sup>/s，<i>D</i> 的對數為 −14.0，而<i>不是</i> 10<sup>−14</sup>。此外，此對數縮放影響十年值之間的讀數；例如，在10<sup>−14</sup> 和 10<sup>−15</sup> 之間位置中途的值不是 5 × 10<sup>−15</sup>，而是 10<sup>−14.5</sup> = 3.2 × 10<sup>−15</sup>。]</p>
+        
+        <div class="figure">
+            <p class="figure-title">圖5.7</p>
+            <p class="figure-description">銅在金中擴散的擴散係數對數相對於絕對溫度倒數的圖。</p>
+        </div>
+        
+        <p class="no-indent">因此，從圖5.7，在1/<i>T</i><sub>1</sub> = 0.8 × 10<sup>−3</sup> (K)<sup>−1</sup> 時，log <i>D</i><sub>1</sub> = −12.40，而對於1/<i>T</i><sub>2</sub> = 1.1 × 10<sup>−3</sup> (K)<sup>−1</sup>，log <i>D</i><sub>2</sub> = −15.45，並且從圖5.7中線段的斜率確定的活化能為</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                <i>Q</i><sub>d</sub> = −2.3<i>R</i> [(log <i>D</i><sub>1</sub> − log <i>D</i><sub>2</sub>)/(1/<i>T</i><sub>1</sub> − 1/<i>T</i><sub>2</sub>)]
+            </div>
+            <div class="equation" style="margin-top: 15px;">
+                = −2.3(8.31 J/mol·K) [−12.40 − (−15.45)]/[0.8 × 10<sup>−3</sup>(K)<sup>−1</sup> − 1.1 × 10<sup>−3</sup>(K)<sup>−1</sup>]
+            </div>
+            <div class="equation" style="margin-top: 10px;">
+                = 194,000 J/mol = 194 kJ/mol
+            </div>
+        </div>
+        
+        <p class="no-indent">現在，與其嘗試進行圖形外推以確定 <i>D</i><sub>0</sub>，我們可以使用方程式5.9b分析地獲得更準確的值，並且我們獲得特定的 <i>D</i>（或 log <i>D</i>）值及其對應的 <i>T</i>（或1/<i>T</i>）從圖5.7。因為我們知道在1/<i>T</i> = 1.1 × 10<sup>−3</sup> (K)<sup>−1</sup> 時 log <i>D</i> = −15.45，則</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                log <i>D</i><sub>0</sub> = log <i>D</i> + (<i>Q</i><sub>d</sub>/2.3<i>R</i>)(1/<i>T</i>)
+            </div>
+            <div class="equation" style="margin-top: 15px;">
+                = −15.45 + [(194,000 J/mol)(1.1 × 10<sup>−3</sup> [K]<sup>−1</sup>)]/[(2.3)(8.31 J/mol·K)]
+            </div>
+            <div class="equation" style="margin-top: 10px;">
+                = −4.28
+            </div>
+        </div>
+        
+        <p class="no-indent">因此，<i>D</i><sub>0</sub> = 10<sup>−4.28</sup> m<sup>2</sup>/s = 5.2 × 10<sup>−5</sup> m<sup>2</sup>/s。</p>
+    </div>
+    
+    <div class="design-example">
+        <p class="design-title">設計範例 5.1</p>
+        <h3 style="color: #e65100; margin: 15px 0;">擴散溫度-時間熱處理規範</h3>
+        
+        <p class="no-indent">鋼齒輪的耐磨性將通過硬化其表面來改善。這將通過在稱為滲碳的過程中增加外表面層內的碳含量來實現；鋼件在升高且恆定的溫度下暴露於富含碳氫化合物氣體（如甲烷，CH<sub>4</sub>）的氣氛中。鋼的初始碳含量為0.20 wt%，而表面濃度將保持在1.00 wt%。為使此處理有效，必須在表面下方0.75 mm的位置建立0.60 wt%的碳含量。指定溫度在900至1050°C之間的適當熱處理，以溫度和時間表示。使用表5.2中γ-鐵中碳擴散的數據。</p>
+        
+        <p class="solution">解答</p>
+        
+        <p class="no-indent">因為這是一個非穩態擴散情況，讓我們首先使用方程式5.5，使用以下濃度參數值：</p>
+        
+        <div style="margin: 15px 0; padding: 15px; background-color: #f5f5f5; border-radius: 4px;">
+            <p class="no-indent"><i>C</i><sub>0</sub> = 0.20 wt% C</p>
+            <p class="no-indent"><i>C</i><sub>s</sub> = 1.00 wt% C</p>
+            <p class="no-indent"><i>C</i><sub>x</sub> = 0.60 wt% C</p>
+        </div>
+        
+        <p class="no-indent">因此，</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                (<i>C</i><sub>x</sub> − <i>C</i><sub>0</sub>)/(<i>C</i><sub>s</sub> − <i>C</i><sub>0</sub>) = (0.60 − 0.20)/(1.00 − 0.20) = 1 − erf(<i>x</i>/(2√<i>Dt</i>))
+            </div>
+        </div>
+        
+        <p class="no-indent">因此，</p>
+        
+        <div class="equation-box" style="background-color: #ffffff;">
+            <div class="equation">
+                0.5 = erf(<i>x</i>/(2√<i>Dt</i>))
+            </div>
+        </div>
+    </div>
+    
+    <div class="footnote">
+        <p><sup>5</sup>對於時間和溫度是變數且組成在某個 <i>x</i> 值保持恆定的擴散情況，方程式5.6b採用以下形式</p>
+        <p style="text-align: center; margin: 10px 0;"><i>Dt</i> = 常數 <span style="float: right;">(5.7)</span></p>
+        <p><sup>6</sup>對方程式5.9a的兩側取以10為底的對數會產生以下一系列方程式：</p>
+        <div style="margin: 10px 0;">
+            <p style="text-align: center;">log <i>D</i> = log <i>D</i><sub>0</sub> − (log<i>e</i>)(<i>Q</i><sub>d</sub>/<i>RT</i>)</p>
+            <p style="text-align: center;">= log <i>D</i><sub>0</sub> − (0.434)(<i>Q</i><sub>d</sub>/<i>RT</i>)</p>
+            <p style="text-align: center;">= log <i>D</i><sub>0</sub> − (1/2.3)(<i>Q</i><sub>d</sub>/<i>RT</i>)</p>
+            <p style="text-align: center;">= log <i>D</i><sub>0</sub> − (<i>Q</i><sub>d</sub>/2.3<i>R</i>)(1/<i>T</i>)</p>
+        </div>
+        <p>這最後的方程式與方程式5.9b相同。</p>
+    </div>
+    
+    <div class="definition">
+        <p class="no-indent"><strong>關鍵術語定義：</strong></p>
+        <ul>
+            <li><span class="term">活化能（Activation energy, <i>Q</i><sub>d</sub>）</span>：產生一莫耳原子的擴散運動所需的能量</li>
+            <li><span class="term">預指數因子（Preexponential factor, <i>D</i><sub>0</sub>）</span>：與溫度無關的擴散常數</li>
+            <li><span class="term">氣體常數（Gas constant, <i>R</i>）</span>：8.31 J/mol·K 或 8.62 × 10<sup>−5</sup> eV/atom·K</li>
+            <li><span class="term">絕對溫度（Absolute temperature）</span>：以開爾文（K）為單位的溫度</li>
+            <li><span class="term">溫度倒數（Reciprocal temperature）</span>：1/<i>T</i>，用於製作擴散圖</li>
+        </ul>
+    </div>
+    
+    <div class="note">
+        <p class="no-indent"><strong>WileyPLUS 教學影片：</strong></p>
+        <ul>
+            <li>如何使用表5.2中的擴散數據</li>
+            <li>從實驗數據確定 <i>D</i><sub>0</sub> 和 <i>Q</i><sub>d</sub></li>
+        </ul>
+    </div>
+    
+</body>
+</html>
