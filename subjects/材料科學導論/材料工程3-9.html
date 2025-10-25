@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 3.9 晶體學方向</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "微軟正黑體", sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #5B2C91;
+            border-bottom: 3px solid #5B2C91;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #C1272D;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        h3 {
+            color: #C1272D;
+            background-color: #E8F4F8;
+            padding: 10px;
+            border-left: 4px solid #C1272D;
+            font-size: 18px;
+        }
+        .definition {
+            background-color: #FFF9E6;
+            padding: 15px;
+            border-left: 4px solid #FFB800;
+            margin: 20px 0;
+        }
+        .example {
+            background-color: #E8F4F8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .example-title {
+            color: #0066CC;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .solution {
+            font-style: italic;
+            color: #C1272D;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        ol {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .equation {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .note {
+            background-color: #FFE6E6;
+            padding: 12px;
+            border-left: 4px solid #FF6B6B;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #5B2C91;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .highlight {
+            background-color: #FFFF99;
+            padding: 2px 5px;
+        }
+        .formula {
+            font-family: "Times New Roman", serif;
+            font-style: italic;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>3.9 晶體學方向</h1>
+        
+        <div class="definition">
+            <p><strong>晶體學方向</strong>（crystallographic direction）被定義為連接兩點之間的有向線，或稱為<strong>向量</strong>。以下步驟用於確定三個方向指數：</p>
+        </div>
+
+        <ol>
+            <li>首先建立一個右手<span class="formula">x-y-z</span>座標系統。為方便起見，其原點可位於單位晶胞的角落。</li>
+            
+            <li>確定位於方向向量上的兩點座標（參考座標系統）——例如，對於向量尾部，點1：<span class="formula">x</span><sub>1</sub>、<span class="formula">y</span><sub>1</sub>和<span class="formula">z</span><sub>1</sub>；而對於向量頭部，點2：<span class="formula">x</span><sub>2</sub>、<span class="formula">y</span><sub>2</sub>和<span class="formula">z</span><sub>2</sub>。<sup>5</sup></li>
+            
+            <li>尾部點座標從頭部點分量中減去——即，<span class="formula">x</span><sub>2</sub> − <span class="formula">x</span><sub>1</sub>、<span class="formula">y</span><sub>2</sub> − <span class="formula">y</span><sub>1</sub>和<span class="formula">z</span><sub>2</sub> − <span class="formula">z</span><sub>1</sub>。</li>
+            
+            <li>然後將這些座標差值以其各自的<span class="formula">a</span>、<span class="formula">b</span>和<span class="formula">c</span>晶格參數進行歸一化（即除以）——即，
+            <div class="equation">
+                <span class="formula">
+                    (<span class="formula">x</span><sub>2</sub> − <span class="formula">x</span><sub>1</sub>) / <span class="formula">a</span>, 
+                    (<span class="formula">y</span><sub>2</sub> − <span class="formula">y</span><sub>1</sub>) / <span class="formula">b</span>, 
+                    (<span class="formula">z</span><sub>2</sub> − <span class="formula">z</span><sub>1</sub>) / <span class="formula">c</span>
+                </span>
+            </div>
+            得到一組三個數字。
+            </li>
+            
+            <li>如有必要，將這三個數字乘以或除以一個公因數，以將它們化簡為最小整數值。</li>
+            
+            <li>將得到的三個指數（不用逗號分隔）括在方括號內，如：[<span class="formula">uvw</span>]。<span class="formula">u</span>、<span class="formula">v</span>和<span class="formula">w</span>整數分別對應於相對於<span class="formula">x</span>、<span class="formula">y</span>和<span class="formula">z</span>軸的歸一化座標差值。</li>
+        </ol>
+
+        <p>總結而言，<span class="formula">u</span>、<span class="formula">v</span>和<span class="formula">w</span>指數可使用以下方程式確定：</p>
+
+        <div class="equation">
+            <p><span class="formula">u = n</span>(<span class="formula">(<span class="formula">x</span><sub>2</sub> − <span class="formula">x</span><sub>1</sub>) / <span class="formula">a</span></span>) &nbsp;&nbsp;&nbsp; (3.10a)</p>
+            <p><span class="formula">v = n</span>(<span class="formula">(<span class="formula">y</span><sub>2</sub> − <span class="formula">y</span><sub>1</sub>) / <span class="formula">b</span></span>) &nbsp;&nbsp;&nbsp; (3.10b)</p>
+            <p><span class="formula">w = n</span>(<span class="formula">(<span class="formula">z</span><sub>2</sub> − <span class="formula">z</span><sub>1</sub>) / <span class="formula">c</span></span>) &nbsp;&nbsp;&nbsp; (3.10c)</p>
+        </div>
+
+        <p>在這些方程式中，<span class="formula">n</span>是可能需要將<span class="formula">u</span>、<span class="formula">v</span>和<span class="formula">w</span>化簡為整數的因數。</p>
+
+        <p>對於三個軸中的每一個，都有正座標和負座標。因此，負指數也是可能的，用相應指數上方的橫線表示。例如，[111]方向在−<span class="formula">y</span>方向有一個分量。此外，改變<strong>所有</strong>指數的符號會產生一個反平行方向；即，[1̄1̄1̄]與[111]正好相反。如果要為特定晶體結構指定多於一個方向（或平面），則為保持一致性，一旦建立正負符號慣例後就不應改變。</p>
+
+        <p>[100]、[110]和[111]方向是常見的方向；它們繪製在圖3.7所示的單位晶胞中。</p>
+
+        <div class="note">
+            <strong>圖3.7：</strong>單位晶胞內的[100]、[110]和[111]方向。
+        </div>
+
+        <!-- 範例問題 3.7 -->
+        <div class="example">
+            <div class="example-title">範例問題 3.7</div>
+            <h3>方向指數的確定</h3>
+            <p>確定附圖所示方向的指數。</p>
+
+            <div class="solution">解答</div>
+            <p>首先需要注意向量的尾部和頭部座標。從圖中可知，尾部座標如下：</p>
+            
+            <div class="equation">
+                <p><span class="formula">x</span><sub>1</sub> = <span class="formula">a</span> &nbsp;&nbsp; <span class="formula">y</span><sub>1</sub> = 0<span class="formula">b</span> &nbsp;&nbsp; <span class="formula">z</span><sub>1</sub> = 0<span class="formula">c</span></p>
+            </div>
+
+            <p>對於頭部座標，</p>
+            
+            <div class="equation">
+                <p><span class="formula">x</span><sub>2</sub> = 0<span class="formula">a</span> &nbsp;&nbsp; <span class="formula">y</span><sub>2</sub> = <span class="formula">b</span> &nbsp;&nbsp; <span class="formula">z</span><sub>2</sub> = <span class="formula">c</span>/2</p>
+            </div>
+
+            <p>現在取點座標差值，</p>
+            
+            <div class="equation">
+                <p><span class="formula">x</span><sub>2</sub> − <span class="formula">x</span><sub>1</sub> = 0<span class="formula">a</span> − <span class="formula">a</span> = −<span class="formula">a</span></p>
+                <p><span class="formula">y</span><sub>2</sub> − <span class="formula">y</span><sub>1</sub> = <span class="formula">b</span> − 0<span class="formula">b</span> = <span class="formula">b</span></p>
+                <p><span class="formula">z</span><sub>2</sub> − <span class="formula">z</span><sub>1</sub> = <span class="formula">c</span>/2 − 0<span class="formula">c</span> = <span class="formula">c</span>/2</p>
+            </div>
+
+            <p>現在可以使用方程式3.10a到3.10c來計算<span class="formula">u</span>、<span class="formula">v</span>和<span class="formula">w</span>的值。然而，由於<span class="formula">z</span><sub>2</sub> − <span class="formula">z</span><sub>1</sub>差值是分數（即<span class="formula">c</span>/2），我們預期為了使三個指數為整數值，需要將<span class="formula">n</span>設為2。因此，</p>
+
+            <div class="equation">
+                <p><span class="formula">u = n</span>((<span class="formula">x</span><sub>2</sub> − <span class="formula">x</span><sub>1</sub>) / <span class="formula">a</span>) = 2(−<span class="formula">a</span> / <span class="formula">a</span>) = −2</p>
+                <p><span class="formula">v = n</span>((<span class="formula">y</span><sub>2</sub> − <span class="formula">y</span><sub>1</sub>) / <span class="formula">b</span>) = 2(<span class="formula">b</span> / <span class="formula">b</span>) = 2</p>
+                <p><span class="formula">w = n</span>((<span class="formula">z</span><sub>2</sub> − <span class="formula">z</span><sub>1</sub>) / <span class="formula">c</span>) = 2(<span class="formula">c</span>/2 / <span class="formula">c</span>) = 1</p>
+            </div>
+
+            <p>最後，將−2、2和1指數括在方括號內，得到[2̄21]作為方向標記。<sup>6</sup></p>
+            
+            <p>此程序總結如下：</p>
+
+            <table>
+                <tr>
+                    <th></th>
+                    <th><span class="formula">x</span></th>
+                    <th><span class="formula">y</span></th>
+                    <th><span class="formula">z</span></th>
+                </tr>
+                <tr>
+                    <td>頭部座標 (<span class="formula">x</span><sub>2</sub>, <span class="formula">y</span><sub>2</sub>, <span class="formula">z</span><sub>2</sub>)</td>
+                    <td>0<span class="formula">a</span></td>
+                    <td><span class="formula">b</span></td>
+                    <td><span class="formula">c</span>/2</td>
+                </tr>
+                <tr>
+                    <td>尾部座標 (<span class="formula">x</span><sub>1</sub>, <span class="formula">y</span><sub>1</sub>, <span class="formula">z</span><sub>1</sub>)</td>
+                    <td><span class="formula">a</span></td>
+                    <td>0<span class="formula">b</span></td>
+                    <td>0<span class="formula">c</span></td>
+                </tr>
+                <tr>
+                    <td>座標差值</td>
+                    <td>−<span class="formula">a</span></td>
+                    <td><span class="formula">b</span></td>
+                    <td><span class="formula">c</span>/2</td>
+                </tr>
+                <tr>
+                    <td>計算得到的 <span class="formula">u</span>, <span class="formula">v</span>, 和 <span class="formula">w</span> 值</td>
+                    <td><span class="formula">u</span> = −2</td>
+                    <td><span class="formula">v</span> = 2</td>
+                    <td><span class="formula">w</span> = 1</td>
+                </tr>
+                <tr>
+                    <td>方括號表示</td>
+                    <td colspan="3">[2̄21]</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 範例問題 3.8 -->
+        <div class="example">
+            <div class="example-title">範例問題 3.8</div>
+            <h3>特定晶體學方向的構造</h3>
+            <p>在下列單位晶胞中繪製一個[1̄10]方向，其尾部位於座標系統的原點O。</p>
+
+            <div class="solution">解答</div>
+            <p>此問題是通過反向執行前述範例的程序來解決的。對於此[1̄10]方向，</p>
+            
+            <div class="equation">
+                <p><span class="formula">u</span> = 1</p>
+                <p><span class="formula">v</span> = −1</p>
+                <p><span class="formula">w</span> = 0</p>
+            </div>
+
+            <p>因為方向向量的尾部位於原點，其座標如下：</p>
+            
+            <div class="equation">
+                <p><span class="formula">x</span><sub>1</sub> = 0<span class="formula">a</span></p>
+                <p><span class="formula">y</span><sub>1</sub> = 0<span class="formula">b</span></p>
+                <p><span class="formula">z</span><sub>1</sub> = 0<span class="formula">c</span></p>
+            </div>
+
+            <p>我們現在想要求解向量頭部的座標——即<span class="formula">x</span><sub>2</sub>、<span class="formula">y</span><sub>2</sub>和<span class="formula">z</span><sub>2</sub>。這可以使用方程式3.10a到3.10c的重新排列形式，並納入上述三個方向指數（<span class="formula">u</span>、<span class="formula">v</span>和<span class="formula">w</span>）和向量尾部座標的值來實現。將<span class="formula">n</span>的值取為1，因為三個方向指數都是整數，導致</p>
+
+            <div class="equation">
+                <p><span class="formula">x</span><sub>2</sub> = <span class="formula">ua</span> + <span class="formula">x</span><sub>1</sub> = (1)(<span class="formula">a</span>) + 0<span class="formula">a</span> = <span class="formula">a</span></p>
+                <p><span class="formula">y</span><sub>2</sub> = <span class="formula">vb</span> + <span class="formula">y</span><sub>1</sub> = (−1)(<span class="formula">b</span>) + 0<span class="formula">b</span> = −<span class="formula">b</span></p>
+                <p><span class="formula">z</span><sub>2</sub> = <span class="formula">wc</span> + <span class="formula">z</span><sub>1</sub> = (0)(<span class="formula">c</span>) + 0<span class="formula">c</span> = 0<span class="formula">c</span></p>
+            </div>
+
+            <p>此方向向量的構造過程顯示在附圖中。</p>
+            
+            <p>由於向量的尾部位於原點，我們從標記為O的點開始，然後以逐步方式移動以定位向量頭部。因為<span class="formula">x</span>頭部座標（<span class="formula">x</span><sub>2</sub>）為<span class="formula">a</span>，我們沿著<span class="formula">x</span>軸從點O移動<span class="formula">a</span>個單位到達點Q。從點Q，我們沿著與−<span class="formula">y</span>軸平行的方向移動<span class="formula">b</span>個單位到達點P，因為<span class="formula">y</span>頭部座標（<span class="formula">y</span><sub>2</sub>）為−<span class="formula">b</span>。向量沒有<span class="formula">z</span>分量，因為<span class="formula">z</span>頭部座標（<span class="formula">z</span><sub>2</sub>）為0<span class="formula">c</span>。最後，從點O到點P繪製一條線，如圖所示，以構造對應於此[1̄10]方向的向量。</p>
+        </div>
+
+        <p>對於某些晶體結構，具有不同指數的幾個非平行方向在<strong>晶體學上是等效的</strong>，這意味著沿每個方向的原子間距是相同的。例如，在立方晶體中，以下指數表示的所有方向都是等效的：[100]、[1̄00]、[010]、[01̄0]、[001]和[001̄]。為方便起見，等效方向被組合成一個<strong>族</strong>，括在角括號內，如：⟨100⟩。此外，在立方晶體中，具有相同指數但不考慮順序或符號的方向是等效的。也就是說，例如，[123]和[213]是等效的。這一般對其他晶體系統不成立。例如，對於四方對稱的晶體，[100]和[010]方向是等效的，而[100]和[001]則不是。</p>
+
+        <h2>六方晶體中的方向</h2>
+
+        <p>對於具有六方對稱性的晶體，會出現一個問題，即某些等效晶體學方向沒有相同的指數組。這種情況使用<strong>四軸</strong>或<strong>米勒-布拉維</strong>座標系統來處理，如圖3.8<span class="formula">a</span>所示。三個<span class="formula">a</span><sub>1</sub>、<span class="formula">a</span><sub>2</sub>和<span class="formula">a</span><sub>3</sub>軸都包含在一個平面內（稱為<strong>基面</strong>），彼此之間成120°角。<span class="formula">z</span>軸垂直於此基面。方向指數按前述方法獲得，用四個指數表示，如[<span class="formula">uvtw</span>]；按慣例，<span class="formula">u</span>、<span class="formula">v</span>和<span class="formula">t</span>與基面中各<span class="formula">a</span><sub>1</sub>、<span class="formula">a</span><sub>2</sub>和<span class="formula">a</span><sub>3</sub>軸的向量座標差值有關；第四個指數與<span class="formula">z</span>軸有關。</p>
+
+        <p>從三指數系統（使用圖3.8<span class="formula">b</span>的<span class="formula">a</span><sub>1</sub>-<span class="formula">a</span><sub>2</sub>-<span class="formula">z</span>座標軸）轉換到四指數系統的方式為</p>
+
+        <div class="equation">
+            <p>[<span class="formula">UVW</span>] → [<span class="formula">uvtw</span>]</p>
+        </div>
+
+        <p>使用以下公式完成<sup>7</sup>：</p>
+
+        <div class="equation">
+            <p><span class="formula">u</span> = (1/3)(2<span class="formula">U</span> − <span class="formula">V</span>) &nbsp;&nbsp;&nbsp; (3.11a)</p>
+            <p><span class="formula">v</span> = (1/3)(2<span class="formula">V</span> − <span class="formula">U</span>) &nbsp;&nbsp;&nbsp; (3.11b)</p>
+            <p><span class="formula">t</span> = −(<span class="formula">u</span> + <span class="formula">v</span>) &nbsp;&nbsp;&nbsp; (3.11c)</p>
+            <p><span class="formula">w</span> = <span class="formula">W</span> &nbsp;&nbsp;&nbsp; (3.11d)</p>
+        </div>
+
+        <p>這裡，大寫的<span class="formula">U</span>、<span class="formula">V</span>和<span class="formula">W</span>指數與三指數方案相關（而非之前的<span class="formula">u</span>、<span class="formula">v</span>和<span class="formula">w</span>），而小寫的<span class="formula">u</span>、<span class="formula">v</span>、<span class="formula">t</span>和<span class="formula">w</span>則與米勒-布拉維四指數系統相關。例如，使用這些方程式，[010]方向變為[12̄10]；此外，[12̄10]也等效於以下方向：[1̄21̄0]、[1̄21̄0]、[1̄21̄0]。</p>
+
+        <div class="note">
+            <strong>圖3.8：</strong>六方晶體單位晶胞的座標軸系統：(<span class="formula">a</span>) 四軸米勒-布拉維系統；(<span class="formula">b</span>) 三軸系統。
+        </div>
+
+        <p>圖3.9的六方晶體單位晶胞中繪製了幾個方向。方向指數的確定使用類似於其他晶體系統所用的程序——通過從頭部點座標減去向量尾部點座標。為了簡化此程序的示範，我們首先使用圖3.8<span class="formula">b</span>的三軸<span class="formula">a</span><sub>1</sub>-<span class="formula">a</span><sub>2</sub>-<span class="formula">z</span>座標系統確定<span class="formula">U</span>、<span class="formula">V</span>和<span class="formula">W</span>指數，然後使用方程式3.11a至3.11d轉換為<span class="formula">u</span>、<span class="formula">v</span>、<span class="formula">t</span>和<span class="formula">w</span>指數。</p>
+
+        <p>三組頭部和尾部座標的標記方案如下：</p>
+
+        <table>
+            <tr>
+                <th>軸</th>
+                <th>頭部座標</th>
+                <th>尾部座標</th>
+            </tr>
+            <tr>
+                <td><span class="formula">a</span><sub>1</sub></td>
+                <td><span class="formula">a</span><sub>1</sub>″</td>
+                <td><span class="formula">a</span><sub>1</sub>′</td>
+            </tr>
+            <tr>
+                <td><span class="formula">a</span><sub>2</sub></td>
+                <td><span class="formula">a</span><sub>2</sub>″</td>
+                <td><span class="formula">a</span><sub>2</sub>′</td>
+            </tr>
+            <tr>
+                <td><span class="formula">z</span></td>
+                <td><span class="formula">z</span>″</td>
+                <td><span class="formula">z</span>′</td>
+            </tr>
+        </table>
+
+        <p>使用此方案，方程式3.10a到3.10c的六方指數<span class="formula">U</span>、<span class="formula">V</span>和<span class="formula">W</span>等效形式如下：</p>
+
+        <div class="equation">
+            <p><span class="formula">U = n</span>((<span class="formula">a</span><sub>1</sub>″ − <span class="formula">a</span><sub>1</sub>′) / <span class="formula">a</span>) &nbsp;&nbsp;&nbsp; (3.12a)</p>
+            <p><span class="formula">V = n</span>((<span class="formula">a</span><sub>2</sub>″ − <span class="formula">a</span><sub>2</sub>′) / <span class="formula">a</span>) &nbsp;&nbsp;&nbsp; (3.12b)</p>
+            <p><span class="formula">W = n</span>((<span class="formula">z</span>″ − <span class="formula">z</span>′) / <span class="formula">c</span>) &nbsp;&nbsp;&nbsp; (3.12c)</p>
+        </div>
+
+        <p>在這些方程式中，包含參數<span class="formula">n</span>是為了在必要時便於將<span class="formula">U</span>、<span class="formula">V</span>和<span class="formula">W</span>化簡為整數值。</p>
+
+        <div class="note">
+            <strong>圖3.9：</strong>對於六方晶體系統，[0001]、[11̄00]和[112̄0]方向。
+        </div>
+
+        <!-- 範例問題 3.9 -->
+        <div class="example">
+            <div class="example-title">範例問題 3.9</div>
+            <h3>六方單位晶胞的方向指數確定</h3>
+            <p>對於附圖所示的方向，執行以下操作：</p>
+            <p><strong>(a)</strong> 確定參考圖3.8<span class="formula">b</span>的三軸座標系統的方向指數。</p>
+            <p><strong>(b)</strong> 將這些指數轉換為參考四軸方案（圖3.8<span class="formula">a</span>）的指數組。</p>
+
+            <div class="solution">解答</div>
+            <p>我們首先需要做的是確定參考草圖中表示的三軸方案的向量的<span class="formula">U</span>、<span class="formula">V</span>和<span class="formula">W</span>指數；這可以使用方程式3.12a到3.12c來完成。因為向量經過原點，<span class="formula">a</span><sub>1</sub>′ = <span class="formula">a</span><sub>2</sub>′ = 0<span class="formula">a</span>且<span class="formula">z</span>′ = 0<span class="formula">c</span>。此外，從草圖中，向量頭部的座標如下：</p>
+
+            <div class="equation">
+                <p><span class="formula">a</span><sub>1</sub>″ = 0<span class="formula">a</span></p>
+                <p><span class="formula">a</span><sub>2</sub>″ = −<span class="formula">a</span></p>
+                <p><span class="formula">z</span>″ = <span class="formula">c</span>/2</p>
+            </div>
+
+            <p>因為<span class="formula">z</span>″的分母是2，我們假設<span class="formula">n</span> = 2。因此，</p>
+
+            <div class="equation">
+                <p><span class="formula">U = n</span>((<span class="formula">a</span><sub>1</sub>″ − <span class="formula">a</span><sub>1</sub>′) / <span class="formula">a</span>) = 2((0<span class="formula">a</span> − 0<span class="formula">a</span>) / <span class="formula">a</span>) = 0</p>
+                <p><span class="formula">V = n</span>((<span class="formula">a</span><sub>2</sub>″ − <span class="formula">a</span><sub>2</sub>′) / <span class="formula">a</span>) = 2((−<span class="formula">a</span> − 0<span class="formula">a</span>) / <span class="formula">a</span>) = −2</p>
+                <p><span class="formula">W = n</span>((<span class="formula">z</span>″ − <span class="formula">z</span>′) / <span class="formula">c</span>) = 2((<span class="formula">c</span>/2 − 0<span class="formula">c</span>) / <span class="formula">c</span>) = 1</p>
+            </div>
+
+            <p>此方向通過將上述指數括在方括號中表示——即[021]。</p>
+            
+            <p><strong>(b)</strong> 要將這些指數轉換為參考四軸方案的指數組，需要使用方程式3.11a至3.11d。對於此[021]方向</p>
+
+            <div class="equation">
+                <p><span class="formula">U</span> = 0 &nbsp;&nbsp;&nbsp; <span class="formula">V</span> = −2 &nbsp;&nbsp;&nbsp; <span class="formula">W</span> = 1</p>
+            </div>
+
+            <p>並且</p>
+
+            <div class="equation">
+                <p><span class="formula">u</span> = (1/3)(2<span class="formula">U</span> − <span class="formula">V</span>) = (1/3)[(2)(0) − (−2)] = 2/3</p>
+                <p><span class="formula">v</span> = (1/3)(2<span class="formula">V</span> − <span class="formula">U</span>) = (1/3)[(2)(−2) − 0] = −4/3</p>
+                <p><span class="formula">t</span> = −(<span class="formula">u</span> + <span class="formula">v</span>) = −(2/3 − 4/3) = 2/3</p>
+                <p><span class="formula">w</span> = <span class="formula">W</span> = 1</p>
+            </div>
+
+            <p>將前述指數乘以3可將它們化簡為最小組，得到<span class="formula">u</span>、<span class="formula">v</span>、<span class="formula">t</span>和<span class="formula">w</span>的值分別為2、−4、2和3。因此，圖中所示的方向向量為[242̄3]。</p>
+        </div>
+
+        <div class="note">
+            <p>在給定指數組的情況下，繪製具有六方對稱性的晶體中方向向量所用的程序相對複雜；因此，我們選擇省略此程序的描述。</p>
+        </div>
+
+        <div class="note">
+            <p><sup>5</sup> 有時更方便的做法是將向量尾部定位在原點以外的某個點。</p>
+            <p><sup>6</sup> 負號表示為橫線放在相應指數上方。</p>
+            <p><sup>7</sup> 對於這些轉換，必須注意不要混淆大寫和小寫的<span class="formula">u</span>、<span class="formula">v</span>和<span class="formula">w</span>。</p>
+        </div>
+
+    </div>
+</body>
+</html>

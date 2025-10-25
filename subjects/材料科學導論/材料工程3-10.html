@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 3.10 晶體學平面</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "新細明體", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a2c7f;
+            border-bottom: 3px solid #4a2c7f;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #2c5aa0;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        h3 {
+            color: #c41e3a;
+            font-size: 18px;
+            margin-top: 25px;
+        }
+        .definition {
+            background-color: #f0f8ff;
+            border-left: 4px solid #2c5aa0;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .note {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffa500;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .example {
+            background-color: #e6f3ff;
+            border: 2px solid #2c5aa0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .solution {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .formula {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #fafafa;
+        }
+        ol {
+            margin-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .emphasis {
+            color: #2c9f2c;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #4a2c7f;
+            color: white;
+        }
+        .footnote {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        sup {
+            color: #c41e3a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>3.10 晶體學平面</h1>
+        
+        <div class="definition">
+            <p>晶體結構中平面的方位以類似的方式表示。同樣地，單位晶胞被選為基礎，三軸座標系統如圖3.5所示。除六方晶系外的所有晶系中，晶體學平面均以三個<span class="emphasis">米勒指數</span>（Miller indices）表示為 <i>(hkl)</i>。任何兩個相互平行的平面均為等效平面，並具有相同的指數。確定 <i>h</i>、<i>k</i> 和 <i>l</i> 指數的程序如下：</p>
+        </div>
+
+        <ol>
+            <li><strong>若該平面通過所選的原點，則必須在單位晶胞內透過適當的平移構造另一個平行平面，或在另一個單位晶胞的角落建立新的原點。</strong><sup>8</sup></li>
+            
+            <li><strong>此時，晶體學平面與三個軸的相交點或與三個軸平行的情況被確定（參考座標系統的原點）。這些與 <i>x</i>、<i>y</i> 和 <i>z</i> 軸的截距將分別被標記為 <i>A</i>、<i>B</i> 和 <i>C</i>。</strong><sup>9</sup></li>
+            
+            <li><strong>取這些數字的倒數。平行於某軸的平面被認為具有無限大的截距，因此指數為零。</strong></li>
+            
+            <li><strong>然後將截距的倒數根據（即乘以）各自的 <i>a</i>、<i>b</i> 和 <i>c</i> 晶格參數進行規範化。即：</strong></li>
+        </ol>
+
+        <div class="formula">
+            <i>a/A&nbsp;&nbsp;&nbsp;b/B&nbsp;&nbsp;&nbsp;c/C</i>
+        </div>
+
+        <ol start="5">
+            <li><strong>如有必要，透過乘以或除以公因數，將這三個數字轉換為最小整數組。</strong><sup>10</sup></li>
+            
+            <li><strong>最後，將整數指數（不以逗號分隔）括在括號中，即：<i>(hkl)</i>。<i>h</i>、<i>k</i> 和 <i>l</i> 整數分別對應於 <i>x</i>、<i>y</i> 和 <i>z</i> 軸的規範化截距倒數。</strong></li>
+        </ol>
+
+        <div class="note">
+            <p>總結來說，<i>h</i>、<i>k</i> 和 <i>l</i> 指數可使用以下方程式確定：</p>
+            <div class="formula">
+                <i>h</i> = <i>na/A</i>&nbsp;&nbsp;&nbsp;&nbsp;(3.13a)<br>
+                <i>k</i> = <i>nb/B</i>&nbsp;&nbsp;&nbsp;&nbsp;(3.13b)<br>
+                <i>l</i> = <i>nc/C</i>&nbsp;&nbsp;&nbsp;&nbsp;(3.13c)
+            </div>
+            <p>在這些表達式中，<i>n</i> 是將 <i>h</i>、<i>k</i> 和 <i>l</i> 化為整數所需的因數。</p>
+        </div>
+
+        <p>位於原點負側的截距以橫槓或負號標示在適當的指數上方。此外，反轉所有指數的方向會指定另一個與原點對側且距離相等的平行平面。圖3.10中表示了幾個低指數平面。</p>
+
+        <div class="footnote">
+            <p><sup>8</sup>選擇新原點時，建議採用以下程序：</p>
+            <p style="margin-left: 20px;">若與原點相交的晶體學平面位於單位晶胞的某一面上，則將原點沿與該平面相交的軸平行移動一個單位晶胞距離。</p>
+            <p style="margin-left: 20px;">若與原點相交的晶體學平面通過單位晶胞的某一軸，則將原點沿其他兩軸之一平行移動一個單位晶胞距離。</p>
+            <p style="margin-left: 20px;">對於所有其他情況，將原點沿三個單位晶胞軸中的任一軸平行移動一個單位晶胞距離。</p>
+            
+            <p><sup>9</sup>這些截距點是晶格位置座標，其值使用第3.8節中概述的程序確定。</p>
+            
+            <p><sup>10</sup>有時不進行指數簡化（例如，對於第3.16節中描述的X射線繞射研究）；例如，(002)不簡化為(001)。此外，對於陶瓷材料，簡化指數平面的離子排列可能與未簡化平面不同。</p>
+        </div>
+
+        <h2>圖3.10 說明</h2>
+        <p>圖3.10展示了一系列 (a) (001)、(b) (110) 和 (c) (111) 晶體學平面的表示。</p>
+        
+        <div class="note">
+            <p>立方晶體的一個有趣且獨特的特性是，具有相同指數的平面和方向彼此垂直；然而，對於其他晶系，具有相同指數的平面和方向之間沒有簡單的幾何關係。</p>
+        </div>
+
+        <div class="example">
+            <h3>例題 3.10</h3>
+            <h3>平面（米勒）指數的確定</h3>
+            <p>確定附圖 <i>(a)</i> 中所示平面的米勒指數。</p>
+            
+            <div class="solution">
+                <h3>解答</h3>
+                <p>由於平面通過所選的原點 <i>O</i>，因此必須在相鄰單位晶胞的角落選擇新的原點。在選擇此新單位晶胞時，我們沿 <i>y</i> 軸平行移動一個單位晶胞距離，如圖 <i>(b)</i> 所示。因此 <i>x'</i>-<i>y'</i>-<i>z'</i> 是新的座標軸系統，其原點位於 <i>O'</i>。由於此平面與 <i>x'</i> 軸平行，其截距為 ∞<i>a</i>，即 <i>A</i> = ∞<i>a</i>。此外，從圖 <i>(b)</i> 可知，與 <i>y</i> 和 <i>z'</i> 軸的截距如下：</p>
+                
+                <div class="formula">
+                    <i>B</i> = −<i>b</i>&nbsp;&nbsp;&nbsp;&nbsp;<i>C</i> = <i>c</i>/2
+                </div>
+                
+                <p>現在可以使用方程式3.13a–3.13c來確定 <i>h</i>、<i>k</i> 和 <i>l</i> 的值。此時，讓我們選擇 <i>n</i> 的值為1。因此，</p>
+                
+                <div class="formula">
+                    <i>h</i> = <i>na/A</i> = 1<i>a</i>/∞<i>a</i> = 0<br><br>
+                    <i>k</i> = <i>nb/B</i> = 1<i>b</i>/(−<i>b</i>) = −1<br><br>
+                    <i>l</i> = <i>nc/C</i> = 1<i>c</i>/(<i>c</i>/2) = 2
+                </div>
+                
+                <p>最後，將0、−1和2這些指數括在括號中，得出(0<span style="text-decoration: overline;">1</span>2)作為此方向的標記。<sup>11</sup></p>
+                
+                <p>此程序總結如下：</p>
+                
+                <table>
+                    <tr>
+                        <th></th>
+                        <th><i>x</i></th>
+                        <th><i>y</i></th>
+                        <th><i>z</i></th>
+                    </tr>
+                    <tr>
+                        <td>截距 (<i>A</i>, <i>B</i>, <i>C</i>)</td>
+                        <td>∞<i>a</i></td>
+                        <td>−<i>b</i></td>
+                        <td><i>c</i>/2</td>
+                    </tr>
+                    <tr>
+                        <td>計算 <i>h</i>, <i>k</i>, 和 <i>l</i> 的值<br>(方程式 3.13a–3.13c)</td>
+                        <td><i>h</i> = 0</td>
+                        <td><i>k</i> = −1</td>
+                        <td><i>l</i> = 2</td>
+                    </tr>
+                    <tr>
+                        <td>括號表示</td>
+                        <td colspan="3">(0<span style="text-decoration: overline;">1</span>2)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>例題 3.11</h3>
+            <h3>指定晶體學平面的構造</h3>
+            <p>在下列單位晶胞中構造一個(101)平面。</p>
+            
+            <div class="solution">
+                <h3>解答</h3>
+                <p>為解決此問題，以相反順序執行前例中使用的程序。對於此(101)方向，</p>
+                
+                <div class="formula">
+                    <i>h</i> = 1<br>
+                    <i>k</i> = 0<br>
+                    <i>l</i> = 1
+                </div>
+                
+                <p>使用這些 <i>h</i>、<i>k</i> 和 <i>l</i> 指數，我們要使用重新排列形式的方程式3.13a–3.13c來求解 <i>A</i>、<i>B</i> 和 <i>C</i> 的值。取 <i>n</i> 的值為1（因為這三個米勒指數均為整數）得到：</p>
+                
+                <div class="formula">
+                    <i>A</i> = <i>na/h</i> = (1)(<i>a</i>)/1 = <i>a</i><br><br>
+                    <i>B</i> = <i>nb/k</i> = (1)(<i>b</i>)/0 = ∞<i>b</i><br><br>
+                    <i>C</i> = <i>nc/l</i> = (1)(<i>c</i>)/1 = <i>c</i>
+                </div>
+                
+                <p>因此，此(101)平面與 <i>x</i> 軸相交於 <i>a</i>（因為 <i>A</i> = <i>a</i>），與 <i>y</i> 軸平行（因為 <i>B</i> = ∞<i>b</i>），並與 <i>z</i> 軸相交於 <i>c</i>。在圖 <i>(b)</i> 所示的單位晶胞上，標示了此平面截距的位置。</p>
+                
+                <p>唯一與 <i>y</i> 軸平行並與 <i>x</i> 和 <i>z</i> 軸在軸向座標 <i>a</i> 和 <i>c</i> 處相交的平面，如圖 <i>(c)</i> 所示。</p>
+                
+                <p>請注意，參考單位晶胞的晶體學平面表示是用線條畫出來表示此平面與單位晶胞面（或這些面的延伸）的相交。以下指南有助於表示晶體學平面：</p>
+                
+                <ul>
+                    <li>如果 <i>h</i>、<i>k</i> 和 <i>l</i> 指數中有兩個為零[如(100)]，則該平面將平行於單位晶胞的一個面（見圖3.10<i>a</i>）。</li>
+                    <li>如果其中一個指數為零[如(110)]，則該平面將是平行四邊形，其兩側與相對的單位晶胞邊緣（或相鄰單位晶胞的邊緣）重合（見圖3.10<i>b</i>）。</li>
+                    <li>如果指數均不為零[如(111)]，則所有相交線都將通過單位晶胞面（見圖3.10<i>c</i>）。</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>原子排列</h2>
+        
+        <p>晶體學平面的原子排列通常是令人感興趣的，這取決於晶體結構。圖3.11和3.12分別表示了FCC和BCC晶體結構的(110)原子平面。也包括了簡化球形單位晶胞。請注意，每種情況的原子堆積都不同。圓圈代表位於晶體學平面中的原子，如同從完整尺寸硬球中心取一切片所獲得的。</p>
+        
+        <div class="definition">
+            <p>包含所有具有相同原子堆積的平面的「晶族」（family）即為<span class="emphasis">晶體學等效</span>（crystallographically equivalent）的平面，即具有相同的原子堆積；晶族以括號中的指數表示，如{100}。例如，在立方晶體中，(111)、(<span style="text-decoration: overline;">1</span>11)、(1<span style="text-decoration: overline;">1</span>1)、(<span style="text-decoration: overline;">1</span><span style="text-decoration: overline;">1</span>1)、(11<span style="text-decoration: overline;">1</span>)、(<span style="text-decoration: overline;">1</span>1<span style="text-decoration: overline;">1</span>)、(1<span style="text-decoration: overline;">11</span>)和(<span style="text-decoration: overline;">111</span>)平面都屬於{111}晶族。然而，對於四方晶體結構，{100}晶族僅包含(100)、(<span style="text-decoration: overline;">1</span>00)、(010)和(0<span style="text-decoration: overline;">1</span>0)平面，因為(001)和(00<span style="text-decoration: overline;">1</span>)平面在晶體學上並不等效。此外，在立方系統中，具有相同指數的平面（無論順序和符號如何）都是等效的。例如，(123)和(312)都屬於{123}晶族。</p>
+        </div>
+
+        <h2>六方晶體</h2>
+        
+        <p>對於具有六方對稱性的晶體，希望等效平面具有相同的指數；如同方向一樣，這是透過圖3.8<i>a</i>所示的Miller-Bravais系統來完成的。此慣例導致四指數 <i>(hkil)</i> 方案，在大多數情況下較為有利，因為它更清楚地標示六方晶體中平面的方位。<i>i</i> 是由 <i>h</i> 和 <i>k</i> 的總和確定，透過</p>
+        
+        <div class="formula">
+            <i>i</i> = −(<i>h</i> + <i>k</i>)&nbsp;&nbsp;&nbsp;&nbsp;(3.14)
+        </div>
+        
+        <p>否則，三個 <i>h</i>、<i>k</i> 和 <i>l</i> 指數對於兩種索引系統都是相同的。</p>
+        
+        <p>我們以類似於先前描述的其他晶系的方式確定這些指數，即取軸向截距的規範化倒數，如下例所示。</p>
+        
+        <p>圖3.13展示了具有六方對稱性的晶體中常見的幾個平面。</p>
+
+    </div>
+</body>
+</html>
