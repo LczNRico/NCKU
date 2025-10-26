@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 4.3 固體中的雜質</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "新細明體", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .chapter-number {
+            color: #4a2c7f;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        h1 {
+            color: #4a2c7f;
+            border-bottom: 3px solid #4a2c7f;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #c41e3a;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        h3 {
+            color: #2c5aa0;
+            font-size: 18px;
+            margin-top: 25px;
+        }
+        .keyword {
+            color: #2c9f2c;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .emphasis {
+            color: #2c9f2c;
+            font-weight: bold;
+        }
+        .definition {
+            background-color: #f0f8ff;
+            border-left: 4px solid #2c5aa0;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .note {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffa500;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .example {
+            background-color: #e6f3ff;
+            border: 2px solid #2c5aa0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .solution {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .main-text {
+            text-align: justify;
+            margin: 15px 0;
+        }
+        .figure-caption {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        .image-box {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .rules-list {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .rules-list ol {
+            margin-left: 20px;
+        }
+        .rules-list li {
+            margin: 15px 0;
+        }
+        .formula {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fafafa;
+            border-radius: 5px;
+        }
+        .concept-check {
+            background-color: #fff4e6;
+            border: 2px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .concept-check h3 {
+            color: #ff9800;
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a2c7f;
+            color: white;
+        }
+        .footnote {
+            font-size: 14px;
+            color: #666;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #ccc;
+        }
+        sup {
+            color: #c41e3a;
+        }
+        .wiley-plus {
+            color: #2c5aa0;
+            font-weight: bold;
+        }
+        .tutorial-video {
+            color: #c41e3a;
+            font-weight: bold;
+        }
+        .diagram-description {
+            background-color: #e8f4f8;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #2c5aa0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="chapter-number">4.3</div>
+        <h1>固體中的雜質</h1>
+        
+        <p class="main-text">
+            僅由一種原子類型組成的純金屬是不可能的；雜質或外來原子總是存在的，且其中一些以晶體點缺陷的形式存在。事實上，即使使用相對精密的技術，也很難將金屬精煉到純度超過 99.9999%。在此水平下，在 1 m³ 材料中存在約 10²² 至 10²³ 個雜質原子。大多數常見的金屬並非高度純淨；相反地，它們是<span class="keyword">合金</span>（alloys），其中雜質原子被刻意添加以賦予材料特定的特性。通常，合金化用於金屬以改善機械強度和耐腐蝕性。例如，純銀是 92.5% 銀–7.5% 銅合金。在正常的環境條件下，純銀具有高度抗腐蝕性，但也非常軟。與銅合金化可顯著增強機械強度，而不會明顯降低耐腐蝕性。
+        </p>
+
+        <div class="definition">
+            <p class="main-text">
+                向金屬中添加雜質原子會形成<span class="keyword">固溶體</span>（solid solution）和/或新的<span class="emphasis">第二相</span>（second phase），這取決於雜質的種類、其濃度和合金的溫度。本節討論固溶體的概念；新相的形成延後至第9章處理。
+            </p>
+        </div>
+
+        <div class="definition">
+            <p class="main-text">
+                與雜質和固溶體相關的幾個術語值得提及。關於合金，<span class="keyword">溶質</span>（solute）和<span class="keyword">溶劑</span>（solvent）是常用的術語。<span class="emphasis">溶劑</span>（Solvent）是存在量最多的元素或化合物；有時，溶劑原子也稱為<span class="emphasis">主原子</span>（host atoms）。<span class="emphasis">溶質</span>（Solute）用於表示存在量較少的元素或化合物。
+            </p>
+        </div>
+
+        <h2>固溶體</h2>
+        
+        <p class="main-text">
+            當溶質原子添加到主材料中時，只要形成的結構保持不變，就會形成固溶體。也許與液體溶液進行類比是有用的。如果將兩種可互溶的液體（如水和酒精）混合，則產生的液體溶液分子會混合，其組成在整個過程中是均勻的。固溶體在組成上也是均勻的；雜質原子在固體內隨機且均勻地分散。
+        </p>
+
+        <p class="main-text">
+            雜質點缺陷存在於固溶體中，其中有兩種類型：<span class="keyword">置換型</span>（substitutional）和<span class="keyword">間隙型</span>（interstitial）。對於置換型類型，溶質原子取代或替代主原子的位置（圖4.2）。溶質和溶劑原子的幾個特徵決定了前者在後者中溶解的程度。這些表示為四個<span class="emphasis">休謨-羅色里法則</span>（Hume-Rothery rules），如下所示：
+        </p>
+
+        <div class="image-box">
+            <p class="figure-caption"><strong>圖 4.2</strong> 置換型和間隙型雜質原子的二維示意圖</p>
+            <p class="figure-caption" style="font-size: 12px;">（改編自 W. G. Moffatt, G. W. Pearsall 和 J. Wulff, <i>The Structure and Properties of Materials</i>, Vol. I, <i>Structure</i>, John Wiley & Sons, 1964. 經 Janet M. Moffatt 許可轉載。）</p>
+        </div>
+
+        <div class="rules-list">
+            <h3>休謨-羅色里法則</h3>
+            <ol>
+                <li><strong><i>原子尺寸因子</i></strong>（Atomic size factor）。只有當兩種原子類型之間的原子半徑差小於約 ±15% 時，這種類型的固溶體才能容納可觀的溶質量。否則，溶質原子會造成顯著的晶格扭曲並形成新的相。</li>
+                
+                <li><strong><i>晶體結構</i></strong>（Crystal structure）。對於可觀的固溶度，兩種原子類型的金屬晶體結構必須相同。</li>
+                
+                <li><strong><i>電負度因子</i></strong>（Electronegativity factor）。一種元素的電正性越強，另一種元素的電負性越強，它們形成金屬間化合物而非置換型固溶體的可能性就越大。</li>
+                
+                <li><strong><i>化合價</i></strong>（Valences）。在其他因素相同的情況下，金屬更傾向於溶解另一種化合價較高的金屬，而不是溶解化合價較低的金屬。</li>
+            </ol>
+        </div>
+
+        <div class="note">
+            <p class="main-text">
+                置換型固溶體的一個例子見於銅和鎳。這兩種元素在所有比例下完全互溶。關於上述控制溶解度程度的規則，銅和鎳的原子半徑分別為 0.128 和 0.125 nm；兩者都具有 FCC 晶體結構；它們的電負度分別為 1.9 和 1.8（圖2.9）。最後，最常見的化合價對於銅為 +1（雖然有時可以是 +2）和鎳為 +2。
+            </p>
+        </div>
+
+        <h3>間隙型固溶體</h3>
+        
+        <p class="main-text">
+            對於間隙型固溶體，雜質原子填充主原子之間的空隙或間隙（見圖4.2）。對於 FCC 和 BCC 晶體結構，都有兩種類型的間隙位置——<span class="emphasis">四面體</span>（tetrahedral）和<span class="emphasis">八面體</span>（octahedral）；這些是由最近鄰主原子的數量來區分的，即配位數。四面體位置的配位數為 4；從周圍主原子的中心畫出的直線形成四面體。然而，對於八面體位置，配位數為 6；連接這六個球心而產生的八面體。<sup>3</sup> 對於 FCC，有兩種類型的八面體位置，其代表性點座標為 0 ½ 1 和 ½ ½ ½。單個四面體位置類型的代表性座標為 ¼ ¼ ¼。<sup>4</sup> 這些位置在 FCC 單位晶胞內的位置標註於圖 4.3<i>a</i>。同樣地，對於 BCC，有兩種八面體和一種四面體類型。八面體位置的代表性座標如下：½ ½ 0 和 ½ 1 0；對於 BCC 四面體，1 ½ ¼ 是一個代表性座標。圖 4.3<i>b</i> 顯示了 BCC 單位晶胞內這些位置的位置。<sup>4</sup>
+        </p>
+
+        <div class="image-box">
+            <p class="figure-caption"><strong>圖 4.3</strong> 四面體和八面體間隙位置在 (<i>a</i>) FCC 和 (<i>b</i>) BCC 單位晶胞內的位置</p>
+        </div>
+
+        <p class="main-text">
+            金屬材料具有相對較高的原子堆積因子，這意味著這些間隙位置相對較小。因此，間隙雜質的原子直徑必須遠小於主原子的直徑。通常，間隙雜質原子的最大允許濃度很低（小於 10%）。即使非常小的雜質原子通常也比間隙位置大，因此，它們會在相鄰的主原子上引入一些晶格應變。問題 4.8 和 4.9 要求確定雜質原子半徑 <i>r</i>（以主原子半徑 <i>R</i> 表示），該半徑剛好適合 BCC 和 FCC 的四面體和八面體間隙位置，而不會引入任何晶格應變。
+        </p>
+
+        <div class="note">
+            <p class="main-text">
+                碳在添加到鐵中時形成間隙型固溶體；碳的最大濃度約為 2%。碳原子的原子半徑遠小於鐵的原子半徑：0.071 nm 相對於 0.124 nm。
+            </p>
+        </div>
+
+        <p class="main-text">
+            陶瓷材料的固溶體也是可能的，如第12.5節所討論。
+        </p>
+
+        <div class="note">
+            <p class="wiley-plus">WileyPLUS</p>
+            <p class="tutorial-video">教學影片：缺陷</p>
+            <p style="font-size: 14px;">間隙型和置換型固溶體之間有什麼區別？</p>
+        </div>
+
+        <div class="example">
+            <h3>例題 4.2</h3>
+            <h3>BCC 八面體間隙位置半徑的計算</h3>
+            <p class="main-text">
+                計算剛好適合 BCC 八面體位置的雜質原子半徑 <i>r</i>（以主原子的原子半徑 <i>R</i> 表示，且不引入晶格應變）。
+            </p>
+            
+            <div class="solution">
+                <h3>解答</h3>
+                <p class="main-text">
+                    如圖 4.3<i>b</i> 所示，對於 BCC，一個八面體間隙位置位於單位晶胞邊緣的中心。為了使間隙原子位於此位置而不引入晶格應變，該原子恰好接觸兩個相鄰的主原子，這兩個主原子是單位晶胞的角原子。圖示顯示 BCC 單位晶胞的 (100) 面上的原子；大圓圈代表主原子——小圓圈代表位於立方體邊緣上的八面體位置的間隙原子。
+                </p>
+
+                <div class="diagram-description">
+                    <p class="main-text">
+                        在此圖上標註了單位晶胞的邊長，即角原子中心之間的距離，根據方程 3.4，等於：
+                    </p>
+                    <div class="formula">
+                        單位晶胞邊長 = 4<i>R</i>/√3
+                    </div>
+                    <p class="main-text">
+                        還顯示單位晶胞邊長等於主原子半徑 2<i>R</i> 的兩倍加上間隙原子半徑 2<i>r</i> 的兩倍；即：
+                    </p>
+                    <div class="formula">
+                        單位晶胞邊長 = 2<i>R</i> + 2<i>r</i>
+                    </div>
+                </div>
+
+                <p class="main-text">
+                    現在，將這兩個單位晶胞邊長表達式相等，我們得到：
+                </p>
+
+                <div class="formula">
+                    2<i>R</i> + 2<i>r</i> = 4<i>R</i>/√3
+                </div>
+
+                <p class="main-text">
+                    並求解 <i>r</i> 以 <i>R</i> 表示：
+                </p>
+
+                <div class="formula">
+                    2<i>r</i> = 4<i>R</i>/√3 − 2<i>R</i> = (2/√3 − 1)(2<i>R</i>)
+                </div>
+
+                <p class="main-text">或</p>
+
+                <div class="formula">
+                    <i>r</i> = (2/√3 − 1)<i>R</i> = 0.155<i>R</i>
+                </div>
+            </div>
+        </div>
+
+        <div class="concept-check">
+            <h3>概念檢查 4.1</h3>
+            <p class="main-text">
+                三種或更多種元素是否可能形成固溶體？請解釋您的答案。
+            </p>
+            <p style="font-size: 14px; color: #666;">
+                [答案可在課本的所有數位版本和/或 www.wiley.com/college/callister (學生網站) 中找到。]
+            </p>
+        </div>
+
+        <div class="concept-check">
+            <h3>概念檢查 4.2</h3>
+            <p class="main-text">
+                解釋為什麼完全固溶度可能出現在置換型固溶體中，但不會出現在間隙型固溶體中。
+            </p>
+            <p style="font-size: 14px; color: #666;">
+                [答案可在課本的所有數位版本和/或 www.wiley.com/college/callister (學生網站) 中找到。]
+            </p>
+        </div>
+
+        <div class="footnote">
+            <p><sup>3</sup>這些位置類型的幾何形狀可以在圖 12.7 中觀察到。</p>
+            <p><sup>4</sup>其他八面體和四面體間隙位於單位晶胞內與這些代表性位置等效的位置。</p>
+        </div>
+
+        <div class="note">
+            <h2>重要概念總結</h2>
+            <table>
+                <tr>
+                    <th>概念</th>
+                    <th>說明</th>
+                </tr>
+                <tr>
+                    <td><strong>雜質的必然性</strong></td>
+                    <td>純金屬不可能存在，雜質或外來原子總是存在</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>合金</strong></td>
+                    <td>刻意添加雜質原子以賦予材料特定特性</td>
+                </tr>
+                <tr>
+                    <td><strong>固溶體</strong></td>
+                    <td>雜質原子隨機且均勻地分散在固體內</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>置換型固溶體</strong></td>
+                    <td>溶質原子取代或替代主原子的位置</td>
+                </tr>
+                <tr>
+                    <td><strong>休謨-羅色里法則</strong></td>
+                    <td>決定固溶度的四個因素：原子尺寸、晶體結構、電負度、化合價</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>間隙型固溶體</strong></td>
+                    <td>雜質原子填充主原子之間的間隙位置</td>
+                </tr>
+                <tr>
+                    <td><strong>間隙位置類型</strong></td>
+                    <td>四面體（配位數4）和八面體（配位數6）</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

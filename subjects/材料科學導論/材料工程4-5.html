@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 4.5 差排—線缺陷</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "新細明體", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section-header {
+            background: linear-gradient(to right, #17a2b8, #138496);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .chapter-number {
+            color: #4a2c7f;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        h1 {
+            color: #4a2c7f;
+            border-bottom: 3px solid #4a2c7f;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #c41e3a;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        h3 {
+            color: #2c5aa0;
+            font-size: 18px;
+            margin-top: 25px;
+        }
+        .keyword {
+            color: #17a2b8;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .emphasis {
+            color: #2c9f2c;
+            font-weight: bold;
+        }
+        .definition {
+            background-color: #f0f8ff;
+            border-left: 4px solid #2c5aa0;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .note {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffa500;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .main-text {
+            text-align: justify;
+            margin: 15px 0;
+        }
+        .figure-caption {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        .image-box {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .wiley-plus {
+            color: #2c5aa0;
+            font-weight: bold;
+        }
+        .vmse {
+            color: #c41e3a;
+            font-weight: bold;
+        }
+        .important-box {
+            background-color: #e8f4f8;
+            border: 2px solid #2c5aa0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a2c7f;
+            color: white;
+        }
+        .comparison-table {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-header">雜項不完整性</div>
+        
+        <div class="chapter-number">4.5</div>
+        <h1>差排—線缺陷</h1>
+        
+        <div class="definition">
+            <p class="main-text">
+                <span class="keyword">差排</span>（dislocation）是一種線性或一維缺陷，圍繞著它的某些原子發生錯位。其中一種類型的差排如圖4.4所示：額外的一部分原子平面，或半平面，其邊緣在晶體內終止。這稱為<span class="keyword">刃差排</span>（edge dislocation）；它是一種線缺陷，其中心位於沿著額外原子半平面末端定義的線上。這有時被稱為<span class="emphasis">差排線</span>（dislocation line），對於圖4.4中的刃差排，它垂直於頁面平面。在差排線周圍的區域存在一些局部化的晶格扭曲。差排線上方的原子在圖4.4中被擠壓在一起，而下方的原子則被拉開；這反映在原子的垂直平面在彎曲繞過這個額外半平面時的輕微曲率上。這種扭曲的大小隨著遠離差排線的距離而減小；在遠離位置處，晶格實際上是完美的。有時圖4.4中的刃差排以符號 ⊥ 表示，這也指示了差排線的位置。刃差排也可能由包含在晶體底部的額外原子半平面形成；其標記為 ⊤。
+            </p>
+        </div>
+
+        <div class="image-box">
+            <p class="figure-caption"><strong>圖 4.4</strong> 刃差排周圍的原子位置：以透視圖顯示的額外原子半平面</p>
+        </div>
+
+        <div class="note">
+            <p class="wiley-plus">WileyPLUS: </p>
+            <p class="vmse">VMSE 刃差排</p>
+        </div>
+
+        <h2>螺旋差排</h2>
+        
+        <p class="main-text">
+            另一種類型的差排稱為<span class="keyword">螺旋差排</span>（screw dislocation），可以認為是由施加剪切應力所形成的，以產生圖4.5<i>a</i>中所示的扭曲：晶體的上前部相對於底部部分向右移動一個原子距離。與螺旋差排相關的晶格扭曲也是線性的，並且沿著差排線，即圖4.5<i>b</i>中的線<i>AB</i>。螺旋差排的名稱來自於原子平面繞著差排線所追蹤的螺旋或螺旋路徑或斜坡。有時使用符號 ⊙ 來標記螺旋差排。
+        </p>
+
+        <div class="image-box">
+            <p class="figure-caption"><strong>圖 4.5</strong> (<i>a</i>) 晶體中的螺旋差排。(<i>b</i>) 從上方觀看的 (<i>a</i>) 中的螺旋差排。差排線沿著線 <i>AB</i> 延伸。滑移面上方的原子位置以空心圓圈標記，下方的原子位置以實心圓圈標記。</p>
+            <p class="figure-caption" style="font-size: 12px;">[圖 (<i>b</i>) 來自 W. T. Read, Jr., <i>Dislocations in Crystals</i>, McGraw-Hill Book Company, New York, NY, 1953.]</p>
+        </div>
+
+        <div class="note">
+            <p class="wiley-plus">WileyPLUS: </p>
+            <p class="vmse">VMSE 螺旋差排</p>
+        </div>
+
+        <h2>混合差排</h2>
+        
+        <p class="main-text">
+            在晶體材料中發現的大多數差排可能既不是純刃差排也不是純螺旋差排，而是表現出兩種類型的成分；這些稱為<span class="keyword">混合差排</span>（mixed dislocations）。所有三種差排類型在圖4.6中以示意圖表示；遠離兩個面產生的晶格扭曲是混合的，具有不同程度的螺旋和刃特性。
+        </p>
+
+        <div class="image-box">
+            <p class="figure-caption"><strong>圖 4.6</strong> (<i>a</i>) 具有刃、螺旋和混合特性的差排的示意圖。(<i>b</i>) 俯視圖，其中空心圓圈表示滑移面上方的原子位置，實心圓圈表示下方的原子位置。在點 <i>A</i>，差排是純螺旋的，而在點 <i>B</i>，它是純刃的。對於兩者之間的區域，差排線有曲率的地方，其特性是混合的刃和螺旋。</p>
+            <p class="figure-caption" style="font-size: 12px;">[圖 (<i>b</i>) 來自 W. T. Read, Jr., <i>Dislocations in Crystals</i>, McGraw-Hill Book Company, New York, NY, 1953.]</p>
+        </div>
+
+        <div class="note">
+            <p class="wiley-plus">WileyPLUS: </p>
+            <p class="vmse">VMSE 混合差排</p>
+        </div>
+
+        <h2>柏格向量</h2>
+        
+        <div class="important-box">
+            <p class="main-text">
+                與差排相關的晶格扭曲的大小和方向用<span class="keyword">柏格向量</span>（Burgers vector）表示，以 <span class="emphasis">b</span> 表示。柏格向量在圖4.4和4.5中分別針對刃和螺旋差排標示。此外，差排的性質（即刃、螺旋或混合）是由差排線和柏格向量的相對方位定義的。對於刃，它們是垂直的（圖4.4），而對於螺旋，它們是平行的（圖4.5）；對於混合差排，它們既不垂直也不平行。此外，即使差排在晶體內改變方向和性質（例如，從刃到混合到螺旋），柏格向量在沿其線的所有點都是相同的。例如，圖4.6中彎曲差排的所有位置都具有所示的柏格向量。對於金屬材料，差排的柏格向量指向緊密堆積的晶體學方向，其大小等於原子間距。
+            </p>
+        </div>
+
+        <p class="main-text">
+            如我們在第7.2節中所述，大多數晶體材料的永久變形是透過差排的運動實現的。此外，柏格向量是已被發展來解釋這種變形類型的理論的一個要素。
+        </p>
+
+        <h2>差排的觀察</h2>
+        
+        <p class="main-text">
+            可以使用電子顯微鏡技術在晶體材料中觀察到差排。在圖4.7中，一張高倍率的穿透式電子顯微照片中，深色線條就是差排。
+        </p>
+
+        <div class="image-box">
+            <p class="figure-caption"><strong>圖 4.7</strong> 鈦合金的穿透式電子顯微照片，其中深色線條是差排，50,000×。</p>
+            <p class="figure-caption" style="font-size: 12px;">（由 M. R. Plichta 提供，Michigan Technological University）</p>
+        </div>
+
+        <h2>差排的來源</h2>
+        
+        <p class="main-text">
+            幾乎所有晶體材料都含有一些差排，這些差排是在凝固、塑性變形期間引入的，以及由於快速冷卻產生的熱應力的結果。差排參與晶體材料（包括金屬和陶瓷）的塑性變形，如第7章和第12章所討論的。它們也在聚合物材料中被觀察到，並在第14.13節中討論。
+        </p>
+
+        <div class="comparison-table">
+            <h3>差排類型比較</h3>
+            <table>
+                <tr>
+                    <th>差排類型</th>
+                    <th>特徵</th>
+                    <th>差排線與柏格向量的關係</th>
+                    <th>符號</th>
+                </tr>
+                <tr>
+                    <td><strong>刃差排</strong></td>
+                    <td>額外的原子半平面插入晶體中</td>
+                    <td>垂直</td>
+                    <td>⊥ 或 ⊤</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>螺旋差排</strong></td>
+                    <td>原子平面形成螺旋或斜坡路徑</td>
+                    <td>平行</td>
+                    <td>⊙</td>
+                </tr>
+                <tr>
+                    <td><strong>混合差排</strong></td>
+                    <td>兼具刃和螺旋特性</td>
+                    <td>既不垂直也不平行</td>
+                    <td>—</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="note">
+            <h2>重要概念總結</h2>
+            <table>
+                <tr>
+                    <th>概念</th>
+                    <th>說明</th>
+                </tr>
+                <tr>
+                    <td><strong>差排</strong></td>
+                    <td>線性或一維缺陷，圍繞著它的某些原子發生錯位</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>刃差排</strong></td>
+                    <td>額外原子半平面的邊緣在晶體內終止形成的線缺陷</td>
+                </tr>
+                <tr>
+                    <td><strong>螺旋差排</strong></td>
+                    <td>原子平面繞差排線形成螺旋路徑的線缺陷</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>混合差排</strong></td>
+                    <td>大多數實際差排，兼具刃和螺旋特性</td>
+                </tr>
+                <tr>
+                    <td><strong>柏格向量</strong></td>
+                    <td>表示與差排相關的晶格扭曲的大小和方向</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>差排的作用</strong></td>
+                    <td>參與材料的塑性變形，是永久變形的主要機制</td>
+                </tr>
+                <tr>
+                    <td><strong>差排的來源</strong></td>
+                    <td>凝固、塑性變形、快速冷卻產生的熱應力</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="important-box">
+            <h3>差排的重要性</h3>
+            <p class="main-text">
+                差排是材料科學中最重要的缺陷之一，它們的存在和運動對材料的機械性質具有深遠影響：
+            </p>
+            <ul>
+                <li><strong>塑性變形</strong>：差排的運動是金屬塑性變形的主要機制</li>
+                <li><strong>強度</strong>：控制差排的運動可以增強材料的強度</li>
+                <li><strong>加工硬化</strong>：差排密度的增加導致材料變硬</li>
+                <li><strong>退火</strong>：熱處理可以減少差排密度，使材料變軟</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

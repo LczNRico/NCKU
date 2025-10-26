@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 4.4 組成規格</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "新細明體", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .chapter-number {
+            color: #4a2c7f;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        h1 {
+            color: #4a2c7f;
+            border-bottom: 3px solid #4a2c7f;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #c41e3a;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        h3 {
+            color: #2c5aa0;
+            font-size: 18px;
+            margin-top: 25px;
+        }
+        .keyword {
+            color: #2c9f2c;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .emphasis {
+            color: #2c9f2c;
+            font-weight: bold;
+        }
+        .definition {
+            background-color: #f0f8ff;
+            border-left: 4px solid #2c5aa0;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .note {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffa500;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .example {
+            background-color: #e6f3ff;
+            border: 2px solid #2c5aa0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .solution {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .main-text {
+            text-align: justify;
+            margin: 15px 0;
+        }
+        .formula {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fafafa;
+            border-radius: 5px;
+        }
+        .equation-number {
+            float: right;
+            color: #666;
+            font-weight: bold;
+        }
+        .formula-label {
+            color: #c41e3a;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a2c7f;
+            color: white;
+        }
+        .footnote {
+            font-size: 14px;
+            color: #666;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #ccc;
+        }
+        sup {
+            color: #c41e3a;
+        }
+        sub {
+            font-size: 0.8em;
+        }
+        .wiley-plus {
+            color: #2c5aa0;
+            font-weight: bold;
+        }
+        .tutorial-video {
+            color: #c41e3a;
+            font-weight: bold;
+        }
+        .conversion-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 2px solid #2c5aa0;
+        }
+        .equation-box {
+            background-color: #e8f4f8;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="chapter-number">4.4</div>
+        <h1>組成規格</h1>
+        
+        <p class="main-text">
+            通常需要用其組成元素來表示合金的<span class="keyword">組成</span>（composition）（或<span class="emphasis">濃度</span>（concentration））<sup>5</sup>。指定組成的兩種最常見方式是重量（或質量）百分比和原子百分比。<span class="emphasis">重量百分比</span>（weight percent, wt%）的基礎是特定元素的重量相對於合金總重量的比例。對於含有由1和2表示的兩個假設原子的合金，元素1的重量百分比濃度 <i>C</i><sub>1</sub> 定義為：
+        </p>
+
+        <div class="formula-label">
+            重量百分比的計算（針對雙元素合金）
+        </div>
+        <div class="formula">
+            <i>C</i><sub>1</sub> = <i>m</i><sub>1</sub> / (<i>m</i><sub>1</sub> + <i>m</i><sub>2</sub>) × 100
+            <span class="equation-number">(4.3a)</span>
+        </div>
+
+        <p class="main-text">
+            其中 <i>m</i><sub>1</sub> 和 <i>m</i><sub>2</sub> 分別代表元素1和元素2的重量（或質量）。元素2的濃度也可以用類似的方式計算。<sup>6</sup>
+        </p>
+
+        <div class="definition">
+            <p class="main-text">
+                <span class="emphasis">原子百分比</span>（atom percent, at%）計算的基礎是元素的莫耳數相對於合金中元素的總莫耳數。某指定質量的假設元素1的莫耳數 <i>n</i><sub><i>m</i>1</sub> 可以如下計算：
+            </p>
+            
+            <div class="formula">
+                <i>n</i><sub><i>m</i>1</sub> = <i>m'</i><sub>1</sub> / <i>A</i><sub>1</sub>
+                <span class="equation-number">(4.4)</span>
+            </div>
+
+            <p class="main-text">
+                這裡，<i>m'</i><sub>1</sub> 和 <i>A</i><sub>1</sub> 分別表示元素1的質量（以克為單位）和原子量。在包含元素1和元素2原子的合金中，以原子百分比表示的元素1濃度 <i>C'</i><sub>1</sub> 定義為<sup>7</sup>：
+            </p>
+        </div>
+
+        <div class="formula-label">
+            原子百分比的計算（針對雙元素合金）
+        </div>
+        <div class="formula">
+            <i>C'</i><sub>1</sub> = <i>n</i><sub><i>m</i>1</sub> / (<i>n</i><sub><i>m</i>1</sub> + <i>n</i><sub><i>m</i>2</sub>) × 100
+            <span class="equation-number">(4.5a)</span>
+        </div>
+
+        <p class="main-text">
+            同樣地，元素2的原子百分比也可以確定。<sup>8</sup>
+        </p>
+
+        <p class="main-text">
+            原子百分比計算也可以基於原子數量而非莫耳數來進行，因為所有物質的一莫耳都含有相同數量的原子。
+        </p>
+
+        <h2>組成轉換</h2>
+        
+        <div class="conversion-section">
+            <p class="main-text">
+                有時需要從一種組成方案轉換為另一種——例如，從重量百分比轉換為原子百分比。我們接下來提供以兩個假設元素1和2進行這些轉換的方程式。使用前一節的慣例（即，重量百分比以 <i>C</i><sub>1</sub> 和 <i>C</i><sub>2</sub> 表示，原子百分比以 <i>C'</i><sub>1</sub> 和 <i>C'</i><sub>2</sub> 表示，原子量為 <i>A</i><sub>1</sub> 和 <i>A</i><sub>2</sub>），我們將這些轉換方程式表示如下：
+            </p>
+
+            <div class="formula-label">
+                重量百分比轉換為原子百分比（針對雙元素合金）
+            </div>
+            <div class="equation-box">
+                <div class="formula">
+                    <i>C'</i><sub>1</sub> = <i>C</i><sub>1</sub><i>A</i><sub>2</sub> / (<i>C</i><sub>1</sub><i>A</i><sub>2</sub> + <i>C</i><sub>2</sub><i>A</i><sub>1</sub>) × 100
+                    <span class="equation-number">(4.6a)</span>
+                </div>
+                
+                <div class="formula">
+                    <i>C'</i><sub>2</sub> = <i>C</i><sub>2</sub><i>A</i><sub>1</sub> / (<i>C</i><sub>1</sub><i>A</i><sub>2</sub> + <i>C</i><sub>2</sub><i>A</i><sub>1</sub>) × 100
+                    <span class="equation-number">(4.6b)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-label">
+            原子百分比轉換為重量百分比（針對雙元素合金）
+        </div>
+        <div class="equation-box">
+            <div class="formula">
+                <i>C</i><sub>1</sub> = <i>C'</i><sub>1</sub><i>A</i><sub>1</sub> / (<i>C'</i><sub>1</sub><i>A</i><sub>1</sub> + <i>C'</i><sub>2</sub><i>A</i><sub>2</sub>) × 100
+                <span class="equation-number">(4.7a)</span>
+            </div>
+            
+            <div class="formula">
+                <i>C</i><sub>2</sub> = <i>C'</i><sub>2</sub><i>A</i><sub>2</sub> / (<i>C'</i><sub>1</sub><i>A</i><sub>1</sub> + <i>C'</i><sub>2</sub><i>A</i><sub>2</sub>) × 100
+                <span class="equation-number">(4.7b)</span>
+            </div>
+        </div>
+
+        <p class="main-text">
+            由於我們只考慮兩種元素，當意識到以下關係時，涉及前述方程式的計算會簡化：
+        </p>
+
+        <div class="formula">
+            <i>C</i><sub>1</sub> + <i>C</i><sub>2</sub> = 100
+            <span class="equation-number">(4.8a)</span>
+        </div>
+        
+        <div class="formula">
+            <i>C'</i><sub>1</sub> + <i>C'</i><sub>2</sub> = 100
+            <span class="equation-number">(4.8b)</span>
+        </div>
+
+        <h3>單位體積質量轉換</h3>
+        
+        <p class="main-text">
+            此外，有時需要將濃度從重量百分比轉換為每單位體積材料的一種組分的質量（即從 wt% 單位到 kg/m³）；後者組成方案經常用於擴散計算（第5.3節）。以此基礎表示的濃度使用雙撇號表示（即 <i>C''</i><sub>1</sub> 和 <i>C''</i><sub>2</sub>），相關方程式如下：
+        </p>
+
+        <div class="formula-label">
+            重量百分比轉換為單位體積質量（針對雙元素合金）
+        </div>
+        <div class="equation-box">
+            <div class="formula">
+                <i>C''</i><sub>1</sub> = (<i>C</i><sub>1</sub> / (<i>C</i><sub>1</sub>/<i>ρ</i><sub>1</sub> + <i>C</i><sub>2</sub>/<i>ρ</i><sub>2</sub>)) × 10³
+                <span class="equation-number">(4.9a)</span>
+            </div>
+            
+            <div class="formula">
+                <i>C''</i><sub>2</sub> = (<i>C</i><sub>2</sub> / (<i>C</i><sub>1</sub>/<i>ρ</i><sub>1</sub> + <i>C</i><sub>2</sub>/<i>ρ</i><sub>2</sub>)) × 10³
+                <span class="equation-number">(4.9b)</span>
+            </div>
+        </div>
+
+        <div class="note">
+            <p class="wiley-plus">WileyPLUS</p>
+            <p class="tutorial-video">教學影片：</p>
+            <p class="tutorial-video">重量百分比和原子百分比計算</p>
+        </div>
+
+        <p class="main-text">
+            對於密度 <i>ρ</i> 以 g/cm³ 為單位，這些表達式產生 <i>C''</i><sub>1</sub> 和 <i>C''</i><sub>2</sub> 的單位為 kg/m³。
+        </p>
+
+        <p class="main-text">
+            此外，有時我們希望確定二元合金的密度和原子量，給定以重量百分比或原子百分比表示的組成。如果我們以 <i>ρ</i><sub>ave</sub> 和 <i>A</i><sub>ave</sub> 分別表示合金密度和原子量，則：
+        </p>
+
+        <div class="formula-label">
+            密度計算（針對雙元素金屬合金）
+        </div>
+        <div class="equation-box">
+            <div class="formula">
+                <i>ρ</i><sub>ave</sub> = 100 / (<i>C</i><sub>1</sub>/<i>ρ</i><sub>1</sub> + <i>C</i><sub>2</sub>/<i>ρ</i><sub>2</sub>)
+                <span class="equation-number">(4.10a)</span>
+            </div>
+            
+            <div class="formula">
+                <i>ρ</i><sub>ave</sub> = (<i>C'</i><sub>1</sub><i>A</i><sub>1</sub> + <i>C'</i><sub>2</sub><i>A</i><sub>2</sub>) / (<i>C'</i><sub>1</sub><i>A</i><sub>1</sub>/<i>ρ</i><sub>1</sub> + <i>C'</i><sub>2</sub><i>A</i><sub>2</sub>/<i>ρ</i><sub>2</sub>)
+                <span class="equation-number">(4.10b)</span>
+            </div>
+        </div>
+
+        <div class="formula-label">
+            原子量計算（針對雙元素金屬合金）
+        </div>
+        <div class="equation-box">
+            <div class="formula">
+                <i>A</i><sub>ave</sub> = 100 / (<i>C</i><sub>1</sub>/<i>A</i><sub>1</sub> + <i>C</i><sub>2</sub>/<i>A</i><sub>2</sub>)
+                <span class="equation-number">(4.11a)</span>
+            </div>
+            
+            <div class="formula">
+                <i>A</i><sub>ave</sub> = (<i>C'</i><sub>1</sub><i>A</i><sub>1</sub> + <i>C'</i><sub>2</sub><i>A</i><sub>2</sub>) / 100
+                <span class="equation-number">(4.11b)</span>
+            </div>
+        </div>
+
+        <div class="note">
+            <p class="main-text">
+                應該注意的是，方程式4.9和4.11並不總是準確的。在其推導中，假設合金總體積恰好等於各個元素體積的總和。對於大多數合金來說，這通常不是事實；然而，這是一個合理有效的假設，並且對於稀溶液和存在固溶體的組成範圍不會導致顯著誤差。
+            </p>
+        </div>
+
+        <div class="example">
+            <h3>例題 4.3</h3>
+            <h3>組成轉換方程式的推導</h3>
+            <p class="main-text">推導方程4.6a。</p>
+            
+            <div class="solution">
+                <h3>解答</h3>
+                <p class="main-text">
+                    為了簡化此推導，我們假設質量以克為單位表示並用撇號表示（例如，<i>m'</i><sub>1</sub>）。此外，合金總質量（以克為單位）<i>M'</i> 為：
+                </p>
+                
+                <div class="formula">
+                    <i>M'</i> = <i>m'</i><sub>1</sub> + <i>m'</i><sub>2</sub>
+                    <span class="equation-number">(4.12)</span>
+                </div>
+
+                <p class="main-text">
+                    使用 <i>C'</i><sub>1</sub> 的定義（方程4.5a）並結合 <i>n</i><sub><i>m</i>1</sub> 的表達式（方程4.4）以及 <i>n</i><sub><i>m</i>2</sub> 的類似表達式，得到：
+                </p>
+
+                <div class="formula">
+                    <i>C'</i><sub>1</sub> = <i>n</i><sub><i>m</i>1</sub> / (<i>n</i><sub><i>m</i>1</sub> + <i>n</i><sub><i>m</i>2</sub>) × 100
+                </div>
+
+                <div class="formula">
+                    = (<i>m'</i><sub>1</sub>/<i>A</i><sub>1</sub>) / (<i>m'</i><sub>1</sub>/<i>A</i><sub>1</sub> + <i>m'</i><sub>2</sub>/<i>A</i><sub>2</sub>) × 100
+                    <span class="equation-number">(4.13)</span>
+                </div>
+
+                <p class="main-text">
+                    重新排列方程4.3a的克質量等效式得到：
+                </p>
+
+                <div class="formula">
+                    <i>m'</i><sub>1</sub> = <i>C</i><sub>1</sub><i>M'</i> / 100
+                    <span class="equation-number">(4.14)</span>
+                </div>
+
+                <p class="main-text">
+                    將此表達式及其 <i>m'</i><sub>2</sub> 等效式代入方程4.13，得到：
+                </p>
+
+                <div class="formula">
+                    <i>C'</i><sub>1</sub> = (<i>C</i><sub>1</sub><i>M'</i>/100<i>A</i><sub>1</sub>) / (<i>C</i><sub>1</sub><i>M'</i>/100<i>A</i><sub>1</sub> + <i>C</i><sub>2</sub><i>M'</i>/100<i>A</i><sub>2</sub>) × 100
+                    <span class="equation-number">(4.15)</span>
+                </div>
+
+                <p class="main-text">
+                    簡化後，我們得到：
+                </p>
+
+                <div class="formula">
+                    <i>C'</i><sub>1</sub> = <i>C</i><sub>1</sub><i>A</i><sub>2</sub> / (<i>C</i><sub>1</sub><i>A</i><sub>2</sub> + <i>C</i><sub>2</sub><i>A</i><sub>1</sub>) × 100
+                </div>
+
+                <p class="main-text">
+                    這與方程4.6a相同。
+                </p>
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>例題 4.4</h3>
+            <h3>組成轉換——從重量百分比到原子百分比</h3>
+            <p class="main-text">
+                確定由 97 wt% 鋁和 3 wt% 銅組成的合金的原子百分比組成。
+            </p>
+            
+            <div class="solution">
+                <h3>解答</h3>
+                <p class="main-text">
+                    如果我們將各自的重量百分比組成表示為 <i>C</i><sub>Al</sub> = 97 和 <i>C</i><sub>Cu</sub> = 3，代入方程4.6a和4.6b得到：
+                </p>
+                
+                <div class="formula">
+                    <i>C'</i><sub>Al</sub> = <i>C</i><sub>Al</sub><i>A</i><sub>Cu</sub> / (<i>C</i><sub>Al</sub><i>A</i><sub>Cu</sub> + <i>C</i><sub>Cu</sub><i>A</i><sub>Al</sub>) × 100
+                </div>
+
+                <div class="formula">
+                    = (97)(63.55 g/mol) / [(97)(63.55 g/mol) + (3)(26.98 g/mol)] × 100
+                </div>
+
+                <div class="formula">
+                    = 98.7 at%
+                </div>
+
+                <p class="main-text">以及</p>
+
+                <div class="formula">
+                    <i>C'</i><sub>Cu</sub> = <i>C</i><sub>Cu</sub><i>A</i><sub>Al</sub> / (<i>C</i><sub>Cu</sub><i>A</i><sub>Al</sub> + <i>C</i><sub>Al</sub><i>A</i><sub>Cu</sub>) × 100
+                </div>
+
+                <div class="formula">
+                    = (3)(26.98 g/mol) / [(3)(26.98 g/mol) + (97)(63.55 g/mol)] × 100
+                </div>
+
+                <div class="formula">
+                    = 1.30 at%
+                </div>
+            </div>
+        </div>
+
+        <div class="footnote">
+            <p><sup>5</sup>術語<span class="emphasis">組成</span>（composition）和<span class="emphasis">濃度</span>（concentration）在本書中將被假定具有相同的含義（即，合金中特定元素或組分的相對含量），並將交替使用。</p>
+            
+            <p><sup>6</sup>當合金包含兩種以上（例如 <i>n</i> 種）元素時，方程(4.3a)採取以下形式：</p>
+            <div class="formula" style="background-color: #f9f9f9;">
+                <i>C</i><sub>1</sub> = <i>m</i><sub>1</sub> / (<i>m</i><sub>1</sub> + <i>m</i><sub>2</sub> + <i>m</i><sub>3</sub> + ⋯ + <i>m</i><sub><i>n</i></sub>) × 100
+                <span class="equation-number">(4.3b)</span>
+            </div>
+            
+            <p><sup>7</sup>為了避免本節中使用的符號和記號的混淆，我們應該指出，撇號（如 <i>C'</i><sub>1</sub> 和 <i>m'</i><sub>1</sub> 中的撇號）用於表示原子百分比的組成和材料質量（以克為單位）。</p>
+            
+            <p><sup>8</sup>當合金包含兩種以上（例如 <i>n</i> 種）元素時，方程(4.5a)採取以下形式：</p>
+            <div class="formula" style="background-color: #f9f9f9;">
+                <i>C'</i><sub>1</sub> = <i>n</i><sub><i>m</i>1</sub> / (<i>n</i><sub><i>m</i>1</sub> + <i>n</i><sub><i>m</i>2</sub> + <i>n</i><sub><i>m</i>3</sub> + ⋯ + <i>n</i><sub><i>mn</i></sub>) × 100
+                <span class="equation-number">(4.5b)</span>
+            </div>
+        </div>
+
+        <div class="note">
+            <h2>重要概念總結</h2>
+            <table>
+                <tr>
+                    <th>概念</th>
+                    <th>說明</th>
+                </tr>
+                <tr>
+                    <td><strong>組成表示法</strong></td>
+                    <td>重量百分比（wt%）和原子百分比（at%）</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>重量百分比</strong></td>
+                    <td>特定元素的重量相對於合金總重量的比例</td>
+                </tr>
+                <tr>
+                    <td><strong>原子百分比</strong></td>
+                    <td>元素的莫耳數相對於合金中元素的總莫耳數</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>組成轉換</strong></td>
+                    <td>重量百分比與原子百分比之間的相互轉換</td>
+                </tr>
+                <tr>
+                    <td><strong>密度與原子量</strong></td>
+                    <td>可從組成數據計算合金的平均密度和原子量</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>

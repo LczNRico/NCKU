@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 4.2 空位與自間隙原子</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "新細明體", Arial, sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section-header {
+            background: linear-gradient(to right, #17a2b8, #138496);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #4a2c7f;
+            border-bottom: 3px solid #4a2c7f;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
+        .chapter-number {
+            color: #4a2c7f;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        h2 {
+            color: #2c5aa0;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        h3 {
+            color: #c41e3a;
+            font-size: 18px;
+            margin-top: 25px;
+        }
+        .keyword {
+            color: #17a2b8;
+            font-weight: bold;
+            font-style: italic;
+        }
+        .emphasis {
+            color: #2c9f2c;
+            font-weight: bold;
+        }
+        .definition {
+            background-color: #f0f8ff;
+            border-left: 4px solid #2c5aa0;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .note {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffa500;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .example {
+            background-color: #e6f3ff;
+            border: 2px solid #2c5aa0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .solution {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .formula {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fafafa;
+            border-radius: 5px;
+        }
+        .equation-number {
+            float: right;
+            color: #666;
+            font-weight: bold;
+        }
+        .main-text {
+            text-align: justify;
+            margin: 15px 0;
+        }
+        .figure-caption {
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        .image-box {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4a2c7f;
+            color: white;
+        }
+        .footnote {
+            font-size: 14px;
+            color: #666;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #ccc;
+        }
+        sup {
+            color: #c41e3a;
+        }
+        .wiley-plus {
+            color: #2c5aa0;
+            font-weight: bold;
+        }
+        .tutorial-video {
+            color: #c41e3a;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section-header">點缺陷</div>
+        
+        <div class="chapter-number">4.2</div>
+        <h1>空位與自間隙原子</h1>
+        
+        <div class="definition">
+            <p class="main-text">
+                最簡單的點缺陷是<span class="keyword">空位</span>（vacancy），或稱空位晶格位置，即通常被佔據但原子缺失的位置（圖4.1）。所有晶體固體都含有空位，事實上，不可能製造出完全沒有這些缺陷的材料。
+            </p>
+        </div>
+
+        <div class="image-box">
+            <p class="figure-caption"><strong>圖 4.1</strong> 空位和自間隙原子的二維表示</p>
+            <p class="figure-caption" style="font-size: 12px;">（改編自 W. G. Moffatt, G. W. Pearsall 和 J. Wulff, <i>The Structure and Properties of Materials</i>, Vol. I, <i>Structure</i>, John Wiley & Sons, 1964. 經 Janet M. Moffatt 許可轉載。）</p>
+        </div>
+
+        <div class="image-box">
+            <p class="figure-caption"><strong>掃描探針顯微鏡圖</strong>，顯示矽的 (111) 型表面平面上的空位。放大倍率約 7,000,000×。</p>
+            <p class="figure-caption" style="font-size: 12px;">（顯微照片由 D. Huang 提供，Stanford University）</p>
+        </div>
+
+        <h2>空位的熱力學必要性</h2>
+        
+        <p class="main-text">
+            空位存在的必要性可以用熱力學原理來解釋：本質上，空位的存在增加了晶體的熵（即無序度）。
+        </p>
+
+        <div class="note">
+            <p class="main-text">
+                給定數量材料（通常是每立方公尺）的空位平衡數量 <i>N<sub>v</sub></i> 取決於溫度並隨溫度增加，其關係式為：
+            </p>
+            
+            <div class="formula">
+                <i>N<sub>v</sub></i> = <i>N</i> exp(−<i>Q<sub>v</sub></i>/<i>kT</i>)
+                <span class="equation-number">(4.1)</span>
+            </div>
+        </div>
+
+        <p class="main-text">
+            在此表達式中，<i>N</i> 是原子位置的總數（最常見的是每立方公尺），<i>Q<sub>v</sub></i> 是形成一個空位所需的能量（J/mol 或 eV/atom），<i>T</i> 是以克耳文為單位的絕對溫度，<sup>1</sup> 而 <i>k</i> 是氣體常數或<span class="emphasis">波茲曼常數</span>（Boltzmann's constant）。<i>k</i> 的值為 1.38 × 10<sup>−23</sup> J/atom·K，或 8.62 × 10<sup>−5</sup> eV/atom·K，取決於 <i>Q<sub>v</sub></i> 的單位。<sup>2</sup> 因此，空位數量隨著溫度呈指數增加，即方程4.1中的 <i>T</i> 項增加，則 exp(−<i>Q<sub>v</sub></i>/<i>kT</i>) 項也隨之增加。對於大多數金屬，在略低於熔點溫度時，空位的分數 <i>N<sub>v</sub></i>/<i>N</i> 約為 10<sup>−4</sup> 的數量級，即每 10,000 個晶格位置中有一個是空的。隨後的討論表明，許多其他材料參數對溫度具有類似於方程4.1的指數依賴性。
+        </p>
+
+        <h2>自間隙原子</h2>
+        
+        <div class="definition">
+            <p class="main-text">
+                <span class="keyword">自間隙原子</span>（self-interstitial）是來自晶體的原子，被擠壓進入<span class="emphasis">間隙位置</span>（interstitial site）——在正常情況下不被佔據的小空隙空間。這種缺陷也如圖4.1所示。在金屬中，自間隙原子在周圍晶格中引入相對較大的扭曲，因為該原子比其所處的間隙位置大得多。因此，這種缺陷的形成不太可能發生，且它以非常小的濃度存在，遠低於空位的濃度。
+            </p>
+        </div>
+
+        <div class="note">
+            <p class="wiley-plus">WileyPLUS</p>
+            <p class="tutorial-video">教學影片：</p>
+            <p class="tutorial-video">空位平衡數量的計算</p>
+        </div>
+
+        <div class="example">
+            <h3>例題 4.1</h3>
+            <h3>在指定溫度下的空位數量計算</h3>
+            <p class="main-text">
+                計算銅在 1000°C 時每立方公尺的空位平衡數量。空位形成能為 0.9 eV/atom；銅在 1000°C 時的原子量和密度分別為 63.5 g/mol 和 8.4 g/cm³。
+            </p>
+            
+            <div class="solution">
+                <h3>解答</h3>
+                <p class="main-text">
+                    此問題可以使用方程4.1來解決；但首先需要從銅的原子量 <i>A</i><sub>Cu</sub>、其密度 <i>ρ</i> 和亞佛加厥數 <i>N</i><sub>A</sub> 確定 <i>N</i><sub>Cu</sub> 的值——即銅每立方公尺的原子位置數，根據以下公式：
+                </p>
+                
+                <div class="formula">
+                    <i>N</i><sub>Cu</sub> = <i>N</i><sub>A</sub><i>ρ</i> / <i>A</i><sub>Cu</sub>
+                    <span class="equation-number">(4.2)</span>
+                </div>
+                
+                <div class="formula">
+                    = (6.022 × 10<sup>23</sup> atoms/mol)(8.4 g/cm³)(10<sup>6</sup> cm³/m³) / 63.5 g/mol
+                </div>
+                
+                <div class="formula">
+                    = 8.0 × 10<sup>28</sup> atoms/m³
+                </div>
+                
+                <p class="main-text">
+                    因此，在 1000°C (1273 K) 時的空位數量等於：
+                </p>
+                
+                <div class="formula">
+                    <i>N<sub>v</sub></i> = <i>N</i> exp(−<i>Q<sub>v</sub></i>/<i>kT</i>)
+                </div>
+                
+                <div class="formula">
+                    = (8.0 × 10<sup>28</sup> atoms/m³) exp[−(0.9 eV) / ((8.62 × 10<sup>−5</sup> eV/K)(1273 K))]
+                </div>
+                
+                <div class="formula">
+                    = 2.2 × 10<sup>25</sup> vacancies/m³
+                </div>
+            </div>
+        </div>
+
+        <div class="footnote">
+            <p><sup>1</sup>克耳文 (K) 的絕對溫度等於 °C + 273。</p>
+            <p><sup>2</sup>每莫耳原子的波茲曼常數變成氣體常數 <i>R</i>；在這種情況下，<i>R</i> = 8.31 J/mol·K。</p>
+        </div>
+
+        <div class="note">
+            <h2>重要概念總結</h2>
+            <table>
+                <tr>
+                    <th>概念</th>
+                    <th>說明</th>
+                </tr>
+                <tr>
+                    <td><strong>空位</strong></td>
+                    <td>通常被佔據但原子缺失的晶格位置，是最簡單的點缺陷</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>空位的必要性</strong></td>
+                    <td>從熱力學角度，空位的存在增加晶體的熵（無序度）</td>
+                </tr>
+                <tr>
+                    <td><strong>溫度效應</strong></td>
+                    <td>空位數量隨溫度呈指數增加</td>
+                </tr>
+                <tr style="background-color: #f9f9f9;">
+                    <td><strong>自間隙原子</strong></td>
+                    <td>被擠壓進入間隙位置的晶體原子，濃度遠低於空位</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
