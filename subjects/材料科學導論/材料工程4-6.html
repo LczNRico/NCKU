@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 4.6 介面缺陷</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "PingFang TC", sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #5b3a8f;
+            border-bottom: 3px solid #5b3a8f;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #c41e3a;
+            margin-top: 30px;
+            font-size: 22px;
+        }
+        h3 {
+            color: #c41e3a;
+            margin-top: 25px;
+            font-size: 18px;
+        }
+        p {
+            text-align: justify;
+            margin: 15px 0;
+        }
+        .indent {
+            text-indent: 2em;
+        }
+        .figure-ref {
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .term {
+            font-style: italic;
+            font-weight: bold;
+        }
+        .highlight-box {
+            background-color: #fff8dc;
+            border-left: 4px solid #ffa500;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .concept-check {
+            background-color: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .concept-check h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+        .footnote {
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #ddd;
+            margin-top: 30px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>4.6 介面缺陷</h1>
+        
+        <p class="indent">介面缺陷是具有二維特性的邊界，通常用於分隔材料中具有不同晶體結構和/或結晶方位的區域。這些不完整性包括外表面、晶界、相界、雙晶界及堆疊層錯。</p>
+
+        <h2>外表面</h2>
+        
+        <p class="indent">最明顯的邊界之一是外表面，晶體結構沿著外表面終止。表面原子未與最多數量的最近鄰原子鍵結，因此處於比內部位置原子更高的能量狀態。這些表面原子未被滿足的鍵導致了表面能的產生，其單位為每單位面積的能量（J/m² 或 erg/cm²）。為了降低此能量，材料傾向於盡可能最小化總表面積。例如，液體會形成具有最小面積的形狀——液滴變成球形。當然，這對於機械剛性的固體是不可能的。</p>
+
+        <h2>晶界</h2>
+        
+        <p class="indent">另一種介面缺陷——晶界——在第 3.14 節中介紹過，它是分隔多晶材料中兩個具有不同結晶方位的小晶粒或晶體的邊界。晶界從原子角度以示意圖方式呈現於<span class="figure-ref">圖 4.8</span>。在晶界區域內（可能只有幾個原子距離寬），從一個晶粒的結晶方位過渡到相鄰晶粒的結晶方位時，存在一些原子錯配。</p>
+
+        <p class="indent">相鄰晶粒之間可能存在不同程度的結晶方位錯排（<span class="figure-ref">圖 4.8</span>）。當這種方位錯配很小，約為幾度時，則使用<span class="term">小角度</span>（或<span class="term">低角度</span>）<span class="term">晶界</span>一詞。這些晶界可以用位錯陣列來描述。當邊位錯以<span class="figure-ref">圖 4.9</span>的方式排列時，就形成了一種簡單的小角度晶界。這種類型稱為<span class="term">傾斜晶界</span>；錯位角 θ 也在圖中標示出來。當錯位角平行於晶界時，會產生<span class="term">扭轉晶界</span>，它可以用螺旋位錯陣列來描述。</p>
+
+        <p class="indent">沿著晶界的原子鍵結較不規則（例如，鍵角較長），因此存在類似於剛才描述的表面能的介面能或晶界能。此能量的大小是錯位程度的函數，對於高角度晶界而言較大。晶界的化學活性高於晶粒本身，這是此晶界能的結果。此外，雜質原子通常會優先偏析在這些晶界上，因為其能量狀態較高。晶界的總介面能在粗晶粒或大晶粒材料中較低，而在細晶粒材料中較高，因為前者的總晶界面積較少。晶粒在高溫下生長以降低總晶界能，此現象將在第 7.13 節中說明。</p>
+
+        <p class="indent">儘管晶界上的原子排列混亂且缺乏規則的鍵結，但多晶材料仍然非常堅固；晶界內部和跨越晶界都存在內聚力。此外，多晶材料的密度實際上與相同材料的單晶密度相同。</p>
+
+        <h2>相界</h2>
+        
+        <p class="indent"><span class="term">相界</span>存在於多相材料中（第 9.3 節），其中邊界的每一側都存在不同的相；此外，每個組成相都有其獨特的物理和/或化學特性。如我們將在後續章節中看到的，相界在決定某些多相金屬合金的機械特性方面扮演重要角色。</p>
+
+        <h2>雙晶界</h2>
+        
+        <p class="indent"><span class="term">雙晶界</span>是一種特殊類型的晶界，跨越此界面存在特定的鏡面晶格對稱性；也就是說，邊界一側的原子位於另一側原子的鏡像位置（<span class="figure-ref">圖 4.10</span>）。這些邊界之間的材料區域被適當地稱為<span class="term">雙晶</span>。雙晶是由施加機械剪切力（機械雙晶）產生的原子位移以及在變形後的退火熱處理過程中（退火雙晶）形成的。雙晶發生在特定的結晶平面上和特定的方向上，兩者都取決於晶體結構。退火雙晶通常存在於具有 FCC 晶體結構的金屬中，而機械雙晶則觀察到於 BCC 和 HCP 金屬中。機械雙晶在變形過程中的作用將在第 7.7 節中討論。退火雙晶可以在<span class="figure-ref">圖 4.14c</span>所示的多晶黃銅試樣的顯微照片中觀察到。雙晶對應於那些具有相對平直和平行側邊且與其所在晶粒的未雙晶區域具有不同視覺對比度的區域。此顯微照片中各種紋理對比的解釋將在第 4.10 節中提供。</p>
+
+        <h2>其他介面缺陷</h2>
+        
+        <p class="indent">其他可能的介面缺陷包括堆疊層錯和鐵磁性磁域壁。當 FCC 金屬中的 <i>ABCABCABC</i>... 密堆積平面堆疊順序發生中斷時，就會產生堆疊層錯（第 3.12 節）。對於鐵磁性和亞鐵磁性材料，分隔具有不同磁化方向區域的邊界稱為<span class="term">磁域壁</span>，這將在第 20.7 節中討論。</p>
+
+        <p class="indent">與本節討論的每種缺陷相關的是介面能，其大小取決於邊界類型，並且因材料而異。通常，介面能對於外表面最大，而對於磁域壁最小。</p>
+
+        <div class="concept-check">
+            <h3>概念檢驗 4.3</h3>
+            <p>單晶的表面能取決於結晶方位。這種表面能會隨著平面密度的增加而增加還是減少？為什麼？</p>
+            <p style="font-style: italic; color: #666;">[答案可在本書的所有數位版本和/或 www.wiley.com/college/callister（學生網站）中找到。]</p>
+        </div>
+
+        <div class="highlight-box">
+            <h2 style="color: #d35400; margin-top: 0;">重要材料 4.1</h2>
+            <h3 style="color: #d35400;">觸媒（與表面缺陷）</h3>
+            
+            <p><span class="term">觸媒</span>是一種能夠加速化學反應速率但本身不參與反應（即不被消耗）的物質。一種類型的觸媒以固體形式存在；氣相或液相中的反應分子被「吸附」<sup>9</sup>到觸媒表面上，在此處發生某種類型的相互作用，從而促進其化學反應性速率的增加。</p>
+
+            <p class="indent">觸媒上的吸附位點通常是與原子平面相關的表面缺陷；介面分子鍵是在缺陷位點與吸附分子種類之間形成的。<span class="figure-ref">圖 4.11</span>中示意性地表示了幾種類型的表面缺陷，包括台階、扭折、平台、空位和個別吸附原子（即吸附在表面上的原子）。</p>
+
+            <p class="indent">觸媒的一個重要用途是在汽車觸媒轉化器中，它可以減少廢氣污染物的排放，如一氧化碳（CO）、氮氧化物（NO<sub>x</sub>，其中 <i>x</i> 是可變的）和未燃燒的碳氫化合物。（請參閱本章開頭的圖表和照片。）空氣被引入汽車引擎的廢氣排放中；這種氣體混合物然後通過觸媒，觸媒在其表面吸附 CO、NO<sub>x</sub> 和 O₂ 分子。NO<sub>x</sub> 解離成 N 和 O 原子，而 O₂ 解離成其原子種類。氮原子對結合形成 N₂ 分子，而一氧化碳被氧化形成二氧化碳（CO₂）。此外，任何未燃燒的碳氫化合物也被氧化成 CO₂ 和 H₂O。</p>
+
+            <p class="indent">在此應用中用作觸媒的材料之一是（Ce<sub>0.5</sub>Zr<sub>0.5</sub>）O₂。<span class="figure-ref">圖 4.12</span>是一張高解析度穿透式電子顯微照片，顯示了此材料的幾個單晶。在此顯微照片中可以分辨出單個原子，以及<span class="figure-ref">圖 4.11</span>中所呈現的一些缺陷。這些表面缺陷充當原子和分子種類的吸附位點，如前一段所述。因此，涉及這些種類的解離、結合和氧化反應得以促進，使得廢氣流中污染物種類（CO、NO<sub>x</sub> 和未燃燒的碳氫化合物）的含量顯著降低。</p>
+        </div>
+
+        <div class="footnote">
+            <p><sup>9</sup><span class="term">吸附</span>是氣體或液體分子附著到固體表面的過程。不應與<span class="term">吸收</span>混淆，後者是分子被同化到固體或液體中的過程。</p>
+        </div>
+    </div>
+</body>
+</html>

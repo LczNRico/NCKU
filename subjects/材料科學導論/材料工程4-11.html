@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>材料科學導論 4.11 - 晶粒尺寸測定</title>
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", sans-serif;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            font-size: 28px;
+        }
+        h2 {
+            color: #e74c3c;
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+            text-indent: 2em;
+        }
+        .term {
+            color: #16a085;
+            font-weight: bold;
+        }
+        .formula {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+            font-family: "Times New Roman", serif;
+            text-align: center;
+        }
+        .example {
+            background-color: #e8f4f8;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #2980b9;
+        }
+        .example h2 {
+            color: #2980b9;
+            margin-top: 0;
+        }
+        .solution {
+            background-color: #fff;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #bdc3c7;
+        }
+        .concept-check {
+            background-color: #fef5e7;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #f39c12;
+        }
+        .concept-check h3 {
+            color: #f39c12;
+            margin-top: 0;
+        }
+        .no-indent {
+            text-indent: 0;
+        }
+        em {
+            color: #e74c3c;
+            font-style: italic;
+        }
+        .sidebar {
+            background-color: #fadbd8;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #e74c3c;
+        }
+        .sidebar h3 {
+            color: #e74c3c;
+            margin-top: 0;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        .footnote {
+            font-size: 14px;
+            color: #666;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        ol {
+            margin-left: 2em;
+        }
+        ol li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>4.11 晶粒尺寸測定</h1>
+
+        <p>在考慮多晶和單相材料的性質時，<span class="term">晶粒尺寸</span>經常需要被測定。在這方面，重要的是要認識到，對於每種材料，組成晶粒具有各種形狀和尺寸的分布。晶粒尺寸可以用平均或平均晶粒直徑來表示，並且已經開發了許多技術來測量此參數。</p>
+
+        <p>在數位時代來臨之前，晶粒尺寸測定是使用顯微照片手動進行的。然而，今天，大多數技術都是自動化的，並使用具有記錄、檢測和準確測量晶粒結構特徵（即晶粒截距數、晶界長度和晶粒面積）能力的數位影像和影像分析儀。</p>
+
+        <p>我們現在簡要描述兩種常見的晶粒尺寸測定技術：(1) <em>linear intercept</em>（線性截距法）——透過直線測試線計算晶界相交的數量；以及 (2) <em>comparison</em>（比較法）——將晶粒結構與標準化圖表進行比較，這些圖表是基於晶粒面積（即每單位面積的晶粒數）。這些技術的討論是從手動角度（使用顯微照片）進行的。</p>
+
+        <p>對於線性截距法，在顯示晶粒結構的多張顯微照片上隨機繪製線條（全部在相同的放大倍率下拍攝）。計算所有線段相交的晶界數量。讓我們將相交總數的總和表示為 <em>P</em>，將所有線條的總長度表示為 <em>L<sub>T</sub></em>。平均截距長度 <span style="text-decoration: overline;">ℓ</span> [在真實空間中（在1×——即不放大的情況下）]，作為晶粒直徑的度量，可由以下表達式確定：</p>
+
+        <div class="formula">
+            <span style="text-decoration: overline;">ℓ</span> = <em>L<sub>T</sub></em> / (<em>PM</em>) &nbsp;&nbsp;&nbsp;&nbsp; (4.16)
+        </div>
+
+        <p>其中 <em>M</em> 是放大倍率。</p>
+
+        <p>晶粒尺寸測定的比較法是由美國材料試驗學會（ASTM）<sup>11</sup>設計的。ASTM 已準備了多個標準比較圖表，所有圖表都具有不同的平均晶粒尺寸，並參考在100×放大倍率下拍攝的顯微照片。每個圖表被分配一個從1到10的數字，這稱為<span class="term">晶粒尺寸號碼</span>。將試片適當製備以顯露晶粒結構，然後拍攝顯微照片。晶粒尺寸表示為最接近顯微照片中晶粒的圖表的晶粒尺寸號碼。因此，相對簡單且方便的晶粒尺寸號碼的視覺確定是可能的。晶粒尺寸號碼在鋼的規範中被廣泛使用。</p>
+
+        <div class="sidebar">
+            <h3>ASTM 晶粒尺寸號碼與每平方英吋晶粒數之關係（在100×放大倍率下）</h3>
+        </div>
+
+        <p>將晶粒尺寸號碼分配給這些不同圖表背後的原理如下：設 <em>G</em> 代表晶粒尺寸號碼，設 <em>n</em> 為在100×放大倍率下每平方英吋的平均晶粒數。這兩個參數透過以下表達式相互關聯<sup>12</sup>：</p>
+
+        <div class="formula">
+            <em>n</em> = 2<sup><em>G</em>−1</sup> &nbsp;&nbsp;&nbsp;&nbsp; (4.17)
+        </div>
+
+        <p>對於在100×以外的放大倍率下拍攝的顯微照片，使用方程式4.17的以下修改形式是必要的：</p>
+
+        <div class="formula">
+            <em>n<sub>M</sub></em> (<em>M</em>/100)<sup>2</sup> = 2<sup><em>G</em>−1</sup> &nbsp;&nbsp;&nbsp;&nbsp; (4.18)
+        </div>
+
+        <p>在此表達式中，<em>n<sub>M</sub></em> 是在放大倍率 <em>M</em> 下每平方英吋的晶粒數。此外，包含 (<em>M</em>/100)<sup>2</sup> 項是利用了這樣的事實：放大倍率是長度參數，而面積則以長度平方的單位表示。因此，每單位面積的晶粒數隨放大倍率增加的平方而增加。</p>
+
+        <p>已經開發出將平均截距長度與 ASTM 晶粒尺寸號碼相關聯的關係式；這些如下：</p>
+
+        <div class="formula">
+            <em>G</em> = −6.6457 log <span style="text-decoration: overline;">ℓ</span> − 3.298 &nbsp;&nbsp;&nbsp;&nbsp; (對於 <span style="text-decoration: overline;">ℓ</span> 以 mm 為單位) &nbsp;&nbsp;&nbsp;&nbsp; (4.19a)<br>
+            <em>G</em> = −6.6353 log <span style="text-decoration: overline;">ℓ</span> − 12.6 &nbsp;&nbsp;&nbsp;&nbsp; (對於 <span style="text-decoration: overline;">ℓ</span> 以 in. 為單位) &nbsp;&nbsp;&nbsp;&nbsp; (4.19b)
+        </div>
+
+        <p>在這一點上，值得討論顯微照片的放大倍率表示方式（即線性放大倍率）。有時放大倍率在顯微照片圖例中以「60×」表示（例如，圖4.14c中的「60×」表示顯微照片在真實空間中代表試片的60倍放大）。<span class="term">比例尺</span>也用於表示放大倍率的程度。比例尺是一條直線（通常是水平的），可疊加在顯微照片影像上或位於顯微照片影像附近。與此尺相關聯的是一個長度，通常以微米表示；這個值代表在放大空間中對應於比例線長度的真實距離。例如，在圖4.15b中，比例尺位於顯微照片底部右角下方；其「100 μm」標記表示100 μm 與比例尺長度相關。</p>
+
+        <p class="no-indent">從比例尺計算放大倍率時，可使用以下程序：</p>
+
+        <ol>
+            <li>使用尺規以毫米為單位測量比例尺的長度。</li>
+            <li>將此長度轉換為微米 [即，將步驟(1)中的值乘以1000，因為一毫米中有1000微米]。</li>
+            <li>放大倍率 <em>M</em> 等於</li>
+        </ol>
+
+        <div class="formula">
+            <em>M</em> = 測量的比例尺長度（轉換為微米）/ 比例尺旁邊出現的數字（以微米為單位） &nbsp;&nbsp;&nbsp;&nbsp; (4.20)
+        </div>
+
+        <p>例如，對於圖4.15b，測量的比例尺長度約為10 mm，這相當於 (10 mm)(1000 μm/mm) = 10,000 μm。由於比例尺長度為100 μm，因此放大倍率等於</p>
+
+        <div class="formula">
+            <em>M</em> = 10,000 μm / 100 μm = 100×
+        </div>
+
+        <p>這是圖例中給出的值。</p>
+
+        <div class="concept-check">
+            <h3>概念檢查 4.4</h3>
+            <p class="no-indent">當晶粒尺寸減小時，晶粒尺寸號碼（方程式4.17中的 <em>G</em>）是增加還是減少？為什麼？</p>
+            <p class="no-indent" style="font-style: italic; color: #666;">[答案可在文本的所有數位版本和/或 www.wiley.com/college/callister（學生伴侶網站）中找到。]</p>
+        </div>
+
+        <div class="example">
+            <h2>範例題 4.5 使用 ASTM 和截距法進行晶粒尺寸計算</h2>
+            
+            <p class="no-indent">以下是一個示意性顯微照片，代表某假設金屬的微觀結構。</p>
+            <p class="no-indent">確定以下內容：</p>
+            <p class="no-indent"><strong>(a)</strong> 平均截距長度</p>
+            <p class="no-indent"><strong>(b)</strong> 使用方程式4.19a 的 ASTM 晶粒尺寸號碼 <em>G</em></p>
+
+            <div class="solution">
+                <h3>解答</h3>
+                
+                <p><strong>(a)</strong> 我們首先使用方程式4.20確定顯微照片的放大倍率。測量比例尺長度發現為16 mm，這等於16,000 μm；由於比例尺號碼為100 μm，因此放大倍率為</p>
+
+                <div class="formula">
+                    <em>M</em> = 16,000 μm / 100 μm = 160×
+                </div>
+
+                <p class="no-indent">以下草圖是相同的顯微照片，其上已繪製了七條直線（紅色），並已編號。</p>
+
+                <p class="no-indent">每條線的長度為50 mm，因此總線長（方程式4.16中的 <em>L<sub>T</sub></em>）為</p>
+
+                <div class="formula">
+                    (7 lines)(50 mm/line) = 350 mm
+                </div>
+
+                <p class="no-indent">接下來列出的是每條線的晶界相交數量：</p>
+
+                <table>
+                    <tr>
+                        <th>線號</th>
+                        <th>晶界相交數</th>
+                    </tr>
+                    <tr><td>1</td><td>8</td></tr>
+                    <tr><td>2</td><td>8</td></tr>
+                    <tr><td>3</td><td>8</td></tr>
+                    <tr><td>4</td><td>9</td></tr>
+                    <tr><td>5</td><td>9</td></tr>
+                    <tr><td>6</td><td>9</td></tr>
+                    <tr><td>7</td><td>7</td></tr>
+                    <tr><td><strong>總計</strong></td><td><strong>58</strong></td></tr>
+                </table>
+
+                <p class="no-indent">因此，由於 <em>L<sub>T</sub></em> = 350 mm，<em>P</em> = 58 個晶界相交，以及放大倍率 <em>M</em> = 160×，平均截距長度 <span style="text-decoration: overline;">ℓ</span>（以毫米為單位在真實空間中），根據方程式4.16，等於</p>
+
+                <div class="formula">
+                    <span style="text-decoration: overline;">ℓ</span> = <em>L<sub>T</sub></em> / (<em>PM</em>)<br><br>
+                    = 350 mm / (58 grain boundary intersections)(160×) = 0.0377 mm
+                </div>
+
+                <p><strong>(b)</strong> 透過將此值代入方程式4.19a 來確定 <em>G</em> 的值；因此，</p>
+
+                <div class="formula">
+                    <em>G</em> = −6.6457 log <span style="text-decoration: overline;">ℓ</span> − 3.298<br>
+                    = (−6.6457) log(0.0377) − 3.298<br>
+                    = 6.16
+                </div>
+            </div>
+        </div>
+
+        <div class="footnote">
+            <p><sup>11</sup>ASTM 標準 E112，「測定平均晶粒尺寸的標準試驗方法」。</p>
+            <p><sup>12</sup>請注意，在本版中，符號 <em>n</em> 取代了先前版本中的 <em>N</em>；同樣地，方程式4.17中的 <em>G</em> 用於代替先前的 <em>n</em>。方程式4.17是目前文獻中使用的標準表示法。</p>
+        </div>
+
+    </div>
+</body>
+</html>
