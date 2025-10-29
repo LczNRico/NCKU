@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCC, BCC, HCP 晶體結構比較</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Segoe UI", Arial, "Microsoft JhengHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h3 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e8eaf6;
+            transition: background-color 0.3s ease;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .subsection {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .formula {
+            background: #fff3cd;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: "Courier New", monospace;
+            margin: 10px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .highlight {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2196F3;
+        }
+        
+        .example {
+            background: #e8f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #4caf50;
+        }
+        
+        ul {
+            margin-left: 30px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        strong {
+            color: #764ba2;
+        }
+        
+        .note {
+            background: #fff3e0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparison of FCC, BCC, and HCP Crystal Structures</h1>
+        <p style="text-align: center; color: #666; margin-bottom: 30px; font-size: 1.1em;">
+            金屬晶體結構比較：面心立方、體心立方、六方最密堆積
+        </p>
+
+        <h2>Summary Table（總覽表）</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>FCC</th>
+                    <th>BCC</th>
+                    <th>HCP</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Number of Atoms per Unit Cell</strong><br>（每單位晶胞原子數）</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td><strong>Atomic Packing Factor (APF)</strong><br>（原子堆積因子）</td>
+                    <td>0.74</td>
+                    <td>0.68</td>
+                    <td>0.74</td>
+                </tr>
+                <tr>
+                    <td><strong>Coordination Number (CN)</strong><br>（配位數）</td>
+                    <td>12</td>
+                    <td>8</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td><strong>Unit Cell Length</strong><br>（單位晶胞長度）</td>
+                    <td>a = 2√2 r<br>≈ 2.828r</td>
+                    <td>a = 4r/√3<br>≈ 2.309r</td>
+                    <td>a = 2r<br>c = √(8/3) a<br>≈ 1.633a</td>
+                </tr>
+                <tr>
+                    <td><strong>Close-Packed Structure</strong><br>（最密堆積結構）</td>
+                    <td>Yes</td>
+                    <td>No</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td><strong>Atomic Contact Direction</strong><br>（原子接觸方向）</td>
+                    <td>Face diagonal<br>（面對角線）</td>
+                    <td>Body diagonal<br>（體對角線）</td>
+                    <td>Basal plane<br>（底面）</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Detailed Information（詳細資訊）</h2>
+
+        <div class="section">
+            <h3>1. FCC (Face-Centered Cubic) 面心立方</h3>
+            
+            <div class="subsection">
+                <h4>Number of Atoms per Unit Cell（每單位晶胞原子數）:</h4>
+                <ul>
+                    <li>Corner atoms: 8 × 1/8 = 1</li>
+                    <li>Face-centered atoms: 6 × 1/2 = 3</li>
+                    <li><strong>Total = 4 atoms</strong></li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>Atomic Packing Factor（原子堆積因子）:</h4>
+                <div class="formula">
+                    APF = (Volume of atoms) / (Volume of unit cell)<br>
+                    APF = (4 × 4πr³/3) / a³<br>
+                    With a = 2√2 r:<br>
+                    <strong>APF = 0.74 = 74%</strong>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h4>Coordination Number（配位數）:</h4>
+                <p>Each atom touches <strong>12 nearest neighbors</strong></p>
+            </div>
+
+            <div class="subsection">
+                <h4>Unit Cell Length（單位晶胞長度）:</h4>
+                <div class="formula">
+                    <strong>a = 2√2 r ≈ 2.828r</strong><br>
+                    <strong>r = a√2/4 ≈ 0.354a</strong>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h4>Common Examples（常見實例）:</h4>
+                <p>Al, Cu, Au, Ag, Pb, Ni, Pt, γ-Fe (above 912°C)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>2. BCC (Body-Centered Cubic) 體心立方</h3>
+            
+            <div class="subsection">
+                <h4>Number of Atoms per Unit Cell（每單位晶胞原子數）:</h4>
+                <ul>
+                    <li>Corner atoms: 8 × 1/8 = 1</li>
+                    <li>Body-centered atom: 1 × 1 = 1</li>
+                    <li><strong>Total = 2 atoms</strong></li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>Atomic Packing Factor（原子堆積因子）:</h4>
+                <div class="formula">
+                    APF = (Volume of atoms) / (Volume of unit cell)<br>
+                    APF = (2 × 4πr³/3) / a³<br>
+                    With a = 4r/√3:<br>
+                    <strong>APF = 0.68 = 68%</strong>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h4>Coordination Number（配位數）:</h4>
+                <p>Each atom touches <strong>8 nearest neighbors</strong></p>
+            </div>
+
+            <div class="subsection">
+                <h4>Unit Cell Length（單位晶胞長度）:</h4>
+                <div class="formula">
+                    <strong>a = 4r/√3 ≈ 2.309r</strong><br>
+                    <strong>r = a√3/4 ≈ 0.433a</strong>
+                </div>
+            </div>
+
+            <div class="highlight">
+                <h4>Common Examples（常見實例）:</h4>
+                <p>α-Fe (below 912°C), Cr, W, Mo, V, Na, K</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>3. HCP (Hexagonal Close-Packed) 六方最密堆積</h3>
+            
+            <div class="subsection">
+                <h4>Number of Atoms per Unit Cell（每單位晶胞原子數）:</h4>
+                <ul>
+                    <li>Corner atoms: 12 × 1/6 = 2</li>
+                    <li>Face-centered atoms (top & bottom): 2 × 1/2 = 1</li>
+                    <li>Interior atoms: 3 × 1 = 3</li>
+                    <li><strong>Total = 6 atoms</strong></li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>Atomic Packing Factor（原子堆積因子）:</h4>
+                <div class="formula">
+                    Same as FCC (both are close-packed)<br>
+                    <strong>APF = 0.74 = 74%</strong>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h4>Coordination Number（配位數）:</h4>
+                <p>Each atom touches <strong>12 nearest neighbors</strong></p>
+                <ul>
+                    <li>6 in the same layer</li>
+                    <li>3 in the layer above</li>
+                    <li>3 in the layer below</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>Unit Cell Length（單位晶胞長度）:</h4>
+                <div class="formula">
+                    <strong>a = 2r</strong><br>
+                    <strong>c = √(8/3) a ≈ 1.633a</strong> (ideal ratio)<br>
+                    <strong>r = a/2 = 0.5a</strong>
+                </div>
+            </div>
+
+            <div class="note">
+                <h4>Note:</h4>
+                <p>The ideal c/a ratio is 1.633, but actual values vary:</p>
+                <ul>
+                    <li>Ideal: c/a = 1.633</li>
+                    <li>Zn: c/a = 1.86</li>
+                    <li>Mg: c/a = 1.62</li>
+                    <li>Ti: c/a = 1.59</li>
+                    <li>Co: c/a = 1.62</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h4>Common Examples（常見實例）:</h4>
+                <p>Mg, Zn, Ti, Co, Cd, Zr, Be</p>
+            </div>
+        </div>
+
+        <h2>Key Comparisons（關鍵比較）</h2>
+
+        <div class="section">
+            <h3>Packing Efficiency（堆積效率）:</h3>
+            <ul>
+                <li><strong>Highest:</strong> FCC = HCP (0.74)</li>
+                <li><strong>Lower:</strong> BCC (0.68)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Ductility（延展性）:</h3>
+            <ul>
+                <li><strong>Most ductile（最具延展性）:</strong> FCC (12 slip systems)</li>
+                <li><strong>Moderate（中等）:</strong> BCC (48 slip systems, but higher critical resolved shear stress)</li>
+                <li><strong>Least ductile（延展性最低）:</strong> HCP (limited slip systems)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Slip Systems（滑移系統）:</h3>
+            <ul>
+                <li><strong>FCC:</strong> 12 systems {111}⟨110⟩</li>
+                <li><strong>BCC:</strong> 48 systems {110}⟨111⟩, {112}⟨111⟩, {123}⟨111⟩</li>
+                <li><strong>HCP:</strong> 3 systems {0001}⟨11̄20⟩ (basal slip)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Stacking Sequence（堆疊順序）:</h3>
+            <ul>
+                <li><strong>FCC:</strong> ABCABC...</li>
+                <li><strong>HCP:</strong> ABAB...</li>
+                <li><strong>BCC:</strong> Not close-packed</li>
+            </ul>
+        </div>
+
+        <h2>Calculation Examples（計算範例）</h2>
+
+        <div class="example">
+            <h3>Example 1: Copper (Cu) - FCC</h3>
+            <p><strong>Given:</strong> a = 0.3615 nm</p>
+            <p><strong>Find:</strong> Atomic radius</p>
+            <div class="formula">
+                <strong>Solution:</strong><br>
+                r = a√2/4 = 0.3615 × 1.414/4<br>
+                <strong>r = 0.128 nm</strong>
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>Example 2: Iron (α-Fe) - BCC</h3>
+            <p><strong>Given:</strong> r = 0.124 nm</p>
+            <p><strong>Find:</strong> Lattice parameter</p>
+            <div class="formula">
+                <strong>Solution:</strong><br>
+                a = 4r/√3 = 4 × 0.124/1.732<br>
+                <strong>a = 0.286 nm</strong>
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>Example 3: Magnesium (Mg) - HCP</h3>
+            <p><strong>Given:</strong> a = 0.321 nm, c/a = 1.624</p>
+            <p><strong>Find:</strong> c parameter</p>
+            <div class="formula">
+                <strong>Solution:</strong><br>
+                c = a × 1.624 = 0.321 × 1.624<br>
+                <strong>c = 0.521 nm</strong>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px;">
+            <p style="font-size: 1.2em; margin: 0;">
+                <strong>這份整理涵蓋了三種主要金屬晶體結構的關鍵數值</strong><br>
+                對於材料科學計算和比較非常重要！
+            </p>
+        </div>
+    </div>
+</body>
+</html>
