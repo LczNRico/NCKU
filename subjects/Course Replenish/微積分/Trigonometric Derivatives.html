@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三角函數微分整理</title>
+    
+    <!-- MathJax 3 配置 -->
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
+    
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", "Arial", sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.8;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #34495e;
+            background-color: #ecf0f1;
+            padding: 10px 15px;
+            border-left: 5px solid #3498db;
+            margin-top: 30px;
+        }
+        
+        .formula-box {
+            background-color: white;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .formula {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin: 12px 0;
+            padding: 10px;
+            background-color: #fafafa;
+            border-left: 4px solid #3498db;
+        }
+        
+        .note {
+            background-color: #fff9e6;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .proof {
+            background-color: #e8f5e9;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 0.95em;
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, #3498db, transparent);
+            margin: 40px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        
+        th, td {
+            border: 1px solid #bdc3c7;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>三角函數微分完整整理</h1>
+    
+    <h2>一、基本三角函數的微分</h2>
+    
+    <div class="formula-box">
+        <div class="formula">
+            1. <strong>正弦函數：</strong> $\frac{d}{dx}(\sin x) = \cos x$
+        </div>
+        
+        <div class="formula">
+            2. <strong>餘弦函數：</strong> $\frac{d}{dx}(\cos x) = -\sin x$
+        </div>
+        
+        <div class="formula">
+            3. <strong>正切函數：</strong> $\frac{d}{dx}(\tan x) = \sec^2 x = 1 + \tan^2 x$
+        </div>
+        
+        <div class="formula">
+            4. <strong>餘切函數：</strong> $\frac{d}{dx}(\cot x) = -\csc^2 x = -(1 + \cot^2 x)$
+        </div>
+        
+        <div class="formula">
+            5. <strong>正割函數：</strong> $\frac{d}{dx}(\sec x) = \sec x \tan x$
+        </div>
+        
+        <div class="formula">
+            6. <strong>餘割函數：</strong> $\frac{d}{dx}(\csc x) = -\csc x \cot x$
+        </div>
+    </div>
+    
+    <div class="note">
+        <strong>📌 記憶技巧：</strong>
+        <ul>
+            <li>「餘」字開頭的函數（cos, cot, csc）微分後會有<span class="highlight">負號</span></li>
+            <li>正弦和餘弦互為微分關係</li>
+            <li>sec 和 csc 的微分會帶上原函數本身</li>
+        </ul>
+    </div>
+    
+    <div class="section-divider"></div>
+    
+    <h2>二、三角函數平方的微分</h2>
+    
+    <div class="formula-box">
+        <div class="formula">
+            1. <strong>正弦平方：</strong> $\frac{d}{dx}(\sin^2 x) = 2\sin x \cos x = \sin(2x)$
+        </div>
+        
+        <div class="formula">
+            2. <strong>餘弦平方：</strong> $\frac{d}{dx}(\cos^2 x) = -2\sin x \cos x = -\sin(2x)$
+        </div>
+        
+        <div class="formula">
+            3. <strong>正切平方：</strong> $\frac{d}{dx}(\tan^2 x) = 2\tan x \sec^2 x$
+        </div>
+        
+        <div class="formula">
+            4. <strong>餘切平方：</strong> $\frac{d}{dx}(\cot^2 x) = -2\cot x \csc^2 x$
+        </div>
+        
+        <div class="formula">
+            5. <strong>正割平方：</strong> $\frac{d}{dx}(\sec^2 x) = 2\sec^2 x \tan x$
+        </div>
+        
+        <div class="formula">
+            6. <strong>餘割平方：</strong> $\frac{d}{dx}(\csc^2 x) = -2\csc^2 x \cot x$
+        </div>
+    </div>
+    
+    <div class="proof">
+        <strong>💡 推導過程（以 $\sin^2 x$ 為例）：</strong><br>
+        使用鏈鎖律：$$\frac{d}{dx}(\sin^2 x) = \frac{d}{dx}[(\sin x)^2] = 2(\sin x) \cdot \frac{d}{dx}(\sin x) = 2\sin x \cdot \cos x = \sin(2x)$$
+    </div>
+    
+    <div class="note">
+        <strong>📌 二倍角公式應用：</strong>
+        <ul>
+            <li>$\sin(2x) = 2\sin x \cos x$</li>
+            <li>因此 $\frac{d}{dx}(\sin^2 x)$ 和 $\frac{d}{dx}(\cos^2 x)$ 可用二倍角表示</li>
+        </ul>
+    </div>
+    
+    <div class="section-divider"></div>
+    
+    <h2>三、反三角函數的微分</h2>
+    
+    <div class="formula-box">
+        <div class="formula">
+            1. <strong>反正弦函數：</strong> $\frac{d}{dx}(\arcsin x) = \frac{1}{\sqrt{1-x^2}}$，定義域：$-1 < x < 1$
+        </div>
+        
+        <div class="formula">
+            2. <strong>反餘弦函數：</strong> $\frac{d}{dx}(\arccos x) = -\frac{1}{\sqrt{1-x^2}}$，定義域：$-1 < x < 1$
+        </div>
+        
+        <div class="formula">
+            3. <strong>反正切函數：</strong> $\frac{d}{dx}(\arctan x) = \frac{1}{1+x^2}$，定義域：所有實數
+        </div>
+        
+        <div class="formula">
+            4. <strong>反餘切函數：</strong> $\frac{d}{dx}(\text{arccot } x) = -\frac{1}{1+x^2}$，定義域：所有實數
+        </div>
+        
+        <div class="formula">
+            5. <strong>反正割函數：</strong> $\frac{d}{dx}(\text{arcsec } x) = \frac{1}{|x|\sqrt{x^2-1}}$，定義域：$|x| > 1$
+        </div>
+        
+        <div class="formula">
+            6. <strong>反餘割函數：</strong> $\frac{d}{dx}(\text{arccsc } x) = -\frac{1}{|x|\sqrt{x^2-1}}$，定義域：$|x| > 1$
+        </div>
+    </div>
+    
+    <div class="note">
+        <strong>📌 記憶技巧：</strong>
+        <ul>
+            <li>「反餘」函數（arccos, arccot, arccsc）的微分有<span class="highlight">負號</span></li>
+            <li>arcsin 和 arccos 的分母都是 $\sqrt{1-x^2}$</li>
+            <li>arctan 和 arccot 的分母都是 $(1+x^2)$</li>
+            <li>arcsec 和 arccsc 的分母都是 $|x|\sqrt{x^2-1}$</li>
+        </ul>
+    </div>
+    
+    <div class="section-divider"></div>
+    
+    <h2>四、快速對照表</h2>
+    
+    <h3>基本三角函數微分</h3>
+    <table>
+        <tr>
+            <th>函數 $f(x)$</th>
+            <th>微分 $f'(x)$</th>
+            <th>備註</th>
+        </tr>
+        <tr>
+            <td>$\sin x$</td>
+            <td>$\cos x$</td>
+            <td>無負號</td>
+        </tr>
+        <tr>
+            <td>$\cos x$</td>
+            <td>$-\sin x$</td>
+            <td class="highlight">有負號</td>
+        </tr>
+        <tr>
+            <td>$\tan x$</td>
+            <td>$\sec^2 x$</td>
+            <td>無負號</td>
+        </tr>
+        <tr>
+            <td>$\cot x$</td>
+            <td>$-\csc^2 x$</td>
+            <td class="highlight">有負號</td>
+        </tr>
+        <tr>
+            <td>$\sec x$</td>
+            <td>$\sec x \tan x$</td>
+            <td>無負號</td>
+        </tr>
+        <tr>
+            <td>$\csc x$</td>
+            <td>$-\csc x \cot x$</td>
+            <td class="highlight">有負號</td>
+        </tr>
+    </table>
+    
+    <h3>反三角函數微分</h3>
+    <table>
+        <tr>
+            <th>函數 $f(x)$</th>
+            <th>微分 $f'(x)$</th>
+            <th>定義域</th>
+        </tr>
+        <tr>
+            <td>$\arcsin x$</td>
+            <td>$\frac{1}{\sqrt{1-x^2}}$</td>
+            <td>$-1 < x < 1$</td>
+        </tr>
+        <tr>
+            <td>$\arccos x$</td>
+            <td>$-\frac{1}{\sqrt{1-x^2}}$</td>
+            <td>$-1 < x < 1$</td>
+        </tr>
+        <tr>
+            <td>$\arctan x$</td>
+            <td>$\frac{1}{1+x^2}$</td>
+            <td>所有實數</td>
+        </tr>
+        <tr>
+            <td>$\text{arccot } x$</td>
+            <td>$-\frac{1}{1+x^2}$</td>
+            <td>所有實數</td>
+        </tr>
+        <tr>
+            <td>$\text{arcsec } x$</td>
+            <td>$\frac{1}{|x|\sqrt{x^2-1}}$</td>
+            <td>$|x| > 1$</td>
+        </tr>
+        <tr>
+            <td>$\text{arccsc } x$</td>
+            <td>$-\frac{1}{|x|\sqrt{x^2-1}}$</td>
+            <td>$|x| > 1$</td>
+        </tr>
+    </table>
+    
+    <div class="proof">
+        <strong>💡 反三角函數微分的推導（以 $\arcsin x$ 為例）：</strong><br>
+        設 $y = \arcsin x$，則 $\sin y = x$<br>
+        兩邊對 $x$ 微分：$\cos y \cdot \frac{dy}{dx} = 1$<br>
+        因此 $\frac{dy}{dx} = \frac{1}{\cos y} = \frac{1}{\sqrt{1-\sin^2 y}} = \frac{1}{\sqrt{1-x^2}}$
+    </div>
+    
+    <div class="section-divider"></div>
+    
+    <h2>五、三角函數的泰勒展開式</h2>
+    
+    <div class="formula-box">
+        <h3 style="color: #2c3e50; margin-top: 0;">正弦函數的泰勒展開</h3>
+        <div class="formula">
+            $$\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \frac{x^9}{9!} - \cdots$$
+        </div>
+        <div class="formula">
+            $$\sin x = \sum_{n=0}^{\infty} \frac{(-1)^n \cdot x^{2n+1}}{(2n+1)!}$$
+        </div>
+        <div style="padding: 10px; margin-top: 10px; background-color: #f0f8ff; border-radius: 5px;">
+            <strong>展開前幾項：</strong><br>
+            $$\sin x = x - \frac{x^3}{6} + \frac{x^5}{120} - \frac{x^7}{5040} + \frac{x^9}{362880} - \cdots$$
+        </div>
+    </div>
+    
+    <div class="formula-box">
+        <h3 style="color: #2c3e50; margin-top: 0;">餘弦函數的泰勒展開</h3>
+        <div class="formula">
+            $$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \frac{x^8}{8!} - \cdots$$
+        </div>
+        <div class="formula">
+            $$\cos x = \sum_{n=0}^{\infty} \frac{(-1)^n \cdot x^{2n}}{(2n)!}$$
+        </div>
+        <div style="padding: 10px; margin-top: 10px; background-color: #f0f8ff; border-radius: 5px;">
+            <strong>展開前幾項：</strong><br>
+            $$\cos x = 1 - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720} + \frac{x^8}{40320} - \cdots$$
+        </div>
+    </div>
+    
+    <div class="formula-box">
+        <h3 style="color: #2c3e50; margin-top: 0;">正切函數的泰勒展開</h3>
+        <div class="formula">
+            $$\tan x = x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315} + \frac{62x^9}{2835} + \cdots$$
+        </div>
+        <div class="formula">
+            $$\tan x = \sum_{n=1}^{\infty} \frac{B_{2n} \cdot (-4)^n(1-4^n) \cdot x^{2n-1}}{(2n)!}$$
+        </div>
+        <div style="padding: 10px; margin-top: 10px; background-color: #fff3cd; border-radius: 5px;">
+            <strong>⚠️ 注意：</strong> $\tan x$ 的泰勒展開式較複雜，涉及伯努利數 $(B_{2n})$，且收斂半徑為 $|x| < \frac{\pi}{2}$
+        </div>
+        <div style="padding: 10px; margin-top: 10px; background-color: #f0f8ff; border-radius: 5px;">
+            <strong>展開前幾項（具體數值）：</strong><br>
+            $$\tan x = x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315} + \frac{62x^9}{2835} + \cdots$$
+        </div>
+    </div>
+    
+    <div class="note">
+        <strong>📌 泰勒展開式的特點：</strong>
+        <ul>
+            <li><strong>$\sin x$：</strong>只有奇數次方項，係數正負交替，收斂半徑 $R = \infty$</li>
+            <li><strong>$\cos x$：</strong>只有偶數次方項，係數正負交替，收斂半徑 $R = \infty$</li>
+            <li><strong>$\tan x$：</strong>只有奇數次方項，係數均為正，收斂半徑 $R = \frac{\pi}{2}$</li>
+            <li>$\sin x$ 和 $\cos x$ 的展開式在整個實數軸上收斂</li>
+            <li>可以通過對 $\sin x$ 微分得到 $\cos x$ 的展開式，反之亦然</li>
+        </ul>
+    </div>
+    
+    <div class="proof">
+        <strong>💡 驗證：$\sin x$ 的微分確實等於 $\cos x$</strong><br>
+        $$\sin x = x - \frac{x^3}{6} + \frac{x^5}{120} - \frac{x^7}{5040} + \cdots$$
+        $$\frac{d}{dx}(\sin x) = 1 - \frac{3x^2}{6} + \frac{5x^4}{120} - \frac{7x^6}{5040} + \cdots$$
+        $$= 1 - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720} + \cdots$$
+        $$= \cos x \quad \checkmark$$
+    </div>
+    
+    <h3>泰勒展開式對照表</h3>
+    <table>
+        <tr>
+            <th>函數</th>
+            <th>前四項展開式</th>
+            <th>收斂半徑</th>
+        </tr>
+        <tr>
+            <td>$\sin x$</td>
+            <td>$x - \frac{x^3}{6} + \frac{x^5}{120} - \frac{x^7}{5040}$</td>
+            <td>$R = \infty$</td>
+        </tr>
+        <tr>
+            <td>$\cos x$</td>
+            <td>$1 - \frac{x^2}{2} + \frac{x^4}{24} - \frac{x^6}{720}$</td>
+            <td>$R = \infty$</td>
+        </tr>
+        <tr>
+            <td>$\tan x$</td>
+            <td>$x + \frac{x^3}{3} + \frac{2x^5}{15} + \frac{17x^7}{315}$</td>
+            <td>$R = \frac{\pi}{2}$</td>
+        </tr>
+    </table>
+    
+    <div class="note">
+        <strong>📌 應用提示：</strong>
+        <ul>
+            <li>當 $x$ 接近 $0$ 時，$\sin x \approx x$，$\cos x \approx 1$，$\tan x \approx x$（線性近似）</li>
+            <li>更精確的近似：$\sin x \approx x - \frac{x^3}{6}$，$\cos x \approx 1 - \frac{x^2}{2}$，$\tan x \approx x + \frac{x^3}{3}$</li>
+            <li>這些展開式在數值計算和物理近似中非常有用</li>
+        </ul>
+    </div>
+    
+    <div class="section-divider"></div>
+    
+    <h2>六、常用恆等式提醒</h2>
+    
+    <div class="note">
+        <strong>三角恆等式（用於微分計算）：</strong>
+        <ul>
+            <li>$\sin^2 x + \cos^2 x = 1$</li>
+            <li>$1 + \tan^2 x = \sec^2 x$</li>
+            <li>$1 + \cot^2 x = \csc^2 x$</li>
+            <li>$\sin(2x) = 2\sin x \cos x$</li>
+            <li>$\cos(2x) = \cos^2 x - \sin^2 x = 2\cos^2 x - 1 = 1 - 2\sin^2 x$</li>
+        </ul>
+    </div>
+    
+    <div style="text-align: center; margin-top: 50px; padding: 20px; background-color: #ecf0f1; border-radius: 5px;">
+        <p style="color: #7f8c8d; font-size: 0.9em;">
+            本整理涵蓋微積分中所有常用的三角函數微分公式<br>
+            建議配合練習題加深理解與記憶
+        </p>
+    </div>
+    
+</body>
+</html>

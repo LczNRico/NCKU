@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四大定理條件完整整理</title>
+    
+    <!-- MathJax 3 配置 -->
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
+    
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', '微軟正黑體', Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            line-height: 1.8;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 15px;
+            text-align: center;
+            font-size: 2em;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 35px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+            font-size: 1.5em;
+        }
+        h3 {
+            color: #2c3e50;
+            margin-top: 25px;
+            font-size: 1.2em;
+        }
+        .theorem-box {
+            background-color: #e8f4f8;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .theorem-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .conditions {
+            background-color: #fff9e6;
+            border-left: 5px solid #f39c12;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .conclusion {
+            background-color: #e8f8f5;
+            border-left: 5px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .note {
+            background-color: #ffeaa7;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #fdcb6e;
+        }
+        .example {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e8f4f8;
+        }
+        ul, ol {
+            line-height: 2;
+        }
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .relationship {
+            background-color: #d4edda;
+            border: 2px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            line-height: 2.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>四大定理條件完整整理</h1>
+        
+        <h2>一、洛爾定理 (Rolle's Theorem)</h2>
+        <div class="theorem-box">
+            <div class="theorem-title">洛爾定理</div>
+            
+            <div class="conditions">
+                <strong>條件：</strong>
+                <ol>
+                    <li>$f$ 在<strong>閉區間</strong> $[a,b]$ 上<strong>連續</strong></li>
+                    <li>$f$ 在<strong>開區間</strong> $(a,b)$ 上<strong>可微</strong></li>
+                    <li>$f(a) = f(b)$ （<strong>端點函數值相等</strong>）</li>
+                </ol>
+            </div>
+            
+            <div class="conclusion">
+                <strong>結論：</strong><br>
+                存在至少一點 $c \in (a,b)$，使得 $f'(c) = 0$
+            </div>
+        </div>
+
+        <h2>二、微分均值定理 / 拉格朗日均值定理 (Mean Value Theorem)</h2>
+        <div class="theorem-box">
+            <div class="theorem-title">拉格朗日均值定理 (MVT)</div>
+            
+            <div class="conditions">
+                <strong>條件：</strong>
+                <ol>
+                    <li>$f$ 在<strong>閉區間</strong> $[a,b]$ 上<strong>連續</strong></li>
+                    <li>$f$ 在<strong>開區間</strong> $(a,b)$ 上<strong>可微</strong></li>
+                </ol>
+            </div>
+            
+            <div class="conclusion">
+                <strong>結論：</strong><br>
+                存在至少一點 $c \in (a,b)$，使得
+                $$f'(c) = \frac{f(b) - f(a)}{b - a}$$
+            </div>
+            
+            <div class="note">
+                <strong>與洛爾定理的關係：</strong>
+                <ul>
+                    <li>洛爾定理是微分均值定理的<strong>特殊情況</strong>（當 $f(a) = f(b)$ 時）</li>
+                    <li>微分均值定理<strong>不要求</strong>端點函數值相等</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>三、柯西均值定理 (Cauchy's Mean Value Theorem)</h2>
+        <div class="theorem-box">
+            <div class="theorem-title">柯西均值定理</div>
+            
+            <div class="conditions">
+                <strong>條件：</strong>
+                <ol>
+                    <li>函數 $f$ 和 $g$ 在<strong>閉區間</strong> $[a,b]$ 上<strong>連續</strong></li>
+                    <li>函數 $f$ 和 $g$ 在<strong>開區間</strong> $(a,b)$ 上<strong>可微</strong></li>
+                    <li>$g'(x) \neq 0$ 對所有 $x \in (a,b)$ 成立（<strong>$g$ 的導數不為零</strong>）</li>
+                </ol>
+            </div>
+            
+            <div class="conclusion">
+                <strong>結論：</strong><br>
+                存在至少一點 $c \in (a,b)$，使得
+                $$\frac{f'(c)}{g'(c)} = \frac{f(b) - f(a)}{g(b) - g(a)}$$
+            </div>
+            
+            <div class="note">
+                <strong>註：</strong> 條件 3 保證了 $g(b) \neq g(a)$（若相等，由洛爾定理存在點使 $g'$ 為零，矛盾）
+                <br><br>
+                <strong>與其他定理的關係：</strong>
+                <ul>
+                    <li>當 $g(x) = x$ 時，柯西均值定理退化為<strong>拉格朗日均值定理</strong></li>
+                    <li>柯西均值定理是<strong>最一般</strong>的均值定理形式</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>四、費馬定理 (Fermat's Theorem)</h2>
+        <div class="theorem-box">
+            <div class="theorem-title">費馬定理</div>
+            
+            <div class="conditions">
+                <strong>條件：</strong>
+                <ol>
+                    <li>$f$ 在點 $c$ 處<strong>可微</strong></li>
+                    <li>$f$ 在 $c$ 處取得<strong>局部極值</strong>（局部最大值或局部最小值）</li>
+                </ol>
+            </div>
+            
+            <div class="conclusion">
+                <strong>結論：</strong><br>
+                $f'(c) = 0$
+            </div>
+            
+            <div class="note">
+                <strong>局部極值的定義：</strong>
+                <ul>
+                    <li><strong>局部最大值：</strong> 存在 $\delta > 0$，使得對所有 $|x - c| < \delta$ 的 $x$，都有 $f(x) \leq f(c)$</li>
+                    <li><strong>局部最小值：</strong> 存在 $\delta > 0$，使得對所有 $|x - c| < \delta$ 的 $x$，都有 $f(x) \geq f(c)$</li>
+                </ul>
+                
+                <strong>重要註記：</strong>
+                <ul>
+                    <li>費馬定理給出了極值點的<strong>必要條件</strong>，但<strong>不是充分條件</strong></li>
+                    <li>反例：$f(x) = x^3$ 在 $x = 0$ 處 $f'(0) = 0$，但 $x = 0$ 不是極值點</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>五、四大定理條件對比表</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>定理</th>
+                    <th>閉區間連續</th>
+                    <th>開區間可微</th>
+                    <th>額外條件</th>
+                    <th>結論</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>洛爾定理</strong></td>
+                    <td>$f$ 在 $[a,b]$ 連續</td>
+                    <td>$f$ 在 $(a,b)$ 可微</td>
+                    <td>$f(a) = f(b)$</td>
+                    <td>$\exists c \in (a,b): f'(c) = 0$</td>
+                </tr>
+                <tr>
+                    <td><strong>拉格朗日均值定理</strong></td>
+                    <td>$f$ 在 $[a,b]$ 連續</td>
+                    <td>$f$ 在 $(a,b)$ 可微</td>
+                    <td>無</td>
+                    <td>$\exists c \in (a,b): f'(c) = \frac{f(b)-f(a)}{b-a}$</td>
+                </tr>
+                <tr>
+                    <td><strong>柯西均值定理</strong></td>
+                    <td>$f, g$ 在 $[a,b]$ 連續</td>
+                    <td>$f, g$ 在 $(a,b)$ 可微</td>
+                    <td>$g'(x) \neq 0$ 在 $(a,b)$</td>
+                    <td>$\exists c \in (a,b): \frac{f'(c)}{g'(c)} = \frac{f(b)-f(a)}{g(b)-g(a)}$</td>
+                </tr>
+                <tr>
+                    <td><strong>費馬定理</strong></td>
+                    <td>不要求</td>
+                    <td>$f$ 在 $c$ 可微</td>
+                    <td>$f$ 在 $c$ 取局部極值</td>
+                    <td>$f'(c) = 0$</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>六、定理之間的邏輯關係</h2>
+        <div class="relationship">
+            <strong>柯西均值定理</strong>（最一般）<br>
+            ↓ （取 $g(x) = x$）<br>
+            <strong>拉格朗日均值定理</strong><br>
+            ↓ （加上 $f(a) = f(b)$）<br>
+            <strong>洛爾定理</strong><br>
+            ↓ （證明中使用）<br>
+            <strong>費馬定理</strong>（最基礎）
+        </div>
+
+        <div class="note">
+            <strong>證明鏈：</strong>
+            <ol>
+                <li><strong>費馬定理</strong> 是最基礎的，用於證明洛爾定理</li>
+                <li><strong>洛爾定理</strong> 用於證明拉格朗日均值定理</li>
+                <li><strong>洛爾定理</strong> 也用於證明柯西均值定理</li>
+                <li><strong>柯西均值定理</strong> 包含了拉格朗日均值定理作為特例</li>
+            </ol>
+        </div>
+
+        <h2>七、條件缺失的反例</h2>
+
+        <h3>洛爾定理的反例</h3>
+        
+        <div class="example">
+            <strong>若缺少條件 1（閉區間連續）：</strong><br>
+            反例：$f(x) = \begin{cases} x & x \in [0,1) \\ 0 & x = 1 \end{cases}$
+            <ul>
+                <li>在 $(0,1)$ 可微，$f(0) = 0 = f(1)$，但在 $x=1$ 不連續</li>
+                <li>結論不成立：$f'(x) = 1 \neq 0$ 對所有 $x \in (0,1)$</li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <strong>若缺少條件 2（開區間可微）：</strong><br>
+            反例：$f(x) = |x - 0.5|$ 在 $[0,1]$
+            <ul>
+                <li>連續，$f(0) = f(1) = 0.5$</li>
+                <li>在 $x = 0.5$ 不可微</li>
+                <li>確實沒有點使 $f'(c) = 0$（左邊 $f'(x) = -1$，右邊 $f'(x) = 1$）</li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <strong>若缺少條件 3（端點相等）：</strong><br>
+            反例：$f(x) = x$ 在 $[0,1]$
+            <ul>
+                <li>連續可微，但 $f(0) = 0 \neq f(1) = 1$</li>
+                <li>$f'(x) = 1 \neq 0$ 對所有 $x$，結論不成立</li>
+                <li>（這正是拉格朗日均值定理的情況）</li>
+            </ul>
+        </div>
+
+        <h3>費馬定理的反例</h3>
+
+        <div class="example">
+            <strong>若缺少條件 1（可微）：</strong><br>
+            反例：$f(x) = |x|$ 在 $x = 0$
+            <ul>
+                <li>在 $x = 0$ 取局部最小值，但不可微</li>
+                <li>無法談論 $f'(0)$</li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <strong>若缺少條件 2（局部極值）：</strong><br>
+            反例：$f(x) = x^3$ 在 $x = 0$
+            <ul>
+                <li>$f'(0) = 0$，但 $x = 0$ 不是極值點</li>
+                <li>說明 $f'(c) = 0$ 不能推出極值</li>
+            </ul>
+        </div>
+
+        <h2>八、記憶口訣</h2>
+        <div class="note">
+            <ul style="font-size: 1.1em; line-height: 2.5;">
+                <li><strong>洛爾定理：</strong> 閉連續，開可微，<span class="highlight">端點等</span></li>
+                <li><strong>拉格朗日：</strong> 閉連續，開可微，<span class="highlight">無限制</span></li>
+                <li><strong>柯西定理：</strong> 閉連續，開可微，<span class="highlight">$g'$ 非零</span></li>
+                <li><strong>費馬定理：</strong> 點可微，<span class="highlight">有極值</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
