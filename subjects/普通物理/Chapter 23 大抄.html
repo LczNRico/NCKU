@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>第23章大抄：電容器與電容</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@700;900&display=swap');
+
+:root {
+  --bg: #0c0f1a;
+  --surface: #131826;
+  --surface2: #1a2035;
+  --border: #252d45;
+  --accent: #4d9cf0;
+  --accent2: #f0a03c;
+  --accent3: #48c97a;
+  --accent4: #d45c8a;
+  --text: #d8e0f5;
+  --text-dim: #7a87a8;
+  --box-blue: rgba(77,156,240,0.08);
+  --box-gold: rgba(240,160,60,0.08);
+  --box-green: rgba(72,201,122,0.08);
+  --box-red: rgba(212,92,138,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Serif TC', serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ── Header ── */
+header {
+  background: linear-gradient(135deg, #080d1e 0%, #112040 50%, #080d1e 100%);
+  border-bottom: 1px solid var(--accent);
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% -20%, rgba(77,156,240,0.15) 0%, transparent 65%);
+  pointer-events: none;
+}
+header .tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+header .sub {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── Layout ── */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  break-inside: avoid;
+}
+.card.full { grid-column: 1 / -1; }
+.card.blue  { border-left: 3px solid var(--accent);  background: var(--box-blue); }
+.card.gold  { border-left: 3px solid var(--accent2); background: var(--box-gold); }
+.card.green { border-left: 3px solid var(--accent3); background: var(--box-green); }
+.card.red   { border-left: 3px solid var(--accent4); background: var(--box-red); }
+
+/* ── Section headers ── */
+.card-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.card.gold  .card-title { color: var(--accent2); }
+.card.green .card-title { color: var(--accent3); }
+.card.red   .card-title { color: var(--accent4); }
+
+.section-divider {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.5rem 0 0;
+}
+.section-divider .label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+.section-divider .line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+}
+
+/* ── Typography inside cards ── */
+h3 {
+  font-size: 0.9rem;
+  color: var(--accent2);
+  margin: 0.9rem 0 0.4rem;
+  font-weight: 600;
+}
+h3:first-child { margin-top: 0; }
+
+p, li { font-size: 0.88rem; color: var(--text); margin-bottom: 0.35rem; }
+ul { padding-left: 1.2rem; }
+li { margin: 0.2rem 0; }
+
+/* ── Formula boxes ── */
+.fbox {
+  background: rgba(77,156,240,0.12);
+  border: 1px solid rgba(77,156,240,0.3);
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  margin: 0.6rem 0;
+  overflow-x: auto;
+  text-align: center;
+}
+.fbox.gold  { background: rgba(240,160,60,0.12); border-color: rgba(240,160,60,0.3); }
+.fbox.green { background: rgba(72,201,122,0.12); border-color: rgba(72,201,122,0.3); }
+.fbox.red   { background: rgba(212,92,138,0.12); border-color: rgba(212,92,138,0.3); }
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin: 0.6rem 0;
+}
+th {
+  background: var(--surface2);
+  color: var(--accent);
+  padding: 0.45rem 0.7rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+td {
+  padding: 0.4rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* ── Note/Tip boxes ── */
+.note {
+  border-left: 3px solid var(--accent4);
+  background: var(--box-red);
+  border-radius: 0 5px 5px 0;
+  padding: 0.5rem 0.8rem;
+  margin: 0.6rem 0;
+  font-size: 0.83rem;
+}
+.tip {
+  border-left: 3px solid var(--accent3);
+  background: var(--box-green);
+  border-radius: 0 5px 5px 0;
+  padding: 0.5rem 0.8rem;
+  margin: 0.6rem 0;
+  font-size: 0.83rem;
+}
+.note strong { color: var(--accent4); }
+.tip strong { color: var(--accent3); }
+
+/* ── Code ── */
+pre {
+  background: #07090f;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.7rem 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent3);
+  overflow-x: auto;
+  line-height: 1.65;
+  margin: 0.5rem 0;
+}
+
+/* ── Comparison row ── */
+.cmp-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin: 0.6rem 0;
+}
+.cmp-cell {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.83rem;
+}
+.cmp-cell .cmp-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.08em;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  main { grid-template-columns: 1fr; padding: 1rem; }
+  .card.full, .section-divider { grid-column: 1; }
+  .cmp-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">Principles of Physics · Chapter 23 · 大抄</div>
+  <h1>電容器與電容</h1>
+  <div class="sub">Capacitors and Capacitance · 完整公式速查</div>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════ -->
+<!-- 23.1 定義 -->
+<!-- ══════════════════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">23.1</span>
+  <span class="label">電容器與電容</span>
+  <div class="line"></div>
+</div>
+
+<div class="card blue">
+  <div class="card-title">電容定義</div>
+  <div class="fbox">$$C = \frac{Q}{\Delta V}$$</div>
+  <ul>
+    <li>$Q$：任一板電荷量的大小（正值）</li>
+    <li>$\Delta V$：兩板電位差的大小（正值）</li>
+    <li>$C$ 由幾何形狀決定，與 $Q$、$\Delta V$ 無關</li>
+  </ul>
+  <h3>單位</h3>
+  <div class="fbox">$$1\ \text{F} = 1\ \text{C/V}$$</div>
+  <table>
+    <tr><th>單位</th><th>換算</th></tr>
+    <tr><td>微法拉 μF</td><td>$10^{-6}\ \text{F}$</td></tr>
+    <tr><td>奈法拉 nF</td><td>$10^{-9}\ \text{F}$</td></tr>
+    <tr><td>皮法拉 pF</td><td>$10^{-12}\ \text{F}$</td></tr>
+  </table>
+</div>
+
+<div class="card gold">
+  <div class="card-title">通用推導策略</div>
+  <pre>假設電荷 Q
+    ↓ 高斯定律
+求電場 E
+    ↓ 積分
+求電位差 ΔV
+    ↓ C = Q/ΔV
+求電容 C</pre>
+  <div class="tip">
+    <strong>✓ 關鍵：</strong>電容只與導體的幾何形狀（大小、形狀、間距）有關，與充了多少電荷無關。
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ -->
+<!-- 23.2 計算電容 -->
+<!-- ══════════════════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">23.2</span>
+  <span class="label">計算電容</span>
+  <div class="line"></div>
+</div>
+
+<!-- 平行板 -->
+<div class="card blue">
+  <div class="card-title">平行板電容器</div>
+  <p>面積 $A$，板間距 $d$，面電荷密度 $\sigma = Q/A$</p>
+  <h3>推導步驟</h3>
+  <ul>
+    <li>電場（高斯定律）：$E = \sigma/\varepsilon_0 = Q/\varepsilon_0 A$</li>
+    <li>電位差：$\Delta V = Ed = Qd/\varepsilon_0 A$</li>
+    <li>代入 $C = Q/\Delta V$</li>
+  </ul>
+  <div class="fbox gold">$$\boxed{C = \frac{\varepsilon_0 A}{d}}$$</div>
+  <div class="tip"><strong>✓</strong> $A\uparrow$ 或 $d\downarrow$ → $C\uparrow$</div>
+</div>
+
+<!-- 圓柱形 -->
+<div class="card green">
+  <div class="card-title">圓柱形電容器</div>
+  <p>內半徑 $a$，外半徑 $b$，長度 $\ell$，$\lambda = Q/\ell$</p>
+  <h3>推導步驟</h3>
+  <ul>
+    <li>高斯面：同軸圓柱，半徑 $r$（$a &lt; r &lt; b$）</li>
+    <li>電場：$E_r = \lambda/2\pi\varepsilon_0 r = 2k\lambda/r$</li>
+    <li>電位差：$\Delta V = 2k\lambda\ln(b/a)$</li>
+  </ul>
+  <div class="fbox gold">$$\boxed{C = \frac{\ell}{2k\ln(b/a)} = \frac{2\pi\varepsilon_0\,\ell}{\ln(b/a)}}$$</div>
+  <p>單位長度電容：$C/\ell = 2\pi\varepsilon_0/\ln(b/a)$</p>
+</div>
+
+<!-- 球形 -->
+<div class="card gold">
+  <div class="card-title">球形電容器</div>
+  <p>內球半徑 $a$，外殼半徑 $b$</p>
+  <h3>推導步驟</h3>
+  <ul>
+    <li>電場（$a &lt; r &lt; b$）：$E_r = kQ/r^2$</li>
+    <li>電位差：$\Delta V = kQ(b-a)/ab$</li>
+  </ul>
+  <div class="fbox gold">$$\boxed{C = \frac{ab}{k(b-a)} = 4\pi\varepsilon_0\frac{ab}{b-a}}$$</div>
+</div>
+
+<!-- 孤立球 -->
+<div class="card red">
+  <div class="card-title">孤立球體</div>
+  <p>令球形電容器外殼 $b\to\infty$，$a\to R$：</p>
+  <div class="fbox gold">$$\boxed{C = \frac{R}{k} = 4\pi\varepsilon_0 R}$$</div>
+  <div class="note"><strong>⚠</strong> 任何單一導體都有電容！</div>
+</div>
+
+<!-- 四種幾何總覽 -->
+<div class="card full">
+  <div class="card-title">四種幾何形狀電容公式總覽</div>
+  <table>
+    <tr><th>形狀</th><th>公式</th><th>幾何參數</th><th>$C\uparrow$ 條件</th></tr>
+    <tr><td>平行板</td><td>$C = \varepsilon_0 A/d$</td><td>面積 $A$，間距 $d$</td><td>$A\uparrow$，$d\downarrow$</td></tr>
+    <tr><td>圓柱形</td><td>$C = 2\pi\varepsilon_0\ell/\ln(b/a)$</td><td>長度 $\ell$，半徑比 $b/a$</td><td>$\ell\uparrow$，$b/a\downarrow$</td></tr>
+    <tr><td>球形</td><td>$C = 4\pi\varepsilon_0 ab/(b-a)$</td><td>內外半徑 $a$，$b$</td><td>$a,b\uparrow$，$(b-a)\downarrow$</td></tr>
+    <tr><td>孤立球</td><td>$C = 4\pi\varepsilon_0 R$</td><td>球半徑 $R$</td><td>$R\uparrow$</td></tr>
+  </table>
+  <div class="tip"><strong>✓ 規律：</strong>所有公式都是 $\varepsilon_0 \times$ 長度量。圓柱/球形在間距極小時退化為平行板公式。</div>
+</div>
+
+<!-- ══════════════════════════════════ -->
+<!-- 23.3 介電質 -->
+<!-- ══════════════════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">23.3</span>
+  <span class="label">含介電質的電容器</span>
+  <div class="line"></div>
+</div>
+
+<!-- 基本效應 -->
+<div class="card blue">
+  <div class="card-title">介電質的基本效應</div>
+  <p>插入介電常數 $\kappa > 1$ 的介電質後：</p>
+  <div class="fbox gold">$$\boxed{C = \kappa C_0}$$</div>
+  <div class="cmp-row">
+    <div class="cmp-cell">
+      <div class="cmp-label">固定電荷（斷開電池）</div>
+      $Q$ 不變，$\Delta V$ 減小：
+      $$\Delta V = \frac{\Delta V_0}{\kappa}$$
+      $$\vec{E} = \frac{\vec{E}_0}{\kappa}$$
+    </div>
+    <div class="cmp-cell">
+      <div class="cmp-label">固定電位差（保持電池）</div>
+      $\Delta V$ 不變，$Q$ 增大：
+      $$Q = \kappa Q_0$$
+      多餘電荷由電池補充
+    </div>
+  </div>
+</div>
+
+<!-- 感應電荷 -->
+<div class="card gold">
+  <div class="card-title">感應電荷密度</div>
+  <table>
+    <tr><th></th><th>$\sigma_0$（極板）</th><th>$\sigma_i$（介電質表面）</th></tr>
+    <tr><td>位置</td><td>金屬極板</td><td>介電質兩側表面</td></tr>
+    <tr><td>性質</td><td>自由電荷</td><td>束縛電荷（極化產生）</td></tr>
+    <tr><td>來源</td><td>電池充電</td><td>分子極化重排</td></tr>
+    <tr><td>可移動</td><td>可以</td><td>不行</td></tr>
+  </table>
+  <h3>感應電荷密度公式</h3>
+  <div class="fbox gold">$$\boxed{\sigma_i = \frac{\kappa-1}{\kappa}\sigma_0} \quad (\sigma_i < \sigma_0)$$</div>
+  <h3>合電場</h3>
+  <div class="fbox">$$E = E_0 - E_i \quad \Rightarrow \quad E = \frac{E_0}{\kappa}$$</div>
+  <div class="note"><strong>⚠</strong> $\sigma_i$ 產生的感應電場方向與 $E_0$ 相反，使合電場減弱。</div>
+</div>
+
+<!-- 含介電質平行板 -->
+<div class="card green">
+  <div class="card-title">含介電質的平行板電容器</div>
+  <div class="fbox gold">$$C = \kappa\frac{\varepsilon_0 A}{d} = \frac{\varepsilon A}{d}$$</div>
+  <p>其中 $\varepsilon = \kappa\varepsilon_0$ 為介電質的電容率（permittivity）。</p>
+  <h3>部分填入時（厚度 $a &lt; d$）</h3>
+  <div class="fbox">$$\Delta V = E_0(d-a) + Ea = E_0\left[(d-a)+\frac{a}{\kappa}\right]$$</div>
+  <div class="fbox gold">$$C = \frac{\varepsilon_0 A}{(d-a)+a/\kappa}$$</div>
+  <div class="note"><strong>⚠</strong> 未填滿時，不能用 $C = \kappa C_0$！</div>
+</div>
+
+<!-- 介電強度 -->
+<div class="card red">
+  <div class="card-title">介電強度與常見材料</div>
+  <table>
+    <tr><th>材料</th><th>$\kappa$</th><th>$E_{\max}\ (10^6\ \text{V/m})$</th></tr>
+    <tr><td>真空</td><td>1.000</td><td>—</td></tr>
+    <tr><td>空氣</td><td>1.0006</td><td>3</td></tr>
+    <tr><td>鐵氟龍</td><td>2.1</td><td>60</td></tr>
+    <tr><td>Pyrex 玻璃</td><td>5.6</td><td>14</td></tr>
+    <tr><td>蒸餾水</td><td>80</td><td>—</td></tr>
+  </table>
+  <div class="note"><strong>⚠ 介電崩潰：</strong>電場超過 $E_{\max}$ 時介電質變導體，電容器短路。</div>
+</div>
+
+<!-- ══════════════════════════════════ -->
+<!-- 23.4 串並聯 -->
+<!-- ══════════════════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">23.4</span>
+  <span class="label">電容器的並聯與串聯</span>
+  <div class="line"></div>
+</div>
+
+<!-- 並聯 -->
+<div class="card blue">
+  <div class="card-title">並聯（Parallel）</div>
+  <p>各電容器兩端電壓相同，電荷各自儲存：</p>
+  <div class="fbox">$$\Delta V_1 = \Delta V_2 = \cdots = \Delta V$$</div>
+  <div class="fbox">$$Q = Q_1 + Q_2 + \cdots$$</div>
+  <div class="fbox gold">$$\boxed{C_{eq} = C_1 + C_2 + \cdots + C_n}$$</div>
+  <div class="tip"><strong>✓</strong> $C_{eq} >$ 任一個別電容</div>
+  <div class="tip"><strong>✓ 直覺：</strong>等效面積增大，$C\uparrow$</div>
+  <div class="note"><strong>⚠ 類比：</strong>並聯電容 ↔ 串聯電阻（直接相加）</div>
+</div>
+
+<!-- 串聯 -->
+<div class="card gold">
+  <div class="card-title">串聯（Series）</div>
+  <p>各電容器電荷相同，電壓各自分擔：</p>
+  <div class="fbox">$$Q_1 = Q_2 = \cdots = Q$$</div>
+  <div class="fbox">$$\Delta V = \Delta V_1 + \Delta V_2 + \cdots$$</div>
+  <div class="fbox gold">$$\boxed{\frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots + \frac{1}{C_n}}$$</div>
+  <div class="tip"><strong>✓</strong> $C_{eq} <$ 任一個別電容</div>
+  <div class="tip"><strong>✓ 直覺：</strong>等效間距增大，$C\downarrow$</div>
+  <div class="note"><strong>⚠ 類比：</strong>串聯電容 ↔ 並聯電阻（取倒數相加）</div>
+</div>
+
+<!-- 串並聯對比 -->
+<div class="card full">
+  <div class="card-title">並聯 vs 串聯 完整對照</div>
+  <table>
+    <tr><th></th><th>並聯</th><th>串聯</th></tr>
+    <tr><td>電壓</td><td>各電容相同 $\Delta V$</td><td>不同，相加等於總電壓</td></tr>
+    <tr><td>電荷</td><td>不同，相加等於總電荷</td><td>各電容相同 $Q$</td></tr>
+    <tr><td>等效公式</td><td>$C_{eq} = \sum C_i$</td><td>$1/C_{eq} = \sum 1/C_i$</td></tr>
+    <tr><td>$C_{eq}$ 大小</td><td>大於任一個別電容</td><td>小於任一個別電容</td></tr>
+    <tr><td>電壓分配</td><td>各電容電壓相同</td><td>$\Delta V_i = Q/C_i$，$C$ 小的電壓大</td></tr>
+    <tr><td>電阻類比</td><td>類似電阻串聯</td><td>類似電阻並聯</td></tr>
+  </table>
+  <h3>混合組合解題流程</h3>
+  <pre>① 辨識並聯組（電壓相同的電容）→ 合併：Ceq = ΣCi
+② 辨識串聯組（電荷相同的電容）→ 合併：1/Ceq = Σ1/Ci
+③ 從最終 Ceq 求總電荷 Q = Ceq·ΔV
+④ 逐層還原：串聯各段 Q 相同，並聯各段 ΔV 相同</pre>
+</div>
+
+<!-- ══════════════════════════════════ -->
+<!-- 23.5 儲能 -->
+<!-- ══════════════════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">23.5</span>
+  <span class="label">帶電電容器的儲能</span>
+  <div class="line"></div>
+</div>
+
+<!-- 儲能公式 -->
+<div class="card blue">
+  <div class="card-title">電容器儲存的電位能</div>
+  <h3>推導思路</h3>
+  <p>充電過程中，電荷 $q$ 已在電容器上，再送入 $dq$ 所需微小功：</p>
+  <div class="fbox">$$dW = \frac{q}{C}\,dq$$</div>
+  <p>對 $0 \to Q$ 積分：</p>
+  <div class="fbox gold">
+    $$\boxed{U = \frac{Q^2}{2C} = \frac{1}{2}C(\Delta V)^2 = \frac{1}{2}Q\Delta V}$$
+  </div>
+  <div class="tip"><strong>✓ 三種形式等價，</strong>適用於任何形狀的電容器。</div>
+  <h3>常用選擇</h3>
+  <ul>
+    <li>已知 $Q$、$C$ → 用 $Q^2/2C$</li>
+    <li>已知 $\Delta V$、$C$ → 用 $\frac{1}{2}C(\Delta V)^2$</li>
+    <li>已知 $Q$、$\Delta V$ → 用 $\frac{1}{2}Q\Delta V$</li>
+  </ul>
+</div>
+
+<!-- 能量密度 -->
+<div class="card gold">
+  <div class="card-title">電場能量密度</div>
+  <p>電場能量密度（單位體積的儲能）：</p>
+  <div class="fbox gold">$$\boxed{u_E = \frac{1}{2}\kappa\varepsilon_0 E^2 = \frac{1}{2}\varepsilon E^2}$$</div>
+  <p>真空中（$\kappa = 1$）：$u_E = \frac{1}{2}\varepsilon_0 E^2$</p>
+  <div class="tip"><strong>✓ 普遍性：</strong>此公式適用於任何電場存在的地方，不只限於電容器。</div>
+  <h3>推導（平行板）</h3>
+  <div class="fbox">$$u_E = \frac{U}{Ad} = \frac{C(\Delta V)^2}{2Ad} = \frac{\kappa\varepsilon_0 A}{d}\cdot\frac{(Ed)^2}{2Ad} = \frac{1}{2}\kappa\varepsilon_0 E^2$$</div>
+</div>
+
+<!-- 能量守恆注意 -->
+<div class="card red full">
+  <div class="card-title">⚠ 能量守恆的常見陷阱</div>
+  <p>充好電的電容器 $C_1$ 斷開電池後，接上未充電的電容器 $C_2$，電荷重新分配：</p>
+  <div class="fbox">$$\Delta V_f = \frac{C_1}{C_1+C_2}\Delta V_i \qquad Q_{1f} = C_1\Delta V_f \qquad Q_{2f} = C_2\Delta V_f$$</div>
+  <div class="note">
+    <strong>⚠ 重要：</strong>重新分配後總儲能 $U_f < U_i$，能量減少了！<br>
+    消失的能量 = 導線上的熱能 + 電磁輻射，<strong>不違反能量守恆</strong>。
+  </div>
+</div>
+
+<!-- ══════════════════════════════════ -->
+<!-- 全章公式速查 -->
+<!-- ══════════════════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">總覽</span>
+  <span class="label">全章公式速查表</span>
+  <div class="line"></div>
+</div>
+
+<div class="card full blue">
+  <div class="card-title">所有重要公式一覽</div>
+  <table>
+    <tr><th>類別</th><th>公式</th><th>條件／備注</th></tr>
+    <tr><td>電容定義</td><td>$C = Q/\Delta V$</td><td>$Q$、$\Delta V$ 取正值</td></tr>
+    <tr><td>平行板</td><td>$C = \varepsilon_0 A/d$</td><td>均勻電場，忽略邊緣效應</td></tr>
+    <tr><td>圓柱形</td><td>$C = 2\pi\varepsilon_0\ell/\ln(b/a)$</td><td>$\ell \gg b$</td></tr>
+    <tr><td>球形</td><td>$C = 4\pi\varepsilon_0 ab/(b-a)$</td><td>同心球殼</td></tr>
+    <tr><td>孤立球</td><td>$C = 4\pi\varepsilon_0 R$</td><td>$b\to\infty$</td></tr>
+    <tr><td>介電質效應</td><td>$C = \kappa C_0$</td><td>介電質完全填滿</td></tr>
+    <tr><td>含介電質平行板</td><td>$C = \kappa\varepsilon_0 A/d = \varepsilon A/d$</td><td>$\varepsilon = \kappa\varepsilon_0$</td></tr>
+    <tr><td>固定電荷插入介電質</td><td>$\Delta V = \Delta V_0/\kappa$，$E = E_0/\kappa$</td><td>$Q$ 不變</td></tr>
+    <tr><td>固定電壓插入介電質</td><td>$Q = \kappa Q_0$</td><td>$\Delta V$ 不變</td></tr>
+    <tr><td>感應電荷密度</td><td>$\sigma_i = (\kappa-1)/\kappa\cdot\sigma_0$</td><td>$\sigma_i < \sigma_0$</td></tr>
+    <tr><td>合電場</td><td>$E = E_0 - E_i$</td><td>感應電場方向相反</td></tr>
+    <tr><td>部分填入介電質</td><td>$C = \varepsilon_0 A/[(d-a)+a/\kappa]$</td><td>厚度 $a < d$</td></tr>
+    <tr><td>並聯</td><td>$C_{eq} = C_1 + C_2 + \cdots$</td><td>$\Delta V$ 相同</td></tr>
+    <tr><td>串聯</td><td>$1/C_{eq} = 1/C_1 + 1/C_2 + \cdots$</td><td>$Q$ 相同</td></tr>
+    <tr><td>儲能（三種形式）</td><td>$U = Q^2/2C = \frac{1}{2}C(\Delta V)^2 = \frac{1}{2}Q\Delta V$</td><td>任何電容器均適用</td></tr>
+    <tr><td>電場能量密度</td><td>$u_E = \frac{1}{2}\kappa\varepsilon_0 E^2$</td><td>$\kappa=1$ 為真空</td></tr>
+    <tr><td>電荷重分配電壓</td><td>$\Delta V_f = C_1\Delta V_i/(C_1+C_2)$</td><td>斷電後連接uncharged $C_2$</td></tr>
+  </table>
+</div>
+
+<!-- 常數 -->
+<div class="card green">
+  <div class="card-title">常用常數</div>
+  <table>
+    <tr><th>符號</th><th>數值</th></tr>
+    <tr><td>$\varepsilon_0$</td><td>$8.85\times10^{-12}\ \text{F/m}$</td></tr>
+    <tr><td>$k = 1/4\pi\varepsilon_0$</td><td>$9\times10^9\ \text{N·m}^2/\text{C}^2$</td></tr>
+    <tr><td>$4\pi\varepsilon_0$</td><td>$1/k \approx 1.11\times10^{-10}\ \text{F/m}$</td></tr>
+  </table>
+</div>
+
+<!-- 易錯點 -->
+<div class="card red">
+  <div class="card-title">⚠ 常見易錯點</div>
+  <ul>
+    <li>$C = \kappa C_0$ 只在介電質<strong>完全填滿</strong>時成立</li>
+    <li>串聯電容：$C$ 小的分擔電壓<strong>大</strong>（$\Delta V \propto 1/C$）</li>
+    <li>並聯電容：$C$ 大的儲存電荷<strong>多</strong>（$Q \propto C$）</li>
+    <li>電容和電阻的串並聯公式<strong>剛好相反</strong></li>
+    <li>電荷重分配後能量<strong>一定減少</strong>，不違反守恆</li>
+    <li>$\sigma_0$ 在極板，$\sigma_i$ 在介電質表面，兩者完全不同</li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  Principles of Physics · Chapter 23 · Capacitors and Capacitance<br>
+  大學物理大抄 · 以繁體中文撰寫
+</footer>
+
+</body>
+</html>

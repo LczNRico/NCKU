@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>第22章大抄：電位</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre'] }
+};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:wght@700;900&display=swap');
+
+:root {
+  --bg: #0c0f1a;
+  --surface: #131826;
+  --surface2: #1a2035;
+  --border: #252d45;
+  --accent: #4d9cf0;
+  --accent2: #f0a03c;
+  --accent3: #48c97a;
+  --accent4: #d45c8a;
+  --text: #d8e0f5;
+  --text-dim: #7a87a8;
+  --box-blue:  rgba(77,156,240,0.08);
+  --box-gold:  rgba(240,160,60,0.08);
+  --box-green: rgba(72,201,122,0.08);
+  --box-red:   rgba(212,92,138,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Serif TC', serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+header {
+  background: linear-gradient(135deg, #08101e 0%, #0e2242 50%, #08101e 100%);
+  border-bottom: 1px solid var(--accent2);
+  padding: 2.5rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% -20%, rgba(240,160,60,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+header .tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--accent2);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+header .sub {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.2rem 1.4rem;
+  break-inside: avoid;
+}
+.card.full  { grid-column: 1 / -1; }
+.card.blue  { border-left: 3px solid var(--accent);  background: var(--box-blue); }
+.card.gold  { border-left: 3px solid var(--accent2); background: var(--box-gold); }
+.card.green { border-left: 3px solid var(--accent3); background: var(--box-green); }
+.card.red   { border-left: 3px solid var(--accent4); background: var(--box-red); }
+
+.card-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.card.gold  .card-title { color: var(--accent2); }
+.card.green .card-title { color: var(--accent3); }
+.card.red   .card-title { color: var(--accent4); }
+
+.section-divider {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.5rem 0 0;
+}
+.section-divider .label {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+.section-divider .line { flex: 1; height: 1px; background: var(--border); }
+.section-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  background: var(--accent2);
+  color: #fff;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+}
+
+h3 {
+  font-size: 0.9rem;
+  color: var(--accent2);
+  margin: 0.9rem 0 0.4rem;
+  font-weight: 600;
+}
+h3:first-child { margin-top: 0; }
+
+p, li { font-size: 0.88rem; color: var(--text); margin-bottom: 0.35rem; }
+ul { padding-left: 1.2rem; }
+li { margin: 0.2rem 0; }
+
+.fbox {
+  background: rgba(77,156,240,0.12);
+  border: 1px solid rgba(77,156,240,0.3);
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  margin: 0.6rem 0;
+  overflow-x: auto;
+  text-align: center;
+}
+.fbox.gold  { background: rgba(240,160,60,0.12);  border-color: rgba(240,160,60,0.3); }
+.fbox.green { background: rgba(72,201,122,0.12);  border-color: rgba(72,201,122,0.3); }
+.fbox.red   { background: rgba(212,92,138,0.12);  border-color: rgba(212,92,138,0.3); }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin: 0.6rem 0;
+}
+th {
+  background: var(--surface2);
+  color: var(--accent);
+  padding: 0.45rem 0.7rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+td {
+  padding: 0.4rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+
+.note {
+  border-left: 3px solid var(--accent4);
+  background: var(--box-red);
+  border-radius: 0 5px 5px 0;
+  padding: 0.5rem 0.8rem;
+  margin: 0.6rem 0;
+  font-size: 0.83rem;
+}
+.tip {
+  border-left: 3px solid var(--accent3);
+  background: var(--box-green);
+  border-radius: 0 5px 5px 0;
+  padding: 0.5rem 0.8rem;
+  margin: 0.6rem 0;
+  font-size: 0.83rem;
+}
+.note strong { color: var(--accent4); }
+.tip  strong { color: var(--accent3); }
+
+pre {
+  background: #07090f;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.7rem 0.9rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent3);
+  overflow-x: auto;
+  line-height: 1.65;
+  margin: 0.5rem 0;
+}
+
+.cmp-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin: 0.6rem 0;
+}
+.cmp-cell {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.83rem;
+}
+.cmp-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--text-dim);
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.08em;
+}
+
+.deriv {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.9rem 1.1rem;
+  margin: 0.7rem 0;
+}
+.deriv-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed var(--border);
+}
+.step {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+  align-items: flex-start;
+  font-size: 0.85rem;
+}
+.sn {
+  background: var(--border);
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  main { grid-template-columns: 1fr; padding: 1rem; }
+  .card.full, .section-divider { grid-column: 1; }
+  .cmp-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="tag">Principles of Physics · Chapter 22 · 大抄</div>
+  <h1>電位（Electric Potential）</h1>
+  <div class="sub">Electric Potential · 完整公式速查</div>
+</header>
+
+<main>
+
+<!-- ══════════════════════ 22.1 電位能 ══════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">22.1</span>
+  <span class="label">電位能</span>
+  <div class="line"></div>
+</div>
+
+<div class="card blue">
+  <div class="card-title">電位能定義</div>
+  <p>測試電荷 $q$ 在電場 $\vec{E}$ 中移動，電場做功：</p>
+  <div class="fbox">$$dW = \vec{F}\cdot d\vec{s} = q\vec{E}\cdot d\vec{s}$$</div>
+  <p>對應電位能變化（$dU = -dW$）：</p>
+  <div class="fbox gold">$$\boxed{\Delta U = U_B - U_A = -W_{AB} = -q\int_A^B\vec{E}\cdot d\vec{s}}$$</div>
+  <p>以無窮遠為參考點（$U_\infty = 0$）：</p>
+  <div class="fbox">$$U_B = -q\int_\infty^B \vec{E}\cdot d\vec{s}$$</div>
+  <div class="tip"><strong>✓ 路徑無關：</strong>電力為保守力，積分結果只取決於起終點。</div>
+</div>
+
+<div class="card gold">
+  <div class="card-title">功與能量關係</div>
+  <table>
+    <tr><th>情況</th><th>結論</th></tr>
+    <tr><td>電場做正功</td><td>$\Delta U < 0$（位能下降）</td></tr>
+    <tr><td>電場做負功</td><td>$\Delta U > 0$（位能上升）</td></tr>
+    <tr><td>正電荷順電場移動</td><td>位能降，動能增</td></tr>
+    <tr><td>負電荷逆電場移動</td><td>位能降，動能增</td></tr>
+  </table>
+  <div class="note"><strong>⚠</strong> 電位能屬於電荷與電場的<strong>系統</strong>，非電荷單獨擁有。</div>
+</div>
+
+<!-- ══════════════════════ 22.2 電位 ══════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">22.2</span>
+  <span class="label">電位與電位差</span>
+  <div class="line"></div>
+</div>
+
+<div class="card blue">
+  <div class="card-title">電位定義</div>
+  <div class="fbox gold">$$\boxed{V = \frac{U}{q}}$$</div>
+  <div class="fbox gold">$$\boxed{\Delta V = V_B - V_A = -\int_A^B\vec{E}\cdot d\vec{s}}$$</div>
+  <ul>
+    <li>電位是<strong>純量</strong>，疊加時代數相加</li>
+    <li>電場線指向電位<strong>降低</strong>的方向</li>
+    <li>等位面與電場線永遠<strong>垂直</strong></li>
+  </ul>
+</div>
+
+<div class="card gold">
+  <div class="card-title">單位與換算</div>
+  <table>
+    <tr><th>量</th><th>單位</th><th>換算</th></tr>
+    <tr><td>電位 $V$</td><td>伏特（V）</td><td>$1\ \text{V} = 1\ \text{J/C}$</td></tr>
+    <tr><td>電場 $E$</td><td>V/m = N/C</td><td>$1\ \text{N/C} = 1\ \text{V/m}$</td></tr>
+    <tr><td>能量（微觀）</td><td>電子伏特 eV</td><td>$1\ \text{eV} = 1.6\times10^{-19}\ \text{J}$</td></tr>
+  </table>
+  <h3>外力做功</h3>
+  <div class="fbox">$$W_{AB(\text{app})} = q\Delta V = q(V_B - V_A)$$</div>
+  <div class="tip"><strong>✓ 電子伏特：</strong>$1\ \text{eV} = (e)(1\ \text{V}) = 1.6\times10^{-19}\ \text{J}$</div>
+</div>
+
+<!-- ══════════════════════ 22.3 均勻電場 ══════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">22.3</span>
+  <span class="label">均勻電場中的電位</span>
+  <div class="line"></div>
+</div>
+
+<div class="card blue">
+  <div class="card-title">沿電場 / 逆電場</div>
+  <div class="cmp-row">
+    <div class="cmp-cell">
+      <div class="cmp-label">沿電場方向（θ=0°）</div>
+      <div class="fbox gold" style="margin:0.4rem 0">$$\Delta V = -Ed$$</div>
+      <p>$V_B < V_A$（電位降低）</p>
+    </div>
+    <div class="cmp-cell">
+      <div class="cmp-label">逆電場方向（θ=180°）</div>
+      <div class="fbox gold" style="margin:0.4rem 0">$$\Delta V = +Ed$$</div>
+      <p>$V_B > V_A$（電位升高）</p>
+    </div>
+  </div>
+  <h3>任意方向位移</h3>
+  <div class="fbox">$$\Delta V = -\vec{E}\cdot\vec{s} = -Es\cos\theta$$</div>
+  <div class="tip"><strong>✓ 等位面：</strong>垂直電場的平面上各點電位相同，在等位面上移動不做功。</div>
+</div>
+
+<div class="card gold">
+  <div class="card-title">電位能變化 $\Delta U = q\Delta V$</div>
+  <table>
+    <tr><th>電荷</th><th>移動</th><th>$\Delta U$</th><th>物理意義</th></tr>
+    <tr><td>$+|q|$</td><td>沿電場</td><td>$-|q|Ed$</td><td>位能↓，動能↑</td></tr>
+    <tr><td>$+|q|$</td><td>逆電場</td><td>$+|q|Ed$</td><td>位能↑，需外力</td></tr>
+    <tr><td>$-|q|$</td><td>沿電場</td><td>$+|q|Ed$</td><td>位能↑，需外力</td></tr>
+    <tr><td>$-|q|$</td><td>逆電場</td><td>$-|q|Ed$</td><td>位能↓，動能↑</td></tr>
+  </table>
+</div>
+
+<!-- ══════════════════════ 22.4 點電荷 ══════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">22.4</span>
+  <span class="label">點電荷的電位</span>
+  <div class="line"></div>
+</div>
+
+<div class="card blue">
+  <div class="card-title">單一點電荷</div>
+  <div class="deriv">
+    <div class="deriv-title">推導（取 $V_\infty = 0$）</div>
+    <div class="step"><div class="sn">1</div><div>$V_B - V_A = -\int_{r_A}^{r_B} E_r\,dr = -kq\int_{r_A}^{r_B} r^{-2}\,dr$</div></div>
+    <div class="step"><div class="sn">2</div><div>$= kq\left[\dfrac{1}{r_B} - \dfrac{1}{r_A}\right]$，令 $r_A\to\infty$</div></div>
+  </div>
+  <div class="fbox gold">$$\boxed{V = k\frac{q}{r}} \quad (r > 0)$$</div>
+  <div class="tip"><strong>✓ 純量！</strong>$V$ 的正負由 $q$ 決定，$r\to 0$ 時 $V\to\pm\infty$。</div>
+</div>
+
+<div class="card gold">
+  <div class="card-title">多點電荷與系統電位能</div>
+  <h3>疊加原理（純量相加）</h3>
+  <div class="fbox gold">$$\boxed{V = k\sum_n \frac{q_n}{r_n}}$$</div>
+  <h3>兩點電荷系統電位能</h3>
+  <div class="fbox gold">$$\boxed{U = k\frac{q_1 q_2}{r_{12}}}$$</div>
+  <h3>三點電荷系統電位能</h3>
+  <div class="fbox">$$U = k\left(\frac{q_1q_2}{r_{12}}+\frac{q_1q_3}{r_{13}}+\frac{q_2q_3}{r_{23}}\right)$$</div>
+  <table>
+    <tr><th>符號</th><th>$U$</th><th>意義</th></tr>
+    <tr><td>同號電荷</td><td>$U > 0$</td><td>需正功克服排斥</td></tr>
+    <tr><td>異號電荷</td><td>$U < 0$</td><td>需負功克服吸引</td></tr>
+  </table>
+</div>
+
+<!-- ══════════════════════ 22.5–22.6 電偶極 ══════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">22.5–22.6</span>
+  <span class="label">電偶極</span>
+  <div class="line"></div>
+</div>
+
+<div class="card blue">
+  <div class="card-title">電偶極的電位（22.5）</div>
+  <p>$+q$ 與 $-q$ 相距 $2a$，電偶極矩 $p = 2aq$（方向由 $-q$ 指向 $+q$）</p>
+  <h3>精確公式（任意 $r$）</h3>
+  <div class="fbox">$$V = kq\left(\frac{1}{r_+} - \frac{1}{r_-}\right) = kq\frac{r_- - r_+}{r_+ r_-}$$</div>
+  <h3>遠場近似（$r \gg 2a$）</h3>
+  <p>利用 $r_- - r_+ \approx 2a\cos\theta$，$r_+r_- \approx r^2$：</p>
+  <div class="fbox gold">$$\boxed{V = k\frac{p\cos\theta}{r^2}} \quad (r\gg 2a)$$</div>
+  <table>
+    <tr><th>角度 $\theta$</th><th>$V$</th></tr>
+    <tr><td>$0°$（正電荷側）</td><td>最大正值</td></tr>
+    <tr><td>$90°$（垂直平分面）</td><td>$V = 0$</td></tr>
+    <tr><td>$180°$（負電荷側）</td><td>最大負值</td></tr>
+  </table>
+</div>
+
+<div class="card gold">
+  <div class="card-title">電偶極在外電場（22.6）</div>
+  <h3>力矩（外積）</h3>
+  <div class="fbox gold">$$\boxed{\tau = pE\sin\theta \qquad \vec{\tau} = \vec{p}\times\vec{E}}$$</div>
+  <h3>位能推導（內積積分）</h3>
+  <div class="deriv">
+    <div class="deriv-title">積分過程（參考點 $\theta_0 = 90°$）</div>
+    <div class="step"><div class="sn">1</div><div>$dW = \vec{\tau}\cdot d\vec{\theta} = -pE\sin\theta\,d\theta$</div></div>
+    <div class="step"><div class="sn">2</div><div>$dU = -dW = pE\sin\theta\,d\theta$</div></div>
+    <div class="step"><div class="sn">3</div><div>$U = pE\int_{90°}^{\theta}\sin\theta\,d\theta = -pE\cos\theta$</div></div>
+  </div>
+  <div class="fbox gold">$$\boxed{U = -pE\cos\theta = -\vec{p}\cdot\vec{E}}$$</div>
+  <table>
+    <tr><th>$\theta$</th><th>$U$</th><th>穩定性</th></tr>
+    <tr><td>$0°$（同向）</td><td>$-pE$（最小）</td><td>穩定平衡</td></tr>
+    <tr><td>$90°$</td><td>$0$（參考點）</td><td>力矩最大</td></tr>
+    <tr><td>$180°$（反向）</td><td>$+pE$（最大）</td><td>不穩定平衡</td></tr>
+  </table>
+  <div class="note"><strong>⚠ 區分：</strong>22.5 是偶極<strong>產生</strong>的電位，22.6 是偶極在<strong>外場中</strong>的行為。</div>
+</div>
+
+<!-- ══════════════════════ 22.7–22.10 連續分佈 ══════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">22.7–22.10</span>
+  <span class="label">連續電荷分佈的電位</span>
+  <div class="line"></div>
+</div>
+
+<div class="card blue">
+  <div class="card-title">帶電棒（22.7）</div>
+  <p>均勻帶電棒，$Q$，長 $L$，$\lambda = Q/L$，$dV = k\,dq/r$</p>
+  <table>
+    <tr><th>P 的位置</th><th>公式</th></tr>
+    <tr><td>軸線延伸，距左端 $a$</td><td>$\dfrac{kQ}{L}\ln\!\left(\dfrac{a+L}{a}\right)$</td></tr>
+    <tr><td>垂直平分線，距中點 $a$</td><td>$\dfrac{2kQ}{L}\ln\!\left(\dfrac{L/2+\sqrt{(L/2)^2+a^2}}{a}\right)$</td></tr>
+    <tr><td>端點正上方，距端點 $a$</td><td>$\dfrac{kQ}{L}\ln\!\left(\dfrac{L+\sqrt{L^2+a^2}}{a}\right)$</td></tr>
+  </table>
+  <div class="tip"><strong>✓ 關鍵積分：</strong>$\displaystyle\int\frac{dx}{\sqrt{x^2+a^2}} = \ln(x+\sqrt{x^2+a^2})$</div>
+</div>
+
+<div class="card gold">
+  <div class="card-title">帶電弧（22.8）</div>
+  <p>半徑 $R$，圓心角 $\phi$，均勻帶電 $Q$</p>
+  <p>每點到圓心距離均為 $R$（常數），可提出積分外：</p>
+  <div class="fbox gold">$$\boxed{V = k\frac{Q}{R}}$$</div>
+  <div class="tip"><strong>✓</strong> 與點電荷形式相同！弧心到各段距離等長，方向不影響純量積分。</div>
+</div>
+
+<div class="card green">
+  <div class="card-title">帶電環（22.9）</div>
+  <p>半徑 $R$，均勻帶電 $Q$，P 在軸線上距環心 $a$</p>
+  <p>所有電荷元素到 P 的距離 $r = \sqrt{R^2+a^2}$ 為常數：</p>
+  <div class="fbox gold">$$\boxed{V = \frac{kQ}{\sqrt{R^2+a^2}}}$$</div>
+  <table>
+    <tr><th>特殊情況</th><th>結果</th></tr>
+    <tr><td>$a = 0$（環心）</td><td>$V = kQ/R$（同帶電弧）</td></tr>
+    <tr><td>$a\gg R$（遠處）</td><td>$V \approx kQ/a$（退化為點電荷）</td></tr>
+  </table>
+</div>
+
+<div class="card blue">
+  <div class="card-title">帶電圓盤（22.10）</div>
+  <p>半徑 $R$，面電荷密度 $\sigma$，P 在軸線上距圓心 $a$</p>
+  <p>策略：分割為同心環，對各環電位積分（令 $u = r^2+a^2$）</p>
+  <div class="fbox gold">$$\boxed{V = 2\pi k\sigma\!\left(\sqrt{R^2+a^2}-a\right) = \frac{\sigma}{2\varepsilon_0}\!\left(\sqrt{R^2+a^2}-a\right)}$$</div>
+</div>
+
+<!-- ══════════════════════ 22.11–22.12 球體與導體 ══════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">22.11–22.12</span>
+  <span class="label">球體與導體的電位</span>
+  <div class="line"></div>
+</div>
+
+<div class="card blue">
+  <div class="card-title">均勻帶電球體（22.11）</div>
+  <table>
+    <tr><th>區域</th><th>電場 $E_r$</th><th>電位 $V$</th></tr>
+    <tr><td>外部 $r \geq R$</td><td>$kQ/r^2$</td><td>$kQ/r$（同點電荷）</td></tr>
+    <tr><td>內部 $r \leq R$</td><td>$kQr/R^3$</td><td>$\dfrac{kQ}{2R}\!\left(3-\dfrac{r^2}{R^2}\right)$</td></tr>
+  </table>
+  <div class="cmp-row">
+    <div class="cmp-cell">
+      <div class="cmp-label">球心 $r=0$</div>
+      $V_0 = \dfrac{3kQ}{2R}$（最大值）
+    </div>
+    <div class="cmp-cell">
+      <div class="cmp-label">球面 $r=R$</div>
+      $V_R = \dfrac{kQ}{R}$（內外銜接）
+    </div>
+  </div>
+  <div class="note"><strong>⚠</strong> 內部曲線為拋物線，外部為雙曲線，$r=R$ 處平滑連接。</div>
+</div>
+
+<div class="card gold">
+  <div class="card-title">帶電導體（22.12）</div>
+  <ul>
+    <li>電荷只在<strong>外表面</strong></li>
+    <li>內部電場為零：$\vec{E}_\text{內} = 0$</li>
+    <li>導體表面為<strong>等位面</strong>（$V = $ 常數）</li>
+    <li>內部電位等於表面電位</li>
+  </ul>
+  <h3>球形導體電位</h3>
+  <div class="fbox gold">$$V = \begin{cases} kQ/r & r \geq R \\ kQ/R = \text{常數} & r \leq R \end{cases}$$</div>
+  <h3>非對稱導體</h3>
+  <p>表面仍為等位面，但電荷密度不均：</p>
+  <div class="fbox">$$R_c\,\sigma = \text{常數} \quad\Rightarrow\quad \sigma \propto \frac{1}{R_c}$$</div>
+  <div class="tip"><strong>✓</strong> 曲率越大（越尖銳），表面電荷密度越大，電場越強。</div>
+</div>
+
+<!-- ══════════════════════ 22.13 電位梯度 ══════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">22.13</span>
+  <span class="label">電位梯度</span>
+  <div class="line"></div>
+</div>
+
+<div class="card blue">
+  <div class="card-title">從電位求電場</div>
+  <div class="deriv">
+    <div class="deriv-title">推導（比較兩種 dV 的表達式）</div>
+    <div class="step"><div class="sn">1</div><div>$dV = -\vec{E}\cdot d\vec{s} = -E_x\,dx - E_y\,dy - E_z\,dz \quad\cdots(1)$</div></div>
+    <div class="step"><div class="sn">2</div><div>連鎖律：$dV = \dfrac{\partial V}{\partial x}dx + \dfrac{\partial V}{\partial y}dy + \dfrac{\partial V}{\partial z}dz \quad\cdots(2)$</div></div>
+    <div class="step"><div class="sn">3</div><div>比較 (1)(2) 各分量係數得電位梯度關係</div></div>
+  </div>
+  <div class="fbox gold">
+    $$\boxed{E_x = -\frac{\partial V}{\partial x},\quad E_y = -\frac{\partial V}{\partial y},\quad E_z = -\frac{\partial V}{\partial z}}$$
+    $$\boxed{\vec{E} = -\nabla V}$$
+  </div>
+  <h3>球對稱（徑向）</h3>
+  <div class="fbox gold">$$\boxed{E_r = -\frac{dV}{dr}}$$</div>
+</div>
+
+<div class="card gold">
+  <div class="card-title">電位梯度驗證（各電荷分佈）</div>
+  <table>
+    <tr><th>電位 $V$</th><th>$E = -dV/dr$</th><th>結果</th></tr>
+    <tr><td>點電荷：$kq/r$</td><td>$-d(kq/r)/dr$</td><td>$kq/r^2$ ✓</td></tr>
+    <tr><td>帶電環：$kQ/\sqrt{R^2+a^2}$</td><td>$-dV/da$</td><td>$kQa/(R^2+a^2)^{3/2}$ ✓</td></tr>
+    <tr><td>帶電圓盤：$\sigma(\sqrt{R^2+a^2}-a)/2\varepsilon_0$</td><td>$-dV/da$</td><td>$\dfrac{\sigma}{2\varepsilon_0}\!\left(1-\dfrac{a}{\sqrt{R^2+a^2}}\right)$ ✓</td></tr>
+  </table>
+  <div class="tip"><strong>✓ 計算策略：</strong>先求純量 $V$（積分簡單），再微分得向量 $\vec{E}$（比直接用庫倫定律容易）。</div>
+</div>
+
+<!-- ══════════════════════ 全章公式速查 ══════════════════════ -->
+<div class="section-divider full">
+  <span class="section-num">總覽</span>
+  <span class="label">全章公式速查表</span>
+  <div class="line"></div>
+</div>
+
+<div class="card full blue">
+  <div class="card-title">所有重要公式一覽</div>
+  <table>
+    <tr><th>類別</th><th>公式</th><th>條件／備注</th></tr>
+    <tr><td>電位能變化</td><td>$\Delta U = -q\displaystyle\int_A^B\vec{E}\cdot d\vec{s}$</td><td>通用</td></tr>
+    <tr><td>電位差</td><td>$\Delta V = -\displaystyle\int_A^B\vec{E}\cdot d\vec{s}$</td><td>通用，路徑無關</td></tr>
+    <tr><td>均勻電場（沿）</td><td>$\Delta V = -Ed$</td><td>$\vec{s}\parallel\vec{E}$</td></tr>
+    <tr><td>均勻電場（逆）</td><td>$\Delta V = +Ed$</td><td>$\vec{s}$ 反 $\vec{E}$</td></tr>
+    <tr><td>外力做功</td><td>$W_\text{app} = q\Delta V$</td><td>動能不變</td></tr>
+    <tr><td>點電荷電位</td><td>$V = kq/r$</td><td>$r > 0$，$V_\infty = 0$</td></tr>
+    <tr><td>疊加原理</td><td>$V = k\displaystyle\sum_n q_n/r_n$</td><td>純量直接相加</td></tr>
+    <tr><td>兩點電荷位能</td><td>$U = kq_1q_2/r_{12}$</td><td>同號 $U>0$，異號 $U<0$</td></tr>
+    <tr><td>電偶極電位（遠場）</td><td>$V = kp\cos\theta/r^2$</td><td>$r\gg 2a$</td></tr>
+    <tr><td>電偶極力矩</td><td>$\tau = pE\sin\theta$，$\vec{\tau}=\vec{p}\times\vec{E}$</td><td>均勻外電場</td></tr>
+    <tr><td>電偶極位能</td><td>$U = -pE\cos\theta = -\vec{p}\cdot\vec{E}$</td><td>參考點 $\theta_0=90°$</td></tr>
+    <tr><td>帶電棒（軸線）</td><td>$V = \dfrac{kQ}{L}\ln\!\left(\dfrac{a+L}{a}\right)$</td><td>距左端 $a$</td></tr>
+    <tr><td>帶電棒（垂直平分線）</td><td>$V = \dfrac{2kQ}{L}\ln\!\left(\dfrac{L/2+\sqrt{(L/2)^2+a^2}}{a}\right)$</td><td>距中點 $a$</td></tr>
+    <tr><td>帶電弧（圓心）</td><td>$V = kQ/R$</td><td>與點電荷形式相同</td></tr>
+    <tr><td>帶電環（軸線）</td><td>$V = kQ/\sqrt{R^2+a^2}$</td><td>距環心 $a$</td></tr>
+    <tr><td>帶電圓盤（軸線）</td><td>$V = \dfrac{\sigma}{2\varepsilon_0}(\sqrt{R^2+a^2}-a)$</td><td>距圓心 $a$</td></tr>
+    <tr><td>帶電球體（外）</td><td>$V = kQ/r$</td><td>$r \geq R$</td></tr>
+    <tr><td>帶電球體（內）</td><td>$V = \dfrac{kQ}{2R}\!\left(3-\dfrac{r^2}{R^2}\right)$</td><td>$0 \leq r \leq R$</td></tr>
+    <tr><td>球形導體（內）</td><td>$V = kQ/R = $ 常數</td><td>$r \leq R$</td></tr>
+    <tr><td>電位梯度</td><td>$\vec{E} = -\nabla V$</td><td>通用</td></tr>
+    <tr><td>徑向電場</td><td>$E_r = -dV/dr$</td><td>球對稱</td></tr>
+  </table>
+</div>
+
+<!-- 對比表 -->
+<div class="card full">
+  <div class="card-title">電位 vs 電場 核心比較</div>
+  <table>
+    <tr><th></th><th>電場 $\vec{E}$</th><th>電位 $V$</th></tr>
+    <tr><td>量的性質</td><td>向量</td><td>純量</td></tr>
+    <tr><td>疊加方式</td><td>向量相加（需分解分量）</td><td>代數相加（直接）</td></tr>
+    <tr><td>點電荷</td><td>$\propto 1/r^2$</td><td>$\propto 1/r$</td></tr>
+    <tr><td>電偶極（遠場）</td><td>$\propto 1/r^3$</td><td>$\propto 1/r^2$</td></tr>
+    <tr><td>互求關係</td><td>$\vec{E} = -\nabla V$（微分）</td><td>$\Delta V = -\int\vec{E}\cdot d\vec{s}$（積分）</td></tr>
+    <tr><td>計算難易</td><td>較難（向量積分）</td><td>較易（純量積分）</td></tr>
+    <tr><td>方向</td><td>指向電位降低最快的方向</td><td>—</td></tr>
+  </table>
+</div>
+
+<!-- 常用常數與易錯 -->
+<div class="card green">
+  <div class="card-title">常用常數</div>
+  <table>
+    <tr><th>符號</th><th>數值</th></tr>
+    <tr><td>$k$</td><td>$9\times10^9\ \text{N·m}^2/\text{C}^2$</td></tr>
+    <tr><td>$\varepsilon_0 = 1/4\pi k$</td><td>$8.85\times10^{-12}\ \text{F/m}$</td></tr>
+    <tr><td>$e$（元電荷）</td><td>$1.6\times10^{-19}\ \text{C}$</td></tr>
+    <tr><td>$m_e$（電子質量）</td><td>$9.11\times10^{-31}\ \text{kg}$</td></tr>
+    <tr><td>$m_p$（質子質量）</td><td>$1.67\times10^{-27}\ \text{kg}$</td></tr>
+  </table>
+</div>
+
+<div class="card red">
+  <div class="card-title">⚠ 常見易錯點</div>
+  <ul>
+    <li>電位是<strong>純量</strong>，電場是向量；疊加時電位直接代數相加</li>
+    <li>電場線從高電位指向<strong>低電位</strong></li>
+    <li>22.5 是偶極<strong>產生的</strong>電位；22.6 是偶極在<strong>外場中</strong>的位能，兩者意義完全不同</li>
+    <li>$E_r = -dV/dr$ 是對<strong>距離</strong>微分，不是對時間</li>
+    <li>帶電棒三種情況：積分上下限和 $r$ 的表達式各不相同，要先確認 P 點位置</li>
+    <li>導體內部電位<strong>等於</strong>表面電位（不是零）</li>
+    <li>球體內部電場 $\propto r$，電位 $\propto (3-r^2/R^2)$，不要混淆</li>
+  </ul>
+</div>
+
+</main>
+
+<footer>
+  Principles of Physics · Chapter 22 · Electric Potential<br>
+  大學物理大抄 · 以繁體中文撰寫
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>大抄 · Ch.21 高斯定律</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+:root{
+  --blue:#1a3a5c; --red:#8b1a1a; --green:#1a5c2a; --amber:#7a4a00;
+  --b1:#ddeaf7; --b2:#f7dddd; --b3:#ddf2e4; --b4:#fdf3dc;
+  --bd:#c8c0b0; --mu:#555; --lt:#888; --bg:#fffef8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{font-size:11px;}
+body{background:var(--bg);color:#111;font-family:'Noto Sans TC',sans-serif;line-height:1.52;padding:8mm;}
+
+/* ─── header ─── */
+.ph{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2.5px solid #111;padding-bottom:5px;margin-bottom:8px;}
+.ph-l{}.ph-title{font-size:1.55rem;font-weight:700;letter-spacing:-0.5px;}
+.ph-sub{font-size:0.75rem;color:var(--mu);margin-top:1px;}
+.ph-r{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--lt);text-align:right;line-height:1.7;}
+
+/* ─── layout ─── */
+.page{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.full{grid-column:1/-1;}
+.col{display:flex;flex-direction:column;gap:8px;}
+
+/* ─── card ─── */
+.card{border:1.5px solid var(--bd);border-radius:4px;overflow:hidden;}
+.card-hd{padding:4px 9px;font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;}
+.hd-blue{background:var(--blue);}
+.hd-red{background:var(--red);}
+.hd-green{background:var(--green);}
+.hd-amber{background:var(--amber);}
+.card-bd{padding:7px 9px;}
+
+/* ─── section inside card ─── */
+.sec{margin-bottom:6px;}
+.sec:last-child{margin-bottom:0;}
+.st{font-size:0.68rem;font-weight:700;font-family:'JetBrains Mono',monospace;letter-spacing:0.7px;text-transform:uppercase;color:var(--blue);border-bottom:1px solid var(--bd);padding-bottom:2px;margin-bottom:3px;}
+.st.red{color:var(--red);}
+.st.green{color:var(--green);}
+.st.amber{color:var(--amber);}
+
+/* ─── formula row ─── */
+.fr{display:flex;align-items:baseline;gap:5px;margin-bottom:2px;}
+.fl{font-family:'JetBrains Mono',monospace;font-size:0.64rem;color:var(--lt);min-width:28px;flex-shrink:0;}
+.fm{flex:1;font-size:0.87rem;}
+.fn{font-size:0.64rem;color:var(--mu);max-width:120px;flex-shrink:0;line-height:1.4;}
+
+/* ─── highlight boxes ─── */
+.box{border-radius:2px;padding:3px 8px;margin:3px 0;font-size:0.85rem;}
+.bblue{background:var(--b1);border-left:2.5px solid var(--blue);}
+.bred{background:var(--b2);border-left:2.5px solid var(--red);}
+.bgreen{background:var(--b3);border-left:2.5px solid var(--green);}
+.bamber{background:var(--b4);border-left:2.5px solid var(--amber);}
+
+/* ─── text helpers ─── */
+p{font-size:0.76rem;margin-bottom:2px;}
+.h{font-size:0.68rem;color:var(--mu);font-style:italic;margin:1px 0;}
+.h b{color:#333;font-style:normal;}
+hr{border:none;border-top:1px dashed var(--bd);margin:4px 0;}
+strong{font-weight:700;}
+
+/* ─── table ─── */
+table{width:100%;border-collapse:collapse;font-size:0.75rem;margin:3px 0;}
+th{background:#ece8de;padding:2px 5px;font-weight:700;border-bottom:1.5px solid var(--bd);text-align:left;}
+td{padding:2px 5px;border-bottom:1px dashed #ddd;vertical-align:top;}
+tr:last-child td{border-bottom:none;}
+
+/* ─── badge ─── */
+.warn{display:inline-block;background:#a06000;color:#fff;font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0 5px;border-radius:8px;vertical-align:middle;margin-left:2px;}
+.ok{display:inline-block;background:var(--green);color:#fff;font-size:0.6rem;font-family:'JetBrains Mono',monospace;padding:0 5px;border-radius:8px;vertical-align:middle;margin-left:2px;}
+
+/* ─── property grid ─── */
+.pgrid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:4px;}
+.pcard{border-radius:2px;padding:4px 6px;background:var(--b1);border-left:2px solid var(--blue);}
+.pcard .pt{font-size:0.7rem;font-weight:700;color:var(--blue);margin-bottom:1px;}
+.pcard p{font-size:0.68rem;}
+
+/* ─── print ─── */
+@media print{
+  body{padding:5mm;font-size:10px;}
+  .page{gap:6px;}
+  html{font-size:10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ PAGE HEADER ══ -->
+<div class="ph">
+  <div class="ph-l">
+    <div class="ph-title">📋 大抄 · Chapter 21 · 高斯定律</div>
+    <div class="ph-sub">Gauss's Law · Principles of Physics · Radi &amp; Rasmussen · Springer 2013</div>
+  </div>
+  <div class="ph-r">
+    \(\varepsilon_0 = 8.85\times10^{-12}\ \mathrm{C^2/(N\cdot m^2)}\)<br>
+    \(k = 1/4\pi\varepsilon_0 = 8.99\times10^9\ \mathrm{N\cdot m^2/C^2}\)<br>
+    電通量單位：\(\mathrm{N\cdot m^2/C}\)
+  </div>
+</div>
+
+<!-- ══ PAGE GRID ══ -->
+<div class="page">
+
+<!-- ──────────────── 電通量 ──────────────── -->
+<div class="card">
+  <div class="card-hd hd-blue">§ 21.1 &nbsp;電通量 &nbsp;Electric Flux &nbsp;Φ_E</div>
+  <div class="card-bd">
+
+    <div class="sec">
+      <div class="st">三種情形</div>
+      <div class="fr">
+        <span class="fl">① 垂直</span>
+        <span class="fm">\(\Phi_E = EA\)</span>
+        <span class="fn">E ⊥ 面，最大值</span>
+      </div>
+      <div class="fr">
+        <span class="fl">② 傾斜</span>
+        <span class="fm">\(\Phi_E = EA\cos\theta = \vec{E}\cdot\vec{A}\)</span>
+        <span class="fn">\(\theta\) = E 與法向量夾角</span>
+      </div>
+      <div class="fr">
+        <span class="fl">③ 微元</span>
+        <span class="fm">\(d\Phi_E = \vec{E}\cdot d\vec{A} = E\,dA\cos\theta\)</span>
+      </div>
+      <div class="fr">
+        <span class="fl">④ 曲面</span>
+        <span class="fm">\(\displaystyle\Phi_E = \int_S \vec{E}\cdot d\vec{A}\)</span>
+      </div>
+      <div class="fr">
+        <span class="fl">⑤ 封閉</span>
+        <span class="fm">\(\displaystyle\Phi_E = \oint \vec{E}\cdot d\vec{A}\)</span>
+        <span class="fn">法向量朝<strong>外</strong>（outward normal）</span>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="st">面積向量</div>
+      <p>\(\vec{A} = A\hat{n}\)　大小 = 面積，方向 = 法向量（垂直面朝外）</p>
+    </div>
+
+    <div class="sec">
+      <div class="st">正負號判斷</div>
+      <table>
+        <tr><th>\(\theta\)</th><th>電場方向</th><th>通量</th></tr>
+        <tr><td>\(\theta < 90°\)</td><td>穿<strong>出</strong>封閉面</td><td>\(> 0\)（正）</td></tr>
+        <tr><td>\(\theta = 90°\)</td><td>沿表面切線（掠過）</td><td>\(= 0\)</td></tr>
+        <tr><td>\(\theta > 90°\)</td><td>穿<strong>入</strong>封閉面</td><td>\(< 0\)（負）</td></tr>
+      </table>
+      <p class="h">淨通量 = 穿出電場線數 − 穿入電場線數</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ──────────────── 高斯定律 ──────────────── -->
+<div class="card">
+  <div class="card-hd hd-blue">§ 21.2 &nbsp;高斯定律 &nbsp;Gauss's Law</div>
+  <div class="card-bd">
+
+    <div class="sec">
+      <div class="st">核心公式</div>
+      <div class="box bblue">
+        \[\oint \vec{E}\cdot d\vec{A} = \frac{q_{in}}{\varepsilon_0}\]
+      </div>
+      <p class="h">\(q_{in}\) = 高斯面<strong>內</strong>的淨電荷；與面外電荷完全無關</p>
+    </div>
+
+    <div class="sec">
+      <div class="st">高斯面（Gaussian Surface）</div>
+      <p><strong>假想的</strong>封閉曲面，物理上不存在，純為計算而選取</p>
+      <p class="h">選對高斯面 → 把難積分變成代數題</p>
+    </div>
+
+    <div class="sec">
+      <div class="st">選高斯面的四個條件（越多越好）</div>
+      <p>① 面上各處 \(E\) 為<strong>常數</strong>（可提出積分號）</p>
+      <p>② \(\vec{E}//d\vec{A}\)，則 \(\vec{E}\cdot d\vec{A} = E\,dA\)</p>
+      <p>③ \(\vec{E}\perp d\vec{A}\)，則通量 = 0（此面可忽略）</p>
+      <p>④ 某部分面上 \(E = 0\)（同樣通量 = 0）</p>
+    </div>
+
+    <div class="sec">
+      <div class="st">三種標準幾何與對應高斯面</div>
+      <table>
+        <tr><th>對稱性</th><th>高斯面形狀</th></tr>
+        <tr><td>球形（點電荷、帶電球）</td><td>同心<strong>球面</strong></td></tr>
+        <tr><td>柱形（無限長線電荷）</td><td>共軸<strong>圓柱面</strong></td></tr>
+        <tr><td>平面（無限大帶電平面）</td><td>圓柱（穿過平面）</td></tr>
+      </table>
+    </div>
+
+    <div class="sec">
+      <div class="st">面內、面外、面上</div>
+      <table>
+        <tr><th>位置</th><th>對面上 E</th><th>對 \(q_{in}\)</th><th>對淨通量</th></tr>
+        <tr><td>面<strong>內</strong></td><td>有影響</td><td>✅ 計入</td><td>有</td></tr>
+        <tr><td>面<strong>外</strong></td><td>有影響（局部）</td><td>❌ 不計</td><td><strong>零</strong>（進出相消）</td></tr>
+        <tr><td>面<strong>上</strong></td><td>有影響</td><td>✅ 視為面內</td><td>有</td></tr>
+      </table>
+      <div class="box bamber">⚠ 面外電荷對<strong>淨通量</strong>貢獻恆為零——穿入多少就穿出多少，這是高斯定律的幾何本質</div>
+    </div>
+
+    <div class="sec">
+      <div class="st">等價庫倫定律（驗證）</div>
+      <p class="h">對點電荷取球形高斯面：\(E\cdot 4\pi r^2 = q/\varepsilon_0\)　→　\(E=kq/r^2\) ✓</p>
+    </div>
+
+    <div class="sec">
+      <div class="st">解題六步驟</div>
+      <p>① 判斷對稱性 → ② 選高斯面（場點在面上）</p>
+      <p>③ 化簡左側 \(E\cdot A_{total}\) → ④ 計算 \(q_{in}\)</p>
+      <p>⑤ 代入 \(EA_{total} = q_{in}/\varepsilon_0\) 解 E</p>
+      <p>⑥ 驗證極限（\(r\to\infty\) 退化點電荷？）</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ──────────────── 八大應用（全寬） ──────────────── -->
+<div class="card full">
+  <div class="card-hd hd-blue">§ 21.3 &nbsp;八大應用 — 完整推導提醒與結果</div>
+  <div class="card-bd">
+
+    <div class="page" style="gap:6px;">
+
+    <!-- 左欄：① ~ ④ -->
+    <div class="col">
+
+      <!-- ① 點電荷 -->
+      <div class="sec">
+        <div class="st">① 點電荷 \(q\)</div>
+        <p class="h"><b>推導：</b>球面高斯面，\(\vec{E}//d\vec{A}\)，E 為常數<br>
+          \(E\cdot 4\pi r^2 = q/\varepsilon_0\)</p>
+        <div class="box bblue">\[E = k\frac{q}{r^2}\quad(r>0)\]</div>
+      </div>
+
+      <!-- ② 球殼內部 -->
+      <div class="sec">
+        <div class="st">② 均勻帶雷球殼——內部 \((r &lt; R)\)</div>
+        <p class="h"><b>推導：</b>球形高斯面（半徑 r &lt; R）完全在球殼內部<br>
+          \(q_{in} = 0 \Rightarrow E\cdot 4\pi r^2 = 0\)</p>
+        <div class="box bblue">\[E = 0\quad(r < R)\]</div>
+        <p class="h">▶ 球殼對內部任意位置的電場貢獻為零 = 靜電屏蔽原理</p>
+      </div>
+
+      <!-- ③ 球殼外部 -->
+      <div class="sec">
+        <div class="st">③ 均勻帶雷球殼——外部 \((r \ge R)\)</div>
+        <p class="h"><b>推導：</b>球形高斯面（半徑 r &gt; R），\(q_{in}=Q\)<br>
+          \(E\cdot 4\pi r^2 = Q/\varepsilon_0\)</p>
+        <div class="box bblue">\[E = k\frac{Q}{r^2}\quad(r\ge R)\]</div>
+        <p class="h">▶ 外部等同於電荷全集中於球心的點電荷</p>
+      </div>
+
+      <!-- ④ 實心球內部 -->
+      <div class="sec">
+        <div class="st">④ 均勻帶電實心絕緣球——內部 \((r \le R)\)</div>
+        <p class="h"><b>推導：</b>體電荷密度 \(\rho = Q/(\tfrac{4}{3}\pi R^3)\)</p>
+        <p class="h">球形高斯面（半徑 r），包圍電荷：\(q_{in}=\rho\cdot\tfrac{4}{3}\pi r^3 = Q\cdot r^3/R^3\)</p>
+        <p class="h">\(E\cdot 4\pi r^2 = Qr^3/(\varepsilon_0 R^3)\)</p>
+        <div class="box bblue">\[E = k\frac{Q}{R^3}\,r\quad(r\le R)\quad\Rightarrow E\propto r\]</div>
+        <p class="h">▶ 球心 r=0 時 E=0；在 r=R 處 E=kQ/R²，與外部銜接（連續）</p>
+      </div>
+
+    </div>
+
+    <!-- 右欄：⑤ ~ ⑧ -->
+    <div class="col">
+
+      <!-- ⑤ 實心球外部 -->
+      <div class="sec">
+        <div class="st">⑤ 均勻帶電實心絕緣球——外部 \((r \ge R)\)</div>
+        <p class="h"><b>推導：</b>高斯面包圍全部電荷 \(q_{in}=Q\)，與球殼外部相同</p>
+        <div class="box bblue">\[E = k\frac{Q}{r^2}\quad(r\ge R)\]</div>
+        <div class="box bamber">
+          E-r 圖：內部線性 \(E\propto r\)，在 r=R 達最大，外部 \(E\propto 1/r^2\) 下降，在 r=R 處連續
+        </div>
+      </div>
+
+      <!-- ⑥ 線電荷 -->
+      <div class="sec">
+        <div class="st">⑥ 無限長線電荷（線密度 \(\lambda\)）</div>
+        <p class="h"><b>推導：</b>取共軸圓柱高斯面（半徑 r，長 ℓ）</p>
+        <p class="h">
+          上下底面：\(\vec{E}\perp d\vec{A}\) → 通量 = 0<br>
+          側曲面：\(\vec{E}//d\vec{A}\)，E 為常數 → \(E\cdot 2\pi r\ell\)<br>
+          \(q_{in} = \lambda\ell\)　→　\(E\cdot 2\pi r\ell = \lambda\ell/\varepsilon_0\)
+        </p>
+        <div class="box bblue">\[E = \frac{\lambda}{2\pi\varepsilon_0 r} = \frac{2k\lambda}{r}\]</div>
+      </div>
+
+      <!-- ⑦ 非導體平面 -->
+      <div class="sec">
+        <div class="st">⑦ 非導體無限大平面（面密度 \(\sigma\)）<span class="warn">分母有 2</span></div>
+        <p class="h"><b>推導：</b>圓柱形高斯面，平面從<strong>正中間</strong>穿過，兩底面積各 A</p>
+        <p class="h">
+          側面：\(\vec{E}\perp d\vec{A}\) → 0<br>
+          左底 + 右底：各貢獻 \(EA\) → 總通量 \(2EA\)<br>
+          \(q_{in}=\sigma A\)　→　\(2EA = \sigma A/\varepsilon_0\)
+        </p>
+        <div class="box bblue">\[E = \frac{\sigma}{2\varepsilon_0}\quad\text{（平面兩側均成立）}\]</div>
+        <p class="h">分母有 2：因電場在<strong>兩側</strong>，通量分攤給兩個底面</p>
+      </div>
+
+      <!-- ⑧ 導體表面 -->
+      <div class="sec">
+        <div class="st">⑧ 帶電導體表面外側（面密度 \(\sigma\)）<span class="ok">分母無 2</span></div>
+        <p class="h"><b>前提：</b>導體內 \(E=0\)；表面電場必垂直表面</p>
+        <p class="h"><b>推導：</b>微小圓柱，一端在導體<strong>內</strong>，一端在導體<strong>外</strong></p>
+        <p class="h">
+          內底面：\(E=0\) → 0<br>
+          側曲面：\(\vec{E}\perp d\vec{A}\) → 0<br>
+          外底面：\(\vec{E}//d\vec{A}\) → \(EA\)<br>
+          \(q_{in}=\sigma A\)　→　\(EA = \sigma A/\varepsilon_0\)
+        </p>
+        <div class="box bblue">\[E = \frac{\sigma}{\varepsilon_0}\quad\text{（方向垂直表面，}\sigma{>0}\text{ 朝外）}\]</div>
+        <p class="h">無 2：電場只在<strong>外側</strong>，通量全由一個底面承擔</p>
+      </div>
+
+    </div>
+    </div><!-- inner page grid -->
+
+    <!-- 速查表 -->
+    <hr style="margin:6px 0;">
+    <div class="st" style="margin-bottom:4px; color:var(--blue); font-family:'JetBrains Mono',monospace; font-size:0.68rem; text-transform:uppercase; letter-spacing:0.7px;">八大應用速查表</div>
+    <table>
+      <tr>
+        <th>#</th><th>幾何形狀</th><th>條件</th>
+        <th>高斯面</th><th>q_in</th><th>電場結果</th>
+      </tr>
+      <tr><td>①</td><td>點電荷 q</td><td>—</td><td>球面</td><td>q</td><td>\(kq/r^2\)</td></tr>
+      <tr><td>②</td><td>帶電球?¯<</td><td>r &lt; R（內）</td><td>球面</td><td><strong>0</strong></td><td>\(\mathbf{0}\)</td></tr>
+      <tr><td>③</td><td>帶雷球?¯<</td><td>r ≥ R（外）</td><td>球面</td><td>Q</td><td>\(kQ/r^2\)</td></tr>
+      <tr><td>④</td><td>均勻實心球</td><td>r ≤ R（內）</td><td>球面</td><td>\(Qr^3/R^3\)</td><td>\(kQr/R^3\)　\(({\propto r})\)</td></tr>
+      <tr><td>⑤</td><td>均勻實心球</td><td>r ≥ R（外）</td><td>球面</td><td>Q</td><td>\(kQ/r^2\)</td></tr>
+      <tr><td>⑥</td><td>無限長線電荷 λ</td><td>徑向距 r</td><td>圓柱面</td><td>λℓ</td><td>\(\lambda/(2\pi\varepsilon_0 r)\)</td></tr>
+      <tr><td>⑦</td><td>非導體無限大平面 σ</td><td>—</td><td>圓柱穿過面</td><td>σA</td><td>\(\sigma/(2\varepsilon_0)\) <span class="warn">÷2</span></td></tr>
+      <tr><td>⑧</td><td>導體表面外側 σ</td><td>—</td><td>圓柱一端在內</td><td>σA</td><td>\(\sigma/\varepsilon_0\) <span class="ok">×1</span></td></tr>
+    </table>
+
+    <div class="box bamber" style="margin-top:5px;">
+      ⚠ <strong>最易混淆</strong>：⑦ 非導體平面 \(\sigma/2\varepsilon_0\)（兩側都有電場，通量分兩個底面）&nbsp;vs&nbsp; ⑧ 導體表面 \(\sigma/\varepsilon_0\)（只有外側有電場，通量全給一個底面），差一個因子 2
+    </div>
+
+  </div>
+</div><!-- card 八大應用 -->
+
+<!-- ──────────────── 21.4 靜電平衡導體 ──────────────── -->
+<div class="card full">
+  <div class="card-hd hd-green">§ 21.4 &nbsp;靜電平衡中的導體（Conductors in Electrostatic Equilibrium）</div>
+  <div class="card-bd">
+
+    <div class="page" style="gap:6px;">
+
+    <div class="col">
+
+      <!-- 四大性質 -->
+      <div class="sec">
+        <div class="st green">四大性質</div>
+        <div class="pgrid">
+          <div class="pcard">
+            <div class="pt">性質①　導體內部 E = 0</div>
+            <p>反證：若 E≠0，自由電子受力移動 → 不平衡，矛盾</p>
+            <p class="h">物理機制：外場使電荷重新分布，產生反向內場恰好抵消外場</p>
+          </div>
+          <div class="pcard">
+            <div class="pt">性質②　多餘電荷在外表面</div>
+            <p>取高斯面於導體材料內：E=0 → 通量=0 → q_in=0</p>
+            <p class="h">對任意縮小的高斯面均成立 → 內部體電荷密度處處為零</p>
+          </div>
+          <div class="pcard">
+            <div class="pt">性質③　表面電場 ⊥ 表面，\(E=\sigma/\varepsilon_0\)</div>
+            <p>反證：若有切向分量 → 表面電子受力移動 → 矛盾</p>
+            <p>大小推導：同應用⑧，\(EA = \sigma A/\varepsilon_0\)</p>
+          </div>
+          <div class="pcard">
+            <div class="pt">性質④　尖端效應</div>
+            <p>曲率越大（越尖）→ σ 越大 → E 越大</p>
+            <p class="h">應用：避雷針頂端 E 超過空氣崩潰電場（3×10⁶ V/m），主動引雷</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col">
+
+      <!-- 腔體屏蔽 -->
+      <div class="sec">
+        <div class="st green">腔體屏蔽（Electrostatic Shielding）</div>
+        <table>
+          <tr><th>腔內狀況</th><th>腔內 E</th><th>腔體壁面感應電荷</th></tr>
+          <tr><td>腔內<strong>無</strong>電荷</td><td>= 0</td><td>內壁 = 0，外壁 = 0</td></tr>
+          <tr><td>腔內有 +q</td><td>≠ 0</td><td>內壁感應 −q，外壁感應 +q</td></tr>
+        </table>
+        <p class="h">法拉第籠原理：金屬殼的腔內 E=0，外部電場無法透過導體進入腔內</p>
+        <p class="h">取高斯面於導體材料中 → q_in = 0 → 腔壁上必無淨感應電荷（腔內無電荷時）</p>
+      </div>
+
+      <!-- 複合導體例題 -->
+      <div class="sec">
+        <div class="st green">複合導體解題流程（同心球殼例）</div>
+        <p>實心球帶 +2Q，外球殼帶 −Q</p>
+        <table>
+          <tr><th>位置</th><th>條件</th><th>電場</th></tr>
+          <tr><td>實心球內（r &lt; R）</td><td>導體內，E=0</td><td>0</td></tr>
+          <tr><td>兩球之間</td><td>q_in = +2Q</td><td>\(k\cdot2Q/r^2\)</td></tr>
+          <tr><td>球殼材料內</td><td>導體內，E=0</td><td>0</td></tr>
+          <tr><td>球殼外（r &gt; R₂）</td><td>q_in = +2Q+(−Q) = +Q</td><td>\(kQ/r^2\)</td></tr>
+        </table>
+        <p class="h">口訣：先用 E=0 推感應電荷 → 再用電荷守恆推各層剩餘 → 最後高斯定律求 E</p>
+      </div>
+
+    </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ──────────────── 觀念提醒 ──────────────── -->
+<div class="card full">
+  <div class="card-hd hd-red">考前關鍵觀念 &amp; 易錯點</div>
+  <div class="card-bd">
+    <div class="page" style="gap:6px;">
+
+    <div class="col">
+      <div class="sec">
+        <div class="st red">高斯定律 vs 庫倫定律</div>
+        <p>兩者<strong>等價</strong>，但高斯定律只在對稱性高時才能化簡計算。</p>
+        <p>沒有對稱性 → 仍可用高斯定律，但無法化簡，需回到庫倫積分。</p>
+      </div>
+      <div class="sec">
+        <div class="st red">常見公式區別整理</div>
+        <table>
+          <tr><th>情形</th><th>公式</th><th>原因</th></tr>
+          <tr><td>球殼<strong>內</strong>部</td><td>\(E=0\)</td><td>q_in = 0</td></tr>
+          <tr><td>實心球<strong>內</strong>部</td><td>\(E=kQr/R^3\)</td><td>q_in = Qr³/R³ ≠ 0</td></tr>
+          <tr><td>非導體平面</td><td>\(\sigma/2\varepsilon_0\)</td><td>兩側各貢獻 EA</td></tr>
+          <tr><td>導體表面</td><td>\(\sigma/\varepsilon_0\)</td><td>只有外側貢獻 EA</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="sec">
+        <div class="st red">方向判斷</div>
+        <p>正電荷 → 電場線<strong>向外</strong>（通量為正）</p>
+        <p>負電荷 → 電場線<strong>向內</strong>（通量為負）</p>
+        <p>面外電荷 → 穿入量 = 穿出量，<strong>淨通量 = 0</strong></p>
+      </div>
+      <div class="sec">
+        <div class="st red">記憶口訣</div>
+        <div class="box bred">
+          「<strong>對稱選面，面外不管，左側化簡，右側算電荷</strong>」<br>
+          球：\(E\cdot4\pi r^2\)　圓柱：\(E\cdot2\pi r\ell\)　平面：\(2EA\) 或 \(EA\)
+        </div>
+      </div>
+      <div class="sec">
+        <div class="st red">單位速查</div>
+        <p>\([E] = \text{N/C} = \text{V/m}\)</p>
+        <p>\([\Phi_E] = \text{N·m}^2/\text{C}\)</p>
+        <p>\([\sigma] = \text{C/m}^2\)　\([\lambda] = \text{C/m}\)　\([\rho] = \text{C/m}^3\)</p>
+        <p>\([\varepsilon_0] = \text{C}^2/(\text{N·m}^2) = \text{F/m}\)</p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+</div><!-- page grid -->
+</body>
+</html>
