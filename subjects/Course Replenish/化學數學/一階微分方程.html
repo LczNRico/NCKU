@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一階 ODE 解法總整理</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
+<style>
+  body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: #f4f6f9;
+    color: #1a1a2e;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #1a1a2e;
+    font-size: 1.6em;
+    margin-bottom: 6px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #555;
+    font-size: 0.9em;
+    margin-bottom: 30px;
+  }
+
+  /* 流程圖 */
+  .flowchart {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .flowchart h2 {
+    font-size: 1.1em;
+    color: #2c3e50;
+    margin-bottom: 16px;
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+  }
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+  .flow-box {
+    background: #eaf4fb;
+    border: 1.5px solid #3498db;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.88em;
+    text-align: center;
+    min-width: 120px;
+  }
+  .flow-arrow {
+    font-size: 1.4em;
+    color: #3498db;
+  }
+  .flow-question {
+    background: #fff3cd;
+    border: 1.5px solid #f39c12;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.88em;
+    text-align: center;
+    min-width: 140px;
+  }
+
+  /* 種類卡片 */
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-left: 6px solid #ccc;
+  }
+  .card.blue   { border-left-color: #3498db; }
+  .card.green  { border-left-color: #27ae60; }
+  .card.orange { border-left-color: #e67e22; }
+  .card.purple { border-left-color: #8e44ad; }
+  .card.red    { border-left-color: #e74c3c; }
+  .card.teal   { border-left-color: #16a085; }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .badge {
+    font-size: 0.72em;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: white;
+  }
+  .badge.blue   { background: #3498db; }
+  .badge.green  { background: #27ae60; }
+  .badge.orange { background: #e67e22; }
+  .badge.purple { background: #8e44ad; }
+  .badge.red    { background: #e74c3c; }
+  .badge.teal   { background: #16a085; }
+
+  .card h3 {
+    margin: 0;
+    font-size: 1.05em;
+    color: #1a1a2e;
+  }
+
+  .section-label {
+    font-size: 0.78em;
+    font-weight: bold;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 10px 0 4px 0;
+  }
+  .formula-box {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+  }
+  .check-condition {
+    background: #fffde7;
+    border-left: 3px solid #f39c12;
+    border-radius: 0 6px 6px 0;
+    padding: 8px 12px;
+    font-size: 0.88em;
+    margin-bottom: 8px;
+  }
+  .steps {
+    padding-left: 18px;
+    font-size: 0.9em;
+    line-height: 1.9;
+    color: #333;
+  }
+  .result-box {
+    background: #e8f8f5;
+    border: 1.5px solid #27ae60;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.92em;
+    margin-top: 8px;
+  }
+  .note {
+    font-size: 0.82em;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* 比較表 */
+  .compare-table {
+    background: white;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .compare-table h2 {
+    font-size: 1.1em;
+    color: #2c3e50;
+    margin-bottom: 16px;
+    border-left: 4px solid #8e44ad;
+    padding-left: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88em;
+  }
+  th {
+    background: #2c3e50;
+    color: white;
+    padding: 10px 12px;
+    text-align: left;
+  }
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #f9f9f9; }
+
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    .flow { flex-direction: column; align-items: flex-start; }
+    .flow-arrow { transform: rotate(90deg); }
+  }
+</style>
+</head>
+<body>
+
+<h1>一階 ODE 解法總整理</h1>
+<p class="subtitle">化學工程數學 · 速查參考表</p>
+
+<!-- 判斷流程圖 -->
+<div class="flowchart">
+  <h2>📌 解題判斷流程</h2>
+  <div class="flow">
+    <div class="flow-box">拿到 ODE</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-question">能分離變數？<br>g(y)dy = f(x)dx</div>
+    <div class="flow-arrow">→ 是</div>
+    <div class="flow-box">① 分離變數法</div>
+  </div>
+  <br>
+  <div class="flow">
+    <div class="flow-box">否 ↓</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-question">M, N 都是<br>n次齊次函數？</div>
+    <div class="flow-arrow">→ 是</div>
+    <div class="flow-box">② 齊次ODE<br>令 v = y/x</div>
+  </div>
+  <br>
+  <div class="flow">
+    <div class="flow-box">否 ↓</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-question">形如 y' = f(ax+by+c)？</div>
+    <div class="flow-arrow">→ 是</div>
+    <div class="flow-box">③ 函數型換元<br>令 t = ax+by+c</div>
+  </div>
+  <br>
+  <div class="flow">
+    <div class="flow-box">否 ↓</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-question">∂M/∂y = ∂N/∂x？</div>
+    <div class="flow-arrow">→ 是</div>
+    <div class="flow-box">④ 恰當方程<br>直接反推 F</div>
+  </div>
+  <br>
+  <div class="flow">
+    <div class="flow-box">否 ↓</div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-box">⑤ 積分因子<br>找 I，乘進去再用④</div>
+  </div>
+</div>
+
+<!-- 卡片 1：分離變數 -->
+<div class="card blue">
+  <div class="card-header">
+    <span class="badge blue">① 分離變數法</span>
+    <h3>Separation of Variables</h3>
+  </div>
+  <div class="section-label">標準形式</div>
+  <div class="formula-box">
+    \[ \frac{dy}{dx} = \frac{f(x)}{g(y)} \quad \Rightarrow \quad g(y)\,dy = f(x)\,dx \]
+  </div>
+  <div class="section-label">解題步驟</div>
+  <ol class="steps">
+    <li>把含 y 的移到左邊，含 x 的移到右邊</li>
+    <li>兩邊同時積分</li>
+    <li>代入初始條件求積分常數 C</li>
+  </ol>
+  <div class="result-box">
+    解：\(\displaystyle \int g(y)\,dy = \int f(x)\,dx + C\)
+  </div>
+  <p class="note">化學範例：一階反應 d[A]/dt = −k[A] → [A] = [A]₀e^(−kt)</p>
+</div>
+
+<!-- 卡片 2：齊次ODE -->
+<div class="card green">
+  <div class="card-header">
+    <span class="badge green">② 齊次 ODE</span>
+    <h3>Homogeneous ODE</h3>
+  </div>
+  <div class="section-label">辨識方式</div>
+  <div class="check-condition">
+    ⚠️ M(x,y) 和 N(x,y) 都是<strong>同樣 n 次</strong>的齊次函數<br>
+    → 驗證：M(λx, λy) = λⁿM(x,y)，N 同理
+  </div>
+  <div class="section-label">解題步驟</div>
+  <ol class="steps">
+    <li>令 \(v = y/x\)，即 \(y = vx\)</li>
+    <li>求 \(dy/dx = v + x\,dv/dx\)（乘積規則）</li>
+    <li>代入原方程，化簡後變成可分離變數的 ODE</li>
+    <li>對 v, x 分離變數積分</li>
+    <li>最後把 v = y/x 代回</li>
+  </ol>
+  <div class="result-box">
+    換元核心：\(\displaystyle \frac{dy}{dx} = v + x\frac{dv}{dx}\)
+  </div>
+</div>
+
+<!-- 卡片 3：函數型換元 -->
+<div class="card orange">
+  <div class="card-header">
+    <span class="badge orange">③ 函數型換元</span>
+    <h3>Substitution: y' = f(ax + by + c)</h3>
+  </div>
+  <div class="section-label">辨識方式</div>
+  <div class="check-condition">
+    ⚠️ 右邊是 x 和 y 的<strong>線性組合</strong>的函數，如 y' = sin(x + 2y)
+  </div>
+  <div class="section-label">解題步驟</div>
+  <ol class="steps">
+    <li>令 \(t = ax + by + c\)</li>
+    <li>取全微分：\(dt = a\,dx + b\,dy\)，即 \(\frac{dt}{dx} = a + b\frac{dy}{dx}\)</li>
+    <li>解出 \(dy/dx = (dt/dx - a)/b\)，代入原方程</li>
+    <li>得到只含 t, x 的可分離 ODE</li>
+    <li>積分後代回 t = ax + by + c</li>
+  </ol>
+  <div class="result-box">
+    換元核心：\(\displaystyle \frac{dt}{dx} = a + b\,f(t)\)
+  </div>
+</div>
+
+<!-- 卡片 4：恰當方程 -->
+<div class="card purple">
+  <div class="card-header">
+    <span class="badge purple">④ 恰當方程</span>
+    <h3>Exact ODE</h3>
+  </div>
+  <div class="section-label">辨識方式</div>
+  <div class="check-condition">
+    ✅ 恰當條件：\(\displaystyle \frac{\partial M}{\partial y} = \frac{\partial N}{\partial x}\)
+  </div>
+  <div class="section-label">解題步驟</div>
+  <ol class="steps">
+    <li>確認恰當條件成立</li>
+    <li>對 M 積分（對 x 積分，y 當常數）：\(F = \int M\,dx + g(y)\)</li>
+    <li>對 F 做 ∂/∂y，令其等於 N，解出 g'(y)</li>
+    <li>積分求 g(y)</li>
+    <li>寫出解：F(x, y) = C</li>
+  </ol>
+  <div class="result-box">
+    解：\(F(x,y) = C\)，其中 \(\partial F/\partial x = M\)，\(\partial F/\partial y = N\)
+  </div>
+  <p class="note">⚠️ Step 3 解出的 g'(y) 必須只含 y，不含 x，否則恰當條件有誤</p>
+</div>
+
+<!-- 卡片 5：積分因子 -->
+<div class="card red">
+  <div class="card-header">
+    <span class="badge red">⑤ 積分因子</span>
+    <h3>Integrating Factor</h3>
+  </div>
+  <div class="section-label">使用時機</div>
+  <div class="check-condition">
+    ⚠️ ∂M/∂y ≠ ∂N/∂x，無法直接用恰當方程解法
+  </div>
+  <div class="section-label">四種情況</div>
+
+  <table>
+    <tr>
+      <th>檢驗條件</th>
+      <th>積分因子</th>
+    </tr>
+    <tr>
+      <td>\(\displaystyle\frac{\partial M/\partial y - \partial N/\partial x}{N} = f(x)\)（只含 x）</td>
+      <td>\(I(x) = e^{\int f(x)\,dx}\)</td>
+    </tr>
+    <tr>
+      <td>\(\displaystyle\frac{\partial M/\partial y - \partial N/\partial x}{-M} = f(y)\)（只含 y）</td>
+      <td>\(I(y) = e^{\int f(y)\,dy}\)</td>
+    </tr>
+    <tr>
+      <td>\(\displaystyle\frac{\partial M/\partial y - \partial N/\partial x}{N - M} = f(x+y)\)</td>
+      <td>\(I(x+y) = e^{\int f(x+y)\,d(x+y)}\)</td>
+    </tr>
+    <tr>
+      <td>\(\displaystyle\frac{\partial M/\partial y - \partial N/\partial x}{Ny - Mx} = f(xy)\)</td>
+      <td>\(I(xy) = e^{\int f(xy)\,d(xy)}\)</td>
+    </tr>
+  </table>
+
+  <div class="section-label" style="margin-top:12px">解題步驟</div>
+  <ol class="steps">
+    <li>計算 ∂M/∂y − ∂N/∂x</li>
+    <li>依序用四種分母試除，看哪個結果只含單一變數</li>
+    <li>找到對應的積分因子 I</li>
+    <li>把 I 乘進原方程：IM dx + IN dy = 0</li>
+    <li>新方程是恰當方程，用④的步驟求解</li>
+  </ol>
+</div>
+
+<!-- 比較表 -->
+<div class="compare-table">
+  <h2>📊 五種解法快速比較</h2>
+  <table>
+    <tr>
+      <th>解法</th>
+      <th>辨識關鍵字</th>
+      <th>換元或工具</th>
+      <th>最終形式</th>
+    </tr>
+    <tr>
+      <td>① 分離變數</td>
+      <td>可以把 x, y 分到兩邊</td>
+      <td>無需換元</td>
+      <td>∫g(y)dy = ∫f(x)dx</td>
+    </tr>
+    <tr>
+      <td>② 齊次 ODE</td>
+      <td>M, N 同次齊次</td>
+      <td>v = y/x</td>
+      <td>分離變數後積分</td>
+    </tr>
+    <tr>
+      <td>③ 函數型換元</td>
+      <td>y' = f(ax+by+c)</td>
+      <td>t = ax+by+c</td>
+      <td>分離變數後積分</td>
+    </tr>
+    <tr>
+      <td>④ 恰當方程</td>
+      <td>∂M/∂y = ∂N/∂x</td>
+      <td>反推 F(x,y)</td>
+      <td>F(x,y) = C</td>
+    </tr>
+    <tr>
+      <td>⑤ 積分因子</td>
+      <td>∂M/∂y ≠ ∂N/∂x</td>
+      <td>找 I，乘進去</td>
+      <td>轉化為④再解</td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
