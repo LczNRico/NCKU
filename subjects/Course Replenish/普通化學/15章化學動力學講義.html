@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 15 章 化學動力學講義</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<style>
+  :root {
+    --blue: #1a5490;
+    --light-blue: #e8f0fa;
+    --orange: #f5a623;
+    --green: #2e7d32;
+    --light-green: #e8f5e9;
+    --purple: #6a1b9a;
+    --light-purple: #f3e5f5;
+    --red: #c62828;
+    --light-red: #ffebee;
+    --yellow: #fff8e1;
+    --gray: #f5f5f5;
+    --border: #ddd;
+    --text: #333;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Microsoft JhengHei", "Noto Sans TC", "PingFang TC", sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* ── Layout ── */
+  .page-wrap { max-width: 960px; margin: 0 auto; padding: 40px 32px 80px; }
+
+  /* ── Cover ── */
+  .cover {
+    background: var(--blue);
+    color: #fff;
+    text-align: center;
+    padding: 60px 40px 48px;
+    border-radius: 8px;
+    margin-bottom: 48px;
+  }
+  .cover h1 { font-size: 2.4em; letter-spacing: 2px; margin-bottom: 12px; }
+  .cover .sub { font-size: 1.1em; opacity: .85; }
+  .cover .tags { margin-top: 20px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .cover .tag {
+    background: rgba(255,255,255,.2);
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: .85em;
+  }
+
+  /* ── TOC ── */
+  .toc {
+    background: var(--gray);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+  }
+  .toc h2 { color: var(--blue); font-size: 1.1em; margin-bottom: 14px; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin-bottom: 6px; }
+  .toc a { color: var(--blue); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ── Section headings ── */
+  h1.sec {
+    color: var(--blue);
+    font-size: 1.8em;
+    border-bottom: 4px solid var(--orange);
+    padding-bottom: 10px;
+    margin: 56px 0 28px;
+  }
+  h2.sub { color: var(--blue); font-size: 1.25em; margin: 32px 0 14px; }
+  h3.subsub { color: var(--purple); font-size: 1.05em; margin: 22px 0 10px; }
+
+  p { margin-bottom: 14px; }
+
+  /* ── Boxes ── */
+  .box {
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin: 20px 0;
+  }
+  .box-title {
+    font-weight: bold;
+    font-size: .95em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .key-box   { background: var(--light-blue);   border-left: 5px solid var(--blue);   }
+  .ex-box    { background: var(--light-green);  border-left: 5px solid var(--green);  }
+  .warn-box  { background: var(--light-red);    border-left: 5px solid var(--red);    }
+  .note-box  { background: var(--yellow);       border-left: 5px solid var(--orange); }
+  .insight-box { background: var(--light-purple); border-left: 5px solid var(--purple); }
+
+  .ex-box .box-title   { color: var(--green);  }
+  .key-box .box-title  { color: var(--blue);   }
+  .warn-box .box-title { color: var(--red);    }
+  .insight-box .box-title { color: var(--purple); }
+
+  /* ── Math display ── */
+  .math-block {
+    background: var(--gray);
+    border-left: 4px solid var(--blue);
+    padding: 16px 20px;
+    margin: 18px 0;
+    overflow-x: auto;
+    text-align: center;
+    font-size: 1.05em;
+  }
+  .math-block.highlight {
+    background: var(--light-blue);
+    border-left: 4px solid var(--blue);
+    border-radius: 4px;
+  }
+
+  /* ── Tables ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: .93em;
+  }
+  th {
+    background: var(--blue);
+    color: #fff;
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid #aac;
+  }
+  td {
+    padding: 9px 12px;
+    text-align: center;
+    border: 1px solid var(--border);
+  }
+  tr:nth-child(even) td { background: var(--gray); }
+
+  /* ── Lists ── */
+  ul, ol { padding-left: 22px; margin-bottom: 14px; }
+  li { margin-bottom: 6px; }
+
+  /* ── Step list ── */
+  .steps { counter-reset: step; list-style: none; padding: 0; }
+  .steps li {
+    counter-increment: step;
+    padding: 8px 12px 8px 44px;
+    position: relative;
+    margin-bottom: 8px;
+    background: var(--gray);
+    border-radius: 4px;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+    background: var(--blue); color: #fff;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: .8em; font-weight: bold;
+  }
+
+  /* ── Code / monospace ── */
+  code {
+    background: #f0f0f0;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: .93em;
+  }
+
+  /* ── Divider ── */
+  hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+
+  /* ── Solution toggle ── */
+  details { margin: 12px 0; }
+  summary {
+    cursor: pointer;
+    color: var(--blue);
+    font-weight: bold;
+    padding: 8px 12px;
+    background: var(--light-blue);
+    border-radius: 4px;
+    list-style: none;
+    user-select: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▶ "; font-size: .8em; }
+  details[open] summary::before { content: "▼ "; }
+  .solution { padding: 14px 16px; background: #fafafa; border: 1px solid var(--border); border-radius: 0 0 4px 4px; }
+
+  /* ── Print ── */
+  @media print {
+    .page-wrap { max-width: 100%; padding: 20px; }
+    details { display: block; }
+    details[open] summary { display: none; }
+    .solution { border: none; padding: 0; }
+  }
+
+  /* ── Highlight span ── */
+  .hl { background: #fff176; padding: 1px 4px; border-radius: 2px; }
+  .hl-red { background: #ffcdd2; padding: 1px 4px; border-radius: 2px; }
+  .hl-green { background: #c8e6c9; padding: 1px 4px; border-radius: 2px; }
+
+  /* ── Two-column ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ── Back to top ── */
+  .back-top {
+    display: inline-block;
+    color: var(--blue);
+    font-size: .85em;
+    text-decoration: none;
+    margin-top: 8px;
+  }
+  .back-top::before { content: "↑ "; }
+
+  /* ── Energy diagram (ASCII art) ── */
+  .diagram {
+    font-family: monospace;
+    font-size: .88em;
+    background: var(--gray);
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin: 16px 0;
+    white-space: pre;
+    overflow-x: auto;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- ══════════════ COVER ══════════════ -->
+<div class="cover" id="top">
+  <h1>第 15 章　化學動力學</h1>
+  <div class="sub">Chemical Kinetics — 完整講義</div>
+  <div class="tags">
+    <span class="tag">速率定律</span>
+    <span class="tag">積分速率定律</span>
+    <span class="tag">反應機構</span>
+    <span class="tag">穩態近似</span>
+    <span class="tag">阿瑞尼士方程式</span>
+    <span class="tag">催化劑</span>
+  </div>
+</div>
+
+<!-- ══════════════ TOC ══════════════ -->
+<div class="toc">
+  <h2>目錄</h2>
+  <ol>
+    <li><a href="#s1">15.1 反應速率</a></li>
+    <li><a href="#s2">15.2 速率定律導論</a></li>
+    <li><a href="#s3">15.3 決定速率定律——初始速率法</a></li>
+    <li><a href="#s4">15.4 積分速率定律</a></li>
+    <li><a href="#s4n">附錄：n 級反應通式推導</a></li>
+    <li><a href="#s5">15.5 速率定律總整理</a></li>
+    <li><a href="#s6">15.6 反應機構</a></li>
+    <li><a href="#s7">15.7 穩態近似法</a></li>
+    <li><a href="#s8">15.8 化學動力學模型（阿瑞尼士方程式）</a></li>
+    <li><a href="#s9">15.9 催化劑</a></li>
+  </ol>
+</div>
+
+<!-- ══════════════ 15.1 ══════════════ -->
+<h1 class="sec" id="s1">15.1　反應速率</h1>
+
+<h2 class="sub">一、定義</h2>
+<p>反應速率定義為<strong>單位時間內反應物或生成物濃度的變化量</strong>：</p>
+<div class="math-block">$$\text{Rate} = \frac{\Delta[\text{A}]}{\Delta t}$$</div>
+<p>因反應物濃度隨時間減少，取負號使速率為正值：</p>
+<div class="math-block highlight">$$\text{Rate} = -\frac{\Delta[\text{A}]}{\Delta t} \qquad \text{（反應物）}$$</div>
+
+<h2 class="sub">二、平均速率 vs. 瞬間速率</h2>
+<table>
+  <tr><th>種類</th><th>定義</th><th>獲取方式</th></tr>
+  <tr><td>平均速率</td><td>某段時間區間的平均值</td><td>直接由數據計算</td></tr>
+  <tr><td>瞬間速率</td><td>\(-d[\text{A}]/dt\)，特定時刻的速率</td><td>濃度-時間曲線的切線斜率</td></tr>
+  <tr><td>初始速率</td><td>\(t \to 0\) 時的瞬間速率</td><td>最常用，逆反應可忽略</td></tr>
+</table>
+
+<h2 class="sub">三、不同物種的速率關係</h2>
+<p>對於 \(a\text{A} + b\text{B} \to c\text{C} + d\text{D}\)：</p>
+<div class="math-block highlight">$$\text{Rate} = -\frac{1}{a}\frac{d[\text{A}]}{dt} = -\frac{1}{b}\frac{d[\text{B}]}{dt} = +\frac{1}{c}\frac{d[\text{C}]}{dt} = +\frac{1}{d}\frac{d[\text{D}]}{dt}$$</div>
+
+<div class="note-box box">
+  <div class="box-title">⚠ 注意</div>
+  各物種速率需除以各自的化學計量係數後才可互相比較。
+</div>
+
+<h2 class="sub">四、例題</h2>
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 1：由速率數據推算化學計量係數</div>
+  <p>已知：\(-\Delta[\text{A}]/\Delta t = 0.0080\)，\(-\Delta[\text{B}]/\Delta t = 0.0120\)，\(\Delta[\text{C}]/\Delta t = 0.0160\)（單位 mol/L·s），求係數 a、b、c。</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p>比值 \(0.0080 : 0.0120 : 0.0160 = 2 : 3 : 4\)</p>
+    <p>故 \(a=2,\ b=3,\ c=4\)，即 \(2\text{A}+3\text{B}\to 4\text{C}\)。</p>
+  </div></details>
+</div>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 2：H₂O₂ 分解的平均速率</div>
+  <p>\(2\text{H}_2\text{O}_2 \to 2\text{H}_2\text{O} + \text{O}_2\)，在 0 到 \(2.16\times10^4\) s 內，\([\text{H}_2\text{O}_2]\) 由 1.000 降至 0.500 mol/L。</p>
+  <p>求 H₂O₂ 的平均消耗速率及 O₂ 的平均生成速率。</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <div class="math-block">$$-\frac{\Delta[\text{H}_2\text{O}_2]}{\Delta t} = \frac{0.500}{2.16\times10^4} = 2.31\times10^{-5}\ \text{mol/L·s}$$</div>
+    <div class="math-block">$$\frac{\Delta[\text{O}_2]}{\Delta t} = \frac{1}{2}\times 2.31\times10^{-5} = 1.16\times10^{-5}\ \text{mol/L·s}$$</div>
+    <p>（第二段同理，速率約為第一段的一半，暗示速率依賴濃度。）</p>
+  </div></details>
+</div>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 3：速率常數的單位</div>
+  <p>已知速率定律 \(\text{Rate} = k[\text{Cl}_2]^{1/2}[\text{CHCl}_3]\)，求 k 的單位（濃度 mol/L，時間 s）。</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p>總級數 \(= 1/2 + 1 = 3/2\)</p>
+    <div class="math-block">$$k = \frac{\text{mol/L·s}}{(\text{mol/L})^{3/2}} = \text{L}^{1/2}\text{mol}^{-1/2}\text{s}^{-1}$$</div>
+    <div class="key-box box" style="margin-top:10px">
+      <div class="box-title">規律</div>
+      <table>
+        <tr><th>級數 n</th><th>k 的單位</th></tr>
+        <tr><td>0</td><td>mol/L·s</td></tr>
+        <tr><td>1</td><td>s⁻¹</td></tr>
+        <tr><td>2</td><td>L/mol·s</td></tr>
+        <tr><td>n</td><td>(mol/L)^(1−n)·s⁻¹</td></tr>
+      </table>
+    </div>
+  </div></details>
+</div>
+
+<a href="#top" class="back-top">回到頂端</a>
+
+<!-- ══════════════ 15.2 ══════════════ -->
+<hr>
+<h1 class="sec" id="s2">15.2　速率定律導論</h1>
+
+<h2 class="sub">一、速率定律的形式</h2>
+<div class="math-block highlight">$$\text{Rate} = k[\text{A}]^n[\text{B}]^m\cdots$$</div>
+<ul>
+  <li><strong>k</strong>（速率常數）：與溫度有關，與濃度<span class="hl-red">無關</span></li>
+  <li><strong>n, m</strong>（反應級數）：<span class="hl-red">必須由實驗決定</span>，不能從方程式係數推算</li>
+  <li><strong>總級數</strong> = n + m + …</li>
+</ul>
+
+<h2 class="sub">二、兩種速率定律</h2>
+<table>
+  <tr><th></th><th>微分速率定律</th><th>積分速率定律</th></tr>
+  <tr><td>描述</td><td>速率如何隨濃度變化</td><td>濃度如何隨時間變化</td></tr>
+  <tr><td>形式</td><td>Rate = k[A]ⁿ</td><td>ln[A] = −kt + ln[A]₀（一級）</td></tr>
+  <tr><td>獲取方式</td><td>初始速率法</td><td>作圖法</td></tr>
+  <tr><td>互相關係</td><td colspan="2" style="text-align:center">知其一即知其二</td></tr>
+</table>
+
+<h2 class="sub">三、速率常數 k 的重要性質</h2>
+<ul>
+  <li>k 隨溫度升高而增大（見 15.8 節）</li>
+  <li>k 的數值與單位取決於反應級數</li>
+  <li><span class="hl">定義速率的物種不同，k 值不同</span></li>
+</ul>
+
+<div class="warn-box box">
+  <div class="box-title">⚠ 重要提醒</div>
+  同一反應，若以不同物種定義速率，k 值不同，需注意計量關係換算。
+  <br>例如 \(2\text{NO}_2 \to 2\text{NO} + \text{O}_2\)，以 NO₂ 定義時 \(k = 2k'\)（k' 以 O₂ 定義）。
+</div>
+
+<h2 class="sub">四、反應級數的意義</h2>
+<table>
+  <tr><th>級數 n</th><th>濃度加倍，速率變為？</th></tr>
+  <tr><td>0</td><td>不變</td></tr>
+  <tr><td>1</td><td>2 倍</td></tr>
+  <tr><td>2</td><td>4 倍</td></tr>
+  <tr><td>−1</td><td>1/2（抑制）</td></tr>
+</table>
+
+<a href="#top" class="back-top">回到頂端</a>
+
+<!-- ══════════════ 15.3 ══════════════ -->
+<hr>
+<h1 class="sec" id="s3">15.3　決定速率定律——初始速率法</h1>
+
+<h2 class="sub">一、核心概念</h2>
+<p>設計多組實驗，<strong>每次只改變一種反應物的濃度</strong>，比較初始速率比值求各物種的級數。</p>
+
+<div class="math-block highlight">$$n = \frac{\ln(\text{Rate}_2 / \text{Rate}_1)}{\ln([\text{A}]_2 / [\text{A}]_1)}$$</div>
+
+<div class="note-box box">
+  <div class="box-title">提示</div>
+  當濃度比為整數倍時可直接心算；遇到<strong>非整數倍濃度比</strong>時必須用對數公式。
+</div>
+
+<h2 class="sub">二、例題</h2>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 1：BrO₃⁻ + Br⁻ + H⁺（三物種）</div>
+  <table>
+    <tr><th>實驗</th><th>[BrO₃⁻]</th><th>[Br⁻]</th><th>[H⁺]</th><th>初始速率 (mol/L·s)</th></tr>
+    <tr><td>1</td><td>0.10</td><td>0.10</td><td>0.10</td><td>8.0 × 10⁻⁴</td></tr>
+    <tr><td>2</td><td>0.20</td><td>0.10</td><td>0.10</td><td>1.6 × 10⁻³</td></tr>
+    <tr><td>3</td><td>0.20</td><td>0.20</td><td>0.10</td><td>3.2 × 10⁻³</td></tr>
+    <tr><td>4</td><td>0.10</td><td>0.10</td><td>0.20</td><td>3.2 × 10⁻³</td></tr>
+  </table>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p>比較實驗 1、2（[BrO₃⁻] 加倍，速率加倍）：\(n=1\)</p>
+    <p>比較實驗 2、3（[Br⁻] 加倍，速率加倍）：\(m=1\)</p>
+    <p>比較實驗 1、4（[H⁺] 加倍，速率 \(\times 4\)）：\(p=2\)</p>
+    <div class="math-block">$$\text{Rate} = k[\text{BrO}_3^-][\text{Br}^-][\text{H}^+]^2 \quad \text{（總級數 = 4）}$$</div>
+    <p>代入實驗 1 求 k：\(k = 8.0 \times 10^{-4} / (0.10)^4 = 8.0\ \text{L}^3\text{mol}^{-3}\text{s}^{-1}\)</p>
+  </div></details>
+</div>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 2：I⁻ + OCl⁻（負級數）</div>
+  <p>實驗數據（部分）：</p>
+  <table>
+    <tr><th>實驗</th><th>[I⁻]</th><th>[OCl⁻]</th><th>[OH⁻]</th><th>初始速率</th></tr>
+    <tr><td>1</td><td>0.0013</td><td>0.012</td><td>0.10</td><td>9.4 × 10⁻³</td></tr>
+    <tr><td>5</td><td>0.0013</td><td>0.012</td><td>0.050</td><td>18.7 × 10⁻³</td></tr>
+    <tr><td>6</td><td>0.0013</td><td>0.012</td><td>0.20</td><td>4.7 × 10⁻³</td></tr>
+  </table>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p>比較實驗 1 和 5，[OH⁻] 由 0.10 減半為 0.050，速率<strong>加倍</strong>：</p>
+    <div class="math-block">$$2.0 = (0.5)^p = 2^{-p} \implies p = -1$$</div>
+    <p><span class="hl-red">[OH⁻] 增大反而抑制速率 → 負一級！</span></p>
+    <div class="math-block">$$\text{Rate} = k\frac{[\text{I}^-][\text{OCl}^-]}{[\text{OH}^-]}$$</div>
+    <p>代入實驗 1：\(k = 9.4\times10^{-3}\times0.10 / (0.0013\times0.012) = 60\ \text{s}^{-1}\)</p>
+  </div></details>
+</div>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 3：H₂SeO₃ 六級反應（非整數倍濃度比）</div>
+  <p>速率定律為 \(\text{Rate} = k[\text{H}_2\text{SeO}_3][\text{H}^+]^2[\text{I}^-]^3\)，總級數 6。</p>
+  <p>對 I⁻ 的推導（[I⁻] 加倍，速率 \(\times 7.95 \approx 8 = 2^3\)），故 \(c=3\)。</p>
+  <details><summary>展開解答（求 k）</summary>
+  <div class="solution">
+    <p>代入實驗 1（[H₂SeO₃] = 1.0×10⁻⁴，[H⁺] = 2.0×10⁻²，[I⁻] = 2.0×10⁻²，Rate = 1.66×10⁻⁷）：</p>
+    <div class="math-block">$$k = \frac{1.66\times10^{-7}}{(1.0\times10^{-4})(2.0\times10^{-2})^2(2.0\times10^{-2})^3} = 5.2\times10^5\ \text{L}^5\text{mol}^{-5}\text{s}^{-1}$$</div>
+  </div></details>
+</div>
+
+<a href="#top" class="back-top">回到頂端</a>
+
+<!-- ══════════════ 15.4 ══════════════ -->
+<hr>
+<h1 class="sec" id="s4">15.4　積分速率定律</h1>
+
+<h2 class="sub">一、一級反應</h2>
+<p><strong>推導：</strong> \(-d[\text{A}]/dt = k[\text{A}]\)，分離變數積分：</p>
+<div class="math-block highlight">$$\ln[\text{A}] = -kt + \ln[\text{A}]_0 \iff \ln\frac{[\text{A}]_0}{[\text{A}]} = kt$$</div>
+<ul>
+  <li>直線作圖：\(\ln[\text{A}]\) vs. \(t\)，斜率 \(= -k\)</li>
+  <li>半衰期：\(t_{1/2} = 0.693/k\)（與初濃度<span class="hl">無關</span>）</li>
+  <li>連續半衰期：每個 \(t_{1/2}\) 完全相同</li>
+</ul>
+
+<div class="note-box box">
+  <div class="box-title">符號辨析</div>
+  <div class="two-col">
+    <div>
+      <strong>正確 ✓</strong><br>
+      \(\ln([\text{A}]/[\text{A}]_0) = -kt\)<br>
+      \(\ln([\text{A}]_0/[\text{A}]) = +kt\)
+    </div>
+    <div>
+      <strong>錯誤 ✗</strong><br>
+      \(\ln([\text{A}]/[\text{A}]_0) = +kt\)
+    </div>
+  </div>
+  <p style="margin-top:8px">分子分母的順序決定正負號，記憶方式：<span class="hl">分子較大 → ln 為正 → 右側也為正</span>。</p>
+</div>
+
+<h2 class="sub">二、二級反應</h2>
+<p><strong>推導：</strong> \(-d[\text{A}]/dt = k[\text{A}]^2\)，積分：</p>
+<div class="math-block highlight">$$\frac{1}{[\text{A}]} = kt + \frac{1}{[\text{A}]_0}$$</div>
+<ul>
+  <li>直線作圖：\(1/[\text{A}]\) vs. \(t\)，斜率 \(= +k\)</li>
+  <li>半衰期：\(t_{1/2} = 1/(k[\text{A}]_0)\)（與初濃度<span class="hl-red">成反比</span>）</li>
+  <li>連續半衰期：每個後續 \(t_{1/2}\) 是前一個的 <strong>2 倍</strong></li>
+</ul>
+
+<h2 class="sub">三、零級反應</h2>
+<p><strong>推導：</strong> \(-d[\text{A}]/dt = k\)，積分：</p>
+<div class="math-block highlight">$$[\text{A}] = -kt + [\text{A}]_0$$</div>
+<ul>
+  <li>直線作圖：\([\text{A}]\) vs. \(t\)，斜率 \(= -k\)</li>
+  <li>半衰期：\(t_{1/2} = [\text{A}]_0/(2k)\)（與初濃度<span class="hl">成正比</span>）</li>
+  <li>連續半衰期：每個後續 \(t_{1/2}\) 是前一個的 <strong>1/2</strong>（越來越短）</li>
+</ul>
+
+<h2 class="sub">四、判斷反應級數的流程</h2>
+<div class="steps">
+  <li>計算各時刻的 \([\text{A}]\)、\(\ln[\text{A}]\)、\(1/[\text{A}]\)</li>
+  <li>作 \([\text{A}]\) vs. \(t\)：直線 → 零級</li>
+  <li>作 \(\ln[\text{A}]\) vs. \(t\)：直線 → 一級</li>
+  <li>作 \(1/[\text{A}]\) vs. \(t\)：直線 → 二級</li>
+  <li>或觀察半衰期：固定→一級；加倍→二級；縮短→零級</li>
+</div>
+
+<h2 class="sub">五、假一級速率定律（Pseudo-First-Order）</h2>
+<p>對多反應物反應，設計使某一反應物濃度遠小於其他物種，其他物種濃度視為常數：</p>
+<div class="math-block">$$\text{Rate} = k[\text{B}]_0^m[\text{C}]_0^p[\text{A}]^n = k'[\text{A}]^n$$</div>
+<p>其中 \(k' = k[\text{B}]_0^m[\text{C}]_0^p\) 為假 n 級速率常數。由 \(k'\) 反推真正的 \(k\)：</p>
+<div class="math-block">$$k = \frac{k'}{[\text{B}]_0^m[\text{C}]_0^p}$$</div>
+
+<h2 class="sub">六、例題</h2>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 1：N₂O₅ 分解（一級驗證 + 計算）</div>
+  <table>
+    <tr><th>t (s)</th><th>[N₂O₅] (mol/L)</th><th>ln[N₂O₅]</th></tr>
+    <tr><td>0</td><td>0.1000</td><td>−2.303</td></tr>
+    <tr><td>100</td><td>0.0500</td><td>−2.996</td></tr>
+    <tr><td>200</td><td>0.0250</td><td>−3.689</td></tr>
+    <tr><td>300</td><td>0.0125</td><td>−4.382</td></tr>
+    <tr><td>400</td><td>0.00625</td><td>−5.075</td></tr>
+  </table>
+  <p>ln[N₂O₅] 每 100 s 差值均為 −0.693 → 直線 → <strong>一級</strong></p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <div class="math-block">$$k = \frac{0.693}{100} = 6.93\times10^{-3}\ \text{s}^{-1}$$</div>
+    <p>求 t = 150 s 時的濃度（不能直接取平均，因為線性的是 ln[A]）：</p>
+    <div class="math-block">$$\ln[\text{N}_2\text{O}_5] = -(6.93\times10^{-3})(150) + \ln(0.100) = -3.343$$</div>
+    <div class="math-block">$$[\text{N}_2\text{O}_5] = e^{-3.343} = 0.0353\ \text{mol/L}$$</div>
+  </div></details>
+</div>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 2：SO₂Cl₂ 分解（一級 + 多步計算）</div>
+  <p>\(\text{SO}_2\text{Cl}_2 \to \text{SO}_2 + \text{Cl}_2\)，320°C，\(t_{1/2} = 8.75\) h。</p>
+  <p>(a) 求 k（s⁻¹）；(b) 初壓 791 torr，12.5 h 後剩餘分子數；(c) 分解 99% 需幾小時？</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p><strong>(a)</strong> \(k = 0.693/(8.75\times3600) = 2.20\times10^{-5}\ \text{s}^{-1}\)</p>
+    <p><strong>(b)</strong> 殘餘分率 \(= e^{-kt} = e^{-0.990} = 0.372\)，初始莫耳數由理想氣體求得，殘餘 \(\approx 5.99\times10^{21}\) 個分子。</p>
+    <p><strong>(c)</strong> \(\ln(1/0.01) = kt \Rightarrow t = 4.605/(2.20\times10^{-5}) = 5.82\text{ h} \approx 6.65\) 個半衰期。</p>
+    <div class="note-box box" style="margin-top:8px">
+      分解 99% ≈ 6.65 個半衰期；分解 99.9% ≈ 9.97 個半衰期。
+    </div>
+  </div></details>
+</div>
+
+<a href="#top" class="back-top">回到頂端</a>
+
+<!-- ══════════════ n 級推導 ══════════════ -->
+<hr>
+<h1 class="sec" id="s4n">附錄：n 級反應積分速率定律通式推導</h1>
+
+<h2 class="sub">一、推導（n ≠ 1）</h2>
+<div class="math-block">$$-\frac{d[\text{A}]}{dt} = k[\text{A}]^n \implies \int_{[\text{A}]_0}^{[\text{A}]}[\text{A}]^{-n}\,d[\text{A}] = -k\int_0^t dt$$</div>
+<div class="math-block">$$\frac{[\text{A}]^{1-n} - [\text{A}]_0^{1-n}}{1-n} = -kt$$</div>
+<div class="math-block highlight">$$\boxed{[\text{A}]^{1-n} = (1-n)(-kt) + [\text{A}]_0^{1-n}}$$</div>
+<div class="math-block highlight">$$\boxed{[\text{A}]^{1-n} - [\text{A}]_0^{1-n} = (n-1)kt}$$</div>
+
+<div class="warn-box box">
+  <div class="box-title">⚠ 符號勘誤</div>
+  第二式右側為 <span class="hl-green">+(n−1)kt</span>，非 −(n−1)kt。<br>
+  驗算（n=2）：\(1/[\text{A}] - 1/[\text{A}]_0 = +kt\)（標準二級積分式）✓
+</div>
+
+<h2 class="sub">二、n = 1 的情況（另行積分）</h2>
+<div class="math-block">$$\int\frac{d[\text{A}]}{[\text{A}]} = \ln[\text{A}] \implies \ln[\text{A}] = -kt + \ln[\text{A}]_0$$</div>
+
+<h2 class="sub">三、n 級半衰期通式（n ≠ 1）</h2>
+<div class="math-block highlight">$$t_{1/2} = \frac{2^{n-1}-1}{(n-1)k[\text{A}]_0^{n-1}}$$</div>
+
+<h2 class="sub">四、連續半衰期的規則</h2>
+<p>每個後續半衰期與前一個的比值：</p>
+<div class="math-block highlight">$$\frac{t_{1/2}^{(m+1)}}{t_{1/2}^{(m)}} = 2^{n-1} \quad \text{（等比數列，公比 } 2^{n-1}\text{）}$$</div>
+<table>
+  <tr><th>級數 n</th><th>公比 2^(n−1)</th><th>規則</th></tr>
+  <tr><td>0</td><td>1/2</td><td>每個半衰期縮短為前一個的 1/2</td></tr>
+  <tr><td>1</td><td>1</td><td>每個半衰期相同（固定值）</td></tr>
+  <tr><td>2</td><td>2</td><td>每個半衰期加倍</td></tr>
+  <tr><td>3</td><td>4</td><td>每個半衰期變為 4 倍</td></tr>
+</table>
+
+<a href="#top" class="back-top">回到頂端</a>
+
+<!-- ══════════════ 15.5 ══════════════ -->
+<hr>
+<h1 class="sec" id="s5">15.5　速率定律總整理</h1>
+
+<h2 class="sub">一、完整比較表</h2>
+<table>
+  <tr><th></th><th>零級</th><th>一級</th><th>二級</th><th>n 級（n≠1）</th></tr>
+  <tr><td><strong>微分式</strong></td><td>Rate = k</td><td>Rate = k[A]</td><td>Rate = k[A]²</td><td>Rate = k[A]ⁿ</td></tr>
+  <tr><td><strong>積分式</strong></td><td>[A] = −kt + [A]₀</td><td>ln[A] = −kt + ln[A]₀</td><td>1/[A] = kt + 1/[A]₀</td><td>[A]^(1−n) − [A]₀^(1−n) = (n−1)kt</td></tr>
+  <tr><td><strong>直線作圖</strong></td><td>[A] vs. t</td><td>ln[A] vs. t</td><td>1/[A] vs. t</td><td>[A]^(1−n) vs. t</td></tr>
+  <tr><td><strong>斜率</strong></td><td>−k</td><td>−k</td><td>+k</td><td>−(n−1)k</td></tr>
+  <tr><td><strong>半衰期</strong></td><td>[A]₀/2k</td><td>0.693/k</td><td>1/(k[A]₀)</td><td>(2^(n−1)−1)/((n−1)k[A]₀^(n−1))</td></tr>
+  <tr><td><strong>t₁/₂ 與 [A]₀</strong></td><td>正比</td><td><strong>無關</strong></td><td>反比</td><td>n&gt;1 反比；n&lt;1 正比</td></tr>
+  <tr><td><strong>連續 t₁/₂ 公比</strong></td><td>1/2</td><td>1</td><td>2</td><td>2^(n−1)</td></tr>
+  <tr><td><strong>k 的單位</strong></td><td>mol/L·s</td><td>s⁻¹</td><td>L/mol·s</td><td>(mol/L)^(1−n)/s</td></tr>
+</table>
+
+<h2 class="sub">二、常見錯誤</h2>
+<table>
+  <tr><th>錯誤觀念</th><th>正確觀念</th></tr>
+  <tr><td>速率定律可由方程式係數直接寫出</td><td>速率定律<strong>只能由實驗決定</strong></td></tr>
+  <tr><td>k 值與濃度有關</td><td>k 只與<strong>溫度</strong>有關</td></tr>
+  <tr><td>半衰期一定是固定值</td><td>只有<strong>一級反應</strong>的半衰期固定</td></tr>
+  <tr><td>ln([A]/[A]₀) = +kt</td><td>應為 ln([A]/[A]₀) = <strong>−</strong>kt</td></tr>
+</table>
+
+<a href="#top" class="back-top">回到頂端</a>
+
+<!-- ══════════════ 15.6 ══════════════ -->
+<hr>
+<h1 class="sec" id="s6">15.6　反應機構</h1>
+
+<h2 class="sub">一、基本名詞</h2>
+<table>
+  <tr><th>名詞</th><th>定義</th></tr>
+  <tr><td>基元步驟</td><td>機構中單一步驟，速率定律由<strong>分子數</strong>直接寫出</td></tr>
+  <tr><td>中間體</td><td>某步驟生成、後續步驟消耗，不出現在整體方程式中</td></tr>
+  <tr><td>分子數</td><td>碰撞物種數：單分子(1)、雙分子(2)、三分子(3)</td></tr>
+  <tr><td>速率決定步驟</td><td>最慢步驟，決定整體反應速率</td></tr>
+</table>
+
+<h2 class="sub">二、基元步驟的速率定律</h2>
+<table>
+  <tr><th>分子數</th><th>步驟</th><th>速率定律</th></tr>
+  <tr><td>單分子</td><td>A → products</td><td>Rate = k[A]</td></tr>
+  <tr><td>雙分子</td><td>A + B → products</td><td>Rate = k[A][B]</td></tr>
+  <tr><td>雙分子</td><td>2A → products</td><td>Rate = k[A]²</td></tr>
+  <tr><td>三分子</td><td>A + B + C → products</td><td>Rate = k[A][B][C]（極少見）</td></tr>
+</table>
+
+<h2 class="sub">三、有效機構的兩個必要條件</h2>
+<div class="key-box box">
+  <div class="box-title">必要條件（缺一不可）</div>
+  <ol>
+    <li>各基元步驟相加 = 整體平衡方程式</li>
+    <li>機構推導出的速率定律 = 實驗測得的速率定律</li>
+  </ol>
+  滿足條件的機構可能不只一個，無法絕對證明機構正確。
+</div>
+
+<h2 class="sub">四、兩種常見機構類型</h2>
+
+<h3 class="subsub">類型一：第一步為速率決定步驟</h3>
+<p>速率定律直接由第一步的分子數寫出，不含中間體。</p>
+
+<h3 class="subsub">類型二：第一步為快速平衡，第二步為速率決定步驟</h3>
+<p>由第二步寫速率定律，利用第一步的平衡條件消去中間體：</p>
+<div class="math-block">$$k_1[\text{反應物}] = k_{-1}[\text{中間體}] \implies [\text{中間體}] = \frac{k_1}{k_{-1}}[\text{反應物}]$$</div>
+
+<h2 class="sub">五、例題</h2>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 1：O₃ 分解（快速平衡機構）</div>
+  <p>實驗速率定律：\(\text{Rate} = k[\text{O}_3]^2/[\text{O}_2]\)</p>
+  <p>機構：\(\text{O}_3 \rightleftharpoons \text{O}_2 + \text{O}\)（快速平衡），\(\text{O} + \text{O}_3 \xrightarrow{k_2} 2\text{O}_2\)（慢）</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p>速率決定步驟：Rate = k₂[O][O₃]，含中間體 [O]，利用平衡消去：</p>
+    <div class="math-block">$$k_1[\text{O}_3] = k_{-1}[\text{O}_2][\text{O}] \implies [\text{O}] = \frac{k_1[\text{O}_3]}{k_{-1}[\text{O}_2]}$$</div>
+    <div class="math-block">$$\text{Rate} = k_2 \cdot \frac{k_1[\text{O}_3]}{k_{-1}[\text{O}_2]} \cdot [\text{O}_3] = \frac{k_1k_2}{k_{-1}}\cdot\frac{[\text{O}_3]^2}{[\text{O}_2]} = k\frac{[\text{O}_3]^2}{[\text{O}_2]}\ \checkmark$$</div>
+    <p>速率定律中 O₂（<strong>生成物</strong>）出現在<strong>分母</strong>，這是快速平衡機構的特徵。</p>
+  </div></details>
+</div>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 2：Cl₂ + CHCl₃（非整數級數的來源）</div>
+  <p>實驗速率定律：\(\text{Rate} = k[\text{Cl}_2]^{1/2}[\text{CHCl}_3]\)</p>
+  <p>機構：\(\text{Cl}_2 \rightleftharpoons 2\text{Cl}\)（快速平衡），\(\text{Cl} + \text{CHCl}_3 \xrightarrow{k_2} \text{HCl}+\text{CCl}_3\)（慢），\(\text{CCl}_3+\text{Cl}\xrightarrow{k_3}\text{CCl}_4\)（快）</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p>平衡步驟消去 [Cl]：\(k_1[\text{Cl}_2]=k_{-1}[\text{Cl}]^2 \implies [\text{Cl}]=(k_1/k_{-1})^{1/2}[\text{Cl}_2]^{1/2}\)</p>
+    <div class="math-block">$$\text{Rate} = k_2(k_1/k_{-1})^{1/2}[\text{Cl}_2]^{1/2}[\text{CHCl}_3] = k[\text{Cl}_2]^{1/2}[\text{CHCl}_3]\ \checkmark$$</div>
+    <div class="insight-box box" style="margin-top:8px">
+      <div class="box-title">洞察</div>
+      <strong>非整數級數幾乎都來自平衡步驟的開根號。</strong><br>
+      Cl₂ 在快速平衡中解離為兩個 Cl，平衡式給出 [Cl] ∝ [Cl₂]^(1/2)，導致 1/2 級。
+    </div>
+  </div></details>
+</div>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 3：判斷 2NO + O₂ → 2NO₂ 的正確機構</div>
+  <p>實驗速率定律：Rate = k[NO]²[O₂]，以下哪個機構可能正確？</p>
+  <p>(b) \(\text{NO}+\text{O}_2\rightleftharpoons\text{NO}_3\)（快速平衡），\(\text{NO}_3+\text{NO}\to2\text{NO}_2\)（慢）</p>
+  <p>(d) \(2\text{NO}\rightleftharpoons\text{N}_2\text{O}_2\)（快速平衡），\(\text{N}_2\text{O}_2+\text{O}_2\to2\text{NO}_2\)（慢）</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p><strong>機構(b)：</strong>消去 [NO₃]：\(k_1[\text{NO}][\text{O}_2]=k_{-1}[\text{NO}_3]\)，代入第二步：</p>
+    <div class="math-block">$$\text{Rate} = k_2 \cdot\frac{k_1}{k_{-1}}[\text{NO}][\text{O}_2]\cdot[\text{NO}] = k[\text{NO}]^2[\text{O}_2]\ \checkmark$$</div>
+    <p><strong>機構(d)：</strong>消去 [N₂O₂]：\(k_1[\text{NO}]^2=k_{-1}[\text{N}_2\text{O}_2]\)，代入第二步：</p>
+    <div class="math-block">$$\text{Rate} = k_2\cdot\frac{k_1}{k_{-1}}[\text{NO}]^2\cdot[\text{O}_2] = k[\text{NO}]^2[\text{O}_2]\ \checkmark$$</div>
+    <p>(b) 和 (d) 均滿足條件，<strong>僅憑速率定律無法區分</strong>，需要偵測中間體 NO₃ 或 N₂O₂。</p>
+  </div></details>
+</div>
+
+<a href="#top" class="back-top">回到頂端</a>
+
+<!-- ══════════════ 15.7 ══════════════ -->
+<hr>
+<h1 class="sec" id="s7">15.7　穩態近似法（Steady-State Approximation）</h1>
+
+<h2 class="sub">一、核心假設</h2>
+<div class="math-block highlight">$$\frac{d[\text{中間體}]}{dt} = 0 \iff \text{生成速率} = \text{消耗速率}$$</div>
+<p>物理意義：中間體一生成就立刻被消耗，濃度維持極低但穩定的值。</p>
+
+<h2 class="sub">二、穩態近似 vs. 快速平衡</h2>
+<table>
+  <tr><th></th><th>快速平衡法</th><th>穩態近似法</th></tr>
+  <tr><td>假設</td><td>正逆反應速率相等</td><td>中間體濃度不隨時間改變</td></tr>
+  <tr><td>適用條件</td><td>第一步明顯為快速平衡</td><td>無法明確指定速率決定步驟</td></tr>
+  <tr><td>普遍性</td><td>較受限</td><td><strong>更普遍</strong>，快速平衡是其特例</td></tr>
+</table>
+
+<h2 class="sub">三、操作步驟</h2>
+<div class="steps">
+  <li>寫出反應機構</li>
+  <li>找出所有中間體</li>
+  <li>對每個中間體：生成速率之和 = 消耗速率之和</li>
+  <li>解出 [中間體] 的表達式</li>
+  <li>寫出整體反應速率定律</li>
+  <li>代入 [中間體]，消去中間體濃度</li>
+</div>
+
+<h2 class="sub">四、例題</h2>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 1：2NO + H₂ → N₂O + H₂O</div>
+  <p>機構：\(2\text{NO}\rightleftharpoons\text{N}_2\text{O}_2\)（步驟 1），\(\text{N}_2\text{O}_2+\text{H}_2\xrightarrow{k_2}\text{N}_2\text{O}+\text{H}_2\text{O}\)（步驟 2）</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p>中間體：N₂O₂，穩態：\(k_1[\text{NO}]^2 = k_{-1}[\text{N}_2\text{O}_2] + k_2[\text{N}_2\text{O}_2][\text{H}_2]\)</p>
+    <div class="math-block">$$[\text{N}_2\text{O}_2] = \frac{k_1[\text{NO}]^2}{k_{-1}+k_2[\text{H}_2]}$$</div>
+    <div class="math-block highlight">$$\text{Rate} = \frac{k_1k_2[\text{NO}]^2[\text{H}_2]}{k_{-1}+k_2[\text{H}_2]}$$</div>
+    <p><strong>兩個極限：</strong></p>
+    <ul>
+      <li>\(k_{-1} \gg k_2[\text{H}_2]\)：Rate ≈ \(\frac{k_1k_2}{k_{-1}}[\text{NO}]^2[\text{H}_2]\)（三級，同快速平衡）</li>
+      <li>\(k_2[\text{H}_2] \gg k_{-1}\)：Rate ≈ \(k_1[\text{NO}]^2\)（對 H₂ 零級，第一步為速率決定）</li>
+    </ul>
+  </div></details>
+</div>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 2：N₂O₅ 分解（兩個中間體）</div>
+  <p>機構含 NO₃ 和 NO 兩個中間體，推導結果：</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p>對 NO 的穩態：\(k_2[\text{NO}_3][\text{NO}_2] = k_3[\text{NO}_3][\text{NO}]\)，得 \([\text{NO}]=k_2[\text{NO}_2]/k_3\)</p>
+    <p>代入對 NO₃ 的穩態，最終得：</p>
+    <div class="math-block highlight">$$\text{Rate} = \frac{2k_1k_2}{k_{-1}+2k_2}[\text{N}_2\text{O}_5] = k[\text{N}_2\text{O}_5]$$</div>
+    <p>與實驗的一級結果一致，其中複合速率常數 \(k = \frac{2k_1k_2}{k_{-1}+2k_2}\)。</p>
+  </div></details>
+</div>
+
+<a href="#top" class="back-top">回到頂端</a>
+
+<!-- ══════════════ 15.8 ══════════════ -->
+<hr>
+<h1 class="sec" id="s8">15.8　化學動力學模型（阿瑞尼士方程式）</h1>
+
+<h2 class="sub">一、碰撞模型</h2>
+<p>反應發生需要：</p>
+<ol>
+  <li>碰撞能量 ≥ 活化能 Eₐ</li>
+  <li>碰撞方向正確（立體因子）</li>
+</ol>
+
+<h2 class="sub">二、能量圖</h2>
+<div class="diagram">
+能量
+  |        過渡態（活化錯合物）
+  |              △
+  |             /|\
+  |            / | \
+  |      Eₐ → /  |  \  ← Eₐ（逆）= Eₐ + |ΔE|（放熱時）
+  |           /   |   \
+  |          /    |    \
+  |  反應物 /    ΔE     \ 生成物
+  |________/____________\________→ 反應進度</div>
+
+<div class="key-box box">
+  <div class="box-title">重要區別</div>
+  <ul>
+    <li><strong>Eₐ</strong>：決定反應<strong>速率</strong>（Eₐ 越大，速率越慢）</li>
+    <li><strong>ΔE</strong>：決定反應<strong>方向</strong>（熱力學），與速率無關</li>
+    <li>逆反應活化能 = Eₐ − ΔE（放熱反應）</li>
+  </ul>
+</div>
+
+<h2 class="sub">三、阿瑞尼士方程式</h2>
+<div class="math-block highlight">$$\boxed{k = Ae^{-E_a/RT}}$$</div>
+<ul>
+  <li><strong>A</strong>（頻率因子）= 碰撞頻率 × 立體因子</li>
+  <li><strong>Eₐ</strong>（活化能）：單位 J/mol</li>
+  <li><strong>R</strong> = 8.3145 J/mol·K</li>
+  <li><strong>T</strong>：絕對溫度（K）</li>
+</ul>
+
+<h3 class="subsub">線性化形式（作圖求 Eₐ）</h3>
+<div class="math-block highlight">$$\ln k = -\frac{E_a}{R}\cdot\frac{1}{T} + \ln A$$</div>
+<p>以 \(\ln k\) vs. \(1/T\) 作圖得直線，斜率 \(= -E_a/R\)，截距 \(= \ln A\)。</p>
+
+<h3 class="subsub">兩點法</h3>
+<div class="math-block highlight">$$\ln\frac{k_2}{k_1} = \frac{E_a}{R}\left(\frac{1}{T_1} - \frac{1}{T_2}\right)$$</div>
+
+<h2 class="sub">四、例題</h2>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 1：兩點法求 Eₐ 及預測 k</div>
+  <p>HI 分解：Eₐ = 186 kJ/mol，T₁ = 555 K 時 k₁ = 3.52×10⁻⁷ L/mol·s。</p>
+  <p>(a) 求 645 K 時的 k₂；(b) 欲使 k 增大 1000 倍，需升溫至幾 K？</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p><strong>(a)</strong></p>
+    <div class="math-block">$$\ln\frac{k_2}{k_1} = \frac{186\times10^3}{8.3145}\left(\frac{1}{555}-\frac{1}{645}\right) = 5.64$$</div>
+    <div class="math-block">$$k_2 = 282\times3.52\times10^{-7} = 9.93\times10^{-5}\ \text{L/mol·s}$$</div>
+    <p><strong>(b)</strong> ln(1000) = 6.908：</p>
+    <div class="math-block">$$\frac{1}{T_2} = \frac{1}{555} - \frac{6.908}{2.237\times10^4} = 1.493\times10^{-3} \implies T_2 = 670\ \text{K}$$</div>
+  </div></details>
+</div>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 2：由 ln k vs. 1/T 圖求多個量</div>
+  <p>(CH₃)₃CBr + OH⁻ 反應，ln k vs. 1/T 直線：斜率 = −1.10×10⁴ K，截距 = 33.5（k 單位 s⁻¹）。</p>
+  <p>求 Eₐ、A、25°C 時的 k，並討論「溫度升高 10 K，速率加倍」的適用性。</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <div class="math-block">$$E_a = (8.3145)(1.10\times10^4) = 91.5\ \text{kJ/mol}$$</div>
+    <div class="math-block">$$A = e^{33.5} = 3.93\times10^{14}\ \text{s}^{-1}$$</div>
+    <div class="math-block">$$k_{25°C} = e^{-3.43} = 3.25\times10^{-2}\ \text{s}^{-1}$$</div>
+    <p>25→35°C 實際倍率：</p>
+    <div class="math-block">$$\frac{k_{35}}{k_{25}} = e^{1.197} = 3.3\ \text{倍（並非加倍）}$$</div>
+    <p>「升高 10 K 速率加倍」對應的 Eₐ ≈ <strong>53 kJ/mol</strong>，對 Eₐ 偏高的反應誤差很大。</p>
+  </div></details>
+</div>
+
+<a href="#top" class="back-top">回到頂端</a>
+
+<!-- ══════════════ 15.9 ══════════════ -->
+<hr>
+<h1 class="sec" id="s9">15.9　催化劑（Catalysis）</h1>
+
+<h2 class="sub">一、定義與作用原理</h2>
+<p><strong>催化劑</strong>：能加速反應速率但本身<strong>不被消耗</strong>的物質。</p>
+<p>作用：提供一條活化能較低的替代路徑。</p>
+
+<div class="key-box box">
+  <div class="box-title">催化劑的關鍵性質</div>
+  <ul>
+    <li>降低 Eₐ（活化能）</li>
+    <li><strong>不改變</strong> ΔE（反應熱）</li>
+    <li><strong>不改變</strong>平衡常數 K</li>
+    <li><strong>同時</strong>加速正反應與逆反應</li>
+    <li>催化反應的 ln k vs. 1/T 圖斜率絕對值較小</li>
+  </ul>
+</div>
+
+<h2 class="sub">二、均相 vs. 異相催化</h2>
+<table>
+  <tr><th></th><th>均相催化</th><th>異相催化</th></tr>
+  <tr><td>定義</td><td>與反應物<strong>同相</strong></td><td>與反應物<strong>不同相</strong></td></tr>
+  <tr><td>常見形式</td><td>液相酸鹼、酵素</td><td>固體金屬、金屬氧化物</td></tr>
+  <tr><td>優點</td><td>均勻接觸、選擇性高</td><td>易回收、耐高溫</td></tr>
+</table>
+
+<h2 class="sub">三、異相催化——四個基本步驟</h2>
+<div class="steps">
+  <li><strong>吸附與活化：</strong>反應物分子吸附在催化劑表面，相關化學鍵削弱</li>
+  <li><strong>表面遷移：</strong>吸附分子在表面移動，彼此靠近</li>
+  <li><strong>表面反應：</strong>形成新化學鍵，生成產物</li>
+  <li><strong>脫附：</strong>產物與表面結合力弱，離開表面</li>
+</div>
+
+<div class="note-box box">
+  <div class="box-title">名詞辨析</div>
+  <strong>吸附（Adsorption）</strong>：物質聚集在另一物質<strong>表面</strong><br>
+  <strong>吸收（Absorption）</strong>：物質進入另一物質<strong>內部</strong>（如海綿吸水）
+</div>
+
+<h2 class="sub">四、異相催化的重要實例</h2>
+
+<h3 class="subsub">4.1 Haber 製程——合成氨</h3>
+<div class="math-block">$$\text{N}_2(g) + 3\text{H}_2(g) \rightleftharpoons 2\text{NH}_3(g)$$</div>
+<ul>
+  <li>催化劑：<strong>鐵（Fe）</strong>，現代工業使用 Fe + K + Ca 混合物</li>
+  <li>鐵與氮的結合強度「恰好適中」：夠強防止 N 重新結合成 N₂，夠弱讓 N+H 形成 NH₃</li>
+  <li>Fritz Haber 測試超過 1000 種催化劑後選定鐵</li>
+</ul>
+
+<h3 class="subsub">4.2 乙烯氫化——製造飽和脂肪</h3>
+<div class="math-block">$$\text{C}_2\text{H}_4(g) + \text{H}_2(g) \xrightarrow{\text{Pt/Pd/Ni}} \text{C}_2\text{H}_6(g)$$</div>
+<p>工業用途：將不飽和脂肪（液態油）轉化為飽和脂肪（固態，如人造奶油）。</p>
+<p>機制：H₂ 吸附於金屬表面，H-H 鍵斷裂；C₂H₄ 的 C=C π 鍵削弱；表面 H 原子逐一轉移至碳原子；C₂H₆ 脫附。</p>
+
+<h3 class="subsub">4.3 SO₂ 的氧化——環境與工業的雙面性</h3>
+<table>
+  <tr><th>面向</th><th>說明</th></tr>
+  <tr><td>負面：酸雨</td><td>空氣中塵粒和水滴催化 SO₂ → SO₃，SO₃ + H₂O → H₂SO₄，造成酸雨危害</td></tr>
+  <tr><td>正面：工業製硫酸</td><td>以 Pt/V₂O₅ 固體為催化劑，催化 SO₂ + O₂ → SO₃，再製成 H₂SO₄</td></tr>
+</table>
+
+<h3 class="subsub">4.4 汽車觸媒轉化器</h3>
+<p>以<strong>鉑（Pt）和銠（Rh）</strong>沉積在陶瓷蜂巢上，處理廢氣：</p>
+<table>
+  <tr><th>廢氣成分</th><th>轉化反應</th><th>主要催化劑</th></tr>
+  <tr><td>CO</td><td>2CO + O₂ → 2CO₂</td><td>Pt</td></tr>
+  <tr><td>烴類</td><td>烴 + O₂ → CO₂ + H₂O</td><td>Pt</td></tr>
+  <tr><td>NO</td><td>2NO → N₂ + O₂</td><td>Rh（特別有效）</td></tr>
+</table>
+<div class="warn-box box">
+  <div class="box-title">負面效應</div>
+  <ul>
+    <li>轉化器也可能催化 SO₂ → SO₃，SO₃ 與水蒸氣生成 H₂SO₄</li>
+    <li>鉛汽油中的四乙基鉛會<strong>毒化</strong>催化劑（catalyst poisoning），是鉛汽油被禁用的主因之一</li>
+  </ul>
+</div>
+
+<h3 class="subsub">4.5 石油脫硫</h3>
+<p>天然石油含硫醇（R-SH），燃燒產生 SO₂。脫硫反應：</p>
+<div class="math-block">$$\text{R-SH} \to \text{R-H} + \text{S}$$</div>
+<p>催化劑：<strong>鉬（Mo）、鈷（Co）、硫的混合物</strong>。機制：硫醇吸附後 S-H 鍵斷裂，H 轉移至 R 片段形成 R-H，S 留在表面。</p>
+
+<h2 class="sub">五、均相催化的重要實例</h2>
+
+<h3 class="subsub">5.1 NO 對臭氧的雙重效應</h3>
+<div class="two-col">
+  <div class="key-box box">
+    <div class="box-title">對流層（低層）— 促進 O₃ 生成</div>
+    <p>高溫燃燒產生 NO，NO 氧化成 NO₂，NO₂ 光分解產生 O 原子，O + O₂ → O₃（光化學煙霧）</p>
+  </div>
+  <div class="warn-box box">
+    <div class="box-title">平流層（高層）— 促進 O₃ 分解</div>
+    <p>NO + O₃ → NO₂ + O₂；NO₂ + O → NO + O₂；整體：O₃ + O → 2O₂（NO 為催化劑，破壞臭氧層）</p>
+  </div>
+</div>
+
+<h3 class="subsub">5.2 氟氯碳化物（Freons/CFCs）與臭氧破洞</h3>
+<p>Freon-12（CCl₂F₂）在平流層被紫外光分解產生 Cl 原子：</p>
+<div class="math-block">$$\text{CCl}_2\text{F}_2 \xrightarrow{h\nu} \text{CClF}_2 + \text{Cl}$$</div>
+<p>Cl 催化 O₃ 分解：</p>
+<div class="math-block">$$\text{Cl} + \text{O}_3 \to \text{ClO} + \text{O}_2$$</div>
+<div class="math-block">$$\text{ClO} + \text{O} \to \text{Cl} + \text{O}_2$$</div>
+<p>整體：O₃ + O → 2O₂，Cl 為催化劑，一個 Cl 原子可摧毀數萬個 O₃ 分子。目前 Freons 已在全球被<strong>禁用</strong>（噴霧罐、冷媒等）。</p>
+
+<h3 class="subsub">5.3 酸催化——乙烯水合製乙醇</h3>
+<div class="math-block">$$\text{CH}_2{=}\text{CH}_2 + \text{H}_2\text{O} \xrightarrow{\text{H}^+} \text{CH}_3\text{CH}_2\text{OH}$$</div>
+<p>機制：H⁺ 攻擊 C=C 雙鍵形成碳陽離子中間體（缺八隅體，活性高）→ 與 H₂O 反應 → 脫去 H⁺（催化劑重生）。</p>
+
+<h2 class="sub">六、酵素催化（Enzyme Catalysis）</h2>
+
+<h3 class="subsub">6.1 結構與特性</h3>
+<p>酵素是由 α-胺基酸組成的蛋白質大分子，折疊後形成<strong>活性位點（active site）</strong>，賦予酵素高度專一性。</p>
+
+<h3 class="subsub">6.2 催化機構</h3>
+<div class="math-block">$$\text{E} + \text{S} \underset{k_{-1}}{\stackrel{k_1}{\rightleftharpoons}} \text{E·S} \xrightarrow{k_2} \text{E} + \text{P}$$</div>
+<table>
+  <tr><th>符號</th><th>意義</th></tr>
+  <tr><td>E</td><td>酵素（enzyme）</td></tr>
+  <tr><td>S</td><td>受質（substrate）</td></tr>
+  <tr><td>E·S</td><td>酵素-受質複合體，反應在此發生</td></tr>
+  <tr><td>P</td><td>產物，釋放後酵素重新利用</td></tr>
+</table>
+
+<h3 class="subsub">6.3 米氏方程式（Michaelis-Menten Equation）</h3>
+<p>由穩態近似推導：</p>
+<div class="math-block highlight">$$\text{Rate} = \frac{k_2[\text{E}]_T[\text{S}]}{K_m + [\text{S}]}$$</div>
+<p>其中米氏常數 \(K_m = (k_{-1}+k_2)/k_1\)，\([\text{E}]_T = [\text{E}]+[\text{E·S}]\)。</p>
+<table>
+  <tr><th>[S] 的範圍</th><th>近似結果</th><th>行為</th></tr>
+  <tr><td>[S] ≪ Kₘ</td><td>Rate ≈ (k₂[E]ₜ/Kₘ)[S]</td><td>一級反應</td></tr>
+  <tr><td>[S] ≫ Kₘ</td><td>Rate ≈ k₂[E]ₜ = Vₘₐₓ</td><td>零級反應（活性位點飽和）</td></tr>
+</table>
+
+<h3 class="subsub">6.4 羧肽酶 A（Carboxypeptidase-A）</h3>
+<p>含 307 個胺基酸、含 Zn²⁺ 的蛋白酶，負責切除蛋白質鏈末端的胺基酸。Zn²⁺ 極化 C=O 鍵，使鄰近 C-N 鍵更容易斷裂。</p>
+
+<h3 class="subsub">6.5 酵素的效率</h3>
+<p>碳酸酐酶：每個酵素分子每秒催化超過 <strong>600,000 個</strong> CO₂ 分子反應。微量酵素即可維持生命所需速率。</p>
+
+<h3 class="subsub">6.6 極端酵素（Extremozymes）</h3>
+<p>來自極端環境微生物（嗜熱、嗜冷、嗜酸、嗜鹼等）的酵素，可在工業常規酵素無法運作的條件下發揮催化活性。全球工業酵素市場超過 <strong>70 億美元</strong>。</p>
+
+<h2 class="sub">七、例題</h2>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 1：催化劑對活化能的影響</div>
+  <p>H₂O₂ 分解：無催化劑 Eₐ = 70.0 kJ/mol，加 MnO₂ 後 Eₐ = 42.0 kJ/mol（20°C）。</p>
+  <p>(a) 求 k 比值；(b) 需升溫至幾度才能讓未催化速率等於 20°C 催化速率？</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p><strong>(a)</strong> T = 293 K，A 相同：</p>
+    <div class="math-block">$$\frac{k_{\text{催化}}}{k_{\text{未催化}}} = e^{(70000-42000)/(8.3145\times293)} = e^{11.5} \approx 9.9\times10^4$$</div>
+    <p>催化劑使速率常數增大約 <strong>10 萬倍</strong>！</p>
+    <p><strong>(b)</strong> 令兩者 k 相等：</p>
+    <div class="math-block">$$T_2 = \frac{70000\times293}{42000} = 488\ \text{K} = 215°\text{C}$$</div>
+  </div></details>
+</div>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 2：N₂O 在 Pt 表面的零級分解</div>
+  <p>\(2\text{N}_2\text{O}(g) \xrightarrow{\text{Pt}} 2\text{N}_2 + \text{O}_2\)，[N₂O]₀ = 0.50 mol/L，k = 2.4×10⁻⁴ mol/L·s。</p>
+  <p>(a) 為何是零級？(b) 反應物完全耗盡時間？(c) [N₂O]₀ 加倍後，耗盡時間如何變化？</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p><strong>(a)</strong> Pt 表面位點有限，[N₂O] 夠高時表面<strong>完全飽和</strong>，速率由表面反應決定，為常數。</p>
+    <p><strong>(b)</strong> 零級，令 [A] = 0：\(t = [\text{A}]_0/k = 0.50/(2.4\times10^{-4}) \approx 2100\ \text{s}\)</p>
+    <p><strong>(c)</strong> [N₂O]₀ = 1.00 mol/L：\(t = 1.00/(2.4\times10^{-4}) \approx 4200\ \text{s}\)，剛好<strong>加倍</strong>，驗證零級反應 \(t_{1/2}\propto[\text{A}]_0\)。</p>
+  </div></details>
+</div>
+
+<div class="ex-box box">
+  <div class="box-title">▸ 例題 3：酵素動力學推導（米氏方程式）</div>
+  <p>由穩態近似對 E·S 推導完整速率定律，設 [E]ₜ = [E] + [E·S]。</p>
+  <details><summary>展開解答</summary>
+  <div class="solution">
+    <p>穩態：\(k_1[\text{E}][\text{S}] = (k_{-1}+k_2)[\text{E·S}]\)</p>
+    <p>令 [E] = [E]ₜ − [E·S]：</p>
+    <div class="math-block">$$[\text{E·S}] = \frac{k_1[\text{E}]_T[\text{S}]}{k_{-1}+k_2+k_1[\text{S}]} = \frac{[\text{E}]_T[\text{S}]}{K_m+[\text{S}]}$$</div>
+    <div class="math-block highlight">$$\text{Rate} = k_2[\text{E·S}] = \frac{k_2[\text{E}]_T[\text{S}]}{K_m+[\text{S}]}$$</div>
+    <p>低 [S]：Rate ≈ \((k_2[\text{E}]_T/K_m)[\text{S}]\)（一級）；高 [S]：Rate → \(k_2[\text{E}]_T = V_{\max}\)（零級）。</p>
+  </div></details>
+</div>
+
+<hr>
+
+<!-- ══════════════ FINAL SUMMARY ══════════════ -->
+<h2 class="sub">全章概念圖</h2>
+<div class="diagram">
+化學動力學（第 15 章）
+│
+├── 速率定律
+│   ├── 微分速率定律  Rate = k[A]ⁿ[B]ᵐ
+│   │   └── 由初始速率法決定
+│   └── 積分速率定律  [A] 對 t 的函數
+│       ├── 零級：[A] vs. t → 直線，t₁/₂ = [A]₀/2k
+│       ├── 一級：ln[A] vs. t → 直線，t₁/₂ = 0.693/k（獨立於[A]₀）
+│       ├── 二級：1/[A] vs. t → 直線，t₁/₂ = 1/(k[A]₀)
+│       └── n 級通式：[A]^(1−n)−[A]₀^(1−n) = (n−1)kt
+│
+├── 反應機構
+│   ├── 基元步驟（分子數 → 速率定律）
+│   ├── 中間體
+│   │   ├── 快速平衡法：利用 k₁[A] = k₋₁[I] 消去
+│   │   └── 穩態近似法：d[I]/dt = 0（更普遍）
+│   └── 速率決定步驟（最慢步驟）
+│
+├── 溫度效應
+│   └── Arrhenius 方程式：k = Ae^(−Eₐ/RT)
+│       ├── 作圖法：ln k vs. 1/T，斜率 = −Eₐ/R
+│       └── 兩點法：ln(k₂/k₁) = (Eₐ/R)(1/T₁ − 1/T₂)
+│
+└── 催化劑
+    ├── 均相（酸鹼催化、NO 效應、Freons 問題）
+    ├── 異相（Haber、氫化、SO₂、觸媒轉化器、脫硫）
+    └── 酵素（E·S 複合體、米氏方程式 Vmax）</div>
+
+<div class="note-box box" style="margin-top:32px">
+  <div class="box-title">考試常見重點整理</div>
+  <ol>
+    <li>速率定律<strong>只能由實驗決定</strong>，k 只與溫度有關</li>
+    <li>判斷反應級數：三種作圖法；或觀察半衰期是否固定</li>
+    <li>一級反應：\(t_{1/2} = 0.693/k\)，與 [A]₀ 無關；連續 t₁/₂ 相等</li>
+    <li>二級反應：\(t_{1/2} = 1/(k[\text{A}]_0)\)；連續 t₁/₂ 加倍</li>
+    <li>n 級連續 t₁/₂ 公比 = \(2^{n-1}\)</li>
+    <li>有效機構：①相加等於整體方程式；②速率定律與實驗一致</li>
+    <li>穩態近似 ⊃ 快速平衡（當 k₋₁ ≫ k₂ 時兩者等價）</li>
+    <li>Arrhenius：\(\ln k = (-E_a/R)(1/T) + \ln A\)，斜率 = \(-E_a/R\)</li>
+    <li>催化劑降低 Eₐ，不改變 ΔE 和 K；同時加速正逆反應</li>
+    <li>酵素：低 [S] 一級，高 [S] 零級（Vₘₐₓ，飽和）</li>
+  </ol>
+</div>
+
+<p style="text-align:center; color:#999; font-size:.85em; margin-top:48px">
+  第 15 章化學動力學講義 ∣ 普通化學
+</p>
+
+</div><!-- /page-wrap -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "\\(", right: "\\)", display: false}
+      ],
+      throwOnError: false
+    });
+  });
+</script>
+</body>
+</html>
