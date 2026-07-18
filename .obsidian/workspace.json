@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "8c38c5423c2da10f",
+    "type": "split",
+    "children": [
+      {
+        "id": "60061e692a2de4cc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "630c1ec4f77a53f2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ch2_Part1_極性與分子間作用力"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "99c28b71d87c6888",
+    "type": "split",
+    "children": [
+      {
+        "id": "b3414a9311199f08",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "acdb7390b35cd50b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "檔案瀏覽器"
+            }
+          },
+          {
+            "id": "b3c978c8f58e1d61",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜尋"
+            }
+          },
+          {
+            "id": "ff23ed65bd1bdafa",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "書籤"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 358.50390243530273
+  },
+  "right": {
+    "id": "51505f105ddf53d2",
+    "type": "split",
+    "children": [
+      {
+        "id": "3ecc5cb4fcdd9a04",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "10470ceab0960877",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Ch2_Part1_極性與分子間作用力 的反向連結"
+            }
+          },
+          {
+            "id": "0d5fd00d246d90d2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Ch2_Part1_極性與分子間作用力 的對外連結"
+            }
+          },
+          {
+            "id": "4515c46cbb387da7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "標籤"
+            }
+          },
+          {
+            "id": "0542d94257bac462",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "所有屬性"
+            }
+          },
+          {
+            "id": "542f107b0770f20c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Ch2_Part1_極性與分子間作用力 的大綱"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:開啟快速切換": false,
+      "graph:查看關聯圖": false,
+      "canvas:建立新畫布": false,
+      "daily-notes:開啟今天的每日筆記": false,
+      "templates:插入模板": false,
+      "command-palette:開啟命令面板": false,
+      "bases:建立新的 base": false
+    }
+  },
+  "floating": {
+    "id": "01e5de715780c7c3",
+    "type": "floating",
+    "children": [
+      {
+        "id": "0eb0a217d87ed135",
+        "type": "window",
+        "children": [
+          {
+            "id": "5c260cc47906d764",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "de1fdcc901fed72e",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
+                    "mode": "preview",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "Ch2_Part1_極性與分子間作用力"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 214,
+        "y": 25,
+        "width": 746,
+        "height": 854,
+        "maximize": false,
+        "zoom": 0.5
+      }
+    ]
+  },
+  "active": "de1fdcc901fed72e",
+  "lastOpenFiles": [
+    "training plan/小腿訓練動作字卡總覽.md",
+    "training plan",
+    "新增資料夾",
+    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Theory.md",
+    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md"
+  ]
+}
