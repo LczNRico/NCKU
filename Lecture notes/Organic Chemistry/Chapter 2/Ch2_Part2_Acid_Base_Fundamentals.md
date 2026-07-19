@@ -1,4 +1,4 @@
-# Chapter 2 · Part II（新版）：酸鹼基本理論
+# Chapter 2 · Part II：酸鹼基本理論
 ### (2-4 Arrhenius Acids and Bases ~ 2-8 Solvent Effects on Acidity and Basicity)
 
 > 本次重新拆分：原本的 Part II 涵蓋 2-4~2-13 共十節，內容被壓縮。這份新版**只處理 2-4~2-8**（酸鹼定義的三層演進、Ka/Kb 的完整推導、平衡方向判斷、拉平效應），份量減半、深度加倍。2-9~2-13（酸性強弱五大影響因素）將於 Part III 獨立處理。
