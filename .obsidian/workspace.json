@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
+                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Fundamentals.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ch2_Part1_極性與分子間作用力"
+              "title": "Ch2_Part2_Acid_Base_Fundamentals"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 358.50390243530273,
-    "collapsed": true
+    "width": 358.50390243530273
   },
   "right": {
     "id": "51505f105ddf53d2",
@@ -184,8 +183,14 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "630c1ec4f77a53f2",
+  "active": "acdb7390b35cd50b",
   "lastOpenFiles": [
+    "Lecture notes/Calculus/15.2_一般區域上的二重積分.md",
+    "Lecture notes/Calculus/15.1_矩形區域上的二重積分_1.md",
+    "Lecture notes/Calculus",
+    "未命名",
+    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
+    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Fundamentals.md",
     "subjects/training plan/小腿訓練動作字卡總覽.md",
     "subjects/training plan",
     "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part3_Acidity_Factors_Lewis.md",
@@ -198,9 +203,7 @@
     "Lecture notes/backup/coordination_rules_updated.md",
     "Lecture notes/backup",
     "Lecture notes/Ch2_Part2_Acid_Base_Theory.md",
-    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Fundamentals.md",
     "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Theory.md",
-    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
     "training plan/小腿訓練動作字卡總覽.md",
     "training plan",
     "新增資料夾"
