@@ -4,21 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "60061e692a2de4cc",
+        "id": "a5d10711847991fa",
         "type": "tabs",
         "children": [
           {
-            "id": "630c1ec4f77a53f2",
+            "id": "206de837ea75962b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture notes/Calculus/15.1_矩形區域上的二重積分.md",
+                "file": "Lecture notes/Calculus/11_1_數列.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "15.1_矩形區域上的二重積分"
+              "title": "11_1_數列"
+            }
+          },
+          {
+            "id": "7de02b7962c93917",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part3_Acidity_Factors_Lewis.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ch2_Part3_Acidity_Factors_Lewis"
             }
           }
         ]
@@ -35,13 +49,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "acdb7390b35cd50b",
+            "id": "ed2a059b644082ca",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "檔案瀏覽器"
@@ -78,7 +94,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 358.50390243530273
+    "width": 285.6809959411621,
+    "collapsed": true
   },
   "right": {
     "id": "51505f105ddf53d2",
@@ -94,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
+                "file": "Lecture notes/Calculus/11_1_數列.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +121,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Ch2_Part1_極性與分子間作用力 的反向連結"
+              "title": "反向連結"
             }
           },
           {
@@ -183,17 +200,27 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "630c1ec4f77a53f2",
+  "active": "206de837ea75962b",
   "lastOpenFiles": [
-    "Lecture notes/Calculus/15.2_一般區域上的二重積分.md",
-    "Lecture notes/Calculus/15.1_矩形區域上的二重積分.md",
+    "Lecture notes/Calculus/11_2_級數.md",
+    "Lecture notes/Calculus/11_1_數列.md",
     "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Fundamentals.md",
+    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part3_Acidity_Factors_Lewis.md",
+    "Lecture notes/Calculus/15.5_曲面面積.md",
+    "Lecture notes/Calculus/15.3_極座標下的二重積分.md",
+    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
+    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part4_Curved_Arrows_Functional_Groups.md",
+    "Lecture notes/Calculus/15.2_一般區域上的二重積分.md",
+    "Lecture notes/Organic Chemistry/Chapter 2/desktop.ini",
+    "Lecture notes/Organic Chemistry/textbook backup/desktop.ini",
+    "Lecture notes/Organic Chemistry/Chapter 1/desktop.ini",
+    "Lecture notes/Organic Chemistry/desktop.ini",
+    "desktop.ini",
+    "Lecture notes/Calculus/15.1_矩形區域上的二重積分.md",
     "Lecture notes/Calculus",
     "未命名",
-    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
     "subjects/training plan/小腿訓練動作字卡總覽.md",
     "subjects/training plan",
-    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part3_Acidity_Factors_Lewis.md",
     "Lecture notes/backup/Ch2_Part2_Acid_Base_Theory.md",
     "Lecture notes/backup/第21章_總複習筆記_命名與反應觀念-v2.md",
     "Lecture notes/backup/第21章_21.4_烴的衍生物講義-v1.md",
@@ -205,7 +232,6 @@
     "Lecture notes/Ch2_Part2_Acid_Base_Theory.md",
     "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Theory.md",
     "training plan/小腿訓練動作字卡總覽.md",
-    "training plan",
-    "新增資料夾"
+    "training plan"
   ]
 }
