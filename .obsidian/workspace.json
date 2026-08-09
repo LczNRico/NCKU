@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "206de837ea75962b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture notes/Calculus/11_1_數列.md",
-                "mode": "preview",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "11_1_數列"
-            }
-          },
-          {
             "id": "7de02b7962c93917",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part3_Acidity_Factors_Lewis.md",
+                "file": "Lecture notes/Calculus/11_4_比較測試.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ch2_Part3_Acidity_Factors_Lewis"
+              "title": "11_4_比較測試"
             }
           }
         ]
@@ -111,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lecture notes/Calculus/11_1_數列.md",
+                "file": "Lecture notes/Calculus/11_3_積分測試與誤差估計.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -200,12 +186,15 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "206de837ea75962b",
+  "active": "7de02b7962c93917",
   "lastOpenFiles": [
+    "Lecture notes/Calculus/11_5_交錯級數與絕對收斂.md",
+    "Lecture notes/Calculus/11_3_積分測試與誤差估計.md",
+    "Lecture notes/Calculus/11_4_比較測試.md",
     "Lecture notes/Calculus/11_2_級數.md",
+    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part3_Acidity_Factors_Lewis.md",
     "Lecture notes/Calculus/11_1_數列.md",
     "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Fundamentals.md",
-    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part3_Acidity_Factors_Lewis.md",
     "Lecture notes/Calculus/15.5_曲面面積.md",
     "Lecture notes/Calculus/15.3_極座標下的二重積分.md",
     "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
