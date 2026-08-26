@@ -13,12 +13,40 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture notes/Calculus/11_4_比較測試.md",
+                "file": "Lecture notes/Finance/布林帶寬BBW參數探討講義.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "布林帶寬BBW參數探討講義"
+            }
+          },
+          {
+            "id": "d05cb0531d0a439b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Fundamentals.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ch2_Part2_Acid_Base_Fundamentals"
+            }
+          },
+          {
+            "id": "7756df3578f76fc4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part1_烷類分類與命名.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "11_4_比較測試"
+              "title": "Ch3_Part1_烷類分類與命名"
             }
           }
         ]
@@ -188,13 +216,18 @@
   },
   "active": "7de02b7962c93917",
   "lastOpenFiles": [
-    "Lecture notes/Calculus/11_5_交錯級數與絕對收斂.md",
-    "Lecture notes/Calculus/11_3_積分測試與誤差估計.md",
-    "Lecture notes/Calculus/11_4_比較測試.md",
-    "Lecture notes/Calculus/11_2_級數.md",
-    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part3_Acidity_Factors_Lewis.md",
-    "Lecture notes/Calculus/11_1_數列.md",
     "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Fundamentals.md",
+    "Lecture notes/Finance/布林帶寬BBW參數探討講義.md",
+    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part3_Acidity_Factors_Lewis.md",
+    "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part1_烷類分類與命名.md",
+    "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part2_物理性質與反應.md",
+    "Lecture notes/Calculus/11_5_交錯級數與絕對收斂.md",
+    "Lecture notes/Calculus/11_7_收斂測試的選擇策略.md",
+    "Lecture notes/Calculus/11_6_比值測試與根值測試.md",
+    "Lecture notes/Calculus/11_4_比較測試.md",
+    "Lecture notes/Calculus/11_3_積分測試與誤差估計.md",
+    "Lecture notes/Calculus/11_2_級數.md",
+    "Lecture notes/Calculus/11_1_數列.md",
     "Lecture notes/Calculus/15.5_曲面面積.md",
     "Lecture notes/Calculus/15.3_極座標下的二重積分.md",
     "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
@@ -218,9 +251,6 @@
     "Lecture notes/backup/LLM Comparison.md",
     "Lecture notes/backup/coordination_rules_updated.md",
     "Lecture notes/backup",
-    "Lecture notes/Ch2_Part2_Acid_Base_Theory.md",
-    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Theory.md",
-    "training plan/小腿訓練動作字卡總覽.md",
     "training plan"
   ]
 }

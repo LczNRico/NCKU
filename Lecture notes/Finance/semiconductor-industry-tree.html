@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>晶圓產業結構圖</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+  :root{
+    --bg:#0A0E12;
+    --panel:#111820;
+    --panel-hi:#161F29;
+    --line:#22303C;
+    --trace:#4FD1C5;
+    --trace-dim:#245650;
+    --amber:#F0A94E;
+    --text:#E8EEF2;
+    --muted:#7C8A96;
+    --up:#4FD1C5;
+    --mid:#F0A94E;
+    --down:#E8677D;
+    --sup:#8B7FE8;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+    font-family:'Noto Sans TC',sans-serif;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  .hero{
+    padding:36px 20px 24px;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(79,209,197,0.08), transparent 40%),
+      radial-gradient(circle at 85% 10%, rgba(240,169,78,0.06), transparent 45%),
+      var(--bg);
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:28px 28px;
+    opacity:0.15;
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px; letter-spacing:0.2em; color:var(--trace);
+    text-transform:uppercase; margin:0 0 10px;
+  }
+  h1{
+    font-size:26px; line-height:1.35; margin:0 0 10px; font-weight:900;
+    position:relative;
+  }
+  .hero p{color:var(--muted); font-size:13.5px; line-height:1.7; margin:0; max-width:60ch; position:relative;}
+
+  .legend{
+    display:flex; flex-wrap:wrap; gap:8px 14px; padding:14px 20px;
+    background:var(--panel); border-bottom:1px solid var(--line);
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--muted);
+  }
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .dot{width:8px; height:8px; border-radius:50%; display:inline-block;}
+
+  .tree{padding:22px 16px 60px; max-width:720px; margin:0 auto;}
+
+  .stage{margin-bottom:14px; position:relative;}
+  .stage-head{
+    display:flex; align-items:center; gap:12px;
+    padding:14px 16px; background:var(--panel);
+    border:1px solid var(--line); border-radius:10px;
+    cursor:pointer; user-select:none;
+    transition:border-color .15s ease;
+  }
+  .stage-head:active{border-color:var(--stage-color);}
+  .stage-idx{
+    font-family:'IBM Plex Mono',monospace; font-size:11px;
+    color:var(--stage-color); border:1px solid var(--stage-color);
+    border-radius:5px; padding:3px 7px; flex-shrink:0;
+    background:rgba(255,255,255,0.02);
+  }
+  .stage-title{flex:1; font-weight:700; font-size:15.5px;}
+  .stage-sub{font-size:11.5px; color:var(--muted); font-family:'IBM Plex Mono',monospace; margin-top:2px;}
+  .chev{
+    font-family:'IBM Plex Mono',monospace; color:var(--muted); font-size:14px;
+    transition:transform .2s ease; flex-shrink:0;
+  }
+  .stage.open .chev{transform:rotate(90deg); color:var(--stage-color);}
+
+  .stage-body{
+    max-height:0; overflow:hidden;
+    transition:max-height .25s ease;
+    padding-left:14px; margin-left:20px;
+    border-left:1px dashed var(--line);
+  }
+  .stage.open .stage-body{max-height:4000px;}
+
+  .node{
+    position:relative; margin:14px 0 14px 14px;
+    padding:14px 14px 14px 16px;
+    background:var(--panel-hi);
+    border:1px solid var(--line);
+    border-left:3px solid var(--stage-color);
+    border-radius:8px;
+  }
+  .node::before{
+    content:""; position:absolute; left:-32px; top:22px;
+    width:18px; height:1px; background:var(--line);
+  }
+  .node-name{font-weight:700; font-size:14.5px; margin:0 0 6px;}
+  .node-desc{font-size:13px; line-height:1.75; color:#C3CDD5; margin:0 0 10px;}
+  .companies{display:flex; flex-direction:column; gap:6px;}
+  .company{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid var(--line);
+    border-radius:6px; padding:7px 10px;
+    font-size:12.5px;
+  }
+  .company-name{font-weight:500;}
+  .company-mkt{
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px;
+    color:var(--amber); white-space:nowrap; flex-shrink:0;
+  }
+
+  .flow-note{
+    text-align:center; font-family:'IBM Plex Mono',monospace;
+    font-size:11px; color:var(--muted); margin:26px 0 8px;
+    letter-spacing:0.05em;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <p class="eyebrow">SEMICONDUCTOR WAFER SUPPLY CHAIN</p>
+  <h1>晶圓產業結構圖</h1>
+  <p>從矽晶圓到終端晶片，一條產業鏈跨越四個階段、十餘個專業分工環節。點擊各階段展開細項，每個環節皆附上代表公司與其上市市場。</p>
+</div>
+
+<div class="legend">
+  <span><i class="dot" style="background:var(--up)"></i>上游</span>
+  <span><i class="dot" style="background:var(--mid)"></i>中游</span>
+  <span><i class="dot" style="background:var(--down)"></i>下游</span>
+  <span><i class="dot" style="background:var(--sup)"></i>支援體系</span>
+</div>
+
+<div class="tree" id="tree"></div>
+
+<script>
+const DATA = [
+  {
+    key:"up", label:"上游 · Upstream", sub:"設計與原材料 — 決定晶片的規格與基礎材料", color:"var(--up)",
+    nodes:[
+      {
+        name:"IC設計（Fabless）",
+        desc:"負責定義晶片的電路架構、規格與功能，本身不擁有晶圓廠，設計完成後委外代工生產。是整條產業鏈附加價值最高的環節之一，決定晶片的效能與差異化。",
+        companies:[
+          {name:"聯發科", mkt:"台灣證交所 TWSE 2454"},
+          {name:"高通 Qualcomm", mkt:"美國那斯達克 NASDAQ"}
+        ]
+      },
+      {
+        name:"IP矽智財",
+        desc:"提供可重複授權的電路設計模組（如處理器架構），IC設計公司採購授權後整合進自己的晶片，可大幅縮短設計時間、降低重工風險。",
+        companies:[
+          {name:"Arm Holdings", mkt:"美國那斯達克 NASDAQ"}
+        ]
+      },
+      {
+        name:"EDA 設計工具",
+        desc:"提供晶片設計所需的軟體工具，用於電路模擬、佈局繞線與驗證。沒有EDA工具，複雜的現代晶片設計幾乎不可能完成，是整個設計流程的地基。",
+        companies:[
+          {name:"新思科技 Synopsys", mkt:"美國那斯達克 NASDAQ"},
+          {name:"益華電腦 Cadence", mkt:"美國那斯達克 NASDAQ"}
+        ]
+      },
+      {
+        name:"矽晶圓材料",
+        desc:"將高純度矽提煉、拉晶、切片、拋光成薄圓片，作為所有晶片製造的基礎載體。晶圓品質直接影響良率，是資本與技術密集的關鍵材料業。",
+        companies:[
+          {name:"環球晶圓", mkt:"台灣證交所 TWSE 6488"},
+          {name:"信越化學 Shin-Etsu", mkt:"日本東京證交所 TSE"}
+        ]
+      },
+      {
+        name:"特用化學品／光阻劑",
+        desc:"提供製程中所需的高純度氣體、光阻劑、靶材等耗材，用於曝光顯影與薄膜製作。純度要求極高，供應中斷會直接卡住整條產線。",
+        companies:[
+          {name:"東京應化 TOK", mkt:"日本東京證交所 TSE"}
+        ]
+      }
+    ]
+  },
+  {
+    key:"mid", label:"中游 · Midstream", sub:"晶圓製造 — 把設計圖轉換成真正的晶片", color:"var(--mid)",
+    nodes:[
+      {
+        name:"晶圓代工（Foundry）",
+        desc:"專門依客戶設計圖進行晶片生產，不涉入設計。是資本支出最龐大的環節，先進製程節點（如3奈米）的技術門檻與量產能力，是各國半導體戰略競逐的核心。",
+        companies:[
+          {name:"台積電 TSMC", mkt:"台灣證交所 TWSE 2330／美股ADR：NYSE"}
+        ]
+      },
+      {
+        name:"IDM 整合元件製造",
+        desc:"從設計、製造到封測一手包辦的垂直整合模式，不依賴外部代工廠。優點是製程與設計高度整合，但資本負擔也最重。",
+        companies:[
+          {name:"英特爾 Intel", mkt:"美國那斯達克 NASDAQ"},
+          {name:"三星電子 Samsung", mkt:"韓國證交所 KRX"}
+        ]
+      },
+      {
+        name:"半導體設備",
+        desc:"製造曝光機、蝕刻機、薄膜沉積設備等，是晶圓廠的「生產機具」供應商。設備效能直接決定製程節點能推進到多先進，具高度技術壟斷性。",
+        companies:[
+          {name:"艾斯摩爾 ASML", mkt:"荷蘭Euronext Amsterdam／美股ADR：NASDAQ"},
+          {name:"應用材料 Applied Materials", mkt:"美國那斯達克 NASDAQ"}
+        ]
+      },
+      {
+        name:"記憶體製造",
+        desc:"專注生產DRAM、NAND Flash等標準化記憶體晶片，產品規格化程度高，價格隨供需大幅波動，具明顯景氣循環特性。",
+        companies:[
+          {name:"美光 Micron", mkt:"美國那斯達克 NASDAQ"},
+          {name:"SK海力士", mkt:"韓國證交所 KRX"}
+        ]
+      }
+    ]
+  },
+  {
+    key:"down", label:"下游 · Downstream", sub:"封裝測試與應用 — 把晶片變成可用零件", color:"var(--down)",
+    nodes:[
+      {
+        name:"封裝測試（OSAT）",
+        desc:"將製造完成的晶圓切割、封裝成可焊接的晶片，並進行電性測試篩除瑕疵品。先進封裝（如3D堆疊）近年成為突破製程物理極限的新戰場。",
+        companies:[
+          {name:"日月光投控 ASE", mkt:"台灣證交所 TWSE 3711／美股ADR：NYSE"}
+        ]
+      },
+      {
+        name:"IC載板／基板",
+        desc:"作為晶片與電路板之間的橋樑，提供電力傳輸與訊號連接。先進封裝需求提升後，載板技術難度與重要性同步上升，一度出現全球供不應求。",
+        companies:[
+          {name:"欣興電子", mkt:"台灣證交所 TWSE 3037"}
+        ]
+      },
+      {
+        name:"終端應用品牌",
+        desc:"將晶片組裝進手機、電腦、伺服器等終端產品，直接面對消費市場。品牌商的採購量與規格需求，反過來牽動整條產業鏈的投資方向。",
+        companies:[
+          {name:"蘋果 Apple", mkt:"美國那斯達克 NASDAQ"}
+        ]
+      }
+    ]
+  },
+  {
+    key:"sup", label:"支援體系 · Support", sub:"貫穿全鏈的服務與流通環節", color:"var(--sup)",
+    nodes:[
+      {
+        name:"半導體通路／經銷",
+        desc:"連接晶片製造商與中小型下游客戶，處理備貨、物流與技術支援，讓晶片廠不必直接服務數千家零散客戶，提升整體供應鏈效率。",
+        companies:[
+          {name:"大聯大控股", mkt:"台灣證交所 TWSE 3702"}
+        ]
+      },
+      {
+        name:"設計服務／IP整合（ASIC）",
+        desc:"協助客戶把IP與客製化需求整合成可量產的晶片設計，常見於AI晶片等客製化需求興起後，是Fabless與晶圓代工之間的橋樑角色。",
+        companies:[
+          {name:"世芯電子 Alchip", mkt:"台灣證交所 TWSE 3661"}
+        ]
+      }
+    ]
+  }
+];
+
+const container = document.getElementById('tree');
+
+DATA.forEach((stage, i) => {
+  const stageEl = document.createElement('div');
+  stageEl.className = 'stage';
+  stageEl.style.setProperty('--stage-color', stage.color);
+
+  const head = document.createElement('div');
+  head.className = 'stage-head';
+  head.innerHTML = `
+    <span class="stage-idx mono">0${i+1}</span>
+    <span style="flex:1">
+      <div class="stage-title">${stage.label}</div>
+      <div class="stage-sub">${stage.sub}</div>
+    </span>
+    <span class="chev mono">›</span>
+  `;
+
+  const body = document.createElement('div');
+  body.className = 'stage-body';
+
+  stage.nodes.forEach(node => {
+    const nodeEl = document.createElement('div');
+    nodeEl.className = 'node';
+    nodeEl.style.setProperty('--stage-color', stage.color);
+    nodeEl.innerHTML = `
+      <p class="node-name">${node.name}</p>
+      <p class="node-desc">${node.desc}</p>
+      <div class="companies">
+        ${node.companies.map(c => `
+          <div class="company">
+            <span class="company-name">${c.name}</span>
+            <span class="company-mkt mono">${c.mkt}</span>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    body.appendChild(nodeEl);
+  });
+
+  head.addEventListener('click', () => {
+    stageEl.classList.toggle('open');
+  });
+
+  stageEl.appendChild(head);
+  stageEl.appendChild(body);
+  container.appendChild(stageEl);
+
+  if (i === 0) stageEl.classList.add('open');
+});
+</script>
+
+</body>
+</html>
