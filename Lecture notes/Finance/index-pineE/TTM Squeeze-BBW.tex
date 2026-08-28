@@ -1,0 +1,107 @@
+//@version=6
+indicator(title="TTM Squeeze Overlay - Multi Level", shorttitle="Squeeze-OV-ML", overlay=true)
+
+// === 布林通道參數 (標準差) ===
+lengthBB = input.int(20, title="BB Length")
+multBB = input.float(2.0, title="BB StdDev Mult")
+
+// === 凱特納通道參數 (ATR) ===
+lengthKC = input.int(20, title="KC Length")
+multKC1   = input.float(1.0, title="KC Mult 1 (最窄/最極端)")
+multKC1_5 = input.float(1.5, title="KC Mult 1.5 (Squeeze Pro標準)")
+multKC2   = input.float(2.0, title="KC Mult 2")
+multKC3   = input.float(3.0, title="KC Mult 3")
+multKC4   = input.float(4.0, title="KC Mult 4 (最寬/最寬鬆)")
+
+// === 布林通道計算 ===
+basisBB = ta.sma(close, lengthBB)
+devBB = multBB * ta.stdev(close, lengthBB)
+upperBB = basisBB + devBB
+lowerBB = basisBB - devBB
+
+// === 凱特納通道計算 (五層) ===
+basisKC = ta.sma(close, lengthKC)
+rangeKC = ta.atr(lengthKC)
+
+upperKC1 = basisKC + rangeKC * multKC1
+lowerKC1 = basisKC - rangeKC * multKC1
+upperKC1_5 = basisKC + rangeKC * multKC1_5
+lowerKC1_5 = basisKC - rangeKC * multKC1_5
+upperKC2 = basisKC + rangeKC * multKC2
+lowerKC2 = basisKC - rangeKC * multKC2
+upperKC3 = basisKC + rangeKC * multKC3
+lowerKC3 = basisKC - rangeKC * multKC3
+upperKC4 = basisKC + rangeKC * multKC4
+lowerKC4 = basisKC - rangeKC * multKC4
+
+// === 擠壓等級判斷 (由內而外,1最極端,5最寬鬆) ===
+sqzLevel = lowerBB > lowerKC1 and upperBB < upperKC1 ? 5 :
+           lowerBB > lowerKC1_5 and upperBB < upperKC1_5 ? 4 :
+           lowerBB > lowerKC2 and upperBB < upperKC2 ? 3 :
+           lowerBB > lowerKC3 and upperBB < upperKC3 ? 2 :
+           lowerBB > lowerKC4 and upperBB < upperKC4 ? 1 : 0
+
+// 完全釋放:布林通道連最寬的4倍凱特納通道都超出
+sqzOff = lowerBB < lowerKC4 and upperBB > upperKC4
+
+// === 動能計算 ===
+avgHL = math.avg(ta.highest(high, lengthKC), ta.lowest(low, lengthKC))
+avgAll = math.avg(avgHL, ta.sma(close, lengthKC))
+mom = ta.linreg(close - avgAll, lengthKC, 0)
+momRising = mom > mom[1]
+
+// === 繪製布林通道線 ===
+bbUpperPlot = plot(upperBB, title="BB Upper", color=color.new(color.blue, 0), linewidth=2)
+bbLowerPlot = plot(lowerBB, title="BB Lower", color=color.new(color.blue, 0), linewidth=2)
+plot(basisBB, title="BB Basis", color=color.new(color.blue, 60), linewidth=1)
+
+// === 繪製五層凱特納通道 (由外而內,透明度遞增) ===
+plot(upperKC4, title="KC Upper 4x", color=color.rgb(166, 82, 189), linewidth=1)
+plot(lowerKC4, title="KC Lower 4x", color=color.rgb(166, 82, 189), linewidth=1)
+plot(upperKC3, title="KC Upper 3x", color=color.rgb(233, 70, 242, 20), linewidth=1)
+plot(lowerKC3, title="KC Lower 3x", color=color.rgb(233, 70, 242, 20), linewidth=1)
+plot(upperKC2, title="KC Upper 2x", color=color.new(#00ff66, 30), linewidth=1)
+plot(lowerKC2, title="KC Lower 2x", color=color.new(#00ff66, 30), linewidth=1)
+plot(upperKC1_5, title="KC Upper 1.5x", color=color.new(#ffe415, 0), linewidth=2)
+plot(lowerKC1_5, title="KC Lower 1.5x", color=color.new(#ffe415, 0), linewidth=2)
+plot(upperKC1, title="KC Upper 1x", color=color.new(#f31010, 16), linewidth=1)
+plot(lowerKC1, title="KC Lower 1x", color=color.new(#f31010, 16), linewidth=1)
+
+// === 布林通道填色:依擠壓等級變色 ===
+fillColor = sqzOff ? color.new(color.yellow, 90) :
+     sqzLevel == 5 ? color.new(color.red, 75) :
+     sqzLevel == 4 ? color.new(color.red, 85) :
+     sqzLevel == 3 ? color.new(color.orange, 82) :
+     sqzLevel == 2 ? color.new(color.gray, 85) :
+     sqzLevel == 1 ? color.new(color.gray, 92) :
+     color.new(color.blue, 95)
+
+fill(bbUpperPlot, bbLowerPlot, color=fillColor, title="BB Fill")
+
+// === 擠壓釋放箭頭 ===
+plotshape(sqzOff and momRising, title="Squeeze Release Up", style=shape.triangleup,
+     location=location.abovebar, color=color.rgb(121, 211, 167), size=size.tiny)
+plotshape(sqzOff and not momRising, title="Squeeze Release Down", style=shape.triangledown,
+     location=location.abovebar, color=color.red, size=size.tiny)
+
+// === 擠壓等級標記 (各等級獨立 plotchar,char須為固定字元) ===
+plotchar(sqzLevel == 0, title="Squeeze Level 0", char="0", location=location.belowbar,
+     color=color.gray, size=size.tiny)
+plotchar(sqzLevel == 1, title="Squeeze Level 1", char="1", location=location.belowbar,
+     color=color.gray, size=size.tiny)
+plotchar(sqzLevel == 2, title="Squeeze Level 2", char="2", location=location.belowbar,
+     color=color.gray, size=size.tiny)
+plotchar(sqzLevel == 3, title="Squeeze Level 3", char="3", location=location.belowbar,
+     color=color.orange, size=size.tiny)
+plotchar(sqzLevel == 4, title="Squeeze Level 4 (Pro標準)", char="P", location=location.belowbar,
+     color=color.red, size=size.tiny)
+plotchar(sqzLevel == 5, title="Squeeze Level 5 (極端)", char="5", location=location.belowbar,
+     color=color.red, size=size.tiny)
+
+// === 動能標示 ===
+// === 每根K棒的動能方向箭頭 (取代背景色) ===
+plotchar(mom > 0, title="Momentum Up", char="▲", location=location.abovebar,
+     color=color.new(color.lime, 0), size=size.tiny)
+plotchar(mom <= 0, title="Momentum Down", char="▼", location=location.abovebar,
+     color=color.new(color.red, 0), size=size.tiny)
+
