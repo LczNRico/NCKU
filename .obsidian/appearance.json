@@ -1,4 +1,5 @@
 {
   "cssTheme": "Wasp",
-  "theme": "system"
+  "theme": "system",
+  "accentColor": "#adc0d1"
 }

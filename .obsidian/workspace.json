@@ -8,35 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7756df3578f76fc4",
+            "id": "e14388394aa87063",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture notes/Finance/Optical Communication/光通訊產業地圖_重點整理_Part1產業分類.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "光通訊產業地圖_重點整理_Part1產業分類"
-            }
-          },
-          {
-            "id": "dcc0b82af5831505",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part3_Acidity_Factors_Lewis.md",
+                "file": "Lecture notes/MSE/MSE_Ch3_講義三_米勒指數與線面密度.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ch2_Part3_Acidity_Factors_Lewis"
+              "title": "MSE_Ch3_講義三_米勒指數與線面密度"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -95,7 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 282.94237899780273
+    "width": 257.838436126709
   },
   "right": {
     "id": "51505f105ddf53d2",
@@ -111,11 +96,11 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lecture notes/Calculus/11_3_積分測試與誤差估計.md",
+                "file": "Lecture notes/MSE/MSE_Ch3_講義一_基礎概念與金屬晶體結構.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
@@ -173,16 +158,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
+                "file": "Lecture notes/MSE/MSE_Ch3_講義二_七大晶系與晶向指數.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Ch2_Part1_極性與分子間作用力 的大綱"
+              "title": "大綱"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -200,42 +186,47 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "dcc0b82af5831505",
+  "active": "e14388394aa87063",
   "lastOpenFiles": [
-    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Fundamentals.md",
-    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part1_極性與分子間作用力.md",
-    "Lecture notes/Finance/Optical Communication/光通訊廠商索引_業務與市占_Part2廠商分類.md",
-    "Lecture notes/Finance/Optical Communication/光通訊產業地圖_重點整理_Part1產業分類.md",
-    "Lecture notes/Finance/Optical Communication/tradingview_optical_lite_24.txt",
-    "Lecture notes/Finance/Optical Communication/tradingview_optical_full_120.txt",
-    "Lecture notes/Finance/Optical Communication/資料中心光通訊技術細流與廠商地圖.md",
-    "Lecture notes/Organic Chemistry/Chapter 1/Ch1_Part5_鍵的旋轉與異構物.md",
-    "Lecture notes/MSE/MSE_Ch1_講義.md",
-    "Lecture notes/Finance/Optical Communication/光通訊廠商索引_業務與市占_Part2廠商分類 (1).md",
-    "Lecture notes/Organic Chemistry/Chapter 1/Ch1_Part3_結構式與分子式.md",
-    "Lecture notes/Finance/業務分析/Coherent_完整業務結構報告.md",
-    "Lecture notes/Finance/業務分析/科林研發_LamResearch_完整業務結構報告.md",
-    "Lecture notes/Finance/貴金屬價格影響因素.md",
-    "Lecture notes/Anatomy/肌肉分類清單.md",
+    "Lecture notes/MSE/MSE_Ch3_講義二_七大晶系與晶向指數.md",
+    "Lecture notes/MSE/MSE_Ch5_Part2_菲克第一定律.md",
+    "Lecture notes/MSE/MSE_Ch5_Part3_菲克第二定律.md",
+    "Lecture notes/MSE/MSE_Ch4_Part1_點缺陷與成分.md",
+    "Lecture notes/MSE/MSE_Ch4_Part2_線面體缺陷.md",
     "Lecture notes/MSE/MSE_Ch3_講義四_X光繞射與非等向性.md",
     "Lecture notes/MSE/MSE_Ch3_講義三_米勒指數與線面密度.md",
-    "Lecture notes/MSE/MSE_Ch3_講義二_七大晶系與晶向指數.md",
+    "Lecture notes/MSE/MSE_Ch1_講義.md",
+    "Lecture notes/MSE/MSE_Ch5_Part4_溫度效應與半導體擴散.md",
     "Lecture notes/MSE/MSE_Ch3_講義一_基礎概念與金屬晶體結構.md",
-    "Lecture notes/MSE",
-    "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part1_烷類分類與命名.md",
-    "Lecture notes/Finance/業務分析/AMAT_完整業務結構報告.md",
-    "Lecture notes/Finance/業務分析/Broadcom_完整業務結構報告.md",
-    "Lecture notes/Finance/業務分析/博通_Broadcom_完整業務結構報告.md",
-    "Lecture notes/Finance/業務分析/應用材料_AMAT_完整業務結構報告.md",
-    "Lecture notes/Finance/光通訊產業基礎知識與大學課程地圖.md",
-    "Lecture notes/Finance/業務分析/Alphabet_Google_業務全解析報告.md",
-    "Lecture notes/Finance/業務分析",
+    "Lecture notes/MSE/MSE_Ch5_Part1_擴散基礎與機制.md",
+    "Lecture notes/MSE/MSE_Ch4_Part3_顯微檢驗與晶粒尺寸.md",
+    "Lecture notes/MSE/MSE_Ch5_總複習.md",
+    "Lecture notes/MSE/第5章_擴散_Part4_溫度效應與半導體擴散.md",
+    "Lecture notes/MSE/第5章_擴散_總複習.md",
+    "Lecture notes/MSE/第5章_擴散_Part3_菲克第二定律.md",
+    "Lecture notes/MSE/第5章_擴散_Part2_菲克第一定律.md",
+    "Lecture notes/MSE/第5章_擴散_Part1_擴散基礎與機制.md",
     "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part3_構形分析.md",
+    "Lecture notes/Finance/業務分析/AXT_AXTI_業務全解析報告.md",
+    "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part1_烷類分類與命名.md",
+    "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part2_物理性質與反應.md",
+    "Lecture notes/Physics Chemistry/Chapter 1/1A_完美氣體_講義.md",
+    "未命名.canvas",
+    "未命名 1.canvas",
+    "未命名 2.canvas",
+    "未命名 3.canvas",
+    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part4_Curved_Arrows_Functional_Groups.md",
+    "Lecture notes/Organic Chemistry/Chapter 4/desktop.ini",
+    "Lecture notes/Organic Chemistry/Chapter 4/ch4_part1_radical_chain.md",
+    "Lecture notes/Organic Chemistry/Chapter 4/ch4_part6_challenge_review.md",
+    "Lecture notes/Organic Chemistry/Chapter 4",
+    "Lecture notes/Finance/Optical Communication/tradingview_optical_lite_24.txt",
+    "Lecture notes/Finance/Optical Communication/tradingview_optical_full_120.txt",
+    "Lecture notes/MSE",
+    "Lecture notes/Finance/業務分析",
     "Lecture notes/Anatomy",
     "desktop.ini",
     "Lecture notes/Finance/指標/Bollinger.tex",
-    "Lecture notes/Finance/指標",
-    "未命名.base",
-    "Lecture notes/Ch3_Part1_烷類分類與命名.pdf"
+    "Lecture notes/Finance/指標"
   ]
 }
