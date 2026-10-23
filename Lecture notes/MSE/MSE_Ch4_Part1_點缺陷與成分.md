@@ -75,11 +75,11 @@ $$
 
 **單位配對規則（常考陷阱）**
 
-| $Q_v$ 的單位 | 分母用什麼 |
-|---|---|
-| eV/atom | $k = 8.62\times10^{-5}$ eV/atom·K |
-| J/atom | $k = 1.38\times10^{-23}$ J/atom·K |
-| J/mol | 氣體常數（gas constant）$R = 8.31$ J/mol·K，也就是把 $kT$ 換成 $RT$ |
+| $Q_v$ 的單位 | 分母用什麼                                                  |
+| --------- | ------------------------------------------------------ |
+| eV/atom   | $k = 8.62\times10^{-5}$ eV/atom·K                      |
+| J/atom    | $k = 1.38\times10^{-23}$ J/atom·K                      |
+| J/mol     | 氣體常數（gas constant）$R = 8.31$ J/mol·K，也就是把 $kT$ 換成 $RT$ |
 
 > $R = k \cdot N_A$：波茲曼常數乘以亞佛加厥數（Avogadro's number）就是氣體常數，代表「每個原子」和「每莫耳原子」的差別。
 > 換算：$1\ \text{eV/atom} = 96.5\ \text{kJ/mol}$。
