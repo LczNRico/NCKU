@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part4_Curved_Arrows_Functional_Groups.md",
+                "file": "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part3_構形分析.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ch2_Part4_Curved_Arrows_Functional_Groups"
+              "title": "Ch3_Part3_構形分析"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "Ch3_Part2_物理性質與反應"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -95,8 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 309.4156150817871,
-    "collapsed": true
+    "width": 267.88000106811523
   },
   "right": {
     "id": "51505f105ddf53d2",
@@ -174,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part2_物理性質與反應.md",
+                "file": "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part3_構形分析.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -188,8 +186,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 347.00634765625
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -202,10 +199,16 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "781eb526866c141b",
+  "active": "e14388394aa87063",
   "lastOpenFiles": [
-    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part4_Curved_Arrows_Functional_Groups.md",
+    "Lecture notes/Organic Chemistry/Chapter 6/desktop.ini",
+    "Lecture notes/Organic Chemistry/Chapter 6/ch06_part1_alkyl_halide_basics.md",
+    "Lecture notes/Organic Chemistry/Chapter 6/ch06_part2_SN2.md",
+    "Lecture notes/Organic Chemistry/Chapter 6/ch06_part3_SN1_rearrangement.md",
+    "Lecture notes/Organic Chemistry/Chapter 6/ch06_part4_comparison_review.md",
+    "Lecture notes/Organic Chemistry/Chapter 6",
     "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part2_Acid_Base_Fundamentals.md",
+    "Lecture notes/Organic Chemistry/Chapter 2/Ch2_Part4_Curved_Arrows_Functional_Groups.md",
     "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part2_物理性質與反應.md",
     "Lecture notes/Organic Chemistry/Chapter 5/ch05_part1_chirality.md",
     "Lecture notes/Organic Chemistry/Chapter 5/ch05_part4_fischer_conformation.md",
@@ -225,11 +228,6 @@
     "Lecture notes/MSE/MSE_Ch5_Part3_菲克第二定律.md",
     "Lecture notes/MSE/MSE_Ch5_Part4_溫度效應與半導體擴散.md",
     "Lecture notes/MSE/MSE_Ch4_Part3_顯微檢驗與晶粒尺寸.md",
-    "Lecture notes/MSE/MSE_Ch4_Part1_點缺陷與成分.md",
-    "Lecture notes/MSE/MSE_Ch4_Part2_線面體缺陷.md",
-    "Lecture notes/MSE/MSE_Ch3_講義四_X光繞射與非等向性.md",
-    "Lecture notes/MSE/MSE_Ch3_講義三_米勒指數與線面密度.md",
-    "Lecture notes/MSE/MSE_Ch4_總整理.md",
     "未命名.canvas",
     "未命名 1.canvas",
     "未命名 2.canvas",
@@ -242,7 +240,6 @@
     "Lecture notes/Finance/業務分析",
     "Lecture notes/Anatomy",
     "desktop.ini",
-    "Lecture notes/Finance/指標/Bollinger.tex",
-    "Lecture notes/Finance/指標"
+    "Lecture notes/Finance/指標/Bollinger.tex"
   ]
 }
