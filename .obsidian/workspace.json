@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part3_構形分析.md",
+                "file": "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part4_環烷類與立體化學.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ch3_Part3_構形分析"
+              "title": "Ch3_Part4_環烷類與立體化學"
+            }
+          },
+          {
+            "id": "277d58e88f3e6e5e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture notes/Organic Chemistry/Chapter 4/ch4_part1_radical_chain.md",
+                "mode": "preview",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ch4_part1_radical_chain"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -173,7 +187,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part3_構形分析.md",
+                "file": "Lecture notes/Organic Chemistry/Chapter 4/ch4_part1_radical_chain.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -197,14 +211,19 @@
       "daily-notes:開啟今天的每日筆記": false,
       "templates:插入模板": false,
       "command-palette:開啟命令面板": false,
-      "bases:建立新的 base": false
+      "bases:建立新的 base": false,
+      "github-sync:Sync with Remote": false
     }
   },
-  "active": "781eb526866c141b",
+  "active": "277d58e88f3e6e5e",
   "lastOpenFiles": [
-    "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part2_物理性質與反應.md",
     "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part4_環烷類與立體化學.md",
+    "Lecture notes/Organic Chemistry/Chapter 4/ch4_part1_radical_chain.md",
     "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part3_構形分析.md",
+    "未命名.canvas",
+    "2026-10-24.md",
+    "未命名.base",
+    "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part2_物理性質與反應.md",
     "Lecture notes/test.f",
     "Lecture notes/Organic Chemistry/Chapter 6/desktop.ini",
     "Lecture notes/Organic Chemistry/Chapter 6/ch06_part1_alkyl_halide_basics.md",
@@ -229,9 +248,6 @@
     "Lecture notes/Physics Chemistry/Focus1_總整理與公式表.md",
     "Lecture notes/Physics Chemistry/Focus2_2A_內能講義.md",
     "Lecture notes/Physics Chemistry/Focus2_總整理與公式表.md",
-    "Lecture notes/MSE/MSE_Ch5_Part3_菲克第二定律.md",
-    "Lecture notes/MSE/MSE_Ch5_Part4_溫度效應與半導體擴散.md",
-    "未命名.canvas",
     "未命名 1.canvas",
     "未命名 2.canvas",
     "未命名 3.canvas",
@@ -240,7 +256,6 @@
     "Lecture notes/Finance/Optical Communication/tradingview_optical_lite_24.txt",
     "Lecture notes/Finance/Optical Communication/tradingview_optical_full_120.txt",
     "Lecture notes/MSE",
-    "Lecture notes/Finance/業務分析",
-    "Lecture notes/Anatomy"
+    "Lecture notes/Finance/業務分析"
   ]
 }
