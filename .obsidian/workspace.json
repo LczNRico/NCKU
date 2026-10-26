@@ -187,7 +187,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2026-10-24.md",
+                "file": "Lecture notes/Organic Chemistry/Chapter 4/ch4_part1_radical_chain.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -201,7 +201,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 347.00634765625
+    "width": 347.00634765625,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -215,13 +216,13 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "ed2a059b644082ca",
+  "active": "277d58e88f3e6e5e",
   "lastOpenFiles": [
+    "2026-10-24.md",
     "Lecture notes/Organic Chemistry/Chapter 4/ch4_part1_radical_chain.md",
     "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part4_環烷類與立體化學.md",
     "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part3_構形分析.md",
     "未命名.canvas",
-    "2026-10-24.md",
     "未命名.base",
     "Lecture notes/Organic Chemistry/Chapter 3/Ch3_Part2_物理性質與反應.md",
     "Lecture notes/test.f",
